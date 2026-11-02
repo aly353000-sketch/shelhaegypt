@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Google Search Console & Web Crawlers Sitemap
+Sitemap: https://shelhaegypt.com/sitemap.xml
