@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TFJ7D161W"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2TFJ7D161W');
+
+      // Global Deduplicated Click Tracking for phone_click and whatsapp_click
+      document.addEventListener('click', function(event) {
+        var link = event.target && event.target.closest ? event.target.closest('a') : null;
+        if (!link || !link.href) return;
+
+        var href = link.href.trim();
+        var now = Date.now();
+        
+        // Prevent duplicate trigger on repeated bubbles or rapid re-clicks within 800ms
+        if (link.__lastGaTrackTime && (now - link.__lastGaTrackTime < 800)) {
+          return;
+        }
+
+        if (href.startsWith('tel:')) {
+          link.__lastGaTrackTime = now;
+          var phoneNumber = href.replace('tel:', '').trim();
+          if (typeof gtag === 'function') {
+            gtag('event', 'phone_click', {
+              phone_number: phoneNumber,
+              link_url: href,
+              link_text: (link.textContent || '').trim().substring(0, 60),
+              event_category: 'engagement',
+              event_label: phoneNumber
+            });
+          }
+        } else if (href.indexOf('wa.me') !== -1 || href.indexOf('api.whatsapp.com') !== -1) {
+          link.__lastGaTrackTime = now;
+          if (typeof gtag === 'function') {
+            gtag('event', 'whatsapp_click', {
+              whatsapp_url: href,
+              link_url: href,
+              link_text: (link.textContent || '').trim().substring(0, 60),
+              event_category: 'engagement',
+              event_label: href
+            });
+          }
+        }
+      }, { capture: true });
+    </script>
+    <title>شركة شِلها لنقل وتغليف الأثاث | Shelha Egypt | ونش هيدروليكي وسيارات مجهزة</title>
+    <meta name="description" content="شركة شِلها لنقل وتغليف الأثاث بمصر | Shelha Egypt Moving &amp; Packing. فك وتركيب وتغليف عفش الشقق والفلل، فك وتركيب التكييفات 800ج، أوناش هيدروليكية تبدأ من 1700ج." />
+    <meta name="keywords" content="Shelha Egypt, Shelha, Shelhaegypt, Shelhaegypt.com, شركة شلها, شِلها لنقل الاثاث, شركة نقل اثاث, نقل عفش مصر, ونش رفع اثاث, ونش هيدروليكي, Shilha, Shilha Movers, Moving Company Egypt, furniture movers Cairo, packing services Cairo" />
+    <meta name="author" content="شركة شِلها لنقل وتغليف الأثاث | Shelha Egypt" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
+    <!-- Google Search Console Verification Meta Tag -->
+    <meta name="google-site-verification" content="hBDqg1s06-2q5ir8oKzP_ZijEo73m_JMs1cNFZcCLcQ" />
+    
+    <!-- Canonical URL for Google Indexing -->
+    <link rel="canonical" href="https://shelhaegypt.com/" />
+
+    <!-- Favicon Icon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%231d4ed8'/><text x='50' y='68' font-size='55' font-weight='900' font-family='sans-serif' fill='white' text-anchor='middle'>ش</text></svg>" />
+
+    <!-- Geo Local SEO for Egypt -->
+    <meta name="geo.region" content="EG" />
+    <meta name="geo.placename" content="Cairo, Egypt" />
+    <meta name="geo.position" content="30.0444;31.2357" />
+    <meta name="ICBM" content="30.0444, 31.2357" />
+
+    <!-- Open Graph / Facebook / WhatsApp Preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shelhaegypt.com/" />
+    <meta property="og:title" content="شركة شِلها لنقل وتغليف الأثاث | Shelha Egypt" />
+    <meta property="og:description" content="مش أي حد يشيل عفشك يستاهل ثقتك! شركة شِلها لخدمات نقل وتغليف الأثاث وفك وتركيب التكييفات وأوناش الرفع بمصر | Shelha Egypt" />
+    <meta property="og:site_name" content="شِلها | Shelha Egypt" />
+    <meta property="og:locale" content="ar_EG" />
+    <meta property="og:image" content="https://shelhaegypt.com/assets/aistudio/FB_IMG_1793372096933_b1d91a1d.jpg" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="شركة شِلها لنقل وتغليف الأثاث | Shelha Egypt" />
+    <meta name="twitter:description" content="عفشك في أمان مع شِلها. نقل وتغليف الأثاث وأوناش هيدروليكية بمصر | Shelha Egypt." />
+    <meta name="twitter:image" content="https://shelhaegypt.com/assets/aistudio/FB_IMG_1793372096933_b1d91a1d.jpg" />
+
+    <!-- Google Fonts: Alexandria, Readex Pro & IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD Graph for Google Search & Google Ads -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "MovingCompany",
+          "@id": "https://shelhaegypt.com/#organization",
+          "name": "شركة شِلها لنقل وتغليف الأثاث | Shelha Egypt",
+          "alternateName": [
+            "Shelha Egypt",
+            "Shelhaegypt",
+            "Shelha",
+            "شِلها",
+            "شركة شلها",
+            "شِلها لنقل العفش",
+            "Shilha Movers",
+            "Shilha",
+            "Shelhaegypt.com"
+          ],
+          "url": "https://shelhaegypt.com/",
+          "logo": "https://shelhaegypt.com/assets/aistudio/FB_IMG_1793372096933_b1d91a1d.jpg",
+          "image": "https://shelhaegypt.com/assets/aistudio/FB_IMG_1793372096933_b1d91a1d.jpg",
+          "description": "شركة متخصصة في نقل الأثاث وتغليف العفش للشقق والفلل والشركات والعيادات مع فك وتركيب التكييفات والأجهزة الكهربائية وتوفير ونش هيدروليكي لرفع وتنزيل الأثاث لجميع محافظات مصر.",
+          "telephone": ["+201099649897", "+201128418399", "+201019785437"],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "القاهرة",
+            "addressRegion": "القاهرة الكبرى",
+            "addressCountry": "EG"
+          },
+          "areaServed": [
+            "القاهرة", "القاهرة الجديدة", "التجمع الخامس", "مدينة نصر", "مصر الجديدة", "المعادي", "الشيخ زايد", "6 أكتوبر", "الشروق", "مدينتي", "الرحاب", "الإسكندرية", "جميع محافظات مصر"
+          ],
+          "priceRange": "$$",
+          "openingHours": "Mo-Su 00:00-24:00",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "184",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "خدمات نقل وتغليف الأثاث ومستلزمات الشحن",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "نقل أثاث الشقق والفلل السكنية"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "ونش رفع أثاث هيدروليكي تبدأ من 1700 ج.م"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "فك وتركيب التكييفات 800 ج.م للوحدة"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "تغليف الأثاث والصيني بكراتين 5 راق وبابلز"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "بيع وتوصيل كراتين 5 طبقات مقواة وشنط مفروشات ورولات بابلز لباب المنزل",
+                  "description": "خدمة توريد وتوصيل كراتين نقل وتخزين 5 طبقات متينة ومستلزمات التغليف ورولات بابلز واسترتش وشنط مفروشات لباب المنزل بالقاهرة والجيزة"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://shelhaegypt.com/#faqs",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "ما هو سعر خدمة الونش الهيدروليكي لرفع الأثاث؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "يبدأ سعر خدمة الونش الهيدروليكي من 1700 ج.م، وهو ونش مجهز بحمولة حتى 400 كجم ويصل للأدوار المرتفعة حتى الدور 25."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "كم سعر فك وتركيب التكييف مع شركة شِلها؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "سعر فك وتركيب التكييف هو 800 ج.م للوحدة، يقوم به فني تكييف متخصص ومعتمد يتولى فك الوحدة وحفظ شحنة الفريون وإعادة تركيبها وتشغيلها بكفاءة."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "كيف تحافظ شركة شِلها على سلامة الأثاث أثناء النقل؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "نستخدم خامات تغليف سميكة كالبابلز والاسترتش والكرتون المقوى 5 راق، مع سيارات مبطنة بشرائح خشبية وأحزمة تثبيت لمنع أي اهتزاز."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-600 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

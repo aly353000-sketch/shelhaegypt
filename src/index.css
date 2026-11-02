@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* Force dark variant to require .dark class so OS dark-mode media queries never wash out text */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    font-family: 'Alexandria', 'Readex Pro', 'IBM Plex Sans Arabic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #0f172a;
+    background-color: #f8fafc;
+  }
+  ::selection {
+    background-color: #2563eb;
+    color: #ffffff;
+  }
+}
+
+/* Periodic subtle shake every 10 seconds */
+@keyframes periodicShake {
+  0%, 88%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  90% {
+    transform: scale(1.1) rotate(-14deg);
+  }
+  92% {
+    transform: scale(1.1) rotate(14deg);
+  }
+  94% {
+    transform: scale(1.1) rotate(-10deg);
+  }
+  96% {
+    transform: scale(1.1) rotate(10deg);
+  }
+  98% {
+    transform: scale(1.05) rotate(0deg);
+  }
+}
+
+.animate-periodic-shake {
+  animation: periodicShake 10s ease-in-out infinite;
+}
+
+/* Custom scrollbar in royal blue */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #0284c7;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
+}
