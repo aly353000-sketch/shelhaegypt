@@ -118,42 +118,28 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onOpenGoldenTi
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           
-          {/* Logo & Back Arrow Container */}
-          <div className="flex items-center gap-2.5 sm:gap-3">
-            {/* Back Arrow Button (سهم الرجوع والعودة) */}
-            <button
-              type="button"
-              onClick={handleGoBack}
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl border text-xs sm:text-sm font-bold transition-all shadow-sm cursor-pointer group ${
+          {/* Brand Logo & Name (Bilingual Arabic & English) - Enlarged with Luxury Styling */}
+          <a href="#hero" className="flex flex-col text-right group select-none py-1">
+            <div className="flex items-baseline gap-1.5 sm:gap-2.5">
+              <span className={`text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-none transition-all duration-300 font-alexandria ${
                 theme === 'light'
-                  ? 'bg-slate-100 hover:bg-blue-50 border-slate-300 text-slate-700 hover:text-blue-600'
-                  : 'bg-blue-950/70 hover:bg-blue-900/80 border-blue-800/60 text-slate-200 hover:text-sky-300'
-              }`}
-              title={t('الرجوع للصفحة السابقة', 'Go back')}
-              aria-label={t('الرجوع للصفحة السابقة', 'Go back')}
-            >
-              <ArrowRight className={`w-4 h-4 text-sky-400 transition-transform ${lang === 'en' ? 'rotate-180 group-hover:translate-x-1' : 'group-hover:-translate-x-1'}`} />
-              <span>{t('رجوع', 'Back')}</span>
-            </button>
-
-            {/* Brand Logo & Name (Bilingual Arabic & English) */}
-            <a href="#hero" className="flex flex-col text-right group select-none whitespace-nowrap">
-              <div className="flex items-baseline gap-2">
-                <span className="text-2xl sm:text-3xl font-black tracking-tight text-blue-950 group-hover:text-blue-700 transition-colors leading-none">
-                  شِلـهـا
-                </span>
-                <span className="text-xs sm:text-sm font-extrabold text-blue-700 leading-none">
-                  لنقل وتغليف الأثاث
-                </span>
-                <span className="text-[10px] font-black tracking-wider text-slate-600 dark:text-slate-300 font-mono hidden sm:inline-block">
-                  SHELHA EGYPT
-                </span>
-              </div>
-              <span className="text-[10px] sm:text-[11px] font-extrabold text-slate-700 dark:text-slate-300 mt-1">
-                الشركة الرائدة لنقل العفش بمصر • Shelha Egypt
+                  ? 'bg-gradient-to-r from-blue-950 via-blue-900 to-sky-700 bg-clip-text text-transparent group-hover:from-blue-700 group-hover:to-sky-500'
+                  : 'text-white group-hover:text-sky-300'
+              }`}>
+                شِلـهـا
               </span>
-            </a>
-          </div>
+              <span className="text-xs sm:text-sm md:text-base font-black text-blue-700 dark:text-sky-400 leading-none pb-0.5">
+                لنقل وتغليف الأثاث
+              </span>
+              <span className="text-[10px] font-black tracking-widest text-sky-700 bg-sky-50 dark:bg-blue-950/60 dark:text-sky-300 border border-sky-200 dark:border-blue-800 px-2 py-0.5 rounded-full font-mono hidden md:inline-block">
+                SHELHA EGYPT
+              </span>
+            </div>
+            <span className="text-[10px] sm:text-xs font-bold text-slate-600 dark:text-slate-300 mt-0.5 flex items-center gap-1.5 whitespace-nowrap">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse inline-block" />
+              <span>الرائدة لنقل العفش بمصر • Shelha Egypt</span>
+            </span>
+          </a>
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center gap-5">
