@@ -7,36 +7,90 @@
     <lastmod>2026-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://shelhaegypt.com/assets/aistudio/FB_IMG_1793372096933_b1d91a1d.jpg</image:loc>
+      <image:title>شركة شِلها لنقل وتغليف الأثاث | Shelha Egypt</image:title>
+      <image:caption>سيارات نقل عفش مغلقة ومجهزة لنقل وتغليف الأثاث بمصر</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://shelhaegypt.com/assets/aistudio/Screenshot_________-_______Chrome_68be8d7e.jpg</image:loc>
+      <image:title>ونش هيدروليكي لرفع وتنزيل الأثاث - شركة شِلها</image:title>
+      <image:caption>ونش رفع أثاث هيدروليكي حتى الدور 25 بحمولة 400 كجم</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://shelhaegypt.com/#calculator-section</loc>
     <lastmod>2026-11-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://shelhaegypt.com/#winch-section</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://shelhaegypt.com/#services</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://shelhaegypt.com/#boxes-store</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://shelhaegypt.com/assets/aistudio/FB_IMG_1793372087782_e1c10367.jpg</image:loc>
+      <image:title>متجر بيع وتوصيل كراتين نقل العفش ومستلزمات التغليف</image:title>
+      <image:caption>كراتين 5 طبقات مقواة وشنط مفروشات ورولات بابلز واسترتش</image:caption>
+    </image:image>
   </url>
   <url>
-    <loc>https://shelhaegypt.com/#prep-guide</loc>
+    <loc>https://shelhaegypt.com/#winch-section</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://shelhaegypt.com/assets/aistudio/Screenshot_________-_______Chrome_ed32c971.jpg</image:loc>
+      <image:title>أوناش رفع الأثاث الهيدروليكية والكهربائية</image:title>
+      <image:caption>خدمة ونش رفع العفش تبدأ من 1700 ج.م لجميع الأدوار</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://shelhaegypt.com/#services</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://shelhaegypt.com/#packing-section</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://shelhaegypt.com/assets/aistudio/FB_IMG_1793231473308_f92e10a1.jpg</image:loc>
+      <image:title>تغليف احترافي للأثاث والتحف والصيني</image:title>
+      <image:caption>تغليف شامل بكرتون 5 طبقات ونايلون فقاعي ممتص للصدمات</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://shelhaegypt.com/#case-study-article</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://shelhaegypt.com/assets/aistudio/FB_IMG_1793372243785_978ce9bc.jpg</image:loc>
+      <image:title>دراسة حالة: تغليف صالون مذهب كلاسيكي فاخر قبل وبعد</image:title>
+      <image:caption>حماية الأثاث الأنتيك والمذهب بأعلى معايير التغليف</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://shelhaegypt.com/#moving-tips</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://shelhaegypt.com/#areas</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://shelhaegypt.com/#gallery</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://shelhaegypt.com/#faqs</loc>
