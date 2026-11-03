@@ -59,7 +59,7 @@ export const CountdownTimer: React.FC = () => {
             </div>
 
             <h3 className="text-2xl sm:text-4xl font-black text-white leading-tight">
-              {t('خصم 10% على نقل الفلل والشقق + ونش هيدروليكي مجاني!', '10% OFF Moving Packages + Free Hydraulic Winch Inspection!')}
+              {t('خصم 10% على نقل الفلل والشقق + معاينة فنية مجانية!', '10% OFF Moving Packages + Free Technical Inspection!')}
             </h3>
 
             <p className="text-sky-100 text-xs sm:text-sm leading-relaxed max-w-2xl">
