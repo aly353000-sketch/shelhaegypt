@@ -246,7 +246,7 @@ export const ServicesSection: React.FC = () => {
                   <div className="space-y-4">
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="bg-sky-500/10 text-sky-400 border border-sky-500/30 text-xs font-bold px-3 py-1 rounded-full">
-                        {t('شِلها للخدمات اللوجستية المتخصصة', 'Shilha Specialized Logistics')}
+                        {t('شلها للخدمات اللوجستية المتخصصة', 'Shilha Specialized Logistics')}
                       </span>
                       <span className={`text-xs ${theme === 'light' ? 'text-slate-500' : 'text-slate-400'}`}>
                         {t('متاح في كافة المحافظات', 'Available Across All Governorates')}
@@ -309,7 +309,7 @@ export const ServicesSection: React.FC = () => {
                   <div className={`pt-6 border-t flex flex-wrap items-center gap-3 ${theme === 'light' ? 'border-slate-100' : 'border-blue-900/60'}`}>
                     <a
                       href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-                        t(`السلام عليكم، أرغب في حجز والاستفسار عن خدمة: ${activeService.title} مع شركة شِلها`, `Hello, I want to book: ${activeService.title}`)
+                        t(`السلام عليكم، أرغب في حجز والاستفسار عن خدمة: ${activeService.title} مع شركة شلها`, `Hello, I want to book: ${activeService.title}`)
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"

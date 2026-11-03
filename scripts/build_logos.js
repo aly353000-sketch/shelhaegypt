@@ -95,11 +95,11 @@ const squareSvg = `
       </g>
     </g>
 
-    <!-- Super Enlarged Stylized Arabic Brand Typography "شِلها" -->
+    <!-- Super Enlarged Stylized Arabic Brand Typography "شلها" -->
     <g transform="translate(512, 498)">
       <text x="0" y="0" text-anchor="middle" font-family="'Alexandria', 'Cairo', 'Segoe UI', sans-serif" 
             font-size="160" font-weight="900" fill="url(#navyGrad)" letter-spacing="-1">
-        شِلــهـا
+        شلــهـا
       </text>
       
       <!-- Sub-headline in Arabic (Enlarged and Clear) -->
@@ -222,7 +222,7 @@ const landscapeSvg = `
   <g transform="translate(500, 145)">
     <!-- Main Giant Arabic Brand Name -->
     <text x="0" y="70" font-family="'Alexandria', 'Cairo', 'Segoe UI', sans-serif" font-size="136" font-weight="900" fill="url(#navyL)" letter-spacing="-1">
-      شِلـــهـا
+      شلـــهـا
     </text>
     
     <!-- Subtitle Arabic (Large & Ultra-Clear) -->
@@ -332,7 +332,7 @@ const brandIconSvg = `
   <g transform="translate(512, 780)">
     <text x="0" y="0" text-anchor="middle" font-family="'Alexandria', 'Cairo', 'Segoe UI', sans-serif" 
           font-size="185" font-weight="900" fill="url(#navyI)" letter-spacing="-1">
-      شِلــهـا
+      شلــهـا
     </text>
     <text x="0" y="70" text-anchor="middle" font-family="'Alexandria', 'Cairo', 'Segoe UI', sans-serif" 
           font-size="42" font-weight="800" fill="#0284c7">

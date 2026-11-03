@@ -64,7 +64,7 @@ export const CountdownTimer: React.FC = () => {
 
             <p className="text-sky-100 text-xs sm:text-sm leading-relaxed max-w-2xl">
               {t(
-                'استفد الآن من خصم شِلها الحصري عند تأكيد حجزك قبل انتهاء العداد التنازلي. يشمل العرض معاينة مجانية، تغليف متقن للأجهزة والتكييفات، وسيارات نقل مبطنة.',
+                'استفد الآن من خصم شلها الحصري عند تأكيد حجزك قبل انتهاء العداد التنازلي. يشمل العرض معاينة مجانية، تغليف متقن للأجهزة والتكييفات، وسيارات نقل مبطنة.',
                 'Claim Shilha special discount today before the countdown ends. Includes free site inspection, full appliance packing, and padded closed trucks.'
               )}
             </p>
@@ -98,7 +98,7 @@ export const CountdownTimer: React.FC = () => {
               <a
                 href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
                   t(
-                    'السلام عليكم، أرغب في الاستفادة من عرض الخم 10% مع شركة شِلها قبل انتهاء العداد التنازلي',
+                    'السلام عليكم، أرغب في الاستفادة من عرض الخم 10% مع شركة شلها قبل انتهاء العداد التنازلي',
                     'Hello, I want to claim the 10% discount offer from Shilha before it expires.'
                   )
                 )}`}

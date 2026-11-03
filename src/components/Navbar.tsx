@@ -93,15 +93,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onOpenGoldenTi
               <Clock className="w-3.5 h-3.5 text-sky-200" />
               <span>{t('متاحون 24 ساعة طوال الأسبوع', '24/7 Available')}</span>
             </div>
-            <div className="flex items-center gap-2 font-bold">
+            <div className="flex items-center gap-2 sm:gap-3 font-bold">
               <Phone className="w-3.5 h-3.5 text-sky-200" />
-              <span>{t('احجز الآن:', 'Call:')}</span>
+              <span>{t('اتصل الآن:', 'Call:')}</span>
               <a
-                href={`tel:${COMPANY_DATA.phones[0].number}`}
+                href="tel:01099649897"
                 className="underline hover:text-sky-200 transition-colors font-mono"
                 dir="ltr"
               >
-                {COMPANY_DATA.phones[0].number}
+                01099649897
+              </a>
+              <span className="text-sky-300 font-normal">|</span>
+              <a
+                href="tel:01128418399"
+                className="underline hover:text-sky-200 transition-colors font-mono"
+                dir="ltr"
+              >
+                01128418399
               </a>
             </div>
           </div>
@@ -126,7 +134,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onOpenGoldenTi
                   ? 'bg-gradient-to-r from-blue-950 via-blue-900 to-sky-700 bg-clip-text text-transparent group-hover:from-blue-700 group-hover:to-sky-500'
                   : 'text-white group-hover:text-sky-300'
               }`}>
-                شِلـهـا
+                شلـهـا
               </span>
               <span className="text-xs sm:text-sm md:text-base font-black text-blue-700 dark:text-sky-400 leading-none pb-0.5">
                 لنقل وتغليف الأثاث
@@ -203,7 +211,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onOpenGoldenTi
                   <div className={`p-2 border-t ${theme === 'light' ? 'border-slate-100' : 'border-slate-800'}`}>
                     <a
                       href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-                        t('السلام عليكم، استفسار عن خدمات نقل العفش وتغليف الأثاث مع شركة شِلها', 'Hello, I want to inquire about moving and packing services.')
+                        t('السلام عليكم، استفسار عن خدمات نقل العفش وتغليف الأثاث مع شركة شلها', 'Hello, I want to inquire about moving and packing services.')
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -275,7 +283,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onOpenGoldenTi
               </a>
               <a
                 href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-                  t('السلام عليكم، استفسار عن خدمات نقل وتغليف الأثاث مع شركة شِلها', 'Hello, inquiry about moving services')
+                  t('السلام عليكم، استفسار عن خدمات نقل وتغليف الأثاث مع شركة شلها', 'Hello, inquiry about moving services')
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"

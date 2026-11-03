@@ -15,7 +15,7 @@ const SLIDES: MediaSlide[] = [
   {
     type: 'video',
     src: '/assets/aistudio/VID-20261029-WA0025_08d54593.mp4',
-    titleAr: 'فيديو حي ومباشر: ونش شِلها الهيدروليكي ينزل المنقولات بسلاسة وأمان تام',
+    titleAr: 'فيديو حي ومباشر: ونش شلها الهيدروليكي ينزل المنقولات بسلاسة وأمان تام',
     titleEn: 'Live Field Video: Shilha Hydraulic Winch Safely Lowering Furniture',
     badgeAr: 'فيديو ونش حي من الواقع 🎥',
     badgeEn: 'Live Winch Field Video 🎥',
@@ -31,7 +31,7 @@ const SLIDES: MediaSlide[] = [
   {
     type: 'image',
     src: '/assets/aistudio/IMG-20261029-WA0010_1__f198d94c.jpg',
-    titleAr: 'طاقم عمل شِلها الثلاثي المتخصص أثناء إحكام تغليف كنب الصالون بالاسترتش والبابلز',
+    titleAr: 'طاقم عمل شلها الثلاثي المتخصص أثناء إحكام تغليف كنب الصالون بالاسترتش والبابلز',
     titleEn: 'Shilha 3-Man Specialist Crew Wrapping Luxury Sofa with Stretch & Bubble',
     badgeAr: 'فريق التغليف المتخصص',
     badgeEn: 'Specialist Packing Crew',
@@ -39,7 +39,7 @@ const SLIDES: MediaSlide[] = [
   {
     type: 'image',
     src: '/assets/aistudio/FB_IMG_1793372087782_e1c10367.jpg',
-    titleAr: 'صندوق سيارة شِلها المبطن والمدعم بشرائح خشبية سويدي وأحزمة ربط لحماية العفش',
+    titleAr: 'صندوق سيارة شلها المبطن والمدعم بشرائح خشبية سويدي وأحزمة ربط لحماية العفش',
     titleEn: 'Padded Truck Cargo Bed with Solid Wood Battens & Safety Straps',
     badgeAr: 'سيارات نقل مجهزة ومبطنة',
     badgeEn: 'Equipped Padded Trucks',
@@ -47,7 +47,7 @@ const SLIDES: MediaSlide[] = [
   {
     type: 'image',
     src: '/assets/aistudio/IMG-20261029-WA0039_a33b1140.jpg',
-    titleAr: 'توثيق قبل وبعد: كيف يحمي التغليف الاحترافي لشِلها الأقمشة المخملية والأرجل المذهبة',
+    titleAr: 'توثيق قبل وبعد: كيف يحمي التغليف الاحترافي لشلها الأقمشة المخملية والأرجل المذهبة',
     titleEn: 'Before & After Protection: Shielding Delicate Velvet Fabrics & Gold Legs',
     badgeAr: 'قبل وبعد التغليف (درع أمان)',
     badgeEn: 'Before & After Protection',
@@ -155,7 +155,7 @@ export const HeroMediaSlider: React.FC = () => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       role="region"
-      aria-label={t('معرض صور وفيديو شِلها', 'Shilha Media Showcase')}
+      aria-label={t('معرض صور وفيديو شلها', 'Shilha Media Showcase')}
     >
       {/* Soothing Royal Blue Glow Behind the Media Card */}
       <div className="absolute -inset-1.5 bg-gradient-to-tr from-blue-600 via-sky-400 to-cyan-300 rounded-3xl blur-md opacity-50 group-hover:opacity-90 transition duration-700 pointer-events-none" />

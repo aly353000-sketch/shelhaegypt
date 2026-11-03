@@ -4,29 +4,29 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://shelhaegypt.com/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://shelhaegypt.com/assets/aistudio/FB_IMG_1793372096933_b1d91a1d.jpg</image:loc>
-      <image:title>شركة شِلها لنقل وتغليف الأثاث | Shelha Egypt</image:title>
-      <image:caption>سيارات نقل عفش مغلقة ومجهزة لنقل وتغليف الأثاث بمصر</image:caption>
+      <image:title>شركة شلها مصر (شركة شيلها مصر) | 01099649897 - 01128418399</image:title>
+      <image:caption>سيارات نقل عفش مغلقة ومجهزة - اتصل الآن 01099649897 أو 01128418399</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://shelhaegypt.com/assets/aistudio/Screenshot_________-_______Chrome_68be8d7e.jpg</image:loc>
-      <image:title>ونش هيدروليكي لرفع وتنزيل الأثاث - شركة شِلها</image:title>
-      <image:caption>ونش رفع أثاث هيدروليكي حتى الدور 25 بحمولة 400 كجم</image:caption>
+      <image:title>ونش هيدروليكي لرفع وتنزيل الأثاث - شركة شلها مصر | 01099649897</image:title>
+      <image:caption>ونش رفع أثاث هيدروليكي حتى الدور 25 - حجز فوري 01099649897 أو 01128418399</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://shelhaegypt.com/#calculator-section</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://shelhaegypt.com/#boxes-store</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -37,7 +37,7 @@
   </url>
   <url>
     <loc>https://shelhaegypt.com/#winch-section</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -48,13 +48,13 @@
   </url>
   <url>
     <loc>https://shelhaegypt.com/#services</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://shelhaegypt.com/#packing-section</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -65,7 +65,7 @@
   </url>
   <url>
     <loc>https://shelhaegypt.com/#case-study-article</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -76,25 +76,25 @@
   </url>
   <url>
     <loc>https://shelhaegypt.com/#moving-tips</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://shelhaegypt.com/#areas</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://shelhaegypt.com/#gallery</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://shelhaegypt.com/#faqs</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>

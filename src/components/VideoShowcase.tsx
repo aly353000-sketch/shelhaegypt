@@ -93,7 +93,7 @@ export const VideoShowcase: React.FC = () => {
           </h2>
 
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            توثيق حقيقي من أرض الواقع يُظهر ونش شِلها الهيدروليكي وهو ينزل الأثاث والمفروشات من الطوابق العليا مباشرة إلى سيارة النقل المجهزة، دون أي احتكاك بالسلالم أو جدران العمارة.
+            توثيق حقيقي من أرض الواقع يُظهر ونش شلها الهيدروليكي وهو ينزل الأثاث والمفروشات من الطوابق العليا مباشرة إلى سيارة النقل المجهزة، دون أي احتكاك بالسلالم أو جدران العمارة.
           </p>
         </div>
 
@@ -121,7 +121,7 @@ export const VideoShowcase: React.FC = () => {
               {/* Top Bar: Brand Badge & Audio/Fullscreen */}
               <div className="flex items-center justify-between pointer-events-auto">
                 <span className="bg-slate-950/85 backdrop-blur-md text-sky-400 border border-sky-400/40 px-3 py-1.5 rounded-xl text-xs font-bold shadow-md">
-                  شركة شِلها | Shelha Furniture Movers
+                  شركة شلها | Shelha Furniture Movers
                 </span>
 
                 <div className="flex items-center gap-2">
@@ -177,7 +177,7 @@ export const VideoShowcase: React.FC = () => {
               <div className="pointer-events-auto text-xs sm:text-sm text-slate-100 bg-slate-950/90 backdrop-blur-md p-3.5 rounded-xl border border-blue-900/50 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>تنزيل المنقولات بأمان بالونش الهيدروليكي مباشرة إلى سيارة شِلها</span>
+                  <span>تنزيل المنقولات بأمان بالونش الهيدروليكي مباشرة إلى سيارة شلها</span>
                 </div>
                 <span className="text-sky-300 font-bold hidden sm:inline">اضغط للتشغيل أو الإيقاف</span>
               </div>
@@ -195,7 +195,7 @@ export const VideoShowcase: React.FC = () => {
                 كفاءة الونش في حماية العفش من أخطار وضيق السلالم
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                في هذا الفيديو الحقيقي، بتشوف إزاي منصة الونش الهيدروليكي بتتحرك بثبات وسرعة فائقة من بلكونة العميل في الطوابق العليا مباشرة لداخل صندوق سيارة شِلها المبطنة، مما يوفر ساعات طويلة ويمنع أي خدش أو احتكاك للأثاث.
+                في هذا الفيديو الحقيقي، بتشوف إزاي منصة الونش الهيدروليكي بتتحرك بثبات وسرعة فائقة من بلكونة العميل في الطوابق العليا مباشرة لداخل صندوق سيارة شلها المبطنة، مما يوفر ساعات طويلة ويمنع أي خدش أو احتكاك للأثاث.
               </p>
             </div>
 
@@ -220,7 +220,7 @@ export const VideoShowcase: React.FC = () => {
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <a
                 href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-                  'السلام عليكم، شفت فيديو شغل الونش الهيدروليكي في الموقع وعايز أحجز ونش نقل عفش مع شركة شِلها'
+                  'السلام عليكم، شفت فيديو شغل الونش الهيدروليكي في الموقع وعايز أحجز ونش نقل عفش مع شركة شلها'
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"

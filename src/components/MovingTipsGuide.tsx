@@ -165,7 +165,7 @@ export const MovingTipsGuide: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 bg-blue-100 border border-blue-300 text-blue-900 text-xs sm:text-sm font-black px-4 py-1.5 rounded-full shadow-xs">
             <Lightbulb className="w-4 h-4 text-blue-700" />
-            <span>دليل شِلها الذهبي قبل يوم النقل</span>
+            <span>دليل شلها الذهبي قبل يوم النقل</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
@@ -173,7 +173,7 @@ export const MovingTipsGuide: React.FC = () => {
           </h2>
 
           <p className="text-sm sm:text-base leading-relaxed text-slate-700 max-w-2xl mx-auto">
-            حرصاً من شركة شِلها على راحتك التامة وأمان ممتلكاتك، نضع بين يديك هذا الدليل الإرشادي المفصل ليوم نقل مريح وهادئ بدون أي مفاجآت.
+            حرصاً من شركة شلها على راحتك التامة وأمان ممتلكاتك، نضع بين يديك هذا الدليل الإرشادي المفصل ليوم نقل مريح وهادئ بدون أي مفاجآت.
           </p>
         </div>
 
@@ -282,7 +282,7 @@ export const MovingTipsGuide: React.FC = () => {
               ترقيم وتسمية الكراتين
             </h4>
             <p className={`${getFontSizeClass()} text-slate-700 font-normal leading-relaxed`}>
-              اكتب اسم الغرفة على كل كرتونة (مثال: "مطبخ"، "غرفة أطفال")، وضع علامة واضحة "قابل للكسر" على كراتين الزجاج والأنتيكات ليقوم طاقم شِلها بوضعها في مكانها المحدد في شقتك الجديدة مباشرة.
+              اكتب اسم الغرفة على كل كرتونة (مثال: "مطبخ"، "غرفة أطفال")، وضع علامة واضحة "قابل للكسر" على كراتين الزجاج والأنتيكات ليقوم طاقم شلها بوضعها في مكانها المحدد في شقتك الجديدة مباشرة.
             </p>
           </div>
 
@@ -293,7 +293,7 @@ export const MovingTipsGuide: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-200">
             <div>
               <h3 className="text-lg sm:text-xl font-black text-slate-900">
-                القائمة التفقدية السريعة قبل وصول طاقم شِلها
+                القائمة التفقدية السريعة قبل وصول طاقم شلها
               </h3>
               <p className="text-xs sm:text-sm mt-1 text-slate-600">
                 علّم على المهام التي قمت بإنجازها لتتأكد من جاهزيتك التامة بنسبة 100%:

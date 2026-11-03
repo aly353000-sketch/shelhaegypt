@@ -38,7 +38,7 @@ export const WorkProcess: React.FC = () => {
       num: '04',
       title: t('النقل بالسيارات المغلقة', 'Padded Truck Transport'),
       desc: t(
-        'رص وتثبيت الأثاث داخل سيارات شِلها المجهزة والمبطنة من الداخل لمنع تعرضه لأي اهتزاز أو أتربة على الطريق.',
+        'رص وتثبيت الأثاث داخل سيارات شلها المجهزة والمبطنة من الداخل لمنع تعرضه لأي اهتزاز أو أتربة على الطريق.',
         'Fastening furniture inside padded, sealed trucks to guard against bumps, dust, and weather during transit.'
       ),
       icon: <Truck className="w-6 h-6 text-sky-400" />,
@@ -79,7 +79,7 @@ export const WorkProcess: React.FC = () => {
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-black ${
             theme === 'light' ? 'text-slate-900' : 'text-white'
           }`}>
-            {t('رحلة نقلك مع شِلها في 5 خطوات سهلة', 'Your Moving Journey with Shilha in 5 Easy Steps')}
+            {t('رحلة نقلك مع شلها في 5 خطوات سهلة', 'Your Moving Journey with Shilha in 5 Easy Steps')}
           </h2>
           <p className={`text-base sm:text-lg ${
             theme === 'light' ? 'text-slate-600' : 'text-slate-300'

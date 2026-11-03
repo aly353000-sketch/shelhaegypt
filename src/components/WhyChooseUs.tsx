@@ -25,7 +25,7 @@ export const WhyChooseUs: React.FC = () => {
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-black ${
             theme === 'light' ? 'text-slate-900' : 'text-white'
           }`}>
-            {t('ليه تختار شركة شِلها؟', 'Why Choose Shilha Moving Company?')}
+            {t('ليه تختار شركة شلها؟', 'Why Choose Shilha Moving Company?')}
           </h2>
           <p className={`text-base sm:text-lg ${
             theme === 'light' ? 'text-slate-600' : 'text-slate-300'
@@ -87,7 +87,7 @@ export const WhyChooseUs: React.FC = () => {
                   : 'border-blue-900/60 text-sky-400'
               }`}>
                 <CheckCircle className="w-3.5 h-3.5 text-sky-400" />
-                <span>{t('مطبق في كل عملية نقل مع شِلها', 'Standard in every Shilha move')}</span>
+                <span>{t('مطبق في كل عملية نقل مع شلها', 'Standard in every Shilha move')}</span>
               </div>
             </div>
           ))}
@@ -101,13 +101,13 @@ export const WhyChooseUs: React.FC = () => {
             <h3 className={`text-2xl sm:text-3xl font-black ${
               theme === 'light' ? 'text-slate-900' : 'text-white'
             }`}>
-              {t('الفرق بين النقل العشوائي ونقل شِلها الاحترافي', 'Comparison: Random Street Movers vs Professional Shilha')}
+              {t('الفرق بين النقل العشوائي ونقل شلها الاحترافي', 'Comparison: Random Street Movers vs Professional Shilha')}
             </h3>
             <p className={`text-xs sm:text-sm ${
               theme === 'light' ? 'text-slate-500' : 'text-slate-400'
             }`}>
               {t(
-                'مقارنة واقعية توضح لماذا يعتبر اختيار شِلها استثماراً يحمي أثاثك ويوفر مالك',
+                'مقارنة واقعية توضح لماذا يعتبر اختيار شلها استثماراً يحمي أثاثك ويوفر مالك',
                 'Real comparison showing why Shilha is the investment that protects your furniture and wallet'
               )}
             </p>
@@ -162,13 +162,13 @@ export const WhyChooseUs: React.FC = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-2 text-blue-900 font-black text-base sm:text-lg">
                   <ShieldCheck className="w-5 h-5 shrink-0 text-blue-700" />
-                  <span>{t('تجربة نقل VIP الآمنة والمنظمة مع شِلها:', 'VIP Safe & Organized Experience with Shilha:')}</span>
+                  <span>{t('تجربة نقل VIP الآمنة والمنظمة مع شلها:', 'VIP Safe & Organized Experience with Shilha:')}</span>
                 </div>
 
                 <div className="rounded-2xl overflow-hidden border border-blue-300 max-h-48 shadow-inner">
                   <img
                     src="/assets/aistudio/FB_IMG_1793231464813_9511a619.jpg"
-                    alt="طاقم شِلها المحترف"
+                    alt="طاقم شلها المحترف"
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />

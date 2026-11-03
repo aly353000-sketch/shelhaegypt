@@ -232,7 +232,7 @@ export const FaqSection: React.FC = () => {
                           <p>{faq.a}</p>
                           <div className="flex items-center gap-2 pt-2 text-[11px] font-bold text-emerald-600">
                             <CheckCircle2 className="w-3.5 h-3.5" />
-                            <span>معتمد من شركة شِلها لنقل وتغليف الأثاث | Shelha Furniture Movers</span>
+                            <span>معتمد من شركة شلها لنقل وتغليف الأثاث | Shelha Furniture Movers</span>
                           </div>
                         </div>
                       </motion.div>
@@ -251,14 +251,14 @@ export const FaqSection: React.FC = () => {
               عندك استفسار خاص أو محتاج معاينة مجانية؟
             </h3>
             <p className="text-xs sm:text-sm text-sky-100 max-w-lg">
-              فريق خدمة عملاء شِلها متاح 24 ساعة للرد على استفسارك ومساعدتك في اختيار أنسب باقة لنقل بيتك.
+              فريق خدمة عملاء شلها متاح 24 ساعة للرد على استفسارك ومساعدتك في اختيار أنسب باقة لنقل بيتك.
             </p>
           </div>
 
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <a
               href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-                'السلام عليكم، عندي استفسار عن خدمات نقل وتغليف الأثاث مع شركة شِلها'
+                'السلام عليكم، عندي استفسار عن خدمات نقل وتغليف الأثاث مع شركة شلها'
               )}`}
               target="_blank"
               rel="noopener noreferrer"

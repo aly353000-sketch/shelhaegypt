@@ -50,7 +50,7 @@ const DEFAULT_TESTIMONIALS: TestimonialItem[] = [
     name: 'د. سارة عبد الرحمن',
     role: 'نقل عيادة أسنان متكاملة',
     location: 'مصر الجديدة - الكوربة',
-    text: 'كنت خايفة جداً على أجهزة العيادة والمعدات الطبية لأنها غالية وحساسة، لكن فريق شِلها عملوا تغليف ثلاثي بابلز وفوم ووصلوا كل حاجة سليمة واشتغلنا تاني يوم على طول. شكراً ليكم ولأمانتكم!',
+    text: 'كنت خايفة جداً على أجهزة العيادة والمعدات الطبية لأنها غالية وحساسة، لكن فريق شلها عملوا تغليف ثلاثي بابلز وفوم ووصلوا كل حاجة سليمة واشتغلنا تاني يوم على طول. شكراً ليكم ولأمانتكم!',
     rating: 5,
     date: 'منذ شهر',
     likes: 38,
@@ -201,7 +201,7 @@ export const Testimonials: React.FC = () => {
     const newReview: TestimonialItem = {
       id: `testi-${Date.now()}`,
       name: reviewerName.trim(),
-      role: moveDetails.trim() || t('عميل شِلها المعتمد', 'Verified Shilha Customer'),
+      role: moveDetails.trim() || t('عميل شلها المعتمد', 'Verified Shilha Customer'),
       location: reviewLocation.trim() || t('القاهرة الكبرى', 'Greater Cairo'),
       text: reviewComment.trim(),
       rating: formRating,
@@ -258,7 +258,7 @@ export const Testimonials: React.FC = () => {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
-            {t('ماذا يقول عملاء شِلها عنا؟', 'What Do Shilha Customers Say?')}
+            {t('ماذا يقول عملاء شلها عنا؟', 'What Do Shilha Customers Say?')}
           </h2>
 
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
@@ -364,7 +364,7 @@ export const Testimonials: React.FC = () => {
                   <div className="space-y-1">
                     <h3 className="text-lg sm:text-xl font-black text-blue-950 flex items-center gap-2">
                       <Sparkles className="w-5 h-5 text-amber-500" />
-                      <span>{t('شاركنا تقييمك ورأيك في خدمة شِلها', 'Share Your Feedback on Shilha')}</span>
+                      <span>{t('شاركنا تقييمك ورأيك في خدمة شلها', 'Share Your Feedback on Shilha')}</span>
                     </h3>
                     <p className="text-xs text-slate-500">
                       {t('نعتز بكل كلمة وتجربة حقيقية لخدمة النقل والتغليف والأوناش', 'We value every authentic moving experience')}

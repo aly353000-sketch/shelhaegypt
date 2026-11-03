@@ -165,7 +165,7 @@ export const FurnitureTransformationArticle: React.FC = () => {
         <div className="space-y-4">
           <div className="inline-flex items-center gap-2 bg-amber-500/15 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full">
             <Sparkles className="w-4 h-4 text-amber-500" />
-            <span>{t('دراسة حالة عملية من أرض الواقع | شركة شِلها', 'Real Life Case Study | Shilha Protection')}</span>
+            <span>{t('دراسة حالة عملية من أرض الواقع | شركة شلها', 'Real Life Case Study | Shilha Protection')}</span>
           </div>
 
           <h2 className={`text-2xl sm:text-4xl lg:text-5xl font-black leading-tight ${
@@ -179,7 +179,7 @@ export const FurnitureTransformationArticle: React.FC = () => {
 
           <p className={`text-sm sm:text-base ${isReaderMode ? 'text-[#4e4741]' : theme === 'light' ? 'text-slate-600' : 'text-slate-300'}`}>
             {t(
-              'شاهد بالصورة الحية من عمليات شِلها كيف تم تغليف هذا الكرسي الصالون الفاخر بحرفية تامة، ولماذا يعتبر التغليف الاحترافي أفضل استثمار لحماية مفروشاتك وذكرياتك.',
+              'شاهد بالصورة الحية من عمليات شلها كيف تم تغليف هذا الكرسي الصالون الفاخر بحرفية تامة، ولماذا يعتبر التغليف الاحترافي أفضل استثمار لحماية مفروشاتك وذكرياتك.',
               'Live proof from Shilha operations showcasing meticulous chair wrapping and why professional packing is your best furniture investment.'
             )}
           </p>
@@ -195,7 +195,7 @@ export const FurnitureTransformationArticle: React.FC = () => {
           <div className="relative group cursor-pointer" onClick={() => setIsZoomModalOpen(true)}>
             <img
               src="/assets/aistudio/IMG-20261029-WA0039_a33b1140.jpg"
-              alt="مقارنة قبل وبعد تغليف الكرسي الفاخر شركة شِلها لنقل الأثاث"
+              alt="مقارنة قبل وبعد تغليف الكرسي الفاخر شركة شلها لنقل الأثاث"
               className="w-full min-h-[360px] sm:min-h-[480px] max-h-[680px] object-cover sm:object-contain mx-auto transition-transform duration-500 group-hover:scale-[1.01]"
               loading="lazy"
             />
@@ -210,7 +210,7 @@ export const FurnitureTransformationArticle: React.FC = () => {
 
             {/* Badges Overlay */}
             <div className="absolute top-4 right-4 bg-emerald-600/90 text-white font-black text-xs sm:text-sm px-3.5 py-1.5 rounded-xl shadow-lg backdrop-blur-md">
-              {t('صورة حقيقية من تنفيذ طاقم شِلها ✅', 'Real Unedited Shilha Crew Work ✅')}
+              {t('صورة حقيقية من تنفيذ طاقم شلها ✅', 'Real Unedited Shilha Crew Work ✅')}
             </div>
 
             <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-slate-950/85 text-white p-3 rounded-2xl border border-sky-400/30 backdrop-blur-md text-xs space-y-1">
@@ -259,7 +259,7 @@ export const FurnitureTransformationArticle: React.FC = () => {
             <h3 className={`text-xl sm:text-2xl font-black ${
               isReaderMode ? 'text-[#221e1a]' : theme === 'light' ? 'text-blue-950' : 'text-sky-300'
             }`}>
-              {t('2. كيف حوله فريق "شِلها" إلى الصورة التي تراها على اليسار؟', '2. The Transformation: How Shilha Turned It Into the Armored State?')}
+              {t('2. كيف حوله فريق "شلها" إلى الصورة التي تراها على اليسار؟', '2. The Transformation: How Shilha Turned It Into the Armored State?')}
             </h3>
             <p>
               {t(
@@ -301,19 +301,19 @@ export const FurnitureTransformationArticle: React.FC = () => {
               <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white">
                 <img
                   src="/assets/aistudio/IMG-20261029-WA0010_1__f198d94c.jpg"
-                  alt="فريق عمل شِلها الثلاثي يغلف كنبة صالون فاخرة"
+                  alt="فريق عمل شلها الثلاثي يغلف كنبة صالون فاخرة"
                   className="w-full h-52 sm:h-60 object-cover"
                   loading="lazy"
                 />
                 <div className="p-3 bg-slate-50 border-t border-slate-200 text-xs font-bold text-slate-700">
-                  فريق شِلها المتخصص أثناء تغليف الكنب الصالون بالاسترتش والبابلز
+                  فريق شلها المتخصص أثناء تغليف الكنب الصالون بالاسترتش والبابلز
                 </div>
               </div>
 
               <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white">
                 <img
                   src="/assets/aistudio/IMG-20261029-WA0009_1__3127f7b9.jpg"
-                  alt="فني تغليف أثاث شِلها يثبت شريط الأمان وشعار الشركة"
+                  alt="فني تغليف أثاث شلها يثبت شريط الأمان وشعار الشركة"
                   className="w-full h-52 sm:h-60 object-cover"
                   loading="lazy"
                 />
@@ -333,7 +333,7 @@ export const FurnitureTransformationArticle: React.FC = () => {
             </h3>
             <p>
               {t(
-                'عندما يقرر العميل الاستعانة بشركة شِلها لنقل أثاثه مع خدمة التغليف المعتمدة، فإن هذا الاستثمار الصغير يحقق له عوائد ملموسة تفوق تكلفته بأضعاف:',
+                'عندما يقرر العميل الاستعانة بشركة شلها لنقل أثاثه مع خدمة التغليف المعتمدة، فإن هذا الاستثمار الصغير يحقق له عوائد ملموسة تفوق تكلفته بأضعاف:',
                 'When choosing Shilha with certified packing, this modest investment yields outsized returns:'
               )}
             </p>
@@ -379,7 +379,7 @@ export const FurnitureTransformationArticle: React.FC = () => {
             </div>
             <p className="text-xs sm:text-sm leading-relaxed text-slate-300 dark:text-slate-200">
               {t(
-                'في شركة شِلها، نتعامل مع كل كرسي وكل كرتونة وكأنها ملك خاص بنا. نحرص على استخدام أفضل رولات البابلز والفيروز الثقيل والاسترتش المقاوم للتمزق، لأن راحتك ورضاك هما أساس نجاحنا.',
+                'في شركة شلها، نتعامل مع كل كرسي وكل كرتونة وكأنها ملك خاص بنا. نحرص على استخدام أفضل رولات البابلز والفيروز الثقيل والاسترتش المقاوم للتمزق، لأن راحتك ورضاك هما أساس نجاحنا.',
                 'At Shilha, we treat every single chair and box as our own precious possession, delivering unmatched peace of mind.'
               )}
             </p>
@@ -402,7 +402,7 @@ export const FurnitureTransformationArticle: React.FC = () => {
               className="max-h-[80vh] w-auto object-contain rounded-2xl border-2 border-sky-400 shadow-2xl"
             />
             <div className="mt-4 flex items-center justify-between w-full text-white text-xs px-2">
-              <span>{t('قبل وبعد التغليف - شركة شِلها لنقل وتغليف الأثاث', 'Before & After Protection - Shilha Moving')}</span>
+              <span>{t('قبل وبعد التغليف - شركة شلها لنقل وتغليف الأثاث', 'Before & After Protection - Shilha Moving')}</span>
               <button
                 type="button"
                 onClick={() => setIsZoomModalOpen(false)}

@@ -42,7 +42,7 @@ export interface PackagingProduct {
 const PACKAGING_CATALOG: PackagingProduct[] = [
   {
     id: 'box-m',
-    name: 'كرتونة شِلها المقواة - مقاس وسط (5 طبقات)',
+    name: 'كرتونة شلها المقواة - مقاس وسط (5 طبقات)',
     category: 'boxes',
     tag: 'الأكثر طلباً للأواني والأجهزة',
     dimensions: '50 × 40 × 40 سم',
@@ -56,7 +56,7 @@ const PACKAGING_CATALOG: PackagingProduct[] = [
   },
   {
     id: 'box-l',
-    name: 'كرتونة شِلها الكبيرة - مقاس جامبو (5 طبقات)',
+    name: 'كرتونة شلها الكبيرة - مقاس جامبو (5 طبقات)',
     category: 'boxes',
     tag: 'للشاشات والتحف والملابس',
     dimensions: '60 × 45 × 50 سم',
@@ -69,7 +69,7 @@ const PACKAGING_CATALOG: PackagingProduct[] = [
   },
   {
     id: 'box-s',
-    name: 'كرتونة شِلها الصغيرة - متينة جداً للمقتنيات الثمينة',
+    name: 'كرتونة شلها الصغيرة - متينة جداً للمقتنيات الثمينة',
     category: 'boxes',
     tag: 'للأشياء الدقيقة والثقيلة',
     dimensions: '40 × 30 × 30 سم',
@@ -148,7 +148,7 @@ const PACKAGING_CATALOG: PackagingProduct[] = [
     category: 'bundles',
     tag: 'كل ما تحتاجه في طلبية واحدة',
     specs: '20 كرتونة مقواة 5 طبقات (10 وسط + 10 كبيرة) + 1 رول بابلز 50م + 2 رول استريتش + 3 بكرات شكرتون عريض + 2 شنطة مفروشات سوستة',
-    idealFor: 'العائلات التي ترغب في تجهيز وتعبئة شقتها ذاتياً بأعلى خامات شِلها المعتمدة',
+    idealFor: 'العائلات التي ترغب في تجهيز وتعبئة شقتها ذاتياً بأعلى خامات شلها المعتمدة',
     price: 1550,
     unit: 'باقة كاملة شاملة التوصيل',
     badge: 'وفر 250 ج.م 💥',
@@ -206,14 +206,14 @@ export const BoxesStoreSection: React.FC = () => {
     if (cartItems.length > 0) {
       orderDetails = cartItems.map(item => `• ${item.name} × ${item.quantity} (${item.quantity * item.price} ج.م)`).join('\n');
     } else {
-      orderDetails = '• استفسار عن طلب وتوصيل كراتين ومستلزمات تغليف شِلها';
+      orderDetails = '• استفسار عن طلب وتوصيل كراتين ومستلزمات تغليف شلها';
     }
 
     const msg = encodeURIComponent(
-      `السلام عليكم، أود طلب كراتين ومستلزمات تغليف من شركة شِلها (Shelha Egypt):\n\n` +
+      `السلام عليكم، أود طلب كراتين ومستلزمات تغليف من شركة شلها (Shelha Egypt):\n\n` +
       `📋 قائمة الطلبات المقترحة:\n${orderDetails}\n\n` +
       (totalCartPrice > 0 ? `💰 إجمالي القيمة التقريبية: ${totalCartPrice.toLocaleString()} ج.م\n` : '') +
-      `👤 الاسم: ${customerName || 'عميل شِلها'}\n` +
+      `👤 الاسم: ${customerName || 'عميل شلها'}\n` +
       `📱 الهاتف: ${customerPhone || 'متاح للتواصل'}\n` +
       `📍 عنوان التوصيل: ${deliveryArea}\n\n` +
       `برجاء إفادتي بميعاد التوصيل المتاح لباب المنزل وتأكيد الطلب.`
@@ -249,7 +249,7 @@ export const BoxesStoreSection: React.FC = () => {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight leading-tight">
-            كراتين شِلها 5 طبقات ومستلزمات التغليف الاحترافية
+            كراتين شلها 5 طبقات ومستلزمات التغليف الاحترافية
           </h2>
 
           <p className="text-sm sm:text-base font-bold text-slate-900 leading-relaxed max-w-2xl mx-auto">
@@ -281,7 +281,7 @@ export const BoxesStoreSection: React.FC = () => {
             <div className="h-64 sm:h-72 overflow-hidden relative">
               <img
                 src="/assets/aistudio/FB_IMG_1793372243785_978ce9bc.jpg"
-                alt="كراتين نقل وتغليف 5 طبقات ورولات بابلز متينة من شِلها"
+                alt="كراتين نقل وتغليف 5 طبقات ورولات بابلز متينة من شلها"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
@@ -310,7 +310,7 @@ export const BoxesStoreSection: React.FC = () => {
             <div className="h-64 sm:h-72 overflow-hidden relative">
               <img
                 src="/assets/aistudio/FB_IMG_1793372075500_f4e6d910.jpg"
-                alt="مستودع كراتين شِلها الجاهز للشحن الفوري لباب منزلك"
+                alt="مستودع كراتين شلها الجاهز للشحن الفوري لباب منزلك"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
@@ -319,7 +319,7 @@ export const BoxesStoreSection: React.FC = () => {
                 مخزون ضخم جاهز 24/7
               </span>
               <div className="absolute bottom-3 right-3 left-3 text-white space-y-1">
-                <div className="text-sm font-black">مستودع كراتين ومستلزمات شِلها</div>
+                <div className="text-sm font-black">مستودع كراتين ومستلزمات شلها</div>
                 <div className="text-xs text-amber-200 font-bold">تجهيز وشحن فوري لأي عدد كراتين تحتاجه</div>
               </div>
             </div>
@@ -496,7 +496,7 @@ export const BoxesStoreSection: React.FC = () => {
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-black">
               {totalCartCount > 0 
                 ? `طلبيتك المختارة: ${totalCartCount} قطعة • الإجمالي: ${totalCartPrice.toLocaleString()} ج.م`
-                : 'اطلب كراتين ومستلزمات شِلها الآن بأفضل سعر في مصر'}
+                : 'اطلب كراتين ومستلزمات شلها الآن بأفضل سعر في مصر'}
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 font-bold max-w-xl">
               يمكنك طلب أي عدد كراتين أو مستلزمات تغليف بمفردها دون الحاجة لطلب سيارة نقل، ونوفر لك خدمة التوصيل الفوري السريع.

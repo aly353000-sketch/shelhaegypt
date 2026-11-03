@@ -135,7 +135,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCalculator, onOpenGoldenTips }
               theme === 'light' ? 'text-slate-700' : 'text-slate-300'
             }`}>
               {t(
-                'مع شركة شِلها هتنقل شقتك أو فيلتك أو شركتك وإنت مرتاح البال تماماً. خدمة VIP شاملة: فك وتركيب نجارين محترفين، فك وتركيب التكييفات والأجهزة الكهربائية، تغليف أوروبي ثلاثي الطبقات، أوناش رفع هيدروليكية حتى الدور 25، وأسطول سيارات مغلقة مبطنة تغطي القاهرة الكبرى وجميع المحافظات.',
+                'مع شركة شلها (شيلها) هتنقل شقتك أو فيلتك أو شركتك وإنت مرتاح البال تماماً. خدمة VIP شاملة: فك وتركيب نجارين محترفين، فك وتركيب التكييفات والأجهزة الكهربائية، تغليف أوروبي ثلاثي الطبقات، أوناش رفع هيدروليكية حتى الدور 25، وأسطول سيارات مغلقة مبطنة تغطي القاهرة الكبرى وجميع المحافظات.',
                 'With Shilha, move your apartment, villa, or corporate office with complete peace of mind. Full VIP moving package: professional carpentry dismantling & assembly, AC technicians, 3-layer European packing, hydraulic winches up to floor 25, and padded closed trucks covering all Egypt.'
               )}
             </p>
@@ -151,7 +151,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCalculator, onOpenGoldenTips }
               </div>
               <div>
                 <div className={`text-base sm:text-lg font-black ${theme === 'light' ? 'text-blue-950' : 'text-white'}`}>
-                  {t('شِلها.. راحتك مش رفاهية، دي أساس شغلنا!', 'Shilha.. Your comfort is not a luxury, it is our core duty!')}
+                  {t('شلها.. راحتك مش رفاهية، دي أساس شغلنا!', 'Shilha.. Your comfort is not a luxury, it is our core duty!')}
                 </div>
                 <div className={`text-xs sm:text-sm mt-0.5 ${theme === 'light' ? 'text-slate-600' : 'text-slate-400'}`}>
                   {t(
@@ -168,7 +168,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCalculator, onOpenGoldenTips }
                 {/* WhatsApp Primary with official WhatsApp icon */}
                 <a
                   href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-                    t('السلام عليكم، استفسار عن حجز نقل عفش وتغليف أثاث مع شركة شِلها', 'Hello, I want to book moving & packing with Shilha')
+                    t('السلام عليكم، استفسار عن حجز نقل عفش وتغليف أثاث مع شركة شلها', 'Hello, I want to book moving & packing with Shilha')
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -200,6 +200,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCalculator, onOpenGoldenTips }
                   <Calculator className="w-5 h-5 text-sky-400" />
                   <span>{t('حاسبة التكلفة الفورية', 'Price Calculator')}</span>
                 </button>
+              </div>
+
+              {/* Direct Phone Numbers for instant dial without clicks */}
+              <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-3 py-2 px-3.5 rounded-xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 text-xs sm:text-sm font-bold">
+                <span className="text-blue-900 dark:text-sky-200">📞 {t('للاتصال المباشر والفوري:', 'Direct Call:')}</span>
+                <a href="tel:01099649897" className="font-mono font-black text-blue-700 dark:text-sky-300 hover:underline text-sm sm:text-base" dir="ltr">
+                  01099649897
+                </a>
+                <span className="text-slate-400">|</span>
+                <a href="tel:01128418399" className="font-mono font-black text-blue-700 dark:text-sky-300 hover:underline text-sm sm:text-base" dir="ltr">
+                  01128418399
+                </a>
               </div>
 
               {/* Sophisticated Reassurance & High-Demand Callback Note (Requested) */}

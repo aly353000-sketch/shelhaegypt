@@ -28,7 +28,7 @@ export const QuickContactForm: React.FC = () => {
       const msg = encodeURIComponent(
         `السلام عليكم، عايز أحجز موعد نقل عفش:\n` +
         `• كود الطلب: ${ref}\n` +
-        `• الاسم: ${name || 'عميل شِلها'}\n` +
+        `• الاسم: ${name || 'عميل شلها'}\n` +
         `• رقم الهاتف: ${phone}\n` +
         `• الخدمة: ${serviceType}\n` +
         `• من: ${fromLocation}\n` +
@@ -55,7 +55,7 @@ export const QuickContactForm: React.FC = () => {
               حجز موعد ومعاينة مجانية
             </span>
             <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
-              ابعتلنا دلوقتي.. سيبها على شِلها وإنت مرتاح!
+              ابعتلنا دلوقتي.. سيبها على شلها وإنت مرتاح!
             </h3>
             <p className="text-xs sm:text-sm text-slate-600">
               سجل بياناتك وسيتم التواصل معك خلال 10 دقائق لتأكيد الموعد وتوفير أفضل طاقم وونش هيدروليكي.
@@ -139,7 +139,7 @@ export const QuickContactForm: React.FC = () => {
                     transition={{ duration: 0.4, delay: 0.45 }}
                     className="text-sm sm:text-base text-slate-600 max-w-lg mx-auto leading-relaxed"
                   >
-                    شكراً لثقتك في شركة شِلها. فريق خدمة العملاء سيتصل بك على الرقم{' '}
+                    شكراً لثقتك في شركة شلها. فريق خدمة العملاء سيتصل بك على الرقم{' '}
                     <strong className="text-blue-700 font-bold" dir="ltr">{phone}</strong>{' '}
                     خلال 10 دقائق لتأكيد الموعد والمعاينة وتفاصيل النقل.
                   </motion.p>

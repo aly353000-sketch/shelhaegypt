@@ -43,7 +43,7 @@ export const AreasCoverage: React.FC = () => {
             theme === 'light' ? 'text-slate-600' : 'text-slate-300'
           }`}>
             {t(
-              'خدمات نقل وتغليف الأثاث مع شِلها متوفرة في كافة أحياء القاهرة، القاهرة الجديدة، الجيزة، وجميع محافظات الجمهورية.',
+              'خدمات نقل وتغليف الأثاث مع شلها متوفرة في كافة أحياء القاهرة، القاهرة الجديدة، الجيزة، وجميع محافظات الجمهورية.',
               'Furniture moving & packing available across Cairo, New Cairo, Giza, and all Egypt governorates.'
             )}
           </p>
@@ -66,7 +66,7 @@ export const AreasCoverage: React.FC = () => {
               </div>
               <p className="text-blue-100/90 text-sm sm:text-base leading-relaxed">
                 {t(
-                  'أسطول سيارات شِلها وأوناشنا الهيدروليكية متمركزة في نقاط حيوية في القاهرة والجيزة (التجمع، مدينة نصر، أكتوبر، المعادي) لسرعة الوصول لموقعك في أقل من 45 دقيقة من تأكيد الحجز، مع جداول منتظمة لنقل العفش إلى الإسكندرية والساحل الشمالي ومحافظات الدلتا والصعيد.',
+                  'أسطول سيارات شلها وأوناشنا الهيدروليكية متمركزة في نقاط حيوية في القاهرة والجيزة (التجمع، مدينة نصر، أكتوبر، المعادي) لسرعة الوصول لموقعك في أقل من 45 دقيقة من تأكيد الحجز، مع جداول منتظمة لنقل العفش إلى الإسكندرية والساحل الشمالي ومحافظات الدلتا والصعيد.',
                   'Shilha fleet and winches are stationed at key points in Cairo & Giza to ensure arrival under 45 minutes, with regular trips to Alexandria, North Coast, Delta, and Upper Egypt.'
                 )}
               </p>

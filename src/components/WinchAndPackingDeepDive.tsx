@@ -56,7 +56,7 @@ export const WinchAndPackingDeepDive: React.FC = () => {
               </h2>
 
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                وداعاً لتجريح جدران السلالم أو تكسير الرخام وضيق المصاعد! توفر شركة شِلها أحدث أوناش رفع الأثاث الهيدروليكية المحمولة على شاحنات مجهزة. يحقق الونش وصول غرف النوم الضخمة والكنب والزجاج والأجهزة إلى شقتك حتى الطابق الـ 25 بدون أي خدش، مع مشغلين معتمدين وأحزمة أمان مطاطية.
+                وداعاً لتجريح جدران السلالم أو تكسير الرخام وضيق المصاعد! توفر شركة شلها أحدث أوناش رفع الأثاث الهيدروليكية المحمولة على شاحنات مجهزة. يحقق الونش وصول غرف النوم الضخمة والكنب والزجاج والأجهزة إلى شقتك حتى الطابق الـ 25 بدون أي خدش، مع مشغلين معتمدين وأحزمة أمان مطاطية.
               </p>
 
               {/* Highlights 4-box grid */}
@@ -90,7 +90,7 @@ export const WinchAndPackingDeepDive: React.FC = () => {
                 </a>
                 <a
                   href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-                    'السلام عليكم، استفسار عن حجز ونش رفع عفش هيدروليكي بسعر 1700ج من شركة شِلها'
+                    'السلام عليكم، استفسار عن حجز ونش رفع عفش هيدروليكي بسعر 1700ج من شركة شلها'
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -107,7 +107,7 @@ export const WinchAndPackingDeepDive: React.FC = () => {
               <div className="rounded-3xl overflow-hidden border-2 border-blue-200 shadow-2xl bg-slate-900 relative">
                 <img
                   src="/assets/aistudio/FB_IMG_1793372096933_b1d91a1d.jpg"
-                  alt="ونش رفع الأثاث الهيدروليكي شركة شِلها ممتد لواجهة عمارة سكنية"
+                  alt="ونش رفع الأثاث الهيدروليكي شركة شلها ممتد لواجهة عمارة سكنية"
                   className="w-full h-80 sm:h-96 lg:h-[430px] object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
@@ -115,7 +115,7 @@ export const WinchAndPackingDeepDive: React.FC = () => {
 
                 {/* Badges on image */}
                 <div className="absolute top-4 right-4 bg-blue-700/90 text-white text-xs font-black px-3.5 py-1.5 rounded-xl shadow-md backdrop-blur-md">
-                  ونش شِلها الهيدروليكي في الموقع ✅
+                  ونش شلها الهيدروليكي في الموقع ✅
                 </div>
 
                 <div className="absolute bottom-4 left-4 right-4 bg-slate-950/85 backdrop-blur-md text-white p-3.5 rounded-2xl border border-sky-400/30 text-xs flex items-center justify-between">
@@ -157,13 +157,13 @@ export const WinchAndPackingDeepDive: React.FC = () => {
                 >
                   <img
                     src="/assets/aistudio/IMG-20261029-WA0010_1__f198d94c.jpg"
-                    alt="فريق عمل شِلها الثلاثي يغلف كنبة صالون فاخرة"
+                    alt="فريق عمل شلها الثلاثي يغلف كنبة صالون فاخرة"
                     className="w-full h-52 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
                   <div className="absolute bottom-2 right-2 left-2 text-[11px] font-bold text-white leading-tight">
-                    طاقم شِلها يغلف كنبة صالون فاخرة
+                    طاقم شلها يغلف كنبة صالون فاخرة
                   </div>
                 </div>
 
@@ -174,7 +174,7 @@ export const WinchAndPackingDeepDive: React.FC = () => {
                 >
                   <img
                     src="/assets/aistudio/IMG-20261029-WA0009_1__3127f7b9.jpg"
-                    alt="فني تغليف أثاث شِلها يثبت شريط الأمان"
+                    alt="فني تغليف أثاث شلها يثبت شريط الأمان"
                     className="w-full h-52 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
@@ -192,13 +192,13 @@ export const WinchAndPackingDeepDive: React.FC = () => {
               >
                 <img
                   src="/assets/aistudio/FB_IMG_1793372087782_e1c10367.jpg"
-                  alt="صندوق سيارة شِلها المبطن بشرائح خشبية سويدي وأحزمة ربط"
+                  alt="صندوق سيارة شلها المبطن بشرائح خشبية سويدي وأحزمة ربط"
                   className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
                 <div className="absolute bottom-2.5 right-3 left-3 flex items-center justify-between text-xs font-bold text-white">
-                  <span>صندوق سيارة شِلها المبطن والمدعم بشرائح خشبية لحماية العفش</span>
+                  <span>صندوق سيارة شلها المبطن والمدعم بشرائح خشبية لحماية العفش</span>
                   <ZoomIn className="w-4 h-4 text-sky-300" />
                 </div>
               </div>
@@ -242,7 +242,7 @@ export const WinchAndPackingDeepDive: React.FC = () => {
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <a
                   href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-                    'السلام عليكم، استفسار عن خدمات التغليف وفك وتركيب التكييفات (800ج) مع شركة شِلها'
+                    'السلام عليكم، استفسار عن خدمات التغليف وفك وتركيب التكييفات (800ج) مع شركة شلها'
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -281,7 +281,7 @@ export const WinchAndPackingDeepDive: React.FC = () => {
               className="max-h-[80vh] w-auto object-contain rounded-2xl border-2 border-sky-400 shadow-2xl"
             />
             <div className="mt-4 flex items-center justify-between w-full text-white text-xs px-2">
-              <span className="font-bold">شركة شِلها لنقل وتغليف الأثاث | Shelha Furniture Movers</span>
+              <span className="font-bold">شركة شلها لنقل وتغليف الأثاث | Shelha Furniture Movers</span>
               <button
                 type="button"
                 onClick={() => setZoomedImage(null)}

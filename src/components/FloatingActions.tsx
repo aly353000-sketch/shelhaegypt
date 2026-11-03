@@ -47,7 +47,7 @@ export const FloatingActions: React.FC = () => {
 
         <a
           href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-            t('السلام عليكم، عايز استفسر عن خدمات نقل وتغليف الأثاث مع شركة شِلها', 'Hello, inquiry about moving services.')
+            t('السلام عليكم، عايز استفسر عن خدمات نقل وتغليف الأثاث مع شركة شلها', 'Hello, inquiry about moving services.')
           )}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -122,7 +122,7 @@ export const FloatingActions: React.FC = () => {
           onMouseEnter={() => setCallHovered(true)}
           onMouseLeave={() => setCallHovered(false)}
           className="animate-periodic-shake w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-blue-700 via-blue-600 to-sky-400 hover:from-blue-600 hover:to-sky-300 text-white flex items-center justify-center shadow-2xl shadow-blue-600/50 hover:scale-110 active:scale-95 transition-all duration-300 group cursor-pointer border-2 border-white/30"
-          aria-label={t('عرض أرقام الاتصال بشركة شِلها', 'Call Shilha')}
+          aria-label={t('عرض أرقام الاتصال بشركة شلها', 'Call Shilha')}
           aria-expanded={callModalOpen}
         >
           <Phone className="w-7 h-7 group-hover:rotate-12 transition-transform stroke-[2.5]" />
@@ -138,7 +138,7 @@ export const FloatingActions: React.FC = () => {
               theme === 'light' ? 'border-slate-100' : 'border-blue-900/60'
             }`}>
               <div className="text-xs font-black text-sky-400">
-                {t('أرقام هواتف شركة شِلها:', 'Shilha Direct Lines:')}
+                {t('أرقام هواتف شركة شلها:', 'Shilha Direct Lines:')}
               </div>
               <button
                 type="button"

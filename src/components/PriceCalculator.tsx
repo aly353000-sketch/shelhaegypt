@@ -245,7 +245,7 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({ isModal = fals
           {t('احسب تكلفة نقل عفشك في 5 خطوات سهلة', 'Calculate Moving Cost in 5 Simple Steps')}
         </h2>
         <p className={`text-xs sm:text-sm mt-0.5 ${theme === 'light' ? 'text-slate-500' : 'text-slate-400'}`}>
-          {t('سعر تقديري شفاف وعادل مع شِلها، وجميع الخدمات اختيارية 100% حسب رغبتك.', 'Transparent price estimate with Shilha. All services are 100% optional.')}
+          {t('سعر تقديري شفاف وعادل مع شلها، وجميع الخدمات اختيارية 100% حسب رغبتك.', 'Transparent price estimate with Shilha. All services are 100% optional.')}
         </p>
       </div>
 
@@ -514,7 +514,7 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({ isModal = fals
               theme === 'light' ? 'bg-blue-50/70 border-blue-200 text-blue-900' : 'bg-blue-950/40 border-blue-900 text-sky-200'
             }`}>
               <ShieldCheck className="w-4 h-4 inline-block ml-1 text-sky-400" />
-              <span>{t('سيارات شِلها مجهزة بحوائط مبطنة موكيت ولباد وأحزمة ربط قوية لمنع اهتزاز أو تجريح الأثاث أثناء الطريق.', 'Shilha trucks have carpet-padded walls and safety straps.')}</span>
+              <span>{t('سيارات شلها مجهزة بحوائط مبطنة موكيت ولباد وأحزمة ربط قوية لمنع اهتزاز أو تجريح الأثاث أثناء الطريق.', 'Shilha trucks have carpet-padded walls and safety straps.')}</span>
             </div>
           </div>
         )}

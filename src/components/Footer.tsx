@@ -14,6 +14,14 @@ export const Footer: React.FC = () => {
   };
 
   const seoKeywords = [
+    'شلها مصر',
+    'شيلها مصر',
+    'شركة شلها مصر',
+    'شركة شيلها مصر',
+    'شركة شلها',
+    'شركة شيلها',
+    'شلها لنقل الاثاث',
+    'شيلها لنقل الاثاث',
     'شركة نقل اثاث بمصر',
     'نقل عفش واثاث',
     'ونش رفع اثاث هيدروليكي',
@@ -36,7 +44,7 @@ export const Footer: React.FC = () => {
     'نقل عفش الاسكندرية والساحل الشمالي',
     'دينا نقل عفش',
     'اسعار ونش رفع الاثاث',
-    'شركة شِلها لنقل الاثاث',
+    'شركة شلها لنقل الاثاث',
     'فني تكييف نقل عفش',
     'نجار فك وتركيب غرف نوم',
     'كراتين نقل عفش',
@@ -67,17 +75,17 @@ export const Footer: React.FC = () => {
               </div>
               <div>
                 <span className="text-3xl font-black text-blue-950">
-                  شِلـهـا
+                  شلـهـا
                 </span>
                 <span className="block text-sm text-blue-700 font-bold">
-                  شركة شِلها لنقل وتغليف الأثاث في مصر
+                  شركة شلها لنقل وتغليف الأثاث في مصر
                 </span>
               </div>
             </div>
 
             <p className={`text-xs sm:text-sm leading-relaxed ${theme === 'light' ? 'text-slate-600' : 'text-slate-300'}`}>
               {t(
-                'مش أي حد يشيل عفشك.. يستاهل ثقتك! إحنا مش بننقل عفش وبس، إحنا بننقل بيتك بكل اللي فيه من ذكريات وتعب سنين. سيبها على شِلها وإنت مرتاح.',
+                'مش أي حد يشيل عفشك.. يستاهل ثقتك! إحنا مش بننقل عفش وبس، إحنا بننقل بيتك بكل اللي فيه من ذكريات وتعب سنين. سيبها على شلها وإنت مرتاح.',
                 'We carry your home and precious memories with the utmost professional care and dedication. Relax and leave it to Shilha.'
               )}
             </p>
@@ -261,7 +269,7 @@ export const Footer: React.FC = () => {
           theme === 'light' ? 'border-slate-200 text-slate-500' : 'border-blue-900/40 text-slate-500'
         }`}>
           <div>
-            © {new Date().getFullYear()} {t('شركة شِلها لنقل وتغليف الأثاث - جميع الحقوق محفوظة.', 'Shilha Moving & Packing Company - All Rights Reserved.')}
+            © {new Date().getFullYear()} {t('شركة شلها لنقل وتغليف الأثاث - جميع الحقوق محفوظة.', 'Shilha Moving & Packing Company - All Rights Reserved.')}
           </div>
           <div className="flex items-center gap-1 text-sky-600">
             <span>{t('صُنع باحترافية لخدمتكم بأعلى معايير الأمان والراحة', 'Crafted with premium safety & comfort standards')}</span>

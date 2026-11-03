@@ -1,5 +1,5 @@
 /**
- * Pricing and quote estimation logic for Shilha Moving Company (شركة شِلها لنقل وتغليف الأثاث)
+ * Pricing and quote estimation logic for Shilha Moving Company (شركة شلها لنقل وتغليف الأثاث)
  * 
  * Rules:
  * 1. Base cost for 3 rooms + 1 truck anywhere in Cairo: 4000 to 7000 EGP.
@@ -206,7 +206,7 @@ export function calculateMovingQuote(req: QuoteRequest): QuoteEstimate {
     : '';
 
   const whatsappMessage = encodeURIComponent(
-    `السلام عليكم، عايز استفسار وحجز عرض سعر نقل عفش من شركة شِلها (مع خصم 10%):\n` +
+    `السلام عليكم، عايز استفسار وحجز عرض سعر نقل عفش من شركة شلها (مع خصم 10%):\n` +
     `• نوع العقار: ${propertyLabels[req.propertyType]}\n` +
     `• عدد الغرف: ${req.roomsCount} غرف\n` +
     `• سيارات النقل: ${trucksCount} سيارة مبطنة (${trucksCount * 5} عمال أساسي)\n` +
