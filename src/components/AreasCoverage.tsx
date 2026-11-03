@@ -152,6 +152,44 @@ export const AreasCoverage: React.FC = () => {
           ))}
         </div>
 
+        {/* SEO Governorates & Cities Hub */}
+        <div className={`p-6 sm:p-8 rounded-3xl border transition-colors ${
+          theme === 'light'
+            ? 'bg-blue-50/60 border-blue-200 text-slate-800'
+            : 'bg-[#020b1c] border-blue-900/50 text-slate-300'
+        }`}>
+          <div className="space-y-4 text-right">
+            <div className="flex items-center gap-2 text-blue-600 dark:text-sky-400 font-black text-sm sm:text-base">
+              <ShieldCheck className="w-5 h-5" />
+              <h3>{t('دليل شركة شلها لنقل الأثاث والعفش في القاهرة وكافة محافظات مصر', 'Shilha Moving Directory Across Cairo & All Egypt Governorates')}</h3>
+            </div>
+            <p className="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              {t(
+                'توفر شركة شلها لنقل الأثاث أحدث أوناش رفع الأثاث الهيدروليكية وسيارات النقل المغلقة المبطنة في جميع أحياء القاهرة الكبرى (مدينة نصر، مصر الجديدة، التجمع الخامس، المعادي، المقطم، الشروق، مدينتي، الرحاب، العاصمة الإدارية)، ومحافظة الجيزة (الشيخ زايد، 6 أكتوبر، حدائق الأهرام، المهندسين، الدقي، الهرم، فيصل)، بالإضافة إلى رحلات يومية منتظمة لنقل العفش إلى الإسكندرية، الساحل الشمالي، العلمين، ومحافظات الدلتا (المنصورة، طنطا، الزقازيق، المحلة، بنها)، ومدن القناة (بورسعيد، الإسماعيلية، السويس)، ومحافظات الصعيد والبحر الأحمر.',
+                'Shilha Furniture Movers provides modern hydraulic winches and padded trucks covering all Cairo districts, Giza, Alexandria, North Coast, Delta, Canal cities, and Upper Egypt.'
+              )}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2 text-xs">
+              <div className="p-3.5 rounded-xl bg-white dark:bg-slate-900/80 border border-blue-100 dark:border-blue-900/40 space-y-1">
+                <span className="font-black text-blue-700 dark:text-sky-300 block">📍 نقل اثاث القاهرة الجديدة والتجمع</span>
+                <span className="text-[11px] text-slate-500 dark:text-slate-400 block leading-relaxed">التجمع الأول، التجمع الخامس، الرحاب، مدينتي، بيت الوطن، النرجس، والياسمين.</span>
+              </div>
+              <div className="p-3.5 rounded-xl bg-white dark:bg-slate-900/80 border border-blue-100 dark:border-blue-900/40 space-y-1">
+                <span className="font-black text-blue-700 dark:text-sky-300 block">📍 نقل اثاث الشيخ زايد و6 أكتوبر</span>
+                <span className="text-[11px] text-slate-500 dark:text-slate-400 block leading-relaxed">كمبوندات زايد، بيفرلي هيلز، حدائق أكتوبر، التوسعات الشمالية، وحدائق الأهرام.</span>
+              </div>
+              <div className="p-3.5 rounded-xl bg-white dark:bg-slate-900/80 border border-blue-100 dark:border-blue-900/40 space-y-1">
+                <span className="font-black text-blue-700 dark:text-sky-300 block">📍 نقل اثاث الإسكندرية والساحل</span>
+                <span className="text-[11px] text-slate-500 dark:text-slate-400 block leading-relaxed">سموحة، ميامي، لوران، كفر عبده، مارينا، العلمين الجديدة، وسيدي عبد الرحمن.</span>
+              </div>
+              <div className="p-3.5 rounded-xl bg-white dark:bg-slate-900/80 border border-blue-100 dark:border-blue-900/40 space-y-1">
+                <span className="font-black text-blue-700 dark:text-sky-300 block">📍 نقل عفش بين كافة المحافظات</span>
+                <span className="text-[11px] text-slate-500 dark:text-slate-400 block leading-relaxed">سيارات صندوق مقفل مخصصة للسفر إلى الدلتا والقناة والصعيد والبحر الأحمر.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

@@ -115,6 +115,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCalculator, onOpenGoldenTips }
               <h1 className={`text-4xl sm:text-6xl lg:text-6xl xl:text-7xl font-black leading-tight sm:leading-tight tracking-tight ${
                 theme === 'light' ? 'text-slate-900' : 'text-white'
               }`}>
+                <span className="block text-blue-600 dark:text-sky-400 text-base sm:text-2xl font-black mb-2 tracking-wide">
+                  {t('شركة شلها لنقل الأثاث والعفش بمصر', 'Shilha Furniture Movers Egypt')}
+                </span>
                 {t('مش أي حد يشيل عفشك..', 'Not anyone who moves your home..')}{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-l from-blue-600 via-sky-500 to-cyan-400">
                   {t('يستاهل ثقتك!', 'Deserves your trust!')}
