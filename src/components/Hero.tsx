@@ -4,6 +4,7 @@ import { COMPANY_DATA } from '../data/companyData';
 import { TrustBadges } from './TrustBadges';
 import { HeroMediaSlider } from './HeroMediaSlider';
 import { WhatsAppIcon } from './WhatsAppIcon';
+import { SiteSearchBar } from './SiteSearchBar';
 import { useApp } from '../context/AppContext';
 
 interface HeroProps {
@@ -142,6 +143,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCalculator, onOpenGoldenTips }
                 'With Shilha, move your apartment, villa, or corporate office with complete peace of mind. Full VIP moving package: professional carpentry dismantling & assembly, AC technicians, 3-layer European packing, hydraulic winches up to floor 25, and padded closed trucks covering all Egypt.'
               )}
             </p>
+
+            {/* Interactive Live Site Search Bar (Directly at the beginning of the site as requested) */}
+            <div className="space-y-2 pt-1">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse shrink-0" />
+                <span className={`text-xs sm:text-sm font-black ${theme === 'light' ? 'text-blue-950' : 'text-sky-300'}`}>
+                  {t('ابحث في الموقع عن أي خدمة، منطقة، خامة تغليف، أو حاسبة التكلفة:', 'Search the site for any service, location, packing supply, or calculator:')}
+                </span>
+              </div>
+              <SiteSearchBar
+                onOpenCalculator={onOpenCalculator}
+                onOpenGoldenTips={onOpenGoldenTips}
+              />
+            </div>
 
             {/* Quick Slogan Badge */}
             <div className={`rounded-2xl p-4 sm:p-5 flex items-center gap-3.5 border shadow-sm ${

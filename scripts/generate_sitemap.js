@@ -12,6 +12,11 @@ const sitemapEntries = [
     priority: '1.0',
     images: [
       {
+        loc: `${DOMAIN}/shelha_logo_square.jpg`,
+        title: 'شعار شركة شلها لنقل الأثاث والعفش | Shelha Egypt Logo',
+        caption: 'لوجو شركة شلها الرسمي المعتمد لنقل وتغليف الأثاث في مصر'
+      },
+      {
         loc: `${DOMAIN}/assets/aistudio/FB_IMG_1793372096933_b1d91a1d.jpg`,
         title: 'شركة شلها لنقل الأثاث | 01099649897 - 01128418399',
         caption: 'سيارات نقل عفش مغلقة ومجهزة - اتصل الآن 01099649897 أو 01128418399'
