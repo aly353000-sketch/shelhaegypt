@@ -135,7 +135,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCalculator, onOpenGoldenTips }
               theme === 'light' ? 'text-slate-700' : 'text-slate-300'
             }`}>
               {t(
-                'مع شركة شلها (شيلها) هتنقل شقتك أو فيلتك أو شركتك وإنت مرتاح البال تماماً. خدمة VIP شاملة: فك وتركيب نجارين محترفين، فك وتركيب التكييفات والأجهزة الكهربائية، تغليف أوروبي ثلاثي الطبقات، أوناش رفع هيدروليكية حتى الدور 25، وأسطول سيارات مغلقة مبطنة تغطي القاهرة الكبرى وجميع المحافظات.',
+                'مع شركة شلها هتنقل شقتك أو فيلتك أو شركتك وإنت مرتاح البال تماماً. خدمة VIP شاملة: فك وتركيب نجارين محترفين، فك وتركيب التكييفات والأجهزة الكهربائية، تغليف أوروبي ثلاثي الطبقات، أوناش رفع هيدروليكية حتى الدور 25، وأسطول سيارات مغلقة مبطنة تغطي القاهرة الكبرى وجميع المحافظات.',
                 'With Shilha, move your apartment, villa, or corporate office with complete peace of mind. Full VIP moving package: professional carpentry dismantling & assembly, AC technicians, 3-layer European packing, hydraulic winches up to floor 25, and padded closed trucks covering all Egypt.'
               )}
             </p>
