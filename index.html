@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <!-- Google tag (gtag.js) - Google Ads & Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18544594401"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TFJ7D161W"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
+      gtag('config', 'AW-18544594401');
       gtag('config', 'G-2TFJ7D161W');
 
-      // Global Deduplicated Click Tracking for phone_click and whatsapp_click
+      // Global Deduplicated Click Tracking for phone_click, whatsapp_click and Google Ads conversions
       document.addEventListener('click', function(event) {
         var link = event.target && event.target.closest ? event.target.closest('a') : null;
         if (!link || !link.href) return;
@@ -37,6 +39,12 @@
               event_category: 'engagement',
               event_label: phoneNumber
             });
+            // Google Ads Conversion tracking for Phone Call lead
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18544594401',
+              'event_category': 'lead',
+              'event_label': phoneNumber
+            });
           }
         } else if (href.indexOf('wa.me') !== -1 || href.indexOf('api.whatsapp.com') !== -1) {
           link.__lastGaTrackTime = now;
@@ -48,14 +56,20 @@
               event_category: 'engagement',
               event_label: href
             });
+            // Google Ads Conversion tracking for WhatsApp lead
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18544594401',
+              'event_category': 'lead',
+              'event_label': 'WhatsApp'
+            });
           }
         }
       }, { capture: true });
     </script>
-    <title>شركة شلها لنقل الأثاث والعفش بمصر | ونش هيدروليكي وسيارات مجهزة | 01099649897</title>
-    <meta name="description" content="شركة شلها لنقل وتغليف الأثاث والعفش في القاهرة والجيزة وجميع محافظات مصر. أوناش هيدروليكية حتى الدور 25، سيارات نقل مغلقة ومجهزة، فك وتركيب غرف وتكييفات، وخامات تغليف أوروبية. اتصل الآن: 01099649897 - 01128418399." />
-    <meta name="keywords" content="شركة شلها لنقل الأثاث, شركة شلها لنقل الاثاث, شركة شلها لنقل وتغليف الأثاث, شركة شلها لنقل العفش, شلها لنقل الاثاث, شلها لنقل العفش, شركة شلها للأثاث, شركة نقل اثاث شلها, شركة نقل عفش شلها, شركة شيلها لنقل الأثاث, شركة شيلها لنقل الاثاث, شركة شيلها لنقل العفش, شيلها لنقل الاثاث, شيلها لنقل العفش, شركة شيلها للأثاث, شركة نقل اثاث شيلها, شركة نقل عفش شيلها, شلها, شركة شلها, شيلها, شركة شيلها, ونش شلها, ونش شيلها, ونش رفع اثاث شلها, ونش رفع عفش شلها, رقم شركة شلها, رقم شركة شيلها, ارقام شركة شلها, تليفون شركة شلها, اسعار شركة شلها, اسعار شركة شلها لنقل الاثاث, عنوان شركة شلها, موقع شركة شلها, شلها مصر, شيلها مصر, شركة شلها مصر, شركة شيلها مصر, 01099649897, 01128418399, 01019785437, شركات نقل الاثاث بالقاهرة, شركات نقل العفش بالقاهرة, شركة نقل اثاث بالقاهرة, شركة نقل عفش بالقاهرة, افضل شركة نقل اثاث بالقاهرة, ارخص شركة نقل اثاث بالقاهرة, نقل اثاث التجمع الخامس, نقل عفش التجمع الخامس, شركات نقل الاثاث بالتجمع الخامس, شركة نقل اثاث القاهرة الجديدة, نقل عفش القاهرة الجديدة, نقل اثاث مدينة نصر, نقل عفش مدينة نصر, شركات نقل الاثاث بمدينة نصر, نقل اثاث مصر الجديدة, نقل عفش مصر الجديدة, شركات نقل الاثاث بمصر الجديدة, نقل اثاث المعادي, نقل عفش المعادي, شركات نقل الاثاث بالمعادي, نقل اثاث المقطم, نقل عفش المقطم, نقل اثاث الشروق, نقل عفش الشروق, نقل اثاث مدينتي, نقل عفش مدينتي, نقل اثاث الرحاب, نقل عفش الرحاب, نقل اثاث العاصمة الادارية, نقل عفش العاصمة الادارية, نقل اثاث المستقبل سيتي, نقل اثاث بدر, نقل اثاث العبور, نقل عفش العبور, نقل اثاث شبرا, نقل عفش شبرا, نقل اثاث حلوان, نقل عفش حلوان, نقل اثاث وسط البلد, نقل اثاث الزمالك, نقل اثاث بالجيزة, نقل عفش بالجيزة, شركات نقل الاثاث بالجيزة, نقل اثاث الشيخ زايد, نقل عفش الشيخ زايد, شركات نقل الاثاث بالشيخ زايد, ونش رفع اثاث بالشيخ زايد, نقل اثاث 6 اكتوبر, نقل عفش 6 اكتوبر, شركات نقل الاثاث في 6 اكتوبر, ونش رفع اثاث 6 اكتوبر, نقل اثاث حدائق الاهرام, نقل عفش حدائق الاهرام, نقل اثاث حدائق اكتوبر, نقل اثاث المهندسين, نقل عفش المهندسين, نقل اثاث الدقي, نقل عفش الدقي, نقل اثاث العجوزة, نقل اثاث الهرم, نقل عفش الهرم, نقل اثاث فيصل, نقل عفش فيصل, نقل اثاث الاسكندرية, نقل عفش الاسكندرية, شركات نقل الاثاث بالاسكندرية, ونش رفع اثاث الاسكندرية, نقل اثاث الساحل الشمالي, نقل عفش الساحل الشمالي, نقل اثاث العلمين, نقل اثاث مطروح, نقل اثاث القليوبية, نقل اثاث بنها, نقل اثاث شبرا الخيمة, نقل اثاث الشرقية, نقل اثاث الزقازيق, نقل اثاث العاشر من رمضان, نقل اثاث الغربية, نقل اثاث طنطا, نقل اثاث المحلة الكبرى, نقل اثاث المنوفية, نقل اثاث شبين الكوم, نقل اثاث السادات, نقل اثاث الدقهلية, نقل اثاث المنصورة, نقل اثاث ميت غمر, نقل اثاث دمياط, نقل اثاث كفر الشيخ, نقل اثاث البحيرة, نقل اثاث دمنهور, نقل اثاث بورسعيد, نقل اثاث الاسماعيلية, نقل اثاث السويس, نقل اثاث العين السخنة, نقل اثاث الفيوم, نقل اثاث بني سويف, نقل اثاث المنيا, نقل اثاث اسيوط, نقل اثاث سوهاج, نقل اثاث قنا, نقل اثاث الاقصر, نقل اثاث اسوان, نقل اثاث الغردقة, نقل اثاث الجونة, نقل اثاث شرم الشيخ, نقل اثاث بين المحافظات, نقل عفش للمحافظات, عربيات نقل عفش للمحافظات, سيارات نقل عفش مغلقة, ونش رفع اثاث, ونش رفع عفش, ونش هيدروليكي, سعر ونش رفع الاثاث, تغليف اثاث, تغليف عفش بالبابلز, كراتين نقل عفش, اماكن بيع كراتين نقل العفش, فك وتركيب اثاث, فك وتركيب تكييفات, دينا نقل عفش, Shelha Egypt, Shelha, Shilha, Shilha Movers, Shelhaegypt, Shelhaegypt.com, Moving Company Egypt, furniture movers Cairo, packing services Cairo" />
-    <meta name="author" content="شركة شلها لنقل الأثاث | Shelha Egypt" />
+    <title>رويال موفرز لنقل أثاث الفلل والقصور بمصر | ROYAL MOVERS VIP | 01233391255</title>
+    <meta name="description" content="شركة رويال موفرز (ROYAL MOVERS VIP) لنقل وتغليف أثاث الفلل والقصور والشركات في القاهرة والجيزة والكمبوندات. أوناش رفع هيدروليكية، سيارات مغلقة مجهزة، فك وتركيب وتغليف ألماني فاخر. الخط الساخن الموحد: 01233391255." />
+    <meta name="keywords" content="رويال موفرز, شركة رويال لنقل الاثاث, رويال لنقل الاثاث, رويال لنقل العفش, Royal Movers Egypt, Royal Movers VIP, نقل اثاث فلل وقصور, نقل اثاث التجمع الخامس, نقل عفش الشيخ زايد, نقل اثاث كمبوندات, شركة نقل اثاث vip, نقل اثاث فاخر, تغليف اثاث وعفش, شركات تغليف الاثاث, 01233391255, نقل اثاث مدينتي, نقل اثاث ميفيدا, نقل اثاث بالم هيلز, نقل اثاث المعادي, نقل اثاث الزمالك, ونش رفع اثاث هيدروليك, سيارات نقل عفش مغلقة" />
+    <meta name="author" content="رويال موفرز VIP لنقل الأثاث | Royal Movers Egypt" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
@@ -86,17 +100,17 @@
     <!-- Open Graph / Facebook / WhatsApp Preview -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://shelhaegypt.com/" />
-    <meta property="og:title" content="شركة شلها لنقل الأثاث والعفش بمصر | 01099649897" />
-    <meta property="og:description" content="شركة شلها لنقل وتغليف الأثاث والعفش في القاهرة والجيزة وجميع محافظات مصر. أوناش هيدروليكية، سيارات مغلقة ومجهزة، فك وتركيب تكييفات. اتصل الآن: 01099649897 أو 01128418399." />
-    <meta property="og:site_name" content="شركة شلها لنقل الأثاث" />
+    <meta property="og:title" content="رويال موفرز لنقل أثاث الفلل والقصور بمصر | ROYAL MOVERS VIP | 01233391255" />
+    <meta property="og:description" content="رويال موفرز لنقل وتغليف أثاث الفلل والقصور والكمبوندات بالقاهرة والجيزة. أوناش هيدروليكية، سيارات مغلقة مجهزة، وتغليف ألماني فاخر. الخط الموحد: 01233391255." />
+    <meta property="og:site_name" content="رويال موفرز لنقل الأثاث | ROYAL MOVERS VIP" />
     <meta property="og:locale" content="ar_EG" />
-    <meta property="og:image" content="https://shelhaegypt.com/assets/aistudio/FB_IMG_1793372096933_b1d91a1d.jpg" />
+    <meta property="og:image" content="https://shelhaegypt.com/assets/logos/royal_movers_logo.jpg" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="شركة شلها لنقل الأثاث والعفش بمصر | 01099649897" />
-    <meta name="twitter:description" content="شركة شلها لنقل وتغليف الأثاث والعفش في القاهرة والجيزة وجميع محافظات مصر. أوناش هيدروليكية وسيارات نقل مغلقة وفك وتركيب تكييفات. اتصل الآن: 01099649897 أو 01128418399." />
-    <meta name="twitter:image" content="https://shelhaegypt.com/assets/aistudio/FB_IMG_1793372096933_b1d91a1d.jpg" />
+    <meta name="twitter:title" content="رويال موفرز لنقل أثاث الفلل والقصور بمصر | ROYAL MOVERS VIP | 01233391255" />
+    <meta name="twitter:description" content="رويال موفرز لنقل وتغليف أثاث الفلل والقصور والكمبوندات بالقاهرة والجيزة. أوناش هيدروليكية، سيارات مغلقة مجهزة، وتغليف ألماني فاخر. الخط الموحد: 01233391255." />
+    <meta name="twitter:image" content="https://shelhaegypt.com/assets/logos/royal_movers_logo.jpg" />
 
     <!-- Google Fonts: Alexandria, Readex Pro & IBM Plex Sans Arabic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -111,68 +125,27 @@
         {
           "@type": "MovingCompany",
           "@id": "https://shelhaegypt.com/#organization",
-          "name": "شركة شلها لنقل الأثاث",
+          "name": "رويال موفرز لنقل أثاث الفلل والقصور | ROYAL MOVERS VIP",
           "alternateName": [
-            "شركة شلها لنقل الأثاث",
-            "شركة شلها لنقل الاثاث",
-            "شركة شلها لنقل وتغليف الأثاث",
-            "شركة شلها لنقل وتغليف الاثاث",
-            "شركة شلها لنقل العفش",
-            "شلها لنقل الاثاث",
-            "شلها لنقل العفش",
-            "شركة شلها للأثاث",
-            "شركة نقل اثاث شلها",
-            "شركة نقل عفش شلها",
-            "شلها",
-            "شركة شلها",
-            "شيلها",
-            "شركة شيلها",
-            "شركة شيلها لنقل الأثاث",
-            "شركة شيلها لنقل الاثاث",
-            "شركة شيلها لنقل العفش",
-            "شيلها لنقل الاثاث",
-            "شيلها لنقل العفش",
-            "شركة نقل اثاث شيلها",
-            "شركة نقل عفش شيلها",
-            "ونش شلها",
-            "ونش شيلها",
-            "ونش رفع اثاث شلها",
-            "ونش رفع عفش شلها",
-            "رقم شركة شلها",
-            "رقم شركة شلها لنقل الاثاث",
-            "ارقام شركة شلها",
-            "تليفون شركة شلها",
-            "اسعار شركة شلها",
-            "موقع شركة شلها",
-            "شلها مصر",
-            "شيلها مصر",
-            "شركة شلها مصر",
-            "شركة شيلها مصر",
-            "Shelha Egypt",
-            "Shelha",
-            "Shelha Movers",
-            "Shilha Movers",
-            "Shilha",
-            "Shelhaegypt",
-            "Shelhaegypt.com"
+            "رويال موفرز",
+            "شركة رويال لنقل وتغليف الأثاث",
+            "رويال لنقل الأثاث",
+            "Royal Movers",
+            "Royal Movers Egypt",
+            "Royal Movers VIP",
+            "ROYAL MOVERS VIP",
+            "شركة رويال موفرز لنقل العفش"
           ],
           "url": "https://shelhaegypt.com/",
-          "logo": "https://shelhaegypt.com/icon-512.png",
-          "image": "https://shelhaegypt.com/shelha_logo_square.jpg",
-          "description": "شركة شلها لنقل وتغليف الأثاث والعفش في القاهرة والجيزة والإسكندرية وجميع محافظات مصر. خدمات نقل العفش للشقق والفلل والشركات والعيادات، فك وتركيب التكييفات والأجهزة، ونش رفع هيدروليكي حتى الدور 25، سيارات مغلقة ومجهزة لنقل الأثاث بين المحافظات. للحجز الفوري اتصل على 01099649897 أو 01128418399.",
-          "telephone": ["+201099649897", "+201128418399", "+201019785437"],
+          "logo": "https://shelhaegypt.com/assets/logos/royal_movers_logo.jpg",
+          "image": "https://shelhaegypt.com/assets/logos/royal_movers_logo.jpg",
+          "description": "شركة رويال موفرز VIP لنقل وتغليف أثاث الفلل والقصور والكمبوندات والشركات بالقاهرة والجيزة. أوناش هيدروليكية، سيارات مغلقة مجهزة، وتغليف ألماني فاخر. الخط الساخن الموحد 24 ساعة: 01233391255.",
+          "telephone": ["+201233391255"],
           "contactPoint": [
             {
               "@type": "ContactPoint",
-              "telephone": "+201099649897",
+              "telephone": "+201233391255",
               "contactType": "customer service",
-              "areaServed": "EG",
-              "availableLanguage": ["Arabic", "English"]
-            },
-            {
-              "@type": "ContactPoint",
-              "telephone": "+201128418399",
-              "contactType": "sales",
               "areaServed": "EG",
               "availableLanguage": ["Arabic", "English"]
             }
@@ -275,8 +248,8 @@
           "@type": "WebSite",
           "@id": "https://shelhaegypt.com/#website",
           "url": "https://shelhaegypt.com/",
-          "name": "شركة شلها لنقل وتغليف الأثاث | Shelha Egypt",
-          "description": "شركة نقل وتغليف أثاث في مصر، أوناش هيدروليكية وسيارات مغلقة وفك وتركيب تكييفات.",
+          "name": "شركة رويال موفرز لنقل وتغليف الأثاث | ROYAL MOVERS VIP",
+          "description": "شركة نقل وتغليف أثاث الفلل والقصور في مصر، أوناش هيدروليكية وسيارات مغلقة وفك وتركيب وتغليف فندقي راقي.",
           "inLanguage": "ar"
         },
         {
@@ -298,14 +271,14 @@
             {
               "@type": "ListItem",
               "position": 3,
-              "name": "متجر الكراتين والتغليف",
-              "item": "https://shelhaegypt.com/#boxes-store"
+              "name": "كمبوندات نخدمها",
+              "item": "https://shelhaegypt.com/#luxury-compounds"
             },
             {
               "@type": "ListItem",
               "position": 4,
-              "name": "حاسبة الأسعار",
-              "item": "https://shelhaegypt.com/#calculator-section"
+              "name": "الونش الهيدروليكي",
+              "item": "https://shelhaegypt.com/#winch-details"
             }
           ]
         },
@@ -318,12 +291,12 @@
               "name": "ما هو سعر خدمة الونش الهيدروليكي لرفع الأثاث؟",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "يبدأ سعر خدمة الونش الهيدروليكي من 1700 ج.م، وهو ونش مجهز بحمولة حتى 400 كجم ويصل للأدوار المرتفعة حتى الدور 25."
+                "text": "يبدأ سعر خدمة الونش الهيدروليكي من 2,500 ج.م فقط، وهو ونش مجهز بحمولة حتى 400 كجم ويصل للأدوار المرتفعة حتى الدور 25."
               }
             },
             {
               "@type": "Question",
-              "name": "كم سعر فك وتركيب التكييف مع شركة شلها؟",
+              "name": "كم سعر فك وتركيب التكييف مع شركة رويال موفرز؟",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "سعر فك وتركيب التكييف هو 800 ج.م للوحدة، يقوم به فني تكييف متخصص ومعتمد يتولى فك الوحدة وحفظ شحنة الفريون وإعادة تركيبها وتشغيلها بكفاءة."
@@ -331,7 +304,7 @@
             },
             {
               "@type": "Question",
-              "name": "كيف تحافظ شركة شلها على سلامة الأثاث أثناء النقل؟",
+              "name": "كيف تحافظ شركة رويال موفرز VIP على سلامة الأثاث أثناء النقل؟",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "نستخدم خامات تغليف سميكة كالبابلز والاسترتش والكرتون المقوى 5 راق، مع سيارات مبطنة بشرائح خشبية وأحزمة تثبيت لمنع أي اهتزاز."
@@ -342,8 +315,8 @@
       ]
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-DvlxP2W3.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-gnTTFmag.css">
+    <script type="module" crossorigin src="/assets/index-DoycqaHO.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-B9lTH_L_.css">
   </head>
   <body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-600 selection:text-white">
     <div id="root"></div>
