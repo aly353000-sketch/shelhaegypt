@@ -24,6 +24,7 @@ interface NavbarProps {
   onSelectArea?: (slug: string) => void;
   onOpenBrandKit?: () => void;
   onOpenConversions?: () => void;
+  isOwner?: boolean;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ 
@@ -31,12 +32,28 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenGoldenTips,
   onSelectArea,
   onOpenBrandKit,
-  onOpenConversions
+  onOpenConversions,
+  isOwner = false
 }) => {
   const { t, theme, lang } = useApp();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [phonesDropdownOpen, setPhonesDropdownOpen] = useState(false);
   const [areasDropdownOpen, setAreasDropdownOpen] = useState(false);
+
+  // Discreet secret 5-tap on VIP badge to activate owner dashboard
+  const [secretTaps, setSecretTaps] = useState(0);
+  const handleSecretTap = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setSecretTaps(prev => {
+      const next = prev + 1;
+      if (next >= 5) {
+        if (onOpenConversions) onOpenConversions();
+        return 0;
+      }
+      return next;
+    });
+    setTimeout(() => setSecretTaps(0), 3000);
+  };
 
   // Smart Navbar Hide on Scroll Down, Show on Scroll Up
   const [isVisible, setIsVisible] = useState(true);
@@ -145,7 +162,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                 alt="ROYAL MOVERS VIP Logo" 
                 className="w-13 h-13 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain rounded-2xl border-2 border-amber-400/80 shadow-xl bg-white p-1 group-hover:scale-105 transition-transform" 
               />
-              <span className="absolute -bottom-1 -left-1 bg-amber-500 text-slate-950 font-black text-[9px] sm:text-[10px] px-1.5 py-0.5 rounded-md font-mono shadow-xs border border-white">
+              <span 
+                onClick={handleSecretTap}
+                className="absolute -bottom-1 -left-1 bg-amber-500 text-slate-950 font-black text-[9px] sm:text-[10px] px-1.5 py-0.5 rounded-md font-mono shadow-xs border border-white cursor-pointer select-none active:scale-90 transition-transform"
+                title="VIP"
+              >
                 VIP
               </span>
             </div>
@@ -311,13 +332,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
             )}
 
-            {/* Conversions Analytics Dashboard (Desktop) */}
-            {onOpenConversions && (
+            {/* Conversions Analytics Dashboard (Desktop - Owner Only) */}
+            {onOpenConversions && isOwner && (
               <button
                 type="button"
                 onClick={onOpenConversions}
                 className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-emerald-400/50 bg-emerald-500/15 hover:bg-emerald-500 text-emerald-300 hover:text-slate-950 font-black text-xs shadow-sm transition-all hover:scale-105 active:scale-95 cursor-pointer"
-                title="لوحة تحكم إحصائيات وتحويلات الإعلانات"
+                title="لوحة تحكم إحصائيات وتحويلات الإعلانات (خاصة بالمالك)"
               >
                 <BarChart3 className="w-3.5 h-3.5" />
                 <span>إحصائيات التحويلات</span>
@@ -338,8 +359,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Mobile menu and tools - visible on all screens below lg */}
           <div className="flex lg:hidden items-center gap-2">
-            {/* Conversions Tracker Trigger (Mobile) */}
-            {onOpenConversions && (
+            {/* Conversions Tracker Trigger (Mobile - Owner Only) */}
+            {onOpenConversions && isOwner && (
               <button
                 type="button"
                 onClick={onOpenConversions}
@@ -420,8 +441,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               </a>
             </div>
 
-            {/* Conversions Analytics Card in Mobile Drawer */}
-            {onOpenConversions && (
+            {/* Conversions Analytics Card in Mobile Drawer (Owner Only) */}
+            {onOpenConversions && isOwner && (
               <button
                 type="button"
                 onClick={() => {

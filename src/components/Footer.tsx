@@ -5,9 +5,10 @@ import { useApp } from '../context/AppContext';
 interface FooterProps {
   onOpenBrandKit?: () => void;
   onOpenConversions?: () => void;
+  isOwner?: boolean;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenBrandKit, onOpenConversions }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenBrandKit, onOpenConversions, isOwner = false }) => {
   const { t, theme } = useApp();
   const [copiedLink, setCopiedLink] = useState(false);
 
@@ -356,15 +357,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrandKit, onOpenConversion
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto justify-end">
-            {/* Conversions Analytics Dashboard Trigger */}
-            {onOpenConversions && (
+            {/* Conversions Analytics Dashboard Trigger (Owner Only) */}
+            {onOpenConversions && isOwner && (
               <button
                 type="button"
                 onClick={onOpenConversions}
                 className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm bg-emerald-600 hover:bg-emerald-500 text-white shadow-md transition-all cursor-pointer active:scale-95"
               >
                 <BarChart3 className="w-4 h-4" />
-                <span>📊 لوحة قياس التحويلات (Google Ads)</span>
+                <span>📊 لوحة قياس التحويلات (خاصة بالمالك)</span>
               </button>
             )}
 

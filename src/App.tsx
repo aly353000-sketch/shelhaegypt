@@ -33,10 +33,32 @@ function MainAppContent() {
   const [brandKitModalOpen, setBrandKitModalOpen] = useState(false);
   const [faqModalOpen, setFaqModalOpen] = useState(false);
   const [reviewsModalOpen, setReviewsModalOpen] = useState(false);
+  // Owner Mode Authentication state (persisted locally on owner device)
+  const [isOwner, setIsOwner] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('royal_movers_owner_auth') === 'true';
+    }
+    return false;
+  });
+
+  const handleAuthenticateOwner = () => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('royal_movers_owner_auth', 'true');
+    }
+    setIsOwner(true);
+  };
+
+  const handleRevokeOwner = () => {
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('royal_movers_owner_auth');
+    }
+    setIsOwner(false);
+  };
+
   const [conversionsModalOpen, setConversionsModalOpen] = useState(() => {
     if (typeof window !== 'undefined') {
       const h = window.location.hash.toLowerCase();
-      return h === '#conversions' || h === '#analytics' || h === '#dashboard';
+      return h === '#conversions' || h === '#analytics' || h === '#dashboard' || h === '#admin' || h === '#owner';
     }
     return false;
   });
@@ -64,7 +86,7 @@ function MainAppContent() {
       }
 
       const h = hash.toLowerCase();
-      if (h === '#conversions' || h === '#analytics' || h === '#dashboard') {
+      if (h === '#conversions' || h === '#analytics' || h === '#dashboard' || h === '#admin' || h === '#owner') {
         setConversionsModalOpen(true);
       }
     };
@@ -106,6 +128,7 @@ function MainAppContent() {
             onSelectArea={handleSelectArea}
             onOpenBrandKit={() => setBrandKitModalOpen(true)}
             onOpenConversions={() => setConversionsModalOpen(true)}
+            isOwner={isOwner}
           />
 
           {/* Main Content - Streamlined, Royal Navy Blue & Luxurious */}
@@ -147,6 +170,7 @@ function MainAppContent() {
           <Footer 
             onOpenBrandKit={() => setBrandKitModalOpen(true)} 
             onOpenConversions={() => setConversionsModalOpen(true)}
+            isOwner={isOwner}
           />
         </>
       )}
@@ -197,10 +221,13 @@ function MainAppContent() {
         onClose={() => setBrandKitModalOpen(false)} 
       />
 
-      {/* Live Conversions Analytics & Lead Tracker Modal */}
+      {/* Live Conversions Analytics & Lead Tracker Modal (Owner Authenticated) */}
       <ConversionAnalyticsModal 
         isOpen={conversionsModalOpen} 
         onClose={() => setConversionsModalOpen(false)} 
+        isOwner={isOwner}
+        onAuthenticate={handleAuthenticateOwner}
+        onRevoke={handleRevokeOwner}
       />
     </div>
   );

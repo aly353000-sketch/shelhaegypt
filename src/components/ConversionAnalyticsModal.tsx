@@ -15,7 +15,11 @@ import {
   ArrowUpRight, 
   Zap, 
   Trash2,
-  Activity
+  Activity,
+  Lock,
+  KeyRound,
+  LogOut,
+  Crown
 } from 'lucide-react';
 import { 
   getStoredConversions, 
@@ -28,18 +32,45 @@ import {
 import { COMPANY_DATA } from '../data/companyData';
 
 const HOTLINE = COMPANY_DATA.whatsappDefault || COMPANY_DATA.phones[0]?.number || '01233391255';
+const OWNER_PIN = '1255'; // Secret Owner PIN (last 4 digits of hotline)
 
 interface ConversionAnalyticsModalProps {
   isOpen: boolean;
   onClose: () => void;
+  isOwner?: boolean;
+  onAuthenticate?: () => void;
+  onRevoke?: () => void;
 }
 
-export const ConversionAnalyticsModal: React.FC<ConversionAnalyticsModalProps> = ({ isOpen, onClose }) => {
+export const ConversionAnalyticsModal: React.FC<ConversionAnalyticsModalProps> = ({ 
+  isOpen, 
+  onClose,
+  isOwner = false,
+  onAuthenticate,
+  onRevoke
+}) => {
   const [activeTab, setActiveTab] = useState<'daily' | 'feed' | 'guide'>('daily');
   const [records, setRecords] = useState<ConversionRecord[]>([]);
   const [dailySummaries, setDailySummaries] = useState<DailySummary[]>([]);
   const [copiedReport, setCopiedReport] = useState(false);
   const [testSuccessMessage, setTestSuccessMessage] = useState<string | null>(null);
+
+  // Owner PIN entry state
+  const [pinInput, setPinInput] = useState('');
+  const [pinError, setPinError] = useState<string | null>(null);
+
+  const handleVerifyPin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (pinInput.trim() === OWNER_PIN) {
+      setPinError(null);
+      setPinInput('');
+      if (onAuthenticate) {
+        onAuthenticate();
+      }
+    } else {
+      setPinError('رمز PIN غير صحيح. يرجى إدخال الرمز المعتمد لمالك الموقع.');
+    }
+  };
 
   const loadData = () => {
     setRecords(getStoredConversions());
@@ -61,6 +92,82 @@ export const ConversionAnalyticsModal: React.FC<ConversionAnalyticsModalProps> =
   }, []);
 
   if (!isOpen) return null;
+
+  // If not authenticated as owner, show secure PIN entry screen
+  if (!isOwner) {
+    return (
+      <div 
+        className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md overflow-y-auto p-4 flex items-center justify-center animate-fadeIn"
+        onClick={onClose}
+      >
+        <div 
+          onClick={(e) => e.stopPropagation()} 
+          className="w-full max-w-md bg-gradient-to-b from-[#020b18] via-[#071d3a] to-[#020b18] border border-amber-500/40 rounded-3xl shadow-2xl shadow-blue-950/90 p-6 sm:p-8 text-slate-100 relative overflow-hidden"
+        >
+          {/* Top golden crown */}
+          <div className="flex justify-center mb-4">
+            <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 shadow-xl shadow-amber-500/25 border-2 border-amber-300">
+              <Lock className="w-8 h-8 stroke-[2.5]" />
+            </div>
+          </div>
+
+          <h3 className="text-xl sm:text-2xl font-black text-center text-white mb-2 font-serif">
+            منطقة المالك الخاصة 🔒
+          </h3>
+          <p className="text-xs sm:text-sm text-center text-slate-300 mb-6 leading-relaxed">
+            هذه اللوحة خاصة بمالك الموقع فقط لمتابعة إحصائيات حملات Google Ads والإحالات اليومية. لن تظهر هذه اللوحة لزوار الموقع الآخرين.
+          </p>
+
+          <form onSubmit={handleVerifyPin} className="space-y-4">
+            <div>
+              <label className="block text-xs font-bold text-amber-300 mb-1.5 text-right">
+                أدخل رمز الأمان (PIN) لتفعيل اللوحة على جهازك:
+              </label>
+              <div className="relative">
+                <input
+                  type="password"
+                  maxLength={8}
+                  value={pinInput}
+                  onChange={(e) => {
+                    setPinInput(e.target.value);
+                    setPinError(null);
+                  }}
+                  placeholder="••••"
+                  autoFocus
+                  className="w-full px-4 py-3.5 rounded-2xl bg-black/50 border border-amber-500/40 text-center text-2xl tracking-[0.5em] font-mono text-white placeholder:text-slate-600 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-500/20"
+                />
+                <KeyRound className="w-5 h-5 text-amber-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+              </div>
+              {pinError && (
+                <p className="text-xs text-rose-400 mt-2 text-center font-bold">
+                  {pinError}
+                </p>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-sm shadow-lg shadow-amber-500/30 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <Crown className="w-4 h-4 fill-current" />
+              <span>تأكيد وتفعيل وضع المالك على هذا الجهاز</span>
+            </button>
+          </form>
+
+          <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+            <span className="text-[11px] text-slate-400">الرمز المعتمد لمالك الموقع: <strong>1255</strong></span>
+            <button
+              type="button"
+              onClick={onClose}
+              className="hover:text-white transition-colors"
+            >
+              إلغاء وإغلاق
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   // Key Totals
   const todayStr = new Date().toISOString().split('T')[0];
@@ -497,17 +604,36 @@ export const ConversionAnalyticsModal: React.FC<ConversionAnalyticsModalProps> =
         </div>
 
         {/* Modal Footer */}
-        <div className="p-4 border-t border-white/10 bg-[#020b18] flex items-center justify-between text-xs text-slate-400">
+        <div className="p-4 border-t border-white/10 bg-[#020b18] flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span>نظام القياس السحابي متصل برقمك المعتمد {HOTLINE}</span>
+            <span>نظام القياس متصل برقمك {HOTLINE}</span>
+            <span className="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-bold border border-amber-500/30 text-[10px]">
+              وضع المالك مفعّل 👑
+            </span>
           </div>
-          <button
-            onClick={onClose}
-            className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold transition-colors"
-          >
-            إغلاق
-          </button>
+          <div className="flex items-center gap-2">
+            {onRevoke && (
+              <button
+                type="button"
+                onClick={() => {
+                  onRevoke();
+                  onClose();
+                }}
+                className="px-3 py-1.5 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 flex items-center gap-1.5 font-bold transition-all text-[11px] cursor-pointer"
+                title="إخفاء لوحة التحكم وقفل وضع المالك على هذا الجهاز"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+                <span>قفل وضع المالك</span>
+              </button>
+            )}
+            <button
+              onClick={onClose}
+              className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold transition-colors cursor-pointer"
+            >
+              إغلاق
+            </button>
+          </div>
         </div>
       </div>
     </div>
