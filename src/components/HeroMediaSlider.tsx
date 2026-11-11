@@ -15,7 +15,7 @@ const SLIDES: MediaSlide[] = [
   {
     type: 'video',
     src: '/assets/aistudio/VID-20261029-WA0025_08d54593.mp4',
-    titleAr: 'فيديو حي ومباشر: ونش شلها الهيدروليكي ينزل المنقولات بسلاسة وأمان تام',
+    titleAr: 'فيديو حي ومباشر: ونش رويال موفرز الهيدروليكي ينزل المنقولات بسلاسة وأمان تام',
     titleEn: 'Live Field Video: Shilha Hydraulic Winch Safely Lowering Furniture',
     badgeAr: 'فيديو ونش حي من الواقع 🎥',
     badgeEn: 'Live Winch Field Video 🎥',
@@ -25,13 +25,13 @@ const SLIDES: MediaSlide[] = [
     src: '/assets/aistudio/FB_IMG_1793372096933_b1d91a1d.jpg',
     titleAr: 'ونش رفع وتنزيل الأثاث الهيدروليكي ممتد لواجهة العمارة بالدور السادس بأمان مطلق',
     titleEn: 'Truck-Mounted Hydraulic Crane Extended to 6th Floor Balcony',
-    badgeAr: 'ونش هيدروليكي يبدأ من 1700ج',
-    badgeEn: 'Hydraulic Winch from 1700 EGP',
+    badgeAr: 'ونش هيدروليكي يبدأ من 2500ج',
+    badgeEn: 'Hydraulic Winch from 2500 EGP',
   },
   {
     type: 'image',
     src: '/assets/aistudio/IMG-20261029-WA0010_1__f198d94c.jpg',
-    titleAr: 'طاقم عمل شلها الثلاثي المتخصص أثناء إحكام تغليف كنب الصالون بالاسترتش والبابلز',
+    titleAr: 'طاقم رويال موفرز VIP الثلاثي المتخصص أثناء إحكام تغليف كنب الصالون بالاسترتش والبابلز',
     titleEn: 'Shilha 3-Man Specialist Crew Wrapping Luxury Sofa with Stretch & Bubble',
     badgeAr: 'فريق التغليف المتخصص',
     badgeEn: 'Specialist Packing Crew',
@@ -39,7 +39,7 @@ const SLIDES: MediaSlide[] = [
   {
     type: 'image',
     src: '/assets/aistudio/FB_IMG_1793372087782_e1c10367.jpg',
-    titleAr: 'صندوق سيارة شلها المبطن والمدعم بشرائح خشبية سويدي وأحزمة ربط لحماية العفش',
+    titleAr: 'صندوق سيارات رويال موفرز المبطن والمدعم بشرائح خشبية سويدي وأحزمة ربط لحماية العفش',
     titleEn: 'Padded Truck Cargo Bed with Solid Wood Battens & Safety Straps',
     badgeAr: 'سيارات نقل مجهزة ومبطنة',
     badgeEn: 'Equipped Padded Trucks',
@@ -47,18 +47,34 @@ const SLIDES: MediaSlide[] = [
   {
     type: 'image',
     src: '/assets/aistudio/IMG-20261029-WA0039_a33b1140.jpg',
-    titleAr: 'توثيق قبل وبعد: كيف يحمي التغليف الاحترافي لشلها الأقمشة المخملية والأرجل المذهبة',
+    titleAr: 'توثيق قبل وبعد: كيف يحمي التغليف الاحترافي لرويال موفرز الأقمشة المخملية والأرجل المذهبة',
     titleEn: 'Before & After Protection: Shielding Delicate Velvet Fabrics & Gold Legs',
     badgeAr: 'قبل وبعد التغليف (درع أمان)',
     badgeEn: 'Before & After Protection',
   },
   {
     type: 'image',
-    src: '/assets/aistudio/FB_IMG_1793372243785_978ce9bc.jpg',
-    titleAr: 'مخزن خامات التغليف المعتمدة: كراتين 5 راق جديدة، رولات بابلز الفيروز، وشنط قماشية',
-    titleEn: 'Packaging Materials Warehouse: 5-Ply Boxes, Heavy Bubble Rolls & Bags',
-    badgeAr: 'خامات ومواد تغليف أصلية',
-    badgeEn: 'Original Packing Materials',
+    src: '/assets/images/royal_winch_villa.jpg',
+    titleAr: 'ونش رويال موفرز الهيدروليكي أمام فيلا فاخرة بأرقى كمبوندات مصر (بالم هيلز وزايد)',
+    titleEn: 'Royal Movers Hydraulic Winch Operating at Luxury Compound Villa',
+    badgeAr: 'أوناش الفلل والكمبوندات 🏰',
+    badgeEn: 'Compound Villa Winch 🏰',
+  },
+  {
+    type: 'image',
+    src: '/assets/images/royal_delicate_packing.jpg',
+    titleAr: 'عناية فائقة بنقل التحف والنجف والمقتنيات الحساسة داخل صالونات القصور والفلل',
+    titleEn: 'White-glove Moving & Delicate Antiques Protection in Villa Salon',
+    badgeAr: 'حماية التحف والزجاج 💎',
+    badgeEn: 'Antiques White-Glove 💎',
+  },
+  {
+    type: 'image',
+    src: '/assets/images/royal_movers_workers_loading.jpg',
+    titleAr: 'طاقم رويال موفرز VIP أثناء تحميل ورص الأثاث بأعلى درجات العناية بالزي والكراتين الرسمية',
+    titleEn: 'Royal Movers VIP Crew Loading Furniture with Uniforms & Branded Boxes',
+    badgeAr: 'طاقم عمل رسمي معتمد VIP',
+    badgeEn: 'Official Royal Movers VIP Crew',
   },
 ];
 
@@ -155,7 +171,7 @@ export const HeroMediaSlider: React.FC = () => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       role="region"
-      aria-label={t('معرض صور وفيديو شلها', 'Shilha Media Showcase')}
+      aria-label={t('معرض صور وفيديو رويال موفرز', 'Shilha Media Showcase')}
     >
       {/* Soothing Royal Blue Glow Behind the Media Card */}
       <div className="absolute -inset-1.5 bg-gradient-to-tr from-blue-600 via-sky-400 to-cyan-300 rounded-3xl blur-md opacity-50 group-hover:opacity-90 transition duration-700 pointer-events-none" />

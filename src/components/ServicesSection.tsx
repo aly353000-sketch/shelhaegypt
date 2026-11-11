@@ -83,14 +83,14 @@ export const ServicesSection: React.FC = () => {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-center max-w-3xl mx-auto space-y-4 mb-10"
         >
-          <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 text-sky-400 text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full">
-            <Sparkles className="w-4 h-4 text-sky-400" />
+          <div className="inline-flex items-center gap-2.5 bg-blue-500/10 border border-blue-500/30 text-sky-400 text-sm sm:text-base font-black px-5 py-2 rounded-full shadow-sm">
+            <Sparkles className="w-5 h-5 text-sky-400" />
             <span>{t('خدمات متكاملة بأيقونات ومعايير أوروبية', 'Comprehensive Services with Bespoke Icons & European Standards')}</span>
           </div>
-          <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-black ${theme === 'light' ? 'text-slate-900' : 'text-white'}`}>
+          <h2 className={`text-4xl sm:text-5xl lg:text-6xl font-black leading-tight ${theme === 'light' ? 'text-slate-900' : 'text-white'}`}>
             {t('كل ما تحتاجه لنقل أثاثك في مكان واحد', 'Everything You Need for Moving in One Place')}
           </h2>
-          <p className={`text-sm sm:text-base leading-relaxed ${theme === 'light' ? 'text-slate-600' : 'text-slate-300'}`}>
+          <p className={`text-base sm:text-xl leading-relaxed max-w-2xl mx-auto font-medium ${theme === 'light' ? 'text-slate-700' : 'text-slate-300'}`}>
             {t(
               'قسّمنا خدماتنا لتغطي كل تفصيلة من الألف إلى الياء، لنوفر عليك عناء البحث والتنسيق مع أكثر من جهة.',
               'We organized our services to cover every detail from A to Z, saving you time and hassle.'
@@ -184,7 +184,7 @@ export const ServicesSection: React.FC = () => {
                     )}
                     {renderCustomServiceIcon(service.id, isSelected)}
                   </div>
-                  <span className="text-xs sm:text-sm font-bold leading-snug line-clamp-2">
+                  <span className="text-xs sm:text-sm md:text-base font-black leading-snug line-clamp-2">
                     {service.title}
                   </span>
                 </motion.button>
@@ -228,14 +228,14 @@ export const ServicesSection: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent lg:bg-gradient-to-l lg:from-[#031126] lg:to-transparent" />
                   
-                  <div className="absolute top-4 right-4 bg-slate-950/80 backdrop-blur-md border border-sky-400/40 px-3.5 py-1.5 rounded-xl text-xs font-bold text-sky-400 flex items-center gap-1.5">
+                  <div className="absolute top-4 right-4 bg-slate-950/80 backdrop-blur-md border border-sky-400/40 px-3.5 py-1.5 rounded-xl text-sm font-black text-sky-400 flex items-center gap-2">
                     {renderCustomServiceIcon(activeService.id, true)}
                     <span>{t('خدمة معتمدة 100%', '100% Certified Service')}</span>
                   </div>
 
-                  <div className="absolute bottom-4 right-4 left-4 p-3 bg-slate-950/85 backdrop-blur-md rounded-xl border border-blue-900/50">
-                    <div className="text-xs text-sky-300 font-bold">{t('الفئة المستهدفة:', 'Target Audience:')}</div>
-                    <div className="text-xs sm:text-sm font-bold text-white mt-0.5">
+                  <div className="absolute bottom-4 right-4 left-4 p-4 bg-slate-950/90 backdrop-blur-md rounded-2xl border border-blue-900/50">
+                    <div className="text-xs sm:text-sm text-sky-300 font-bold">{t('الفئة المستهدفة:', 'Target Audience:')}</div>
+                    <div className="text-sm sm:text-base font-black text-white mt-0.5">
                       {activeService.targetAudience}
                     </div>
                   </div>
@@ -245,42 +245,42 @@ export const ServicesSection: React.FC = () => {
                 <div className="lg:col-span-7 p-6 sm:p-10 space-y-6 flex flex-col justify-between">
                   <div className="space-y-4">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="bg-sky-500/10 text-sky-400 border border-sky-500/30 text-xs font-bold px-3 py-1 rounded-full">
-                        {t('شلها للخدمات اللوجستية المتخصصة', 'Shilha Specialized Logistics')}
+                      <span className="bg-sky-500/10 text-sky-400 border border-sky-500/30 text-xs sm:text-sm font-black px-3.5 py-1 rounded-full">
+                        {t('رويال موفرز للخدمات اللوجستية المتخصصة', 'Shilha Specialized Logistics')}
                       </span>
-                      <span className={`text-xs ${theme === 'light' ? 'text-slate-500' : 'text-slate-400'}`}>
+                      <span className={`text-xs sm:text-sm font-bold ${theme === 'light' ? 'text-slate-500' : 'text-slate-400'}`}>
                         {t('متاح في كافة المحافظات', 'Available Across All Governorates')}
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-3">
-                      <div className="p-2.5 rounded-xl bg-blue-600/10 border border-sky-400/30 shrink-0">
+                    <div className="flex items-center gap-3.5">
+                      <div className="p-3 rounded-2xl bg-blue-600/10 border border-sky-400/30 shrink-0">
                         {renderCustomServiceIcon(activeService.id, false)}
                       </div>
-                      <h3 className={`text-2xl sm:text-3xl font-black leading-tight ${theme === 'light' ? 'text-blue-950' : 'text-white'}`}>
+                      <h3 className={`text-2xl sm:text-3xl lg:text-4xl font-black leading-tight ${theme === 'light' ? 'text-blue-950' : 'text-white'}`}>
                         {activeService.title}
                       </h3>
                     </div>
 
-                    <p className={`text-sm sm:text-base leading-relaxed ${theme === 'light' ? 'text-slate-600' : 'text-slate-300'}`}>
+                    <p className={`text-base sm:text-lg lg:text-xl leading-relaxed font-medium ${theme === 'light' ? 'text-slate-700' : 'text-slate-300'}`}>
                       {activeService.fullDesc}
                     </p>
 
                     {/* Features Checklist */}
-                    <div className="space-y-2.5 pt-2">
-                      <div className="text-xs font-bold text-sky-400 uppercase tracking-wider">
+                    <div className="space-y-3 pt-2">
+                      <div className="text-sm sm:text-base font-black text-sky-400 uppercase tracking-wider">
                         {t('ماذا تشمل هذه الخدمة؟', 'What does this service include?')}
                       </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {activeService.features.map((feat, idx) => (
                           <motion.div
                             key={idx}
                             initial={{ opacity: 0, x: 10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.3, delay: idx * 0.05 }}
-                            className={`flex items-start gap-2 text-xs sm:text-sm ${theme === 'light' ? 'text-slate-700' : 'text-slate-200'}`}
+                            className={`flex items-start gap-2.5 text-sm sm:text-base font-bold ${theme === 'light' ? 'text-slate-800' : 'text-slate-200'}`}
                           >
-                            <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+                            <CheckCircle2 className="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
                             <span>{feat}</span>
                           </motion.div>
                         ))}
@@ -288,46 +288,46 @@ export const ServicesSection: React.FC = () => {
                     </div>
 
                     {/* Specs Grid */}
-                    <div className={`grid grid-cols-3 gap-2 pt-4 border-t ${theme === 'light' ? 'border-slate-100' : 'border-blue-900/60'}`}>
+                    <div className={`grid grid-cols-3 gap-3 pt-4 border-t ${theme === 'light' ? 'border-slate-100' : 'border-blue-900/60'}`}>
                       {activeService.specs.map((sp, idx) => (
                         <div
                           key={idx}
-                          className={`p-3 rounded-xl border ${
+                          className={`p-3.5 rounded-2xl border ${
                             theme === 'light'
                               ? 'bg-blue-50/60 border-blue-100'
                               : 'bg-blue-950/60 border-blue-900/50'
                           }`}
                         >
-                          <div className={`text-[11px] ${theme === 'light' ? 'text-slate-500' : 'text-slate-400'}`}>{sp.label}</div>
-                          <div className={`text-xs sm:text-sm font-bold mt-0.5 truncate ${theme === 'light' ? 'text-blue-950' : 'text-white'}`}>{sp.value}</div>
+                          <div className={`text-xs sm:text-sm font-bold ${theme === 'light' ? 'text-slate-500' : 'text-slate-400'}`}>{sp.label}</div>
+                          <div className={`text-sm sm:text-base font-black mt-1 truncate ${theme === 'light' ? 'text-blue-950' : 'text-white'}`}>{sp.value}</div>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   {/* Action Buttons */}
-                  <div className={`pt-6 border-t flex flex-wrap items-center gap-3 ${theme === 'light' ? 'border-slate-100' : 'border-blue-900/60'}`}>
+                  <div className={`pt-6 border-t flex flex-wrap items-center gap-3.5 ${theme === 'light' ? 'border-slate-100' : 'border-blue-900/60'}`}>
                     <a
                       href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-                        t(`السلام عليكم، أرغب في حجز والاستفسار عن خدمة: ${activeService.title} مع شركة شلها`, `Hello, I want to book: ${activeService.title}`)
+                        t(`السلام عليكم، أرغب في حجز والاستفسار عن خدمة: ${activeService.title} مع رويال موفرز VIP`, `Hello, I want to book: ${activeService.title}`)
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3 rounded-xl font-bold text-sm shadow-lg shadow-emerald-600/20 transition-all hover:scale-105 active:scale-95"
+                      className="flex-1 sm:flex-none flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-3.5 rounded-2xl font-black text-base shadow-lg shadow-emerald-600/20 transition-all hover:scale-105 active:scale-95"
                     >
-                      <WhatsAppIcon className="w-4 h-4 text-white" />
+                      <WhatsAppIcon className="w-5 h-5 text-white" />
                       <span>{t('طلب الخدمة عبر واتساب', 'Request via WhatsApp')}</span>
                     </a>
 
                     <a
                       href={`tel:${COMPANY_DATA.phones[0].number}`}
-                      className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white px-5 py-3 rounded-xl font-black text-sm transition-all hover:scale-105 active:scale-95"
+                      className="flex-1 sm:flex-none flex items-center justify-center gap-2.5 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white px-7 py-3.5 rounded-2xl font-black text-base transition-all hover:scale-105 active:scale-95"
                     >
-                      <Phone className="w-4 h-4" />
+                      <Phone className="w-5 h-5" />
                       <span>{t('اتصال مباشر للحجز', 'Call to Book')}</span>
                     </a>
 
-                    <div className="text-xs text-sky-400 font-medium w-full sm:w-auto text-center sm:text-right">
+                    <div className="text-xs sm:text-sm text-sky-400 font-bold w-full sm:w-auto text-center sm:text-right">
                       ⚡ {t('معاينة مجانية وتحديد سعر ثابت قبل البدء', 'Free inspection and fixed upfront price')}
                     </div>
                   </div>

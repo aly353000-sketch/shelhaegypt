@@ -9,34 +9,47 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #0f172a;
-    background-color: #f8fafc;
+    color: #f1f5f9;
+    background-color: #020b18;
+    overflow-x: hidden;
   }
+  
+  body {
+    background-color: #020b18;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
   ::selection {
-    background-color: #2563eb;
-    color: #ffffff;
+    background-color: #f59e0b;
+    color: #020b18;
   }
 }
 
-/* Periodic subtle shake every 10 seconds */
+/* Silky smooth motion easing */
+* {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Periodic subtle pulse for trust badges */
 @keyframes periodicShake {
   0%, 88%, 100% {
     transform: scale(1) rotate(0deg);
   }
   90% {
-    transform: scale(1.1) rotate(-14deg);
+    transform: scale(1.08) rotate(-8deg);
   }
   92% {
-    transform: scale(1.1) rotate(14deg);
+    transform: scale(1.08) rotate(8deg);
   }
   94% {
-    transform: scale(1.1) rotate(-10deg);
+    transform: scale(1.08) rotate(-5deg);
   }
   96% {
-    transform: scale(1.1) rotate(10deg);
+    transform: scale(1.08) rotate(5deg);
   }
   98% {
-    transform: scale(1.05) rotate(0deg);
+    transform: scale(1.04) rotate(0deg);
   }
 }
 
@@ -44,17 +57,19 @@
   animation: periodicShake 10s ease-in-out infinite;
 }
 
-/* Custom scrollbar in royal blue */
+/* Custom luxury scrollbar in royal navy & gold */
 ::-webkit-scrollbar {
-  width: 9px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #020b18;
 }
 ::-webkit-scrollbar-thumb {
-  background: #0284c7;
-  border-radius: 6px;
+  background: #1e3a8a;
+  border-radius: 9999px;
+  border: 1px solid rgba(245, 158, 11, 0.3);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #1d4ed8;
+  background: #d97706;
 }

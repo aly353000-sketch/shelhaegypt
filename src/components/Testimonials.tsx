@@ -50,7 +50,7 @@ const DEFAULT_TESTIMONIALS: TestimonialItem[] = [
     name: 'د. سارة عبد الرحمن',
     role: 'نقل عيادة أسنان متكاملة',
     location: 'مصر الجديدة - الكوربة',
-    text: 'كنت خايفة جداً على أجهزة العيادة والمعدات الطبية لأنها غالية وحساسة، لكن فريق شلها عملوا تغليف ثلاثي بابلز وفوم ووصلوا كل حاجة سليمة واشتغلنا تاني يوم على طول. شكراً ليكم ولأمانتكم!',
+    text: 'كنت خايفة جداً على أجهزة العيادة والمعدات الطبية لأنها غالية وحساسة، لكن فريق رويال موفرز عملوا تغليف ثلاثي بابلز وفوم ووصلوا كل حاجة سليمة واشتغلنا تاني يوم على طول. شكراً ليكم ولأمانتكم!',
     rating: 5,
     date: 'منذ شهر',
     likes: 38,
@@ -201,7 +201,7 @@ export const Testimonials: React.FC = () => {
     const newReview: TestimonialItem = {
       id: `testi-${Date.now()}`,
       name: reviewerName.trim(),
-      role: moveDetails.trim() || t('عميل شلها المعتمد', 'Verified Shilha Customer'),
+      role: moveDetails.trim() || t('عميل رويال موفرز المعتمد', 'Verified Shilha Customer'),
       location: reviewLocation.trim() || t('القاهرة الكبرى', 'Greater Cairo'),
       text: reviewComment.trim(),
       rating: formRating,
@@ -257,11 +257,11 @@ export const Testimonials: React.FC = () => {
             <span>{t('آراء وتجارب حقيقية موثقة', 'Authentic & Verified Customer Reviews')}</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
-            {t('ماذا يقول عملاء شلها عنا؟', 'What Do Shilha Customers Say?')}
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-tight">
+            {t('ماذا يقول عملاء رويال موفرز عنا؟', 'What Do Shilha Customers Say?')}
           </h2>
 
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto font-medium">
             {t(
               'ثقة أكثر من 14,850 عائلة وشركة تم نقل مقتنياتهم في القاهرة والجيزة وجميع المحافظات بأعلى معايير الحرص والاحترافية.',
               'Over 14,850 satisfied families and businesses moved safely across Egypt.'
@@ -364,7 +364,7 @@ export const Testimonials: React.FC = () => {
                   <div className="space-y-1">
                     <h3 className="text-lg sm:text-xl font-black text-blue-950 flex items-center gap-2">
                       <Sparkles className="w-5 h-5 text-amber-500" />
-                      <span>{t('شاركنا تقييمك ورأيك في خدمة شلها', 'Share Your Feedback on Shilha')}</span>
+                      <span>{t('شاركنا تقييمك ورأيك في خدمة رويال موفرز', 'Share Your Feedback on Shilha')}</span>
                     </h3>
                     <p className="text-xs text-slate-500">
                       {t('نعتز بكل كلمة وتجربة حقيقية لخدمة النقل والتغليف والأوناش', 'We value every authentic moving experience')}
@@ -613,7 +613,7 @@ export const Testimonials: React.FC = () => {
                   </div>
 
                   {/* Review Text */}
-                  <p className="text-xs sm:text-sm leading-relaxed text-slate-700 font-medium">
+                  <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-slate-800 font-medium">
                     "{testi.text}"
                   </p>
 
@@ -623,7 +623,7 @@ export const Testimonials: React.FC = () => {
                       {testi.tags.map((tg, i) => (
                         <span
                           key={i}
-                          className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-blue-50 text-blue-800 border border-blue-200/60"
+                          className="text-xs font-bold px-2.5 py-1 rounded-lg bg-blue-50 text-blue-800 border border-blue-200/60"
                         >
                           {tg}
                         </span>
@@ -636,15 +636,15 @@ export const Testimonials: React.FC = () => {
                 {/* Bottom Card Bar: Customer Details & Helpful Likes */}
                 <div className="pt-4 border-t border-slate-200/80 flex items-center justify-between mt-2">
                   <div className="space-y-0.5">
-                    <div className="font-black text-xs sm:text-sm text-slate-900 flex items-center gap-1.5">
+                    <div className="font-black text-base sm:text-lg text-slate-900 flex items-center gap-1.5">
                       <span>{testi.name}</span>
                     </div>
-                    <div className="text-[11px] text-blue-700 font-bold">
+                    <div className="text-xs sm:text-sm text-blue-700 font-bold">
                       {testi.role}
                     </div>
                     {testi.location && (
-                      <div className="text-[10px] text-slate-500 flex items-center gap-1">
-                        <MapPin className="w-3 h-3 text-slate-400" />
+                      <div className="text-xs text-slate-500 flex items-center gap-1">
+                        <MapPin className="w-3.5 h-3.5 text-slate-400" />
                         <span>{testi.location}</span>
                       </div>
                     )}

@@ -1,5 +1,5 @@
 /**
- * Pricing and quote estimation logic for Shilha Moving Company (شركة شلها لنقل وتغليف الأثاث)
+ * Pricing and quote estimation logic for Royal Movers VIP (شركة رويال موفرز لنقل وتغليف الأثاث VIP)
  * 
  * Rules:
  * 1. Base cost for 3 rooms + 1 truck anywhere in Cairo: 4000 to 7000 EGP.
@@ -8,7 +8,7 @@
  * 4. Furniture dismantling & assembly (فك وتركيب): +300 EGP per room.
  * 5. Packaging (تغليف): +400 EGP per room. Packing 3 rooms adds 2 workers (+2 عمال لكل 3 غرف تغليف).
  * 6. AC dismantling/assembly: 800 EGP per unit + 1 specialist technician (سعر فك و تركيب التكييف ٨٠٠).
- * 7. Hydraulic Winch service: 1,700 EGP (زود سعر خدمة الونش ل ١٧٠٠) and strictly optional.
+ * 7. Hydraulic Winch service: 2,500 EGP (زود سعر خدمة الونش ل ٢٥٠٠) and strictly optional.
  * 8. Packaging materials & cartons added to total cost dynamically without exposing unit prices to the client.
  */
 
@@ -133,12 +133,12 @@ export function calculateMovingQuote(req: QuoteRequest): QuoteEstimate {
     maxBase += 600;
   }
 
-  // Hydraulic winch (strictly optional - 1,700 EGP base per user request)
+  // Hydraulic winch (strictly optional - 2,500 EGP base per user request)
   const includeWinch = Boolean(req.needsWinch);
   if (includeWinch) {
     const winchFloors = Math.max(req.fromFloor, req.toFloor);
-    // Base 1,700 EGP, with minor floor increment if higher than floor 4
-    const winchCost = 1700 + Math.max(0, winchFloors - 4) * 100;
+    // Base 2,500 EGP, with minor floor increment if higher than floor 4
+    const winchCost = 2500 + Math.max(0, winchFloors - 4) * 100;
     minBase += winchCost;
     maxBase += winchCost;
   }
@@ -206,7 +206,7 @@ export function calculateMovingQuote(req: QuoteRequest): QuoteEstimate {
     : '';
 
   const whatsappMessage = encodeURIComponent(
-    `السلام عليكم، عايز استفسار وحجز عرض سعر نقل عفش من شركة شلها (مع خصم 10%):\n` +
+    `السلام عليكم، حجز واستفسار عن عرض سعر نقل وتغليف من رويال موفرز VIP:\n` +
     `• نوع العقار: ${propertyLabels[req.propertyType]}\n` +
     `• عدد الغرف: ${req.roomsCount} غرف\n` +
     `• سيارات النقل: ${trucksCount} سيارة مبطنة (${trucksCount * 5} عمال أساسي)\n` +
@@ -215,7 +215,7 @@ export function calculateMovingQuote(req: QuoteRequest): QuoteEstimate {
     `• فك وتركيب تكييفات: ${req.acUnitsCount > 0 ? `${req.acUnitsCount} أجهزة (مع فني تكييف متخصص بسعر 800 ج.م/جهاز)` : 'غير مطلوب'}\n` +
     `• فني أجهزة وكهرباء: ${req.needsAppliancesTechnician ? 'مطلوب (+فني كهرباء)' : 'غير مطلوب'}\n` +
     `• فك وتركيب مطبخ: ${req.needsKitchenDismantling ? 'مطلوب' : 'غير مطلوب'}\n` +
-    `• ونش هيدروليكي: ${includeWinch ? 'نعم مطلوب (1,700 ج.م)' : 'غير مطلوب (نقل يدوي/مصعد)'}\n` +
+    `• ونش هيدروليكي: ${includeWinch ? 'نعم مطلوب (2,500 ج.م)' : 'غير مطلوب (نقل يدوي/مصعد)'}\n` +
     `• من: ${req.fromArea} (الدور ${req.fromFloor})\n` +
     `• إلى: ${req.toArea} (الدور ${req.toFloor})\n` +
     `• إجمالي طاقم العمل: ${totalCrew} عمال وفنيين محترفين\n` +

@@ -47,7 +47,7 @@ export const FloatingActions: React.FC = () => {
 
         <a
           href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-            t('السلام عليكم، عايز استفسر عن خدمات نقل وتغليف الأثاث مع شركة شلها', 'Hello, inquiry about moving services.')
+            t('السلام عليكم، استفسار عن خدمات نقل وتغليف أثاث الفلل والقصور مع رويال موفرز VIP', 'Hello, inquiry about VIP moving services with Royal Movers Egypt.')
           )}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -122,7 +122,7 @@ export const FloatingActions: React.FC = () => {
           onMouseEnter={() => setCallHovered(true)}
           onMouseLeave={() => setCallHovered(false)}
           className="animate-periodic-shake w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-blue-700 via-blue-600 to-sky-400 hover:from-blue-600 hover:to-sky-300 text-white flex items-center justify-center shadow-2xl shadow-blue-600/50 hover:scale-110 active:scale-95 transition-all duration-300 group cursor-pointer border-2 border-white/30"
-          aria-label={t('عرض أرقام الاتصال بشركة شلها', 'Call Shilha')}
+          aria-label={t('عرض أرقام الاتصال بشركة رويال موفرز VIP', 'Call Shilha')}
           aria-expanded={callModalOpen}
         >
           <Phone className="w-7 h-7 group-hover:rotate-12 transition-transform stroke-[2.5]" />
@@ -138,7 +138,7 @@ export const FloatingActions: React.FC = () => {
               theme === 'light' ? 'border-slate-100' : 'border-blue-900/60'
             }`}>
               <div className="text-xs font-black text-sky-400">
-                {t('أرقام هواتف شركة شلها:', 'Shilha Direct Lines:')}
+                {t('أرقام هواتف شركة رويال موفرز VIP:', 'Shilha Direct Lines:')}
               </div>
               <button
                 type="button"
@@ -150,59 +150,35 @@ export const FloatingActions: React.FC = () => {
               </button>
             </div>
 
-            <div className="space-y-2 pt-3">
-              {/* Primary Requested Number 1 */}
+            <div className="space-y-3 pt-3">
+              {/* Unified Official Number */}
               <a
-                href="tel:01099649897"
-                className={`flex items-center justify-between p-2.5 rounded-xl border transition-all group ${
+                href="tel:01233391255"
+                className={`flex items-center justify-between p-3.5 rounded-2xl border transition-all group shadow-md ${
                   theme === 'light'
-                    ? 'bg-slate-50 hover:bg-blue-600 hover:text-white border-slate-200'
-                    : 'bg-blue-950/70 hover:bg-blue-600 hover:text-white border-blue-900/60'
+                    ? 'bg-gradient-to-r from-blue-50 to-amber-50/50 hover:bg-blue-600 hover:text-white border-blue-200'
+                    : 'bg-gradient-to-r from-blue-950/80 to-amber-950/40 hover:bg-blue-600 hover:text-white border-amber-500/30'
                 }`}
               >
                 <div className="text-right">
-                  <div className="text-xs font-bold">{t('الخط الساخن والحجوزات', 'Hotline & Bookings')}</div>
-                  <div className="text-[10px] text-slate-400 group-hover:text-blue-100">24/7</div>
+                  <div className="text-sm font-bold flex items-center gap-1.5">
+                    <span>{t('الخط الساخن الموحد', 'Unified VIP Hotline')}</span>
+                    <span className="text-[10px] bg-amber-500 text-slate-950 font-black px-1.5 py-0.5 rounded">VIP</span>
+                  </div>
+                  <div className="text-[11px] text-slate-400 group-hover:text-blue-100">{t('حجوزات واستفسارات 24 ساعة', '24/7 Bookings & Inquiries')}</div>
                 </div>
-                <span className="font-black text-sky-400 group-hover:text-white text-sm font-mono" dir="ltr">
-                  01099649897
+                <span className="font-black text-amber-500 group-hover:text-white text-base font-mono tracking-wider" dir="ltr">
+                  01233391255
                 </span>
               </a>
 
-              {/* Primary Requested Number 2 */}
+              {/* Direct Call Button */}
               <a
-                href="tel:01128418399"
-                className={`flex items-center justify-between p-2.5 rounded-xl border transition-all group ${
-                  theme === 'light'
-                    ? 'bg-slate-50 hover:bg-blue-600 hover:text-white border-slate-200'
-                    : 'bg-blue-950/70 hover:bg-blue-600 hover:text-white border-blue-900/60'
-                }`}
+                href="tel:01233391255"
+                className="w-full bg-gradient-to-r from-blue-600 to-amber-600 hover:from-blue-700 hover:to-amber-700 text-white font-bold py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 text-sm shadow-lg shadow-blue-500/20 transition-all cursor-pointer"
               >
-                <div className="text-right">
-                  <div className="text-xs font-bold">{t('خدمة العملاء والمتابعة', 'Customer Service')}</div>
-                  <div className="text-[10px] text-slate-400 group-hover:text-blue-100">24/7</div>
-                </div>
-                <span className="font-black text-sky-400 group-hover:text-white text-sm font-mono" dir="ltr">
-                  01128418399
-                </span>
-              </a>
-
-              {/* Number from the poster images */}
-              <a
-                href="tel:01019785437"
-                className={`flex items-center justify-between p-2.5 rounded-xl border transition-all group ${
-                  theme === 'light'
-                    ? 'bg-slate-50 hover:bg-blue-600 hover:text-white border-slate-200'
-                    : 'bg-blue-950/70 hover:bg-blue-600 hover:text-white border-blue-900/60'
-                }`}
-              >
-                <div className="text-right">
-                  <div className="text-xs font-bold">{t('إدارة العمليات الميدانية', 'Operations Dept')}</div>
-                  <div className="text-[10px] text-slate-400 group-hover:text-blue-100">{t('رقم الإعلان الرسمي', 'Official Ad')}</div>
-                </div>
-                <span className="font-black text-sky-400 group-hover:text-white text-sm font-mono" dir="ltr">
-                  01019785437
-                </span>
+                <Phone className="w-4 h-4" />
+                <span>اتصال مباشر الآن</span>
               </a>
             </div>
 

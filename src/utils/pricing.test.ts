@@ -53,7 +53,7 @@ test('AC units cost 800 EGP per unit as requested', () => {
   assert.equal(quote.crewBreakdown.technicians, 1);
 });
 
-test('Hydraulic Winch costs 1,700 EGP base as requested', () => {
+test('Hydraulic Winch costs 2,500 EGP base as requested', () => {
   const quoteWithWinch = calculateMovingQuote({
     propertyType: 'apartment',
     roomsCount: 3,
@@ -63,7 +63,7 @@ test('Hydraulic Winch costs 1,700 EGP base as requested', () => {
     fromArea: 'مدينة نصر',
     toArea: 'مصر الجديدة',
     isGovernorate: false,
-    needsWinch: true, // 1700 EGP
+    needsWinch: true, // 2500 EGP
     acUnitsCount: 0,
     needsDismantling: false,
     needsPackaging: false,
@@ -71,9 +71,9 @@ test('Hydraulic Winch costs 1,700 EGP base as requested', () => {
     needsKitchenDismantling: false,
   });
 
-  // Base 4000 + 1700 = 5700, 7000 + 1700 = 8700
-  assert.equal(quoteWithWinch.minPrice, 5700);
-  assert.equal(quoteWithWinch.maxPrice, 8700);
+  // Base 4000 + 2500 = 6500, 7000 + 2500 = 9500
+  assert.equal(quoteWithWinch.minPrice, 6500);
+  assert.equal(quoteWithWinch.maxPrice, 9500);
   assert.equal(quoteWithWinch.recommendedWinch, true);
 });
 

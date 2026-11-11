@@ -25,7 +25,7 @@ export const FaqSection: React.FC = () => {
   const categories = [
     { id: 'الكل', label: 'جميع الأسئلة' },
     { id: 'أسعار', label: 'الأسعار والتكاليف' },
-    { id: 'ونش', label: 'الونش الهيدروليكي (1700ج)' },
+    { id: 'ونش', label: 'الونش الهيدروليكي (2500ج)' },
     { id: 'تكييف', label: 'التكييف والأجهزة (800ج)' },
     { id: 'تغليف', label: 'التغليف والصيني' },
     { id: 'أمان', label: 'الأمان والسلامة' },
@@ -68,11 +68,11 @@ export const FaqSection: React.FC = () => {
             <span>الأسئلة الشائعة والأجوبة الدقيقة الشاملة</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-tight">
             كل ما يدور بذهنك عن نقل وتغليف الأثاث
           </h2>
 
-          <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-medium">
             إجابات واضحة وشفافة تساعدك على اتخاذ القرار الصحيح والتخطيط لنقل منزلك أو شركتك بكل راحة واطمئنان.
           </p>
         </div>
@@ -80,14 +80,14 @@ export const FaqSection: React.FC = () => {
         {/* Dynamic Search & Category Controls */}
         <div className="space-y-4">
           {/* Search Bar */}
-          <div className="relative flex items-center bg-white rounded-2xl border border-slate-300 shadow-sm focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100 transition-all p-1">
+          <div className="relative flex items-center bg-white rounded-2xl border border-slate-300 shadow-sm focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100 transition-all p-1.5">
             <Search className="w-5 h-5 text-blue-600 mr-3.5 ml-2 shrink-0" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="ابحث في الأسئلة (مثال: سعر الونش، التكييف، الصيني، التغليف، السيارات)..."
-              className="w-full bg-transparent py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none"
+              className="w-full bg-transparent py-2.5 text-sm sm:text-base text-slate-900 placeholder-slate-400 outline-none font-bold"
             />
             {searchQuery && (
               <button
@@ -117,14 +117,14 @@ export const FaqSection: React.FC = () => {
                     setSelectedCategory(cat.id);
                     setOpenIndices([0]);
                   }}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center gap-1.5 cursor-pointer ${
                     isActive
                       ? 'bg-gradient-to-r from-blue-700 to-sky-600 text-white shadow-md shadow-blue-500/20 scale-105'
                       : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shadow-xs'
                   }`}
                 >
                   <span>{cat.label}</span>
-                  <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-black ${
+                  <span className={`text-xs px-2 py-0.5 rounded-full font-black ${
                     isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'
                   }`}>
                     {count}
@@ -201,22 +201,22 @@ export const FaqSection: React.FC = () => {
                     aria-expanded={isOpen}
                   >
                     <div className="flex items-center gap-3">
-                      <div className={`w-2 h-2 rounded-full transition-colors ${
+                      <div className={`w-2.5 h-2.5 rounded-full transition-colors ${
                         isOpen ? 'bg-blue-600' : 'bg-slate-300 group-hover:bg-blue-400'
                       }`} />
-                      <span className={`text-sm sm:text-base leading-snug transition-colors ${
+                      <span className={`text-base sm:text-lg lg:text-xl font-black leading-snug transition-colors ${
                         isOpen ? 'text-blue-700' : 'text-slate-800 group-hover:text-blue-600'
                       }`}>
                         {faq.q}
                       </span>
                     </div>
 
-                    <div className={`p-1.5 rounded-xl shrink-0 mr-3 transition-transform duration-300 ${
+                    <div className={`p-2 rounded-xl shrink-0 mr-3 transition-transform duration-300 ${
                       isOpen
                         ? 'bg-blue-600 text-white rotate-180 shadow-xs'
                         : 'bg-blue-50 text-blue-600 group-hover:bg-blue-100'
                     }`}>
-                      <ChevronDown className="w-4 h-4" />
+                      <ChevronDown className="w-5 h-5" />
                     </div>
                   </button>
 
@@ -228,11 +228,11 @@ export const FaqSection: React.FC = () => {
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.25, ease: 'easeInOut' }}
                       >
-                        <div className="px-5 pb-5 pt-1 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed space-y-2">
+                        <div className="px-5 pb-5 pt-2 border-t border-slate-100 text-sm sm:text-base lg:text-lg text-slate-700 font-medium leading-relaxed space-y-2">
                           <p>{faq.a}</p>
-                          <div className="flex items-center gap-2 pt-2 text-[11px] font-bold text-emerald-600">
-                            <CheckCircle2 className="w-3.5 h-3.5" />
-                            <span>معتمد من شركة شلها لنقل وتغليف الأثاث | Shelha Furniture Movers</span>
+                          <div className="flex items-center gap-2 pt-2 text-xs font-bold text-emerald-600">
+                            <CheckCircle2 className="w-4 h-4" />
+                            <span>معتمد من شركة رويال موفرز لنقل وتغليف الأثاث VIP | Shelha Furniture Movers</span>
                           </div>
                         </div>
                       </motion.div>
@@ -251,14 +251,14 @@ export const FaqSection: React.FC = () => {
               عندك استفسار خاص أو محتاج معاينة مجانية؟
             </h3>
             <p className="text-xs sm:text-sm text-sky-100 max-w-lg">
-              فريق خدمة عملاء شلها متاح 24 ساعة للرد على استفسارك ومساعدتك في اختيار أنسب باقة لنقل بيتك.
+              فريق خدمة عملاء رويال موفرز VIP متاح 24 ساعة للرد على استفسارك ومساعدتك في اختيار أنسب باقة لنقل بيتك.
             </p>
           </div>
 
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <a
               href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-                'السلام عليكم، عندي استفسار عن خدمات نقل وتغليف الأثاث مع شركة شلها'
+                'السلام عليكم، عندي استفسار عن خدمات نقل وتغليف الأثاث مع رويال موفرز VIP'
               )}`}
               target="_blank"
               rel="noopener noreferrer"

@@ -82,7 +82,7 @@ export const GoldenTipsModal: React.FC<GoldenTipsModalProps> = ({ isOpen, onClos
       tag: 'التكييفات والشاشات 📺',
       tagColor: 'bg-blue-100 text-blue-950 border-blue-300 font-bold',
       title: 'صوّر توصيلات الأسلاك وخلفيات الشاشات بالموبايل قبل الفك',
-      content: 'التقط صورة واضحة للأسلاك وتوصيلات الرسيفر والواي فاي والمسرح المنزلي قبل فكها. هذا يوفر عليك ساعات عند إعادة التوصيل. واحرص على فك التكييف بأيدي فني معتمد (متوفر لدينا في شلها) لحفظ شحنة غاز الفريون.',
+      content: 'التقط صورة واضحة للأسلاك وتوصيلات الرسيفر والواي فاي والمسرح المنزلي قبل فكها. هذا يوفر عليك ساعات عند إعادة التوصيل. واحرص على فك التكييف بأيدي فني معتمد (متوفر لدينا في رويال موفرز) لحفظ شحنة غاز الفريون.',
       important: false,
     },
     {
@@ -100,7 +100,7 @@ export const GoldenTipsModal: React.FC<GoldenTipsModalProps> = ({ isOpen, onClos
       tag: 'تنظيم وفرز 📦',
       tagColor: 'bg-purple-100 text-purple-950 border-purple-300 font-bold',
       title: 'اكتب اسم الغرفة على كل كرتونة وعلامة "قابل للكسر" بوضوح',
-      content: 'استخدم قلماً عريضاً واكتب بوضوح على كل كرتونة (مثال: "مطبخ - صيني قابل للكسر"، "غرفة نوم أطفال"). هذا يتيح لطاقم شلها وضع الكراتين فوراً في الغرفة المحددة لها بالمنزل الجديد بدلاً من تكديسها في الصالة.',
+      content: 'استخدم قلماً عريضاً واكتب بوضوح على كل كرتونة (مثال: "مطبخ - صيني قابل للكسر"، "غرفة نوم أطفال"). هذا يتيح لطاقم رويال موفرز وضع الكراتين فوراً في الغرفة المحددة لها بالمنزل الجديد بدلاً من تكديسها في الصالة.',
       important: false,
     },
     {
@@ -161,7 +161,7 @@ export const GoldenTipsModal: React.FC<GoldenTipsModalProps> = ({ isOpen, onClos
           <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-amber-400 text-slate-950 font-black text-xs px-3 py-1 rounded-full shadow">
               <Lightbulb className="w-4 h-4 fill-current" />
-              <span>{t('دليل شلها الذهبي المجاني قبل يوم النقل', 'Free Golden Pre-Moving Advice')}</span>
+              <span>{t('دليل رويال موفرز الذهبي المجاني قبل يوم النقل', 'Free Golden Pre-Moving Advice')}</span>
             </div>
             <h2 className="text-xl sm:text-3xl font-black">
               {t('نصائح ذهبية لتجهيز شقتك وتأمين مقتنياتك قبل النقل', 'Golden Tips to Prepare Your Apartment & Valuables')}
@@ -266,13 +266,13 @@ export const GoldenTipsModal: React.FC<GoldenTipsModalProps> = ({ isOpen, onClos
           theme === 'light' ? 'bg-slate-50 border-slate-200' : 'bg-slate-900/80 border-blue-900/60'
         }`}>
           <div className="text-xs text-slate-400 text-center sm:text-right">
-            <span>💡 لديك استفسار بخصوص تجهيز شقتك؟ فريق شلها يقدّم استشارة مجانية 24 ساعة.</span>
+            <span>💡 لديك استفسار بخصوص تجهيز شقتك؟ فريق رويال موفرز يقدّم استشارة مجانية 24 ساعة.</span>
           </div>
 
           <div className="flex items-center gap-2 w-full sm:w-auto">
             <a
               href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-                'السلام عليكم، قرأت نصائح شلها وعندي استفسار بخصوص تجهيز ونقل الشقة'
+                'السلام عليكم، قرأت نصائح رويال موفرز وعندي استفسار بخصوص تجهيز ونقل الشقة'
               )}`}
               target="_blank"
               rel="noopener noreferrer"

@@ -38,7 +38,7 @@ export const WorkProcess: React.FC = () => {
       num: '04',
       title: t('النقل بالسيارات المغلقة', 'Padded Truck Transport'),
       desc: t(
-        'رص وتثبيت الأثاث داخل سيارات شلها المجهزة والمبطنة من الداخل لمنع تعرضه لأي اهتزاز أو أتربة على الطريق.',
+        'رص وتثبيت الأثاث داخل سيارات رويال موفرز المجهزة والمبطنة من الداخل لمنع تعرضه لأي اهتزاز أو أتربة على الطريق.',
         'Fastening furniture inside padded, sealed trucks to guard against bumps, dust, and weather during transit.'
       ),
       icon: <Truck className="w-6 h-6 text-sky-400" />,
@@ -66,23 +66,23 @@ export const WorkProcess: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-center max-w-3xl mx-auto space-y-4"
+          className="text-center max-w-4xl mx-auto space-y-5"
         >
-          <div className={`inline-flex items-center gap-2 border text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full ${
+          <div className={`inline-flex items-center gap-2.5 border text-sm sm:text-base font-black px-5 py-2 rounded-full ${
             theme === 'light'
               ? 'bg-blue-100 border-blue-300 text-blue-900'
               : 'bg-blue-500/10 border-blue-500/30 text-sky-300'
           }`}>
-            <Sparkles className="w-4 h-4 text-sky-400" />
+            <Sparkles className="w-5 h-5 text-sky-400" />
             <span>{t('نظام عمل دقيق كالساعة السويسرية', 'Precise 5-Step Workflow')}</span>
           </div>
-          <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-black ${
+          <h2 className={`text-4xl sm:text-5xl lg:text-6xl font-black leading-tight ${
             theme === 'light' ? 'text-slate-900' : 'text-white'
           }`}>
-            {t('رحلة نقلك مع شلها في 5 خطوات سهلة', 'Your Moving Journey with Shilha in 5 Easy Steps')}
+            {t('رحلة نقلك مع رويال موفرز في 5 خطوات سهلة', 'Your Moving Journey with Shilha in 5 Easy Steps')}
           </h2>
-          <p className={`text-base sm:text-lg ${
-            theme === 'light' ? 'text-slate-600' : 'text-slate-300'
+          <p className={`text-base sm:text-xl font-medium ${
+            theme === 'light' ? 'text-slate-700' : 'text-slate-300'
           }`}>
             {t(
               'خطوات مرتبة تتيح إنهاء عملية النقل في يوم واحد وبأعلى درجات الراحة والأمان.',
@@ -92,7 +92,7 @@ export const WorkProcess: React.FC = () => {
         </motion.div>
 
         {/* Steps Grid with Staggered Scroll-Triggered Reveal */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
           {steps.map((st, idx) => (
             <motion.div
               key={idx}
@@ -101,21 +101,21 @@ export const WorkProcess: React.FC = () => {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: idx * 0.12, ease: 'easeOut' }}
               whileHover={{ y: -8, transition: { duration: 0.2 } }}
-              className={`relative border rounded-2xl p-5 space-y-3 transition-all duration-300 shadow-lg group cursor-default ${
+              className={`relative border-2 rounded-3xl p-6 space-y-4 transition-all duration-300 shadow-lg group cursor-default ${
                 theme === 'light'
                   ? 'bg-white border-slate-200 hover:border-blue-400 hover:shadow-blue-500/10'
                   : 'bg-[#031126] border-blue-900/60 hover:border-sky-400/60 hover:shadow-sky-500/10'
               }`}
             >
               <div className="flex items-center justify-between">
-                <div className={`p-3 rounded-xl border transition-colors ${
+                <div className={`p-3.5 rounded-2xl border transition-colors ${
                   theme === 'light'
                     ? 'bg-blue-50 border-blue-100 text-blue-600'
                     : 'bg-[#041633] border-blue-800/80 text-sky-400'
                 }`}>
                   {st.icon}
                 </div>
-                <span className={`text-2xl font-black transition-colors ${
+                <span className={`text-3xl font-black transition-colors ${
                   theme === 'light'
                     ? 'text-slate-300 group-hover:text-blue-600'
                     : 'text-blue-900 group-hover:text-sky-400'
@@ -124,14 +124,14 @@ export const WorkProcess: React.FC = () => {
                 </span>
               </div>
 
-              <h3 className={`text-base font-black transition-colors ${
+              <h3 className={`text-lg sm:text-xl font-black transition-colors ${
                 theme === 'light' ? 'text-slate-900 group-hover:text-blue-600' : 'text-white group-hover:text-sky-300'
               }`}>
                 {st.title}
               </h3>
 
-              <p className={`text-xs leading-relaxed ${
-                theme === 'light' ? 'text-slate-600' : 'text-slate-400'
+              <p className={`text-sm sm:text-base leading-relaxed font-medium ${
+                theme === 'light' ? 'text-slate-600' : 'text-slate-300'
               }`}>
                 {st.desc}
               </p>

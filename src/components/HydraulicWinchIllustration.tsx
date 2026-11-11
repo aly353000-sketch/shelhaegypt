@@ -154,7 +154,7 @@ export const HydraulicWinchIllustration: React.FC = () => {
 
                 {/* Company Name on Truck */}
                 <text x="160" y="365" fill="#ffffff" fontSize="14" fontWeight="900" textAnchor="middle" fontFamily="sans-serif">
-                  شلها
+                  رويال موفرز
                 </text>
                 <text x="160" y="376" fill="#bae6fd" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">
                   ونش هيدروليكي معتمد
@@ -215,7 +215,7 @@ export const HydraulicWinchIllustration: React.FC = () => {
                   <rect x="18" y="-45" width="40" height="43" rx="3" fill="#d97706" stroke="#92400e" strokeWidth="1.5" />
                   {/* Shilha box label */}
                   <text x="38" y="-24" fill="#ffffff" fontSize="9" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">
-                    شلها
+                    رويال موفرز
                   </text>
                   <text x="38" y="-14" fill="#fef08a" fontSize="5" textAnchor="middle" fontFamily="sans-serif">
                     FRAGILE ⚠️
@@ -269,7 +269,7 @@ export const HydraulicWinchIllustration: React.FC = () => {
           <div className="pt-4 border-t border-blue-900/40 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
             <div className="flex items-center gap-2 text-sky-300 font-bold">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>{t('صورة توضيحية: ونش شلها الهيدروليكي يرفع طقم كنب وكراتين مع أحزمة أمان متطورة', 'Illustration: Shilha Winch Lifting Wrapped Sofa & Boxes with Safety Straps')}</span>
+              <span>{t('صورة توضيحية: ونش رويال موفرز الهيدروليكي يرفع طقم كنب وكراتين مع أحزمة أمان متطورة', 'Illustration: Shilha Winch Lifting Wrapped Sofa & Boxes with Safety Straps')}</span>
             </div>
             <span className="text-[11px] text-slate-400">
               {t('سرعة وأمان 100% بدون تجريح الجدران أو السلالم', 'Zero scratch on narrow stairs & elevators')}
@@ -282,13 +282,13 @@ export const HydraulicWinchIllustration: React.FC = () => {
           <div className="rounded-2xl overflow-hidden max-h-[420px] flex items-center justify-center">
             <img
               src="/assets/aistudio/FB_IMG_1793231505624_3f6ca3c9.jpg"
-              alt={t('أوناش رفع الأثاث الهيدروليكية لشركة شلها لنقل العفش', 'Shilha Hydraulic Winch Real Field Photo')}
+              alt={t('أوناش رفع الأثاث الهيدروليكية لشركة رويال موفرز VIP لنقل العفش', 'Shilha Hydraulic Winch Real Field Photo')}
               className="w-full h-auto object-cover object-center"
               loading="lazy"
             />
           </div>
           <div className="p-3 text-center text-xs font-bold text-slate-300">
-            {t('منظومة شلها الميدانية: شاحنة النقل المغلقة والونش الهيدروليكي في خدمة عميل بمصر', 'Shilha Field Team: Closed Padded Truck & Hydraulic Winch on Duty')}
+            {t('منظومة رويال موفرز الميدانية: شاحنة النقل المغلقة والونش الهيدروليكي في خدمة عميل بمصر', 'Shilha Field Team: Closed Padded Truck & Hydraulic Winch on Duty')}
           </div>
         </div>
       )}

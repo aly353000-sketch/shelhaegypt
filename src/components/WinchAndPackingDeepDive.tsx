@@ -41,38 +41,38 @@ export const WinchAndPackingDeepDive: React.FC = () => {
             
             {/* Text & Features (7 cols) */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center gap-2 bg-blue-100 text-blue-900 border border-blue-200 px-3.5 py-1.5 rounded-full text-xs font-bold shadow-xs">
-                  <Truck className="w-4 h-4 text-blue-600" />
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="inline-flex items-center gap-2 bg-blue-100 text-blue-900 border border-blue-200 px-4 py-2 rounded-full text-sm sm:text-base font-black shadow-xs">
+                  <Truck className="w-5 h-5 text-blue-600" />
                   <span>أوناش هيدروليكية للأدوار المرتفعة حتى الدور 25</span>
                 </span>
-                <span className="bg-emerald-100 text-emerald-800 border border-emerald-300 px-3 py-1 rounded-full text-xs font-black shadow-xs">
-                  سعر الونش يبدأ من ١,٧٠٠ ج.م فقط ⚡
+                <span className="bg-emerald-100 text-emerald-800 border border-emerald-300 px-4 py-2 rounded-full text-sm sm:text-base font-black shadow-xs">
+                  سعر الونش يبدأ من ٢,٥٠٠ ج.م فقط ⚡
                 </span>
               </div>
 
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
                 ونش رفع وتنزيل الأثاث.. حماية تامة من ضيق السلالم والمصاعد
               </h2>
 
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                وداعاً لتجريح جدران السلالم أو تكسير الرخام وضيق المصاعد! توفر شركة شلها أحدث أوناش رفع الأثاث الهيدروليكية المحمولة على شاحنات مجهزة. يحقق الونش وصول غرف النوم الضخمة والكنب والزجاج والأجهزة إلى شقتك حتى الطابق الـ 25 بدون أي خدش، مع مشغلين معتمدين وأحزمة أمان مطاطية.
+              <p className="text-base sm:text-lg lg:text-xl text-slate-700 leading-relaxed font-medium">
+                وداعاً لتجريح جدران السلالم أو تكسير الرخام وضيق المصاعد! توفر شركة رويال موفرز VIP أحدث أوناش رفع الأثاث الهيدروليكية المحمولة على شاحنات مجهزة. يحقق الونش وصول غرف النوم الضخمة والكنب والزجاج والأجهزة إلى شقتك حتى الطابق الـ 25 بدون أي خدش، مع مشغلين معتمدين وأحزمة أمان مطاطية.
               </p>
 
               {/* Highlights 4-box grid */}
-              <div className="grid grid-cols-2 gap-3.5 pt-2">
+              <div className="grid grid-cols-2 gap-4 pt-2">
                 {[
-                  { title: 'سعر يبدأ من 1700ج', desc: 'تكلفة واضحة وثابتة بدون أي مصاريف خفية' },
+                  { title: 'سعر يبدأ من 2500ج', desc: 'تكلفة واضحة وثابتة بدون أي مصاريف خفية' },
                   { title: 'حتى الدور 25', desc: 'أقصى ارتفاع هيدروليكي فائق الأمان' },
                   { title: '400 كجم حمولة', desc: 'رفع وتنزيل أثقل غرف النوم والرخام' },
                   { title: 'أقل من ساعتين', desc: 'تنزيل أو رفع عفش شقة كاملة بسلام' },
                 ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-2xl border border-blue-100 bg-blue-50/50 hover:bg-white hover:border-blue-400 hover:shadow-md transition-all"
+                    className="p-5 rounded-2xl border-2 border-blue-100 bg-blue-50/60 hover:bg-white hover:border-blue-400 hover:shadow-md transition-all"
                   >
-                    <div className="text-blue-700 font-black text-base sm:text-lg">{item.title}</div>
-                    <div className="text-xs mt-1 text-slate-600 font-medium">
+                    <div className="text-blue-700 font-black text-lg sm:text-xl">{item.title}</div>
+                    <div className="text-sm sm:text-base mt-1 text-slate-700 font-bold">
                       {item.desc}
                     </div>
                   </div>
@@ -80,23 +80,23 @@ export const WinchAndPackingDeepDive: React.FC = () => {
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
+              <div className="flex flex-wrap items-center gap-3.5 pt-2">
                 <a
                   href={`tel:${COMPANY_DATA.phones[0].number}`}
-                  className="bg-gradient-to-r from-blue-700 to-sky-600 hover:from-blue-600 hover:to-sky-500 text-white font-black px-6 py-3.5 rounded-2xl text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-blue-500/25 transition-all hover:scale-105 active:scale-95"
+                  className="bg-gradient-to-r from-blue-700 to-sky-600 hover:from-blue-600 hover:to-sky-500 text-white font-black px-7 py-4 rounded-2xl text-base sm:text-lg flex items-center gap-2.5 shadow-lg shadow-blue-500/25 transition-all hover:scale-105 active:scale-95"
                 >
-                  <Phone className="w-4 h-4" />
-                  <span>طلب ونش هيدروليكي الآن (1700ج)</span>
+                  <Phone className="w-5 h-5" />
+                  <span>طلب ونش هيدروليكي الآن (2500ج)</span>
                 </a>
                 <a
                   href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-                    'السلام عليكم، استفسار عن حجز ونش رفع عفش هيدروليكي بسعر 1700ج من شركة شلها'
+                    'السلام عليكم، استفسار عن حجز ونش رفع عفش هيدروليكي بسعر 2500ج من شركة رويال موفرز VIP'
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-bold px-5 py-3.5 rounded-2xl text-xs sm:text-sm flex items-center gap-2 border bg-emerald-600 hover:bg-emerald-500 text-white transition-all hover:scale-105 active:scale-95 shadow-md"
+                  className="font-black px-7 py-4 rounded-2xl text-base sm:text-lg flex items-center gap-2.5 border bg-emerald-600 hover:bg-emerald-500 text-white transition-all hover:scale-105 active:scale-95 shadow-md"
                 >
-                  <WhatsAppIcon className="w-4 h-4 text-white" />
+                  <WhatsAppIcon className="w-5 h-5 text-white" />
                   <span>معاينة مجانية وتحديد موعد الونش</span>
                 </a>
               </div>
@@ -107,7 +107,7 @@ export const WinchAndPackingDeepDive: React.FC = () => {
               <div className="rounded-3xl overflow-hidden border-2 border-blue-200 shadow-2xl bg-slate-900 relative">
                 <img
                   src="/assets/aistudio/FB_IMG_1793372096933_b1d91a1d.jpg"
-                  alt="ونش رفع الأثاث الهيدروليكي شركة شلها ممتد لواجهة عمارة سكنية"
+                  alt="ونش رفع الأثاث الهيدروليكي شركة رويال موفرز VIP ممتد لواجهة عمارة سكنية"
                   className="w-full h-80 sm:h-96 lg:h-[430px] object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
@@ -115,7 +115,7 @@ export const WinchAndPackingDeepDive: React.FC = () => {
 
                 {/* Badges on image */}
                 <div className="absolute top-4 right-4 bg-blue-700/90 text-white text-xs font-black px-3.5 py-1.5 rounded-xl shadow-md backdrop-blur-md">
-                  ونش شلها الهيدروليكي في الموقع ✅
+                  ونش رويال موفرز الهيدروليكي في الموقع ✅
                 </div>
 
                 <div className="absolute bottom-4 left-4 right-4 bg-slate-950/85 backdrop-blur-md text-white p-3.5 rounded-2xl border border-sky-400/30 text-xs flex items-center justify-between">
@@ -157,30 +157,30 @@ export const WinchAndPackingDeepDive: React.FC = () => {
                 >
                   <img
                     src="/assets/aistudio/IMG-20261029-WA0010_1__f198d94c.jpg"
-                    alt="فريق عمل شلها الثلاثي يغلف كنبة صالون فاخرة"
+                    alt="فريق عمل رويال موفرز الثلاثي يغلف كنبة صالون فاخرة"
                     className="w-full h-52 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
                   <div className="absolute bottom-2 right-2 left-2 text-[11px] font-bold text-white leading-tight">
-                    طاقم شلها يغلف كنبة صالون فاخرة
+                    طاقم رويال موفرز يغلف كنبة صالون فاخرة
                   </div>
                 </div>
 
                 {/* Photo 2: Worker wrapping with seal */}
                 <div 
                   className="rounded-2xl overflow-hidden border border-slate-200 shadow-md group cursor-pointer relative bg-slate-100"
-                  onClick={() => setZoomedImage('/assets/aistudio/IMG-20261029-WA0009_1__3127f7b9.jpg')}
+                  onClick={() => setZoomedImage('/assets/images/royal_movers_tape_packing.jpg')}
                 >
                   <img
-                    src="/assets/aistudio/IMG-20261029-WA0009_1__3127f7b9.jpg"
-                    alt="فني تغليف أثاث شلها يثبت شريط الأمان"
+                    src="/assets/images/royal_movers_tape_packing.jpg"
+                    alt="فني تغليف أثاث رويال موفرز VIP يثبت شريط الأمان والاسترتش الرسمي"
                     className="w-full h-52 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-                  <div className="absolute bottom-2 right-2 left-2 text-[11px] font-bold text-white leading-tight">
-                    فني التغليف وأشرطة الأمان
+                  <div className="absolute bottom-2 right-2 left-2 text-xs font-bold text-white leading-tight">
+                    فني التغليف واسترتش رويال موفرز VIP
                   </div>
                 </div>
               </div>
@@ -192,13 +192,13 @@ export const WinchAndPackingDeepDive: React.FC = () => {
               >
                 <img
                   src="/assets/aistudio/FB_IMG_1793372087782_e1c10367.jpg"
-                  alt="صندوق سيارة شلها المبطن بشرائح خشبية سويدي وأحزمة ربط"
+                  alt="صندوق سيارات رويال موفرز المبطن بشرائح خشبية سويدي وأحزمة ربط"
                   className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
                 <div className="absolute bottom-2.5 right-3 left-3 flex items-center justify-between text-xs font-bold text-white">
-                  <span>صندوق سيارة شلها المبطن والمدعم بشرائح خشبية لحماية العفش</span>
+                  <span>صندوق سيارات رويال موفرز المبطن والمدعم بشرائح خشبية لحماية العفش</span>
                   <ZoomIn className="w-4 h-4 text-sky-300" />
                 </div>
               </div>
@@ -242,7 +242,7 @@ export const WinchAndPackingDeepDive: React.FC = () => {
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <a
                   href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-                    'السلام عليكم، استفسار عن خدمات التغليف وفك وتركيب التكييفات (800ج) مع شركة شلها'
+                    'السلام عليكم، استفسار عن خدمات التغليف وفك وتركيب التكييفات مع شركة رويال موفرز VIP'
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -253,11 +253,11 @@ export const WinchAndPackingDeepDive: React.FC = () => {
                 </a>
 
                 <a
-                  href={`tel:${COMPANY_DATA.phones[1].number}`}
+                  href={`tel:${COMPANY_DATA.phones[0].number}`}
                   className="font-bold px-5 py-3.5 rounded-2xl text-xs sm:text-sm flex items-center gap-2 border bg-white hover:bg-slate-50 text-blue-900 border-slate-300 transition-all hover:scale-105 active:scale-95 shadow-xs"
                 >
                   <Phone className="w-4 h-4 text-blue-600" />
-                  <span>اتصال مباشر: {COMPANY_DATA.phones[1].number}</span>
+                  <span>اتصال مباشر: {COMPANY_DATA.phones[0].number}</span>
                 </a>
               </div>
 
@@ -281,7 +281,7 @@ export const WinchAndPackingDeepDive: React.FC = () => {
               className="max-h-[80vh] w-auto object-contain rounded-2xl border-2 border-sky-400 shadow-2xl"
             />
             <div className="mt-4 flex items-center justify-between w-full text-white text-xs px-2">
-              <span className="font-bold">شركة شلها لنقل وتغليف الأثاث | Shelha Furniture Movers</span>
+              <span className="font-bold">شركة رويال موفرز لنقل وتغليف الأثاث VIP | Shelha Furniture Movers</span>
               <button
                 type="button"
                 onClick={() => setZoomedImage(null)}
