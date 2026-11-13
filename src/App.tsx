@@ -23,6 +23,7 @@ import { BrandKitModal } from './components/BrandKitModal';
 import { SiteSearchBar } from './components/SiteSearchBar';
 import { DedicatedAreaLandingPage } from './components/DedicatedAreaLandingPage';
 import { CompactFaqModal } from './components/CompactFaqModal';
+import { GoogleMapsLocationSection } from './components/GoogleMapsLocationSection';
 import { CompactReviewsModal } from './components/CompactReviewsModal';
 import { ConversionAnalyticsModal } from './components/ConversionAnalyticsModal';
 
@@ -161,6 +162,9 @@ function MainAppContent() {
               onOpenFaq={() => setFaqModalOpen(true)}
               onOpenReviews={() => setReviewsModalOpen(true)}
             />
+
+            {/* 7.5 Google Maps Location & Headquarters in Mokattam, Cairo */}
+            <GoogleMapsLocationSection />
 
             {/* 8. Lead Capture Booking Form */}
             <QuickContactForm />

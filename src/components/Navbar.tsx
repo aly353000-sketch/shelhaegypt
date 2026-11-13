@@ -103,16 +103,16 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const desktopNavLinks = [
     { label: t('الرئيسية', 'Home'), href: '#hero' },
-    { label: t('خدمات الفلل والقصور', 'VIP Services'), href: '#services' },
-    { label: t('خدمات تفاعلية 🔄', 'Interactive Services'), href: '#interactive-services' },
-    { label: t('كمبوندات نخدمها 🏰', 'Compounds'), href: '#luxury-compounds' },
+    { label: t('الخدمات', 'Services'), href: '#interactive-services' },
     { label: t('الونش الهيدروليكي', 'Hydraulic Winch'), href: '#winch-section' },
     { label: t('معرض الأعمال', 'Gallery'), href: '#gallery' },
+    { label: t('مقرنا بالمقطم 📍', 'Location'), href: '#location-section' },
     { label: t('الأسئلة الشائعة', 'FAQs'), href: '#faqs' },
   ];
 
   const mobileNavLinks = [
     { label: t('الرئيسية', 'Home'), href: '#hero' },
+    { label: t('مقرنا بالمقطم 📍', 'Location'), href: '#location-section' },
     { label: t('خدمات الفلل والقصور', 'VIP Services'), href: '#services' },
     { label: t('خدمات تفاعلية 🔄', 'Interactive Services'), href: '#interactive-services' },
     { label: t('كمبوندات نخدمها 🏰', 'Compounds'), href: '#luxury-compounds' },
@@ -129,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       }`}
     >
       {/* Top Banner with Royal Blue Gradient */}
-      <div className="bg-gradient-to-r from-blue-700 via-sky-600 to-blue-800 text-white font-medium text-sm sm:text-base py-2.5 px-3 sm:px-6 shadow-sm">
+      <div className="bg-gradient-to-r from-blue-700 via-sky-600 to-blue-800 text-white font-medium text-xs sm:text-sm py-2 px-3 sm:px-6 shadow-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
           <div className="flex items-center gap-2 font-bold">
             <Clock className="w-4 h-4 text-sky-200" />
@@ -141,7 +141,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span>{t('الخط الساخن الموحد:', 'Direct Hotline:')}</span>
             <a
               href="tel:01233391255"
-              className="underline hover:text-sky-200 transition-colors font-mono text-base sm:text-lg font-black tracking-wider"
+              className="underline hover:text-sky-200 transition-colors font-mono text-sm sm:text-base font-black tracking-wider"
               dir="ltr"
             >
               01233391255
@@ -152,49 +152,45 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Main Navbar with Unified Royal Navy Blue Luxury Styling */}
       <nav className="border-b transition-colors duration-300 bg-[#020b18]/95 backdrop-blur-xl border-blue-900/60 text-white sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-22 sm:h-26 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-3">
           
-          {/* Brand Logo & Name (Royal Movers VIP) - Very Large, Modern & Filling the Header */}
-          <a href="#hero" className="flex items-center gap-3 sm:gap-4 md:gap-5 text-right group select-none py-1.5 min-w-0">
+          {/* Brand Logo & Name (Royal Movers VIP) - Compact, Crisp & Non-Wrapping */}
+          <a href="#hero" className="flex items-center gap-2.5 sm:gap-3 text-right group select-none py-1 shrink-0">
             <div className="relative shrink-0">
               <img 
                 src="/assets/logos/royal_movers_logo.jpg" 
                 alt="ROYAL MOVERS VIP Logo" 
-                className="w-13 h-13 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain rounded-2xl border-2 border-amber-400/80 shadow-xl bg-white p-1 group-hover:scale-105 transition-transform" 
+                className="w-11 h-11 sm:w-13 sm:h-13 object-contain rounded-xl border-2 border-amber-400/80 shadow-lg bg-white p-0.5 group-hover:scale-105 transition-transform" 
               />
               <span 
                 onClick={handleSecretTap}
-                className="absolute -bottom-1 -left-1 bg-amber-500 text-slate-950 font-black text-[9px] sm:text-[10px] px-1.5 py-0.5 rounded-md font-mono shadow-xs border border-white cursor-pointer select-none active:scale-90 transition-transform"
+                className="absolute -bottom-1 -left-1 bg-amber-500 text-slate-950 font-black text-[9px] px-1 py-0.5 rounded font-mono shadow-xs border border-white cursor-pointer select-none active:scale-90 transition-transform"
                 title="VIP"
               >
                 VIP
               </span>
             </div>
 
-            <div className="flex flex-col min-w-0 justify-center">
-              <div className="flex items-center gap-2 sm:gap-3">
-                <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-none font-alexandria text-white group-hover:text-amber-300 transition-colors drop-shadow-md">
+            <div className="flex flex-col justify-center shrink-0">
+              <div className="flex items-center gap-1.5">
+                <span className="text-lg sm:text-xl xl:text-2xl font-black tracking-tight leading-none font-alexandria text-white group-hover:text-amber-300 transition-colors whitespace-nowrap">
                   رويال موفرز
                 </span>
-                <span className="text-xs sm:text-sm font-black tracking-wider text-slate-950 bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 border border-amber-300 px-2.5 py-0.5 rounded-lg font-mono shadow-md shrink-0">
+                <span className="text-[10px] sm:text-xs font-black tracking-wider text-slate-950 bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 border border-amber-300 px-1.5 py-0.5 rounded-md font-mono shadow-sm shrink-0">
                   VIP
                 </span>
               </div>
 
-              {/* Prominent English Brand Name: ROYAL MOVERS VIP */}
-              <div className="flex items-center gap-2 mt-1 sm:mt-1.5">
-                <span className="text-xs sm:text-sm md:text-base lg:text-lg font-black tracking-widest text-amber-300 font-mono uppercase drop-shadow-sm" dir="ltr">
+              <div className="flex items-center gap-1.5 mt-0.5">
+                <span className="text-[10px] sm:text-xs font-black tracking-widest text-amber-300 font-mono uppercase whitespace-nowrap" dir="ltr">
                   ROYAL MOVERS VIP
-                </span>
-                <span className="text-xs text-sky-200 font-bold hidden sm:inline">
-                  · نقل وتغليف أثاث الفلل والقصور
                 </span>
               </div>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-3 xl:gap-5">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4 shrink-0">
             {desktopNavLinks.map((link) => (
               <a
                 key={link.href}
@@ -205,22 +201,22 @@ export const Navbar: React.FC<NavbarProps> = ({
                     onOpenGoldenTips();
                   }
                 }}
-                className="text-xs xl:text-sm font-black transition-colors py-1 text-slate-800 hover:text-blue-600 dark:text-slate-200 dark:hover:text-amber-400 whitespace-nowrap"
+                className="text-xs xl:text-sm font-bold transition-colors py-1 text-slate-100 hover:text-amber-300 whitespace-nowrap"
               >
                 {link.label}
               </a>
             ))}
 
-            {/* Desktop Areas Dropdown (Inspired by Khatwa Video) */}
+            {/* Desktop Areas Dropdown */}
             <div className="relative">
               <button
                 type="button"
                 onClick={() => setAreasDropdownOpen(!areasDropdownOpen)}
-                className="flex items-center gap-1.5 bg-gradient-to-r from-amber-500/15 to-blue-500/15 border border-amber-400/50 text-blue-950 dark:text-amber-300 px-3 py-1.5 rounded-xl text-xs xl:text-sm font-black transition-all hover:scale-105 cursor-pointer shadow-2xs"
+                className="flex items-center gap-1.5 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-400/50 text-amber-300 px-2.5 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer whitespace-nowrap"
                 aria-expanded={areasDropdownOpen}
               >
-                <Compass className="w-3.5 h-3.5 text-amber-500" />
-                <span>أهم المناطق 🏰</span>
+                <Compass className="w-3.5 h-3.5 text-amber-400" />
+                <span>أهم المناطق</span>
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform ${areasDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
@@ -263,13 +259,13 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Desktop Hotline & Search Button */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2 shrink-0">
             {/* Phone numbers trigger */}
             <div className="relative">
               <button
                 type="button"
                 onClick={() => setPhonesDropdownOpen(!phonesDropdownOpen)}
-                className="flex items-center gap-2 border px-3 py-2 rounded-xl text-xs font-bold transition-all bg-white hover:bg-slate-50 border-slate-300 text-slate-800 shadow-sm cursor-pointer"
+                className="flex items-center gap-1.5 border px-2.5 py-2 rounded-xl text-xs font-bold transition-all bg-white hover:bg-slate-50 border-slate-300 text-slate-800 shadow-sm cursor-pointer whitespace-nowrap"
                 aria-expanded={phonesDropdownOpen}
                 aria-label="عرض أرقام الهواتف المتاحة"
               >
@@ -324,11 +320,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 type="button"
                 onClick={onOpenBrandKit}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-amber-400/50 bg-amber-500/15 hover:bg-amber-500 text-amber-300 hover:text-slate-950 font-black text-xs shadow-sm transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                className="flex items-center gap-1 px-2.5 py-2 rounded-xl border border-amber-400/50 bg-amber-500/15 hover:bg-amber-500 text-amber-300 hover:text-slate-950 font-black text-xs shadow-sm transition-all cursor-pointer whitespace-nowrap"
                 title="لوجو وهوية رويال موفرز VIP"
               >
                 <span>👑</span>
-                <span>لوجو وهويّة رويال</span>
+                <span>هوية رويال</span>
               </button>
             )}
 
@@ -337,11 +333,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 type="button"
                 onClick={onOpenConversions}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-emerald-400/50 bg-emerald-500/15 hover:bg-emerald-500 text-emerald-300 hover:text-slate-950 font-black text-xs shadow-sm transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                className="flex items-center gap-1 px-2.5 py-2 rounded-xl border border-emerald-400/50 bg-emerald-500/15 hover:bg-emerald-500 text-emerald-300 hover:text-slate-950 font-black text-xs shadow-sm transition-all cursor-pointer whitespace-nowrap"
                 title="لوحة تحكم إحصائيات وتحويلات الإعلانات (خاصة بالمالك)"
               >
                 <BarChart3 className="w-3.5 h-3.5" />
-                <span>إحصائيات التحويلات</span>
+                <span>التحويلات</span>
               </button>
             )}
 
@@ -349,11 +345,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               type="button"
               onClick={onOpenSearch}
-              className="p-2.5 rounded-xl border border-slate-300 dark:border-blue-800 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-blue-950 text-slate-800 dark:text-amber-400 shadow-sm transition-all hover:scale-105 active:scale-95 flex items-center justify-center cursor-pointer"
+              className="p-2 rounded-xl border border-blue-800 bg-slate-900 hover:bg-blue-950 text-amber-400 shadow-sm transition-all flex items-center justify-center cursor-pointer shrink-0"
               aria-label="بحث في الموقع"
               title="بحث في الموقع"
             >
-              <Search className="w-4 h-4 text-blue-600 dark:text-amber-400" />
+              <Search className="w-4 h-4 text-amber-400" />
             </button>
           </div>
 

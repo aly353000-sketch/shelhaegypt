@@ -216,8 +216,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrandKit, onOpenConversion
 
             <p className={`text-sm sm:text-base lg:text-lg leading-relaxed ${theme === 'light' ? 'text-slate-700 font-medium' : 'text-slate-300'}`}>
               {t(
-                'رويال موفرز VIP لنقل وتغليف أثاث الفلل والقصور والشركات بمصر. خدمة فندقية راقية وخصوصية تامة، وأحدث أوناش رفع هيدروليكية وسيارات مغلقة لحماية أثاثك الثمين.',
-                'Royal Movers VIP Egypt: Luxury white-glove relocation for villas, mansions, and corporate estates with extreme care and complete privacy.'
+                'رويال موفرز VIP لنقل وتغليف أثاث الشقق والفلل والشركات بمصر. نجمع بين الفخامة والجودة الفندقية والأسعار العادلة المناسبة لميزانيتك، بأحدث الأوناش الهيدروليكية والسيارات المغلقة.',
+                'Royal Movers VIP Egypt: Quality moving & packing for apartments, villas, and offices at fair, transparent prices.'
               )}
             </p>
 
@@ -311,7 +311,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrandKit, onOpenConversion
 
               <a
                 href={`https://wa.me/2001233391255?text=${encodeURIComponent(
-                  t('السلام عليكم، استفسار عن خدمات نقل وتغليف أثاث الفلل والقصور مع رويال موفرز VIP', 'Hello, inquiry about VIP moving services.')
+                  t('السلام عليكم، أرغب في معرفة أسعار وباقات نقل العفش المناسبة مع رويال موفرز VIP', 'Hello, inquiry about moving packages & pricing.')
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"

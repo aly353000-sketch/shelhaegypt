@@ -43,6 +43,17 @@ export const COMPANY_DATA = {
   ],
   whatsappDefault: '01233391255',
   hours: 'متاحون على مدار 24 ساعة طوال أيام الأسبوع',
+  location: {
+    city: 'القاهرة',
+    district: 'المقطم',
+    fullAddress: 'شارع 9، ميدان النافورة، المقطم، محافظة القاهرة، مصر',
+    shortAddress: 'المقطم، القاهرة',
+    coordinates: {
+      lat: 30.0131,
+      lng: 31.3026,
+    },
+    googleMapsUrl: 'https://maps.google.com/?q=30.0131,31.3026+(رويال+موفرز+VIP+-+المقطم)',
+  },
   stats: [
     { label: 'عملية نقل ناجحة', value: '+14,500', icon: 'CheckCircle' },
     { label: 'نسبة رضاء العملاء', value: '99.4%', icon: 'Heart' },
