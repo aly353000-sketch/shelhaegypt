@@ -337,63 +337,65 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrandKit, onOpenConversion
 
         </div>
 
-        {/* Google & Digital Ad Campaigns Readiness Card - Royal Navy Theme */}
-        <div className="p-5 sm:p-6 rounded-3xl border-2 bg-gradient-to-r from-[#031126] via-[#071d49] to-[#031126] border-blue-800 text-white flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl text-right">
-          <div className="flex items-center gap-3.5 w-full md:w-auto">
-            <div className="w-12 h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center shrink-0 shadow-md font-bold text-xl">
-              👑
-            </div>
-            <div>
-              <div className="text-sm sm:text-base font-black text-white flex flex-wrap items-center gap-2">
-                <span>رابط الموقع الرسمي وهوية رويال VIP لإعلانات Google والفيسبوك</span>
-                <span className="text-[10px] font-black bg-emerald-950 text-emerald-300 border border-emerald-500/50 px-2 py-0.5 rounded-full shadow-2xs">
-                  جاهز 100% للأرشفة والإعلانات
-                </span>
+        {/* Google & Digital Ad Campaigns Readiness Card - Owner Only */}
+        {isOwner && (
+          <div className="p-5 sm:p-6 rounded-3xl border-2 bg-gradient-to-r from-[#031126] via-[#071d49] to-[#031126] border-blue-800 text-white flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl text-right">
+            <div className="flex items-center gap-3.5 w-full md:w-auto">
+              <div className="w-12 h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center shrink-0 shadow-md font-bold text-xl">
+                👑
               </div>
-              <div className="text-xs text-amber-300 font-mono mt-1 dir-ltr select-all break-all font-bold">
-                https://shelhaegypt.com
+              <div>
+                <div className="text-sm sm:text-base font-black text-white flex flex-wrap items-center gap-2">
+                  <span>رابط الموقع الرسمي وهوية رويال VIP لإعلانات Google والفيسبوك</span>
+                  <span className="text-[10px] font-black bg-emerald-950 text-emerald-300 border border-emerald-500/50 px-2 py-0.5 rounded-full shadow-2xs">
+                    جاهز 100% للأرشفة والإعلانات
+                  </span>
+                </div>
+                <div className="text-xs text-amber-300 font-mono mt-1 dir-ltr select-all break-all font-bold">
+                  https://shelhaegypt.com
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto justify-end">
-            {/* Conversions Analytics Dashboard Trigger (Owner Only) */}
-            {onOpenConversions && isOwner && (
+            <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto justify-end">
+              {/* Conversions Analytics Dashboard Trigger (Owner Only) */}
+              {onOpenConversions && (
+                <button
+                  type="button"
+                  onClick={onOpenConversions}
+                  className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm bg-emerald-600 hover:bg-emerald-500 text-white shadow-md transition-all cursor-pointer active:scale-95"
+                >
+                  <BarChart3 className="w-4 h-4" />
+                  <span>📊 لوحة قياس التحويلات (خاصة بالمالك)</span>
+                </button>
+              )}
+
+              {onOpenBrandKit && (
+                <button
+                  type="button"
+                  onClick={onOpenBrandKit}
+                  className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-md transition-all cursor-pointer active:scale-95"
+                >
+                  <span>👑</span>
+                  <span>لوجوهات وهوية رويال VIP</span>
+                </button>
+              )}
+
               <button
                 type="button"
-                onClick={onOpenConversions}
-                className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm bg-emerald-600 hover:bg-emerald-500 text-white shadow-md transition-all cursor-pointer active:scale-95"
+                onClick={handleCopyWebsiteLink}
+                className={`flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm transition-all shadow-md cursor-pointer whitespace-nowrap ${
+                  copiedLink
+                    ? 'bg-emerald-600 text-white scale-105'
+                    : 'bg-blue-600 hover:bg-blue-500 text-white hover:scale-105 active:scale-95'
+                }`}
               >
-                <BarChart3 className="w-4 h-4" />
-                <span>📊 لوحة قياس التحويلات (خاصة بالمالك)</span>
+                {copiedLink ? <Check className="w-4 h-4 text-white" /> : <Copy className="w-4 h-4 text-white" />}
+                <span>{copiedLink ? 'تم نسخ الرابط بنجاح ✓' : 'نسخ رابط الموقع 📋'}</span>
               </button>
-            )}
-
-            {onOpenBrandKit && (
-              <button
-                type="button"
-                onClick={onOpenBrandKit}
-                className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-md transition-all cursor-pointer active:scale-95"
-              >
-                <span>👑</span>
-                <span>لوجوهات وهوية رويال VIP</span>
-              </button>
-            )}
-
-            <button
-              type="button"
-              onClick={handleCopyWebsiteLink}
-              className={`flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-black text-xs sm:text-sm transition-all shadow-md cursor-pointer whitespace-nowrap ${
-                copiedLink
-                  ? 'bg-emerald-600 text-white scale-105'
-                  : 'bg-blue-600 hover:bg-blue-500 text-white hover:scale-105 active:scale-95'
-              }`}
-            >
-              {copiedLink ? <Check className="w-4 h-4 text-white" /> : <Copy className="w-4 h-4 text-white" />}
-              <span>{copiedLink ? 'تم نسخ الرابط بنجاح ✓' : 'نسخ رابط الموقع 📋'}</span>
-            </button>
+            </div>
           </div>
-        </div>
+        )}
 
 
 

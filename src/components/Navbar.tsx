@@ -315,8 +315,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </div>
 
-            {/* Brand Kit & Logos Hub Trigger (Desktop) */}
-            {onOpenBrandKit && (
+            {/* Brand Kit & Logos Hub Trigger (Desktop - Owner Only) */}
+            {onOpenBrandKit && isOwner && (
               <button
                 type="button"
                 onClick={onOpenBrandKit}
@@ -369,8 +369,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
             )}
 
-            {/* Brand Kit Trigger (Mobile) */}
-            {onOpenBrandKit && (
+            {/* Brand Kit Trigger (Mobile - Owner Only) */}
+            {onOpenBrandKit && isOwner && (
               <button
                 type="button"
                 onClick={onOpenBrandKit}
