@@ -79,6 +79,7 @@ export const VideoShowcase: React.FC = () => {
 
   return (
     <section id="video-section" className="py-16 lg:py-24 text-right bg-gradient-to-b from-slate-50 via-white to-blue-50/30 border-y border-slate-200">
+      <div id="winch-section" className="scroll-mt-24" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

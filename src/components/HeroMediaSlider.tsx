@@ -63,7 +63,7 @@ const SLIDES: MediaSlide[] = [
   {
     type: 'image',
     src: '/assets/images/royal_delicate_packing.jpg',
-    titleAr: 'عناية فائقة بنقل التحف والنجف والمقتنيات الحساسة داخل صالونات القصور والفلل',
+    titleAr: 'عناية فائقة بنقل التحف والنجف والمقتنيات الحساسة داخل الشقق والفلل',
     titleEn: 'White-glove Moving & Delicate Antiques Protection in Villa Salon',
     badgeAr: 'حماية التحف والزجاج 💎',
     badgeEn: 'Antiques White-Glove 💎',

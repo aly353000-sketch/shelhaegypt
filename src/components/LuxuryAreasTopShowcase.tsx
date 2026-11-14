@@ -19,7 +19,7 @@ export const LuxuryAreasTopShowcase: React.FC<LuxuryAreasTopShowcaseProps> = ({ 
     {
       slug: 'new-cairo',
       name: 'التجمع الخامس والقاهرة الجديدة',
-      badge: 'قصور وفلل 👑',
+      badge: 'شقق وفلل VIP 👑',
       compounds: 'ميفيدا، قطامية هايتس، سوان ليك، هايد بارك، بيت الوطن',
       highlight: 'أوناش هيدروليكية',
       icon: '🏙️',

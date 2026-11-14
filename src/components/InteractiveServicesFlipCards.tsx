@@ -144,6 +144,7 @@ export const InteractiveServicesFlipCards: React.FC = () => {
 
   return (
     <section id="interactive-services" className="py-16 lg:py-24 text-right bg-gradient-to-b from-[#020b18] via-[#03142e] to-[#020b18] border-t border-blue-900/50 text-white relative">
+      <div id="services" className="scroll-mt-24" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Section Header */}

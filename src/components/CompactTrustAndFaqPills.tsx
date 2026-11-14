@@ -11,14 +11,15 @@ export const CompactTrustAndFaqPills: React.FC<CompactTrustAndFaqPillsProps> = (
   onOpenReviews,
 }) => {
   return (
-    <section className="py-8 bg-[#020b18] border-t border-blue-900/60">
+    <section id="faqs" className="py-8 bg-[#020b18] border-t border-blue-900/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           
           {/* FAQ Compact Pill / Card */}
-          <div
+          <button
+            type="button"
             onClick={onOpenFaq}
-            className="p-5 rounded-3xl bg-[#031126] hover:bg-[#071d49] border-2 border-blue-900/70 hover:border-amber-400 text-white shadow-lg transition-all duration-300 cursor-pointer flex items-center justify-between gap-4 group"
+            className="w-full p-5 rounded-3xl bg-[#031126] hover:bg-[#071d49] border-2 border-blue-900/70 hover:border-amber-400 text-white shadow-lg transition-all duration-300 cursor-pointer flex items-center justify-between gap-4 group text-right"
           >
             <div className="flex items-center gap-3.5">
               <div className="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-400/40 text-amber-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
@@ -43,12 +44,13 @@ export const CompactTrustAndFaqPills: React.FC<CompactTrustAndFaqPillsProps> = (
               <span className="hidden sm:inline">افتح الأسئلة</span>
               <ChevronLeft className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
             </div>
-          </div>
+          </button>
 
           {/* Reviews Compact Pill / Card */}
-          <div
+          <button
+            type="button"
             onClick={onOpenReviews}
-            className="p-5 rounded-3xl bg-[#031126] hover:bg-[#071d49] border-2 border-blue-900/70 hover:border-amber-400 text-white shadow-lg transition-all duration-300 cursor-pointer flex items-center justify-between gap-4 group"
+            className="w-full p-5 rounded-3xl bg-[#031126] hover:bg-[#071d49] border-2 border-blue-900/70 hover:border-amber-400 text-white shadow-lg transition-all duration-300 cursor-pointer flex items-center justify-between gap-4 group text-right"
           >
             <div className="flex items-center gap-3.5">
               <div className="w-12 h-12 rounded-2xl bg-emerald-500/15 border border-emerald-400/40 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
@@ -64,7 +66,7 @@ export const CompactTrustAndFaqPills: React.FC<CompactTrustAndFaqPillsProps> = (
                   </span>
                 </div>
                 <p className="text-xs text-slate-300 font-medium mt-0.5">
-                  شاهد تجارب مهندسين وأطباء وأصحاب فلل نقلوا مع رويال موفرز VIP.
+                  شاهد تجارب مهندسين وأطباء وأصحاب شقق وفلل نقلوا مع رويال موفرز VIP.
                 </p>
               </div>
             </div>
@@ -73,7 +75,7 @@ export const CompactTrustAndFaqPills: React.FC<CompactTrustAndFaqPillsProps> = (
               <span className="hidden sm:inline">آراء العملاء</span>
               <ChevronLeft className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
             </div>
-          </div>
+          </button>
 
         </div>
       </div>

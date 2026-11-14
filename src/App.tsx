@@ -3,39 +3,66 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
-import { AppProvider, useApp } from './context/AppContext';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
+import { AppProvider } from './context/AppContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { StatsCounterBar } from './components/StatsCounterBar';
 import { LuxuryCompoundsTrustStrip } from './components/LuxuryCompoundsTrustStrip';
 import { LuxuryAreasTopShowcase } from './components/LuxuryAreasTopShowcase';
-import { InteractiveServicesFlipCards } from './components/InteractiveServicesFlipCards';
-import { VideoShowcase } from './components/VideoShowcase';
-import { RealGallery } from './components/RealGallery';
 import { CompactTrustAndFaqPills } from './components/CompactTrustAndFaqPills';
 import { QuickContactForm } from './components/QuickContactForm';
 import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
 import { ScrollProgressBar } from './components/ScrollProgressBar';
-import { GoldenTipsModal } from './components/GoldenTipsModal';
-import { BrandKitModal } from './components/BrandKitModal';
-import { SiteSearchBar } from './components/SiteSearchBar';
-import { DedicatedAreaLandingPage } from './components/DedicatedAreaLandingPage';
-import { CompactFaqModal } from './components/CompactFaqModal';
-import { GoogleMapsLocationSection } from './components/GoogleMapsLocationSection';
-import { CompactReviewsModal } from './components/CompactReviewsModal';
-import { ConversionAnalyticsModal } from './components/ConversionAnalyticsModal';
 import { initGlobalConversionTracker } from './utils/analytics';
 
+// Lazy-load below-the-fold heavy sections & modals to speed up initial mobile page load
+const InteractiveServicesFlipCards = lazy(() =>
+  import('./components/InteractiveServicesFlipCards').then((m) => ({ default: m.InteractiveServicesFlipCards }))
+);
+const VideoShowcase = lazy(() =>
+  import('./components/VideoShowcase').then((m) => ({ default: m.VideoShowcase }))
+);
+const RealGallery = lazy(() =>
+  import('./components/RealGallery').then((m) => ({ default: m.RealGallery }))
+);
+const GoogleMapsLocationSection = lazy(() =>
+  import('./components/GoogleMapsLocationSection').then((m) => ({ default: m.GoogleMapsLocationSection }))
+);
+const DedicatedAreaLandingPage = lazy(() =>
+  import('./components/DedicatedAreaLandingPage').then((m) => ({ default: m.DedicatedAreaLandingPage }))
+);
+const GoldenTipsModal = lazy(() =>
+  import('./components/GoldenTipsModal').then((m) => ({ default: m.GoldenTipsModal }))
+);
+const BrandKitModal = lazy(() =>
+  import('./components/BrandKitModal').then((m) => ({ default: m.BrandKitModal }))
+);
+const SiteSearchBar = lazy(() =>
+  import('./components/SiteSearchBar').then((m) => ({ default: m.SiteSearchBar }))
+);
+const CompactFaqModal = lazy(() =>
+  import('./components/CompactFaqModal').then((m) => ({ default: m.CompactFaqModal }))
+);
+const CompactReviewsModal = lazy(() =>
+  import('./components/CompactReviewsModal').then((m) => ({ default: m.CompactReviewsModal }))
+);
+const ConversionAnalyticsModal = lazy(() =>
+  import('./components/ConversionAnalyticsModal').then((m) => ({ default: m.ConversionAnalyticsModal }))
+);
+
+function SectionPlaceholder({ id }: { id: string }) {
+  return <div id={id} className="min-h-[240px] bg-[#020b18]" aria-hidden="true" />;
+}
+
 function MainAppContent() {
-  const { theme } = useApp();
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [goldenTipsModalOpen, setGoldenTipsModalOpen] = useState(false);
   const [brandKitModalOpen, setBrandKitModalOpen] = useState(false);
   const [faqModalOpen, setFaqModalOpen] = useState(false);
   const [reviewsModalOpen, setReviewsModalOpen] = useState(false);
-  // Owner Mode Authentication state (persisted locally on owner device)
+
   const [isOwner, setIsOwner] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('royal_movers_owner_auth') === 'true';
@@ -65,7 +92,6 @@ function MainAppContent() {
     return false;
   });
 
-  // Dedicated Luxury Area Page routing state
   const [selectedAreaSlug, setSelectedAreaSlug] = useState<string | null>(() => {
     if (typeof window !== 'undefined') {
       const hash = window.location.hash;
@@ -116,20 +142,19 @@ function MainAppContent() {
   return (
     <div className="min-h-screen flex flex-col font-sans transition-colors duration-300 selection:bg-blue-600 selection:text-white bg-[#020b18] text-slate-100">
       {selectedAreaSlug ? (
-        /* Dedicated Luxury Area Landing Page (e.g. Sheikh Zayed, New Cairo, 6th October, etc.) */
-        <DedicatedAreaLandingPage 
-          areaSlug={selectedAreaSlug}
-          onBackToHome={handleBackToHome}
-          onSelectArea={handleSelectArea}
-        />
+        <Suspense fallback={<div className="min-h-screen bg-[#020b18]" />}>
+          <DedicatedAreaLandingPage
+            areaSlug={selectedAreaSlug}
+            onBackToHome={handleBackToHome}
+            onSelectArea={handleSelectArea}
+          />
+        </Suspense>
       ) : (
         <>
-          {/* Scroll Progress Bar at very top */}
           <ScrollProgressBar />
 
-          {/* Navigation Bar */}
-          <Navbar 
-            onOpenSearch={() => setSearchModalOpen(true)} 
+          <Navbar
+            onOpenSearch={() => setSearchModalOpen(true)}
             onOpenGoldenTips={() => setGoldenTipsModalOpen(true)}
             onSelectArea={handleSelectArea}
             onOpenBrandKit={() => setBrandKitModalOpen(true)}
@@ -137,107 +162,116 @@ function MainAppContent() {
             isOwner={isOwner}
           />
 
-          {/* Main Content - Streamlined, Royal Navy Blue & Luxurious */}
           <main className="flex-1">
-            {/* 1. Hero Section */}
-            <Hero 
-              onOpenGoldenTips={() => setGoldenTipsModalOpen(true)}
-            />
+            <Hero onOpenGoldenTips={() => setGoldenTipsModalOpen(true)} />
 
-            {/* 2. Live Luxury Stats Counter Bar */}
             <StatsCounterBar />
 
-            {/* 2.5 Luxury Compounds & Developers Trust Strip (Matching Reference Image 7) */}
             <LuxuryCompoundsTrustStrip onSelectArea={handleSelectArea} />
 
-            {/* 3. Luxury Areas Showcase (Prominently placed at the beginning of browsing as requested) */}
             <LuxuryAreasTopShowcase onSelectArea={handleSelectArea} />
 
-            {/* 4. 3D Interactive Flipping Services Cards (All services with tap-to-flip specs) */}
-            <InteractiveServicesFlipCards />
+            <Suspense fallback={<SectionPlaceholder id="interactive-services" />}>
+              <InteractiveServicesFlipCards />
+            </Suspense>
 
-            {/* 5. Real Video Showcase from Live Project */}
-            <VideoShowcase />
+            <Suspense fallback={<SectionPlaceholder id="winch-section" />}>
+              <VideoShowcase />
+            </Suspense>
 
-            {/* 6. Real Gallery with Category Filters */}
-            <RealGallery />
+            <Suspense fallback={<SectionPlaceholder id="gallery" />}>
+              <RealGallery />
+            </Suspense>
 
-            {/* 7. Compact Trust & FAQ Pills (Replaces long accordion & testimonials with sleek modal triggers) */}
-            <CompactTrustAndFaqPills 
+            <CompactTrustAndFaqPills
               onOpenFaq={() => setFaqModalOpen(true)}
               onOpenReviews={() => setReviewsModalOpen(true)}
             />
 
-            {/* 7.5 Google Maps Location & Headquarters in Mokattam, Cairo */}
-            <GoogleMapsLocationSection />
+            <Suspense fallback={<SectionPlaceholder id="location-section" />}>
+              <GoogleMapsLocationSection />
+            </Suspense>
 
-            {/* 8. Lead Capture Booking Form */}
             <QuickContactForm />
           </main>
 
-          {/* Footer (Without visual SEO keyword clutter) */}
-          <Footer 
-            onOpenBrandKit={() => setBrandKitModalOpen(true)} 
+          <Footer
+            onOpenBrandKit={() => setBrandKitModalOpen(true)}
             onOpenConversions={() => setConversionsModalOpen(true)}
             isOwner={isOwner}
           />
         </>
       )}
 
-      {/* Floating Call & WhatsApp Buttons */}
       <FloatingActions />
 
-      {/* Interactive Search Modal */}
       {searchModalOpen && (
         <div
           className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm overflow-y-auto p-4 flex items-start sm:items-center justify-center pt-20 sm:pt-4 animate-fadeIn"
           onClick={() => setSearchModalOpen(false)}
         >
           <div onClick={(e) => e.stopPropagation()} className="w-full max-w-2xl relative">
-            <SiteSearchBar 
-              onClose={() => setSearchModalOpen(false)}
-              onOpenGoldenTips={() => {
-                setSearchModalOpen(false);
-                setGoldenTipsModalOpen(true);
-              }}
-              autoFocus
-            />
+            <Suspense fallback={null}>
+              <SiteSearchBar
+                onClose={() => setSearchModalOpen(false)}
+                onOpenGoldenTips={() => {
+                  setSearchModalOpen(false);
+                  setGoldenTipsModalOpen(true);
+                }}
+                autoFocus
+              />
+            </Suspense>
           </div>
         </div>
       )}
 
-      {/* Interactive Golden Tips Modal */}
-      <GoldenTipsModal 
-        isOpen={goldenTipsModalOpen} 
-        onClose={() => setGoldenTipsModalOpen(false)} 
-      />
+      {goldenTipsModalOpen && (
+        <Suspense fallback={null}>
+          <GoldenTipsModal
+            isOpen={goldenTipsModalOpen}
+            onClose={() => setGoldenTipsModalOpen(false)}
+          />
+        </Suspense>
+      )}
 
-      {/* Compact Interactive FAQ Modal */}
-      <CompactFaqModal 
-        isOpen={faqModalOpen} 
-        onClose={() => setFaqModalOpen(false)} 
-      />
+      {faqModalOpen && (
+        <Suspense fallback={null}>
+          <CompactFaqModal
+            isOpen={faqModalOpen}
+            onClose={() => setFaqModalOpen(false)}
+          />
+        </Suspense>
+      )}
 
-      {/* Compact Customer Reviews Modal */}
-      <CompactReviewsModal 
-        isOpen={reviewsModalOpen} 
-        onClose={() => setReviewsModalOpen(false)} 
-      />
+      {reviewsModalOpen && (
+        <Suspense fallback={null}>
+          <CompactReviewsModal
+            isOpen={reviewsModalOpen}
+            onClose={() => setReviewsModalOpen(false)}
+          />
+        </Suspense>
+      )}
 
-      {/* Brand Kit Download Modal */}
-      <BrandKitModal 
-        isOpen={brandKitModalOpen} 
-        onClose={() => setBrandKitModalOpen(false)} 
-      />
+      {brandKitModalOpen && (
+        <Suspense fallback={null}>
+          <BrandKitModal
+            isOpen={brandKitModalOpen}
+            onClose={() => setBrandKitModalOpen(false)}
+          />
+        </Suspense>
+      )}
 
-      {/* Live Conversions Analytics & Lead Tracker Modal (Owner Authenticated) */}
-      <ConversionAnalyticsModal 
-        isOpen={conversionsModalOpen} 
-        onClose={() => setConversionsModalOpen(false)} 
-        isOwner={isOwner}
-        onAuthenticate={handleAuthenticateOwner}
-        onRevoke={handleRevokeOwner}
-      />
+      {conversionsModalOpen && (
+        <Suspense fallback={null}>
+          <ConversionAnalyticsModal
+            isOpen={conversionsModalOpen}
+            onClose={() => setConversionsModalOpen(false)}
+            isOwner={isOwner}
+            onAuthenticate={handleAuthenticateOwner}
+            onRevoke={handleRevokeOwner}
+          />
+        </Suspense>
+      )}
     </div>
   );
 }

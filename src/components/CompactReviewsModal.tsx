@@ -34,7 +34,7 @@ export const CompactReviewsModal: React.FC<CompactReviewsModalProps> = ({ isOpen
                 </span>
               </h3>
               <span className="text-xs text-sky-300 font-bold">
-                أكثر من 14,500 عميل يثقون في رويال موفرز VIP لنقل الفلل والقصور
+                أكثر من 16,850 عميل يثقون في رويال موفرز VIP لنقل الشقق والفلل بأسعار عادلة
               </span>
             </div>
           </div>

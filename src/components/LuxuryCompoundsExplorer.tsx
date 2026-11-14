@@ -312,7 +312,7 @@ export const LuxuryCompoundsExplorer: React.FC<LuxuryCompoundsExplorerProps> = (
         <div className="text-center max-w-4xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 bg-amber-500/15 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs sm:text-sm font-black px-5 py-2 rounded-full shadow-xs">
             <Sparkles className="w-4 h-4 text-amber-500" />
-            <span>{t('الوجهة الأولى لسكان الفلل والقصور والكمبوندات الفاخرة بمصر 👑', 'The #1 Luxury Movers for Prestigious Compounds in Egypt')}</span>
+            <span>{t('الوجهة الأولى لسكان الشقق والفلل والكمبوندات بأسعار عادلة وجودة VIP 👑', 'The #1 Luxury Movers for Apartments, Villas & Compounds in Egypt')}</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white leading-tight">

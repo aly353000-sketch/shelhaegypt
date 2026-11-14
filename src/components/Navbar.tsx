@@ -83,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const luxuryAreasList = [
     { name: 'نقل عفش الشيخ زايد', slug: 'sheikh-zayed', badge: 'كمبوندات النخبة 🏰' },
-    { name: 'نقل عفش التجمع الخامس', slug: 'new-cairo', badge: 'قصور وفلل 👑' },
+    { name: 'نقل عفش التجمع الخامس', slug: 'new-cairo', badge: 'شقق وفلل VIP 👑' },
     { name: 'نقل عفش 6 أكتوبر', slug: 'october', badge: 'غرب سوميد والحدائق 🛡️' },
     { name: 'نقل عفش مدينتي والرحاب', slug: 'madinaty', badge: 'طلعت مصطفى 🌴' },
     { name: 'نقل عفش العاصمة الإدارية', slug: 'new-capital', badge: 'مقرات وفلل R7 & R8 🏛️' },
@@ -113,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const mobileNavLinks = [
     { label: t('الرئيسية', 'Home'), href: '#hero' },
     { label: t('مقرنا بالمقطم 📍', 'Location'), href: '#location-section' },
-    { label: t('خدمات الفلل والقصور', 'VIP Services'), href: '#services' },
+    { label: t('خدمات الشقق والفلل VIP', 'VIP Moving Services'), href: '#services' },
     { label: t('خدمات تفاعلية 🔄', 'Interactive Services'), href: '#interactive-services' },
     { label: t('كمبوندات نخدمها 🏰', 'Compounds'), href: '#luxury-compounds' },
     { label: t('الونش الهيدروليكي', 'Hydraulic Winch'), href: '#winch-section' },
@@ -301,7 +301,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <div className={`p-2 border-t ${theme === 'light' ? 'border-slate-100' : 'border-slate-800'}`}>
                     <a
                       href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-                        t('السلام عليكم، استفسار عن خدمات نقل وتغليف أثاث الفلل والقصور مع رويال موفرز VIP', 'Hello, I want to inquire about VIP moving services with Royal Movers.')
+                        t('السلام عليكم، استفسار عن خدمات وأسعار نقل وتغليف أثاث الشقق والفلل مع رويال موفرز VIP', 'Hello, I want to inquire about VIP apartment & villa moving services and pricing with Royal Movers.')
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -464,7 +464,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div className="space-y-2 p-3 rounded-2xl bg-gradient-to-b from-blue-950/20 to-amber-500/10 border border-amber-400/30">
               <div className="flex items-center gap-2 text-xs font-black text-amber-600 dark:text-amber-400 px-1">
                 <Compass className="w-4 h-4 text-amber-500" />
-                <span>أهم المناطق وكمبوندات الفلل (صفحات مخصصة):</span>
+                <span>أهم المناطق والكمبوندات (شقق وفلل):</span>
               </div>
               <div className="grid grid-cols-1 gap-1.5">
                 {luxuryAreasList.map((area) => (
