@@ -22,15 +22,15 @@
 
         var href = link.href.trim();
         var now = Date.now();
-        
-        // Prevent duplicate trigger on repeated bubbles or rapid re-clicks within 800ms
-        if (link.__lastGaTrackTime && (now - link.__lastGaTrackTime < 800)) {
-          return;
-        }
+        window.__lastGaEventTime = window.__lastGaEventTime || {};
 
         if (href.startsWith('tel:')) {
-          link.__lastGaTrackTime = now;
           var phoneNumber = href.replace('tel:', '').trim();
+          var phoneKey = 'phone_' + phoneNumber;
+          if (window.__lastGaEventTime[phoneKey] && (now - window.__lastGaEventTime[phoneKey] < 800)) {
+            return;
+          }
+          window.__lastGaEventTime[phoneKey] = now;
           if (typeof gtag === 'function') {
             gtag('event', 'phone_click', {
               phone_number: phoneNumber,
@@ -47,7 +47,11 @@
             });
           }
         } else if (href.indexOf('wa.me') !== -1 || href.indexOf('api.whatsapp.com') !== -1) {
-          link.__lastGaTrackTime = now;
+          var waKey = 'wa_' + href;
+          if (window.__lastGaEventTime[waKey] && (now - window.__lastGaEventTime[waKey] < 800)) {
+            return;
+          }
+          window.__lastGaEventTime[waKey] = now;
           if (typeof gtag === 'function') {
             gtag('event', 'whatsapp_click', {
               whatsapp_url: href,
@@ -317,8 +321,8 @@
       ]
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-qZURJTE_.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-8LxWm0BR.css">
+    <script type="module" crossorigin src="/assets/index-COGHZHHQ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CJD_Tnra.css">
   </head>
   <body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-600 selection:text-white">
     <div id="root"></div>
