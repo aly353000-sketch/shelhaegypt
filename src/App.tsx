@@ -26,6 +26,7 @@ import { CompactFaqModal } from './components/CompactFaqModal';
 import { GoogleMapsLocationSection } from './components/GoogleMapsLocationSection';
 import { CompactReviewsModal } from './components/CompactReviewsModal';
 import { ConversionAnalyticsModal } from './components/ConversionAnalyticsModal';
+import { initGlobalConversionTracker } from './utils/analytics';
 
 function MainAppContent() {
   const { theme } = useApp();
@@ -93,7 +94,11 @@ function MainAppContent() {
     };
 
     window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    const cleanupTracker = initGlobalConversionTracker();
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      cleanupTracker();
+    };
   }, []);
 
   const handleSelectArea = (slug: string) => {

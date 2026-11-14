@@ -258,3 +258,94 @@ export function trackWhatsAppClick(url: string, linkText?: string) {
     }
   }
 }
+
+/**
+ * Track quick booking / callback form lead submissions cleanly without duplicates
+ */
+export function trackBookingLead(phoneNumber: string, customerName: string, bookingRef: string) {
+  const key = `booking_${bookingRef}_${phoneNumber}`;
+  const now = Date.now();
+
+  if (typeof window !== 'undefined') {
+    window.__lastLocalEventTime = window.__lastLocalEventTime || {};
+    if (!window.__lastLocalEventTime[key] || now - window.__lastLocalEventTime[key] >= 800) {
+      window.__lastLocalEventTime[key] = now;
+      recordLocalConversion(
+        'booking',
+        'طلب اتصال من نموذج الحجز السريع',
+        `${customerName || 'عميل'} • ${phoneNumber} (${bookingRef})`
+      );
+    }
+
+    window.__lastGaEventTime = window.__lastGaEventTime || {};
+    if (window.__lastGaEventTime[key] && now - window.__lastGaEventTime[key] < 800) {
+      return;
+    }
+    window.__lastGaEventTime[key] = now;
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'generate_lead', {
+        lead_source: 'quick_contact_form',
+        booking_ref: bookingRef,
+        event_category: 'lead',
+        event_label: phoneNumber,
+      });
+
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-18544594401',
+        event_category: 'lead',
+        event_label: `Callback_${bookingRef}`,
+      });
+    }
+  }
+}
+
+function inferLinkSourceLabel(link: HTMLAnchorElement, type: 'phone' | 'whatsapp'): string {
+  const aria = link.getAttribute('aria-label')?.trim();
+  const text = link.textContent?.replace(/\s+/g, ' ').trim();
+  const baseLabel = type === 'phone' ? 'اتصال هاتفي' : 'محادثة واتساب';
+
+  let sectionTag = '';
+  if (link.closest('header, nav')) sectionTag = 'الشريط العلوي';
+  else if (link.closest('footer')) sectionTag = 'أسفل الموقع';
+  else if (link.closest('#hero')) sectionTag = 'القسم الرئيسي';
+  else if (link.closest('#location-section')) sectionTag = 'خريطة المقطم';
+  else if (link.closest('#winch-section, #winch-deep-dive')) sectionTag = 'قسم الونش';
+  else if (link.closest('#interactive-services, #services')) sectionTag = 'بطاقات الخدمات';
+
+  if (aria && aria.length <= 45) return aria;
+  if (text && text.length > 2 && text.length <= 45 && !/^\d+$/.test(text)) {
+    return sectionTag ? `${text} (${sectionTag})` : text;
+  }
+  return sectionTag ? `${baseLabel} (${sectionTag})` : baseLabel;
+}
+
+/**
+ * Attach a single site-wide click listener so every tel: and wa.me link
+ * logs cleanly to the owner conversion dashboard without modifying every component.
+ */
+export function initGlobalConversionTracker(): () => void {
+  if (typeof document === 'undefined') return () => {};
+
+  const handleDocumentClick = (event: MouseEvent) => {
+    const target = event.target as HTMLElement | null;
+    const link = target?.closest?.('a') as HTMLAnchorElement | null;
+    if (!link) return;
+
+    const href = (link.getAttribute('href') || link.href || '').trim();
+    if (!href) return;
+
+    if (href.startsWith('tel:')) {
+      const phone = href.replace('tel:', '').trim();
+      const label = inferLinkSourceLabel(link, 'phone');
+      trackPhoneClick(phone, label, href);
+    } else if (href.includes('wa.me') || href.includes('api.whatsapp.com')) {
+      const label = inferLinkSourceLabel(link, 'whatsapp');
+      trackWhatsAppClick(href, label);
+    }
+  };
+
+  document.addEventListener('click', handleDocumentClick);
+  return () => document.removeEventListener('click', handleDocumentClick);
+}
+
