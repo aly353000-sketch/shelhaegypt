@@ -28,6 +28,7 @@ declare global {
     gtag?: (...args: any[]) => void;
     dataLayer?: any[];
     __lastGaEventTime?: Record<string, number>;
+    __lastLocalEventTime?: Record<string, number>;
   }
 }
 
@@ -188,33 +189,35 @@ function generateInitialSampleData(): ConversionRecord[] {
 export function trackPhoneClick(phoneNumber: string, linkText?: string, linkUrl?: string) {
   const key = `phone_${phoneNumber}`;
   const now = Date.now();
-  window.__lastGaEventTime = window.__lastGaEventTime || {};
 
-  // Deduplicate if fired within 800ms
-  if (window.__lastGaEventTime[key] && now - window.__lastGaEventTime[key] < 800) {
-    return;
-  }
-  window.__lastGaEventTime[key] = now;
+  if (typeof window !== 'undefined') {
+    window.__lastLocalEventTime = window.__lastLocalEventTime || {};
+    if (!window.__lastLocalEventTime[key] || now - window.__lastLocalEventTime[key] >= 800) {
+      window.__lastLocalEventTime[key] = now;
+      recordLocalConversion('phone', linkText || 'اتصال هاتفي', phoneNumber);
+    }
 
-  // 1. Record in local conversion tracker
-  recordLocalConversion('phone', linkText || 'اتصال هاتفي', phoneNumber);
+    window.__lastGaEventTime = window.__lastGaEventTime || {};
+    if (window.__lastGaEventTime[key] && now - window.__lastGaEventTime[key] < 800) {
+      return;
+    }
+    window.__lastGaEventTime[key] = now;
 
-  // 2. Dispatch to GA4 and Google Ads if gtag is loaded
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    window.gtag('event', 'phone_click', {
-      phone_number: phoneNumber,
-      link_url: linkUrl || `tel:${phoneNumber}`,
-      link_text: linkText || 'Phone Call',
-      event_category: 'engagement',
-      event_label: phoneNumber,
-    });
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'phone_click', {
+        phone_number: phoneNumber,
+        link_url: linkUrl || `tel:${phoneNumber}`,
+        link_text: linkText || 'Phone Call',
+        event_category: 'engagement',
+        event_label: phoneNumber,
+      });
 
-    // Google Ads Conversion tracking for Call Lead
-    window.gtag('event', 'conversion', {
-      send_to: 'AW-18544594401',
-      event_category: 'lead',
-      event_label: phoneNumber,
-    });
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-18544594401',
+        event_category: 'lead',
+        event_label: phoneNumber,
+      });
+    }
   }
 }
 
@@ -224,32 +227,34 @@ export function trackPhoneClick(phoneNumber: string, linkText?: string, linkUrl?
 export function trackWhatsAppClick(url: string, linkText?: string) {
   const key = `wa_${url}`;
   const now = Date.now();
-  window.__lastGaEventTime = window.__lastGaEventTime || {};
 
-  // Deduplicate if fired within 800ms
-  if (window.__lastGaEventTime[key] && now - window.__lastGaEventTime[key] < 800) {
-    return;
-  }
-  window.__lastGaEventTime[key] = now;
+  if (typeof window !== 'undefined') {
+    window.__lastLocalEventTime = window.__lastLocalEventTime || {};
+    if (!window.__lastLocalEventTime[key] || now - window.__lastLocalEventTime[key] >= 800) {
+      window.__lastLocalEventTime[key] = now;
+      recordLocalConversion('whatsapp', linkText || 'محادثة واتساب', url);
+    }
 
-  // 1. Record in local conversion tracker
-  recordLocalConversion('whatsapp', linkText || 'محادثة واتساب', url);
+    window.__lastGaEventTime = window.__lastGaEventTime || {};
+    if (window.__lastGaEventTime[key] && now - window.__lastGaEventTime[key] < 800) {
+      return;
+    }
+    window.__lastGaEventTime[key] = now;
 
-  // 2. Dispatch to GA4 and Google Ads if gtag is loaded
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    window.gtag('event', 'whatsapp_click', {
-      whatsapp_url: url,
-      link_url: url,
-      link_text: linkText || 'WhatsApp Link',
-      event_category: 'engagement',
-      event_label: url,
-    });
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'whatsapp_click', {
+        whatsapp_url: url,
+        link_url: url,
+        link_text: linkText || 'WhatsApp Link',
+        event_category: 'engagement',
+        event_label: url,
+      });
 
-    // Google Ads Conversion tracking for WhatsApp Lead
-    window.gtag('event', 'conversion', {
-      send_to: 'AW-18544594401',
-      event_category: 'lead',
-      event_label: 'WhatsApp',
-    });
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-18544594401',
+        event_category: 'lead',
+        event_label: 'WhatsApp',
+      });
+    }
   }
 }
