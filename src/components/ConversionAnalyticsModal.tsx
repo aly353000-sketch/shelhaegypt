@@ -194,7 +194,7 @@ export const ConversionAnalyticsModal: React.FC<ConversionAnalyticsModalProps> =
 - مكالمات هاتفية: ${totalAllPhone}
 - محادثات واتساب: ${totalAllWhatsApp}
 - إجمالي الإحالات: ${totalAllConversions}
-- كود التتبع: AW-18544594401 (متصل بنجاح)
+- كود التتبع: AW-18544594401/Mq04CNmS1LgdEOGb4IpF (متصل بنجاح)
 -----------------------------------------
 تم التوليد تلقائياً من لوحة تحكم رويال موفرز VIP`;
 
@@ -257,7 +257,7 @@ export const ConversionAnalyticsModal: React.FC<ConversionAnalyticsModalProps> =
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
             <span>حساب إعلانات Google المرتبط:</span>
             <code className="bg-blue-950 px-2 py-0.5 rounded text-amber-300 font-mono font-bold border border-amber-400/20">
-              AW-18544594401
+              AW-18544594401/Mq04CNmS1LgdEOGb4IpF
             </code>
             <span className="text-emerald-400 font-medium">● متصل وجاهز</span>
           </div>

@@ -1,8 +1,10 @@
 /**
  * Google Analytics 4 & Google Ads Conversion Tracking Utility
- * Google Ads Conversion ID: AW-18544594401
+ * Google Ads Conversion ID: AW-18544594401/Mq04CNmS1LgdEOGb4IpF
  * GA4 Measurement ID: G-2TFJ7D161W
  */
+
+export const GOOGLE_ADS_CONTACT_SEND_TO = 'AW-18544594401/Mq04CNmS1LgdEOGb4IpF';
 
 export interface ConversionRecord {
   id: string;
@@ -213,7 +215,9 @@ export function trackPhoneClick(phoneNumber: string, linkText?: string, linkUrl?
       });
 
       window.gtag('event', 'conversion', {
-        send_to: 'AW-18544594401',
+        send_to: GOOGLE_ADS_CONTACT_SEND_TO,
+        value: 1.0,
+        currency: 'EGP',
         event_category: 'lead',
         event_label: phoneNumber,
       });
@@ -251,7 +255,9 @@ export function trackWhatsAppClick(url: string, linkText?: string) {
       });
 
       window.gtag('event', 'conversion', {
-        send_to: 'AW-18544594401',
+        send_to: GOOGLE_ADS_CONTACT_SEND_TO,
+        value: 1.0,
+        currency: 'EGP',
         event_category: 'lead',
         event_label: 'WhatsApp',
       });
@@ -292,7 +298,9 @@ export function trackBookingLead(phoneNumber: string, customerName: string, book
       });
 
       window.gtag('event', 'conversion', {
-        send_to: 'AW-18544594401',
+        send_to: GOOGLE_ADS_CONTACT_SEND_TO,
+        value: 1.0,
+        currency: 'EGP',
         event_category: 'lead',
         event_label: `Callback_${bookingRef}`,
       });
