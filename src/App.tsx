@@ -65,14 +65,16 @@ function MainAppContent() {
 
   const [isOwner, setIsOwner] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('royal_movers_owner_auth') === 'true';
+      // Purge any legacy persisted owner flag so owner controls never stay exposed
+      localStorage.removeItem('royal_movers_owner_auth');
+      return sessionStorage.getItem('royal_movers_owner_session') === 'true';
     }
     return false;
   });
 
   const handleAuthenticateOwner = () => {
     if (typeof window !== 'undefined') {
-      localStorage.setItem('royal_movers_owner_auth', 'true');
+      sessionStorage.setItem('royal_movers_owner_session', 'true');
     }
     setIsOwner(true);
   };
@@ -80,6 +82,7 @@ function MainAppContent() {
   const handleRevokeOwner = () => {
     if (typeof window !== 'undefined') {
       localStorage.removeItem('royal_movers_owner_auth');
+      sessionStorage.removeItem('royal_movers_owner_session');
     }
     setIsOwner(false);
   };
@@ -195,11 +198,7 @@ function MainAppContent() {
             <QuickContactForm />
           </main>
 
-          <Footer
-            onOpenBrandKit={() => setBrandKitModalOpen(true)}
-            onOpenConversions={() => setConversionsModalOpen(true)}
-            isOwner={isOwner}
-          />
+          <Footer />
         </>
       )}
 
