@@ -23,16 +23,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
     }
   };
 
-  const handleWinchClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const el = document.getElementById('winch-section') || document.getElementById('winch-deep-dive');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-      window.location.hash = '#winch-section';
-    }
-  };
-
   return (
     <section
       id="hero"
@@ -50,7 +40,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
             {/* Value Pill */}
             <div className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs sm:text-sm font-black shadow-sm border bg-amber-500/15 border-amber-400/40 text-amber-300">
               <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
-              <span>أفضل شركة نقل أثاث للشقق والفلل — جودة VIP وسعر اقتصادي يناسبك 👑</span>
+              <span>{t('الخدمة الفندقية الأولى لنقل وتغليف الأثاث الفاخر والفلل والشقق الراقية 👑', 'Egypt’s #1 White-Glove VIP Packing & Luxury Relocation Service 👑')}</span>
             </div>
 
             {/* Main Headline */}
@@ -58,17 +48,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
               <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-white">
                 <span className="text-amber-400 text-sm sm:text-lg font-black mb-1 tracking-wide flex items-center gap-2">
                   <span>👑</span>
-                  <span>{t('رويال موفرز VIP | أفضل شركة نقل أثاث بالقاهرة والجيزة', 'Royal Movers VIP | Best Moving Company in Cairo & Egypt')}</span>
+                  <span>{t('رويال موفرز VIP | حراس رفاهيتك لنقل وتغليف الأثاث الفاخر', 'Royal Movers VIP | Guardians of Your Comfort & Luxury Belongings')}</span>
                 </span>
-                {t('فخامة وجودة VIP لنقل أثاث بيتك..', 'White-glove luxury relocation service..')}{' '}
+                {t('مش مجرد عمال نقل.. إحنا حراس لرفاهيتك!', 'Not just movers.. guardians of your comfort!')}{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-l from-amber-400 via-yellow-300 to-amber-500">
-                  {t('بأسعار عادلة ومناسبة للشقق والفلل!', 'At fair prices for apartments & villas!')}
+                  {t('خدمة نقل وتغليف فندقية تليق ببيتك!', 'White-glove hotel-grade packing & moving!')}
                 </span>
               </h1>
               <p className="text-base sm:text-xl font-black leading-relaxed text-sky-300">
                 {t(
-                  'باقات نقل مرنة تناسب ميزانيتك في القاهرة، التجمع، مدينتي، الرحاب، المقطم، زايد و6 أكتوبر ✨',
-                  'Flexible moving packages tailored to your budget across Cairo & Giza ✨'
+                  'عناية فائقة بالتحف والنجف والصالونات والمقتنيات الثمينة في التجمع، مدينتي، الرحاب، الشيخ زايد، أكتوبر والمعادي ✨',
+                  'Supreme care for antiques, chandeliers & luxury salons across New Cairo, Madinaty, Zayed, October & Maadi ✨'
                 )}
               </p>
             </div>
@@ -76,8 +66,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
             {/* Crisp Value Description */}
             <p className="text-sm sm:text-base lg:text-lg leading-relaxed max-w-3xl font-medium text-slate-200">
               {t(
-                'سواء كنت بتنقل شقة أو فيلا أو مكتب، بنوفرلك معاملة راقية وجودة VIP بأفضل سعر مقابل خدمة في مصر: نجارين وفنيين محترفين، تغليف قوي بدون خدش، ونش رفع حديث، وسيارات مغلقة مبطنة بدون أي مصاريف خفية.',
-                'Whether moving an apartment, villa, or office, enjoy white-glove VIP care at a fair, budget-friendly rate with no hidden fees.'
+                'نوفر لك تجربة انتقال فندقية هادئة ومتكاملة بدون أي مجهود: تغليف أوروبي 5 طبقات (بابلز ثقيل واسترتش مستورد)، نجارون محترفون لفك وتركيب الغرف والمطابخ، فنيو تكييفات معتمدون، وتصاريح كمبوندات جاهزة بسيارات مغلقة ومبطنة.',
+                'Enjoy a serene, end-to-end VIP move: 5-ply European packing, master carpenters, certified AC technicians, pre-approved compound permits & padded closed trucks.'
               )}
             </p>
 
@@ -86,8 +76,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
               <a
                 href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
                   t(
-                    'السلام عليكم، أرغب في معرفة أسعار وباقات نقل العفش المناسبة للشقق والفلل مع رويال موفرز VIP',
-                    'Hello, I want to inquire about moving packages & pricing with Royal Movers VIP'
+                    'السلام عليكم، أرغب في حجز خدمة النقل والتغليف الفندقي VIP مع رويال موفرز',
+                    'Hello, I would like to book VIP white-glove moving & packing with Royal Movers'
                   )
                 )}`}
                 target="_blank"
@@ -95,7 +85,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
                 className="flex-1 sm:flex-none flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3.5 rounded-xl font-black text-sm sm:text-lg shadow-xl shadow-emerald-600/30 hover:scale-[1.02] active:scale-95 transition-all"
               >
                 <WhatsAppIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white shrink-0" />
-                <span>{t('اسأل عن السعر عبر واتساب', 'Ask Price via WhatsApp')}</span>
+                <span>{t('احجز خدمة VIP عبر واتساب', 'Book VIP Move via WhatsApp')}</span>
               </a>
 
               <a
@@ -114,15 +104,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
                 onClick={handleGoldenTipsClick}
                 className="px-3.5 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black transition-colors cursor-pointer border border-amber-300 shadow-sm"
               >
-                📖 {t('نصائح ذهبية قبل النقل', 'Golden Pre-Move Tips')}
+                📖 {t('نصائح ذهبية لحماية أثاثك', 'Golden Pre-Move Tips')}
               </button>
               <a
-                href="#winch-section"
-                onClick={handleWinchClick}
-                className="px-3.5 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-black transition-colors cursor-pointer border border-sky-300 shadow-sm flex items-center gap-1.5"
+                href="#interactive-services"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById('interactive-services') || document.getElementById('services');
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  else window.location.hash = '#interactive-services';
+                }}
+                className="px-3.5 py-2 rounded-xl bg-blue-900/90 hover:bg-blue-800 text-amber-300 font-black transition-colors cursor-pointer border border-amber-400/50 shadow-sm flex items-center gap-1.5"
               >
-                <span>🏗️</span>
-                <span>{t('ونش رفع عفش هيدروليكي (2500ج)', 'Hydraulic Winch (2500 EGP)')}</span>
+                <span>🛡️</span>
+                <span>{t('خدمات التغليف والنقل الفندقي', 'VIP Packing & Moving Services')}</span>
               </a>
             </div>
           </div>
@@ -145,8 +140,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
                   </div>
                   <p className="text-xs sm:text-sm leading-relaxed text-slate-200 font-medium">
                     {t(
-                      'بنغلف ذكرياتك بأجود رولات البابلز الفيروز الثقيل والاسترتش المستورد وكراتين 5 طبقات، مع معاينة وتسعير ثابت قبل التنفيذ.',
-                      'We wrap your memories with heavy turquoise bubble wrap, stretch film, and 5-ply cartons at a clear fixed price.'
+                      'تغليف أوروبي فائق الأمان للأنتيكات والكريستال والصالونات والأجهزة، مع معاينة مجانية وخطة نقل منظمة بسعر رسمي ثابت قبل التنفيذ.',
+                      'European-grade multi-layer packing for antiques, crystal, salons & appliances, with free survey and a transparent fixed contract.'
                     )}
                   </p>
                 </div>
@@ -164,7 +159,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
                   href="#quick-contact"
                   className="inline-flex items-center gap-1.5 font-black text-slate-950 bg-amber-400 hover:bg-amber-300 px-3.5 py-1.5 rounded-xl transition-colors shadow-sm"
                 >
-                  <span>احجز معاينة مجانية واتصل بي</span>
+                  <span>احجز معاينة مجانية VIP</span>
                   <span>👈</span>
                 </a>
               </div>

@@ -35,7 +35,7 @@ export const CompactTrustAndFaqPills: React.FC<CompactTrustAndFaqPillsProps> = (
                   </span>
                 </div>
                 <p className="text-xs text-slate-300 font-medium mt-0.5">
-                  كل ما يهمك عن تكلفة الونش (2500ج)، التكييف (800ج)، ومواد التغليف.
+                  كل ما يهمك عن التغليف الأوروبي 5 طبقات، الفك والتركيب، والانتقال للكمبوندات.
                 </p>
               </div>
             </div>
@@ -66,7 +66,7 @@ export const CompactTrustAndFaqPills: React.FC<CompactTrustAndFaqPillsProps> = (
                   </span>
                 </div>
                 <p className="text-xs text-slate-300 font-medium mt-0.5">
-                  شاهد تجارب مهندسين وأطباء وأصحاب شقق وفلل نقلوا مع رويال موفرز VIP.
+                  شاهد تجارب مهندسين وأطباء وسكان الفلل والكمبوندات مع رويال موفرز VIP.
                 </p>
               </div>
             </div>

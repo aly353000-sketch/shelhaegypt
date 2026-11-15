@@ -13,68 +13,68 @@ interface MediaSlide {
 
 const SLIDES: MediaSlide[] = [
   {
-    type: 'video',
-    src: '/assets/aistudio/VID-20261029-WA0025_08d54593.mp4',
-    titleAr: 'فيديو حي ومباشر: ونش رويال موفرز الهيدروليكي ينزل المنقولات بسلاسة وأمان تام',
-    titleEn: 'Live Field Video: Shilha Hydraulic Winch Safely Lowering Furniture',
-    badgeAr: 'فيديو ونش حي من الواقع 🎥',
-    badgeEn: 'Live Winch Field Video 🎥',
-  },
-  {
     type: 'image',
-    src: '/assets/aistudio/FB_IMG_1793372096933_b1d91a1d.jpg',
-    titleAr: 'ونش رفع وتنزيل الأثاث الهيدروليكي ممتد لواجهة العمارة بالدور السادس بأمان مطلق',
-    titleEn: 'Truck-Mounted Hydraulic Crane Extended to 6th Floor Balcony',
-    badgeAr: 'ونش هيدروليكي يبدأ من 2500ج',
-    badgeEn: 'Hydraulic Winch from 2500 EGP',
+    src: '/assets/images/royal_delicate_packing.jpg',
+    titleAr: 'عناية فائقة بتغليف وحماية التحف والنجف والصالونات الفاخرة بأعلى معايير الأمان',
+    titleEn: 'White-glove Moving & Delicate Antiques Protection in Luxury Salon',
+    badgeAr: 'تغليف فندقي VIP للتحف 💎',
+    badgeEn: 'White-Glove Antiques Care 💎',
   },
   {
     type: 'image',
     src: '/assets/aistudio/IMG-20261029-WA0010_1__f198d94c.jpg',
     titleAr: 'طاقم رويال موفرز VIP الثلاثي المتخصص أثناء إحكام تغليف كنب الصالون بالاسترتش والبابلز',
-    titleEn: 'Shilha 3-Man Specialist Crew Wrapping Luxury Sofa with Stretch & Bubble',
-    badgeAr: 'فريق التغليف المتخصص',
-    badgeEn: 'Specialist Packing Crew',
-  },
-  {
-    type: 'image',
-    src: '/assets/aistudio/FB_IMG_1793372087782_e1c10367.jpg',
-    titleAr: 'صندوق سيارات رويال موفرز المبطن والمدعم بشرائح خشبية سويدي وأحزمة ربط لحماية العفش',
-    titleEn: 'Padded Truck Cargo Bed with Solid Wood Battens & Safety Straps',
-    badgeAr: 'سيارات نقل مجهزة ومبطنة',
-    badgeEn: 'Equipped Padded Trucks',
-  },
-  {
-    type: 'image',
-    src: '/assets/aistudio/IMG-20261029-WA0039_a33b1140.jpg',
-    titleAr: 'توثيق قبل وبعد: كيف يحمي التغليف الاحترافي لرويال موفرز الأقمشة المخملية والأرجل المذهبة',
-    titleEn: 'Before & After Protection: Shielding Delicate Velvet Fabrics & Gold Legs',
-    badgeAr: 'قبل وبعد التغليف (درع أمان)',
-    badgeEn: 'Before & After Protection',
-  },
-  {
-    type: 'image',
-    src: '/assets/images/royal_winch_villa.jpg',
-    titleAr: 'ونش رويال موفرز الهيدروليكي أمام فيلا فاخرة بأرقى كمبوندات مصر (بالم هيلز وزايد)',
-    titleEn: 'Royal Movers Hydraulic Winch Operating at Luxury Compound Villa',
-    badgeAr: 'أوناش الفلل والكمبوندات 🏰',
-    badgeEn: 'Compound Villa Winch 🏰',
-  },
-  {
-    type: 'image',
-    src: '/assets/images/royal_delicate_packing.jpg',
-    titleAr: 'عناية فائقة بنقل التحف والنجف والمقتنيات الحساسة داخل الشقق والفلل',
-    titleEn: 'White-glove Moving & Delicate Antiques Protection in Villa Salon',
-    badgeAr: 'حماية التحف والزجاج 💎',
-    badgeEn: 'Antiques White-Glove 💎',
+    titleEn: 'Royal Movers 3-Man Specialist Crew Wrapping Luxury Sofa with Stretch & Bubble',
+    badgeAr: 'فريق التغليف المتخصص 🛡️',
+    badgeEn: 'Specialist Packing Crew 🛡️',
   },
   {
     type: 'image',
     src: '/assets/images/royal_movers_workers_loading.jpg',
-    titleAr: 'طاقم رويال موفرز VIP أثناء تحميل ورص الأثاث بأعلى درجات العناية بالزي والكراتين الرسمية',
+    titleAr: 'طاقم رويال موفرز VIP الرسمي أثناء تحميل ورص الأثاث بالكراتين المقواة بأعلى درجات العناية',
     titleEn: 'Royal Movers VIP Crew Loading Furniture with Uniforms & Branded Boxes',
-    badgeAr: 'طاقم عمل رسمي معتمد VIP',
-    badgeEn: 'Official Royal Movers VIP Crew',
+    badgeAr: 'طاقم عمل رسمي معتمد VIP 👑',
+    badgeEn: 'Official Royal Movers VIP Crew 👑',
+  },
+  {
+    type: 'image',
+    src: '/assets/aistudio/FB_IMG_1793372087782_e1c10367.jpg',
+    titleAr: 'صندوق سيارات رويال موفرز المغلقة والمبطنة بشرائح خشبية وأحزمة تثبيت لحماية العفش',
+    titleEn: 'Padded Closed Truck Cargo Bed with Solid Wood Battens & Safety Straps',
+    badgeAr: 'سيارات نقل مغلقة ومبطنة 🚛',
+    badgeEn: 'Equipped Padded Trucks 🚛',
+  },
+  {
+    type: 'image',
+    src: '/assets/aistudio/IMG-20261029-WA0039_a33b1140.jpg',
+    titleAr: 'توثيق قبل وبعد: كيف يحمي التغليف الأوروبي لرويال موفرز الأقمشة المخملية والأرجل المذهبة',
+    titleEn: 'Before & After Protection: Shielding Delicate Velvet Fabrics & Gold Legs',
+    badgeAr: 'قبل وبعد التغليف (درع أمان) ✨',
+    badgeEn: 'Before & After Protection ✨',
+  },
+  {
+    type: 'image',
+    src: '/assets/images/royal_winch_villa.jpg',
+    titleAr: 'تجهيزات متكاملة لنقل أثاث الفلل والكمبوندات الراقية بأعلى درجات الدقة والهدوء',
+    titleEn: 'Full Relocation Support for Luxury Compound Villas',
+    badgeAr: 'خدمة الفلل والكمبوندات 🏰',
+    badgeEn: 'Compound Villas VIP 🏰',
+  },
+  {
+    type: 'video',
+    src: '/assets/aistudio/VID-20261029-WA0025_08d54593.mp4',
+    titleAr: 'فيديو ميداني: تنزيل القطع الكبيرة والثقيلة بسلاسة وأمان تام أثناء النقل الشامل',
+    titleEn: 'Live Field Video: Safely Lowering Heavy Pieces During Full Relocation',
+    badgeAr: 'توثيق ميداني للرفع الآمن 🎥',
+    badgeEn: 'Live Field Video 🎥',
+  },
+  {
+    type: 'image',
+    src: '/assets/aistudio/FB_IMG_1793372096933_b1d91a1d.jpg',
+    titleAr: 'توافر الأوناش الهيدروليكية عند الحاجة ضمن باقات النقل المتكاملة للواجهات والأدوار العليا',
+    titleEn: 'Hydraulic Winch Support Available Within Full Relocation Packages',
+    badgeAr: 'حلول رفع للقطع الثقيلة 🛡️',
+    badgeEn: 'Heavy Piece Lift Support 🛡️',
   },
 ];
 
@@ -177,11 +177,7 @@ export const HeroMediaSlider: React.FC = () => {
       <div className="absolute -inset-1.5 bg-gradient-to-tr from-blue-600 via-sky-400 to-cyan-300 rounded-3xl blur-md opacity-50 group-hover:opacity-90 transition duration-700 pointer-events-none" />
 
       {/* Main Media Container */}
-      <div
-        className={`relative rounded-3xl overflow-hidden border shadow-2xl transition-colors duration-300 ${
-          theme === 'light' ? 'bg-white border-slate-200' : 'bg-[#051530] border-blue-800/80'
-        }`}
-      >
+      <div className="relative rounded-3xl overflow-hidden border shadow-2xl transition-colors duration-300 bg-[#051530] border-blue-800/80">
         {/* Horizontal Sliding Carousel Track */}
         <div
           className="relative h-[440px] sm:h-[500px] lg:h-[540px] w-full overflow-hidden bg-slate-950"
@@ -325,17 +321,13 @@ export const HeroMediaSlider: React.FC = () => {
         </div>
 
         {/* Card Lower Quick Strip */}
-        <div
-          className={`p-3.5 border-t space-y-2 transition-colors ${
-            theme === 'light' ? 'bg-slate-50 border-slate-200' : 'bg-[#030d20] border-blue-900/60'
-          }`}
-        >
-          <div className="flex items-center justify-between text-xs text-slate-400">
-            <span className="flex items-center gap-1 font-bold text-sky-600">
-              <ShieldCheck className="w-4 h-4 text-sky-500" />
-              {t('عناية تامة واحترافية بالمنقولات', 'Professional Care for All Belongings')}
+        <div className="p-3.5 border-t space-y-2 transition-colors bg-[#030d20] border-blue-900/60">
+          <div className="flex items-center justify-between text-xs text-slate-300">
+            <span className="flex items-center gap-1 font-bold text-amber-300">
+              <ShieldCheck className="w-4 h-4 text-amber-400" />
+              {t('عناية فائقة وتغليف أوروبي لحماية التحف والأثاث', 'White-Glove Care & European Packing')}
             </span>
-            <span className="text-emerald-500 font-bold">{t('متاح 24 ساعة', 'Available 24/7')}</span>
+            <span className="text-emerald-400 font-bold">{t('متاح 24 ساعة', 'Available 24/7')}</span>
           </div>
         </div>
       </div>
