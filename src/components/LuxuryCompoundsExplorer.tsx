@@ -515,7 +515,7 @@ export const LuxuryCompoundsExplorer: React.FC<LuxuryCompoundsExplorerProps> = (
                 {/* Direct Compound Booking Action */}
                 <div className="pt-3 border-t border-slate-200 dark:border-blue-900/60 space-y-2">
                   <a
-                    href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(comp.ctaMessage)}`}
+                    href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(comp.ctaMessage)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-black py-2.5 px-4 rounded-xl text-xs sm:text-sm shadow-md transition-all hover:scale-[1.02] active:scale-95"
@@ -553,7 +553,7 @@ export const LuxuryCompoundsExplorer: React.FC<LuxuryCompoundsExplorerProps> = (
 
           <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto shrink-0">
             <a
-              href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
+              href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
                 'السلام عليكم، استفسار عن إمكانية نقل وتغليف أثاث فيلا/شقة في كمبوند مع رويال موفرز VIP'
               )}`}
               target="_blank"

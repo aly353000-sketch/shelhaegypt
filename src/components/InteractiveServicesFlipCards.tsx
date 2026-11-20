@@ -313,7 +313,7 @@ export const InteractiveServicesFlipCards: React.FC = () => {
                     {/* Quick WhatsApp Booking from back of card */}
                     <div className="pt-2 flex items-center gap-2">
                       <a
-                        href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(card.whatsappMessage)}`}
+                        href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(card.whatsappMessage)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}

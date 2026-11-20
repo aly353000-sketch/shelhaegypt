@@ -124,7 +124,7 @@ export const GoogleMapsLocationSection: React.FC = () => {
                 </a>
 
                 <a
-                  href={`https://wa.me/2001233391255?text=${encodeURIComponent('السلام عليكم، استفسار بخصوص موقع وحجز رويال موفرز VIP فرع المقطم')}`}
+                  href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent('السلام عليكم، استفسار بخصوص موقع وحجز رويال موفرز VIP فرع المقطم')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="py-3 px-3 rounded-xl bg-emerald-600/80 hover:bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors border border-emerald-400/30"

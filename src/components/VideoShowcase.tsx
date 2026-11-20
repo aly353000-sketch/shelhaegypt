@@ -220,7 +220,7 @@ export const VideoShowcase: React.FC = () => {
             {/* Action Buttons */}
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
               <a
-                href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
+                href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
                   'السلام عليكم، شفت فيديو شغل الونش الهيدروليكي في الموقع وعايز أحجز ونش نقل عفش مع رويال موفرز VIP'
                 )}`}
                 target="_blank"

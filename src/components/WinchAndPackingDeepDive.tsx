@@ -89,7 +89,7 @@ export const WinchAndPackingDeepDive: React.FC = () => {
                   <span>طلب ونش هيدروليكي الآن (2500ج)</span>
                 </a>
                 <a
-                  href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
+                  href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
                     'السلام عليكم، استفسار عن حجز ونش رفع عفش هيدروليكي بسعر 2500ج من شركة رويال موفرز VIP'
                   )}`}
                   target="_blank"
@@ -241,7 +241,7 @@ export const WinchAndPackingDeepDive: React.FC = () => {
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <a
-                  href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
+                  href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
                     'السلام عليكم، استفسار عن خدمات التغليف وفك وتركيب التكييفات مع شركة رويال موفرز VIP'
                   )}`}
                   target="_blank"

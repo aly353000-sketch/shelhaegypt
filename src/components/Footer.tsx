@@ -297,7 +297,7 @@ export const Footer: React.FC = () => {
               </a>
 
               <a
-                href={`https://wa.me/2001233391255?text=${encodeURIComponent(
+                href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
                   t('السلام عليكم، أرغب في معرفة أسعار وباقات نقل العفش المناسبة مع رويال موفرز VIP', 'Hello, inquiry about moving packages & pricing.')
                 )}`}
                 target="_blank"

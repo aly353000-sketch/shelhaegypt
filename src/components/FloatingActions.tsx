@@ -11,7 +11,7 @@ export const FloatingActions: React.FC = () => {
   const [copiedPhone, setCopiedPhone] = useState(false);
 
   const phoneNumber = COMPANY_DATA.phones[0]?.number || '01233391255';
-  const waUrl = `https://wa.me/20${COMPANY_DATA.whatsappDefault || phoneNumber}?text=${encodeURIComponent(
+  const waUrl = `https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
     t(
       'السلام عليكم، استفسار عن خدمات وأسعار نقل وتغليف الأثاث مع رويال موفرز VIP',
       'Hello, inquiry about VIP moving services with Royal Movers Egypt.'

@@ -300,7 +300,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   ))}
                   <div className={`p-2 border-t ${theme === 'light' ? 'border-slate-100' : 'border-slate-800'}`}>
                     <a
-                      href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
+                      href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
                         t('السلام عليكم، استفسار عن خدمات وأسعار نقل وتغليف أثاث الشقق والفلل مع رويال موفرز VIP', 'Hello, I want to inquire about VIP apartment & villa moving services and pricing with Royal Movers.')
                       )}`}
                       target="_blank"
@@ -425,7 +425,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span>{t('اتصال سريع', 'Call')}</span>
               </a>
               <a
-                href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
+                href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
                   t('السلام عليكم، استفسار عن خدمات نقل وتغليف الأثاث مع رويال موفرز VIP', 'Hello, inquiry about Royal Movers VIP')
                 )}`}
                 target="_blank"

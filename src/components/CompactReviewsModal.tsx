@@ -96,7 +96,7 @@ export const CompactReviewsModal: React.FC<CompactReviewsModalProps> = ({ isOpen
               <span>01233391255</span>
             </a>
             <a
-              href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent('السلام عليكم، استفسار عن حجز نقل عفش مع رويال موفرز VIP')}`}
+              href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent('السلام عليكم، استفسار عن حجز نقل عفش مع رويال موفرز VIP')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-emerald-600 hover:bg-emerald-500 text-white font-black px-4 py-2 rounded-xl flex items-center gap-1.5"

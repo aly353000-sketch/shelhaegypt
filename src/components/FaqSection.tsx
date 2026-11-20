@@ -257,7 +257,7 @@ export const FaqSection: React.FC = () => {
 
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <a
-              href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
+              href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
                 'السلام عليكم، عندي استفسار عن خدمات نقل وتغليف الأثاث مع رويال موفرز VIP'
               )}`}
               target="_blank"

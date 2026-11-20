@@ -271,7 +271,7 @@ export const GoldenTipsModal: React.FC<GoldenTipsModalProps> = ({ isOpen, onClos
 
           <div className="flex items-center gap-2 w-full sm:w-auto">
             <a
-              href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
+              href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
                 'السلام عليكم، قرأت نصائح رويال موفرز وعندي استفسار بخصوص تجهيز ونقل الشقة'
               )}`}
               target="_blank"

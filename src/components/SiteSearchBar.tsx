@@ -3,6 +3,7 @@ import { Search, X, Truck, Package, Phone, ArrowLeft, HelpCircle, Film, ShieldCh
 import { COMPANY_DATA } from '../data/companyData';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { useApp } from '../context/AppContext';
+import { trackPhoneClick, trackWhatsAppClick } from '../utils/analytics';
 
 export interface SearchResultItem {
   id: string;
@@ -311,17 +312,18 @@ export const SiteSearchBar: React.FC<SiteSearchBarProps> = ({
     }
 
     if (item.actionType === 'phone') {
-      window.location.href = `tel:${COMPANY_DATA.phones[0].number}`;
+      const phoneNum = COMPANY_DATA.phones[0].number;
+      trackPhoneClick(phoneNum, 'بحث الموقع (اتصال)', `tel:${phoneNum}`);
+      window.location.href = `tel:${phoneNum}`;
       return;
     }
 
     if (item.actionType === 'whatsapp') {
-      window.open(
-        `https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
-          'السلام عليكم، استفسار عن خدمات شركة رويال موفرز لنقل وتغليف الأثاث VIP'
-        )}`,
-        '_blank'
-      );
+      const waUrl = `https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
+        'السلام عليكم، استفسار عن خدمات شركة رويال موفرز لنقل وتغليف الأثاث VIP'
+      )}`;
+      trackWhatsAppClick(waUrl, 'بحث الموقع (واتساب)');
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
       return;
     }
 
@@ -495,7 +497,7 @@ export const SiteSearchBar: React.FC<SiteSearchBarProps> = ({
               </p>
               <div className="flex items-center justify-center gap-2 pt-1">
                 <a
-                  href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
+                  href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
                     `السلام عليكم، أبحث عن خدمة: ${query}`
                   )}`}
                   target="_blank"

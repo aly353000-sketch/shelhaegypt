@@ -74,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
             {/* Primary Above-the-Fold Call-To-Action Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
-                href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
+                href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
                   t(
                     'السلام عليكم، أرغب في حجز خدمة النقل والتغليف الفندقي VIP مع رويال موفرز',
                     'Hello, I would like to book VIP white-glove moving & packing with Royal Movers'

@@ -114,7 +114,7 @@ export const CompactFaqModal: React.FC<CompactFaqModalProps> = ({ isOpen, onClos
               <span>01233391255</span>
             </a>
             <a
-              href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent('السلام عليكم، لدي استفسار عن خدمات رويال موفرز VIP')}`}
+              href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent('السلام عليكم، لدي استفسار عن خدمات رويال موفرز VIP')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-emerald-600 hover:bg-emerald-500 text-white font-black px-3.5 py-2 rounded-xl flex items-center gap-1.5"

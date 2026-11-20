@@ -44,7 +44,7 @@ test('Google Ads contact conversion snippet fires exact send_to, value, and EGP 
   const calls = setupMockWindow();
 
   trackPhoneClick('01233391255', 'اتصال هاتفي');
-  trackWhatsAppClick('https://wa.me/2001233391255', 'واتساب');
+  trackWhatsAppClick('https://wa.me/201233391255', 'واتساب');
   trackBookingLead('01012345678', 'عميل', 'ROYAL-1234');
 
   const conversionEvents = calls.filter((c) => c[0] === 'event' && c[1] === 'conversion');

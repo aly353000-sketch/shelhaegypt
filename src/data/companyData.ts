@@ -42,6 +42,7 @@ export const COMPANY_DATA = {
     { number: '01233391255', label: 'الخط الموحد للحجوزات والواتساب (24 ساعة)', tel: '+201233391255', isWhatsapp: true },
   ],
   whatsappDefault: '01233391255',
+  whatsappInternational: '201233391255',
   hours: 'متاحون على مدار 24 ساعة طوال أيام الأسبوع',
   location: {
     city: 'القاهرة',

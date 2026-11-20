@@ -308,7 +308,7 @@ export const ServicesSection: React.FC = () => {
                   {/* Action Buttons */}
                   <div className={`pt-6 border-t flex flex-wrap items-center gap-3.5 ${theme === 'light' ? 'border-slate-100' : 'border-blue-900/60'}`}>
                     <a
-                      href={`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(
+                      href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
                         t(`السلام عليكم، أرغب في حجز والاستفسار عن خدمة: ${activeService.title} مع رويال موفرز VIP`, `Hello, I want to book: ${activeService.title}`)
                       )}`}
                       target="_blank"

@@ -23,6 +23,7 @@ import { WhatsAppIcon } from './WhatsAppIcon';
 import { COMPANY_DATA } from '../data/companyData';
 import { LUXURY_AREAS_DATA, LuxuryAreaDetail } from '../data/luxuryAreasData';
 import { useApp } from '../context/AppContext';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 interface DedicatedAreaLandingPageProps {
   areaSlug: string;
@@ -86,7 +87,9 @@ export const DedicatedAreaLandingPage: React.FC<DedicatedAreaLandingPageProps> =
       ? `السلام عليكم، أرغب في حجز نقل أثاث لـ (${extraContext}) في منطقة (${area.name}) مع رويال موفرز VIP`
       : `السلام عليكم، أود حجز موعد لنقل أثاث في منطقة (${area.name}) مع شركة رويال موفرز VIP والاستفادة من المعاينة المجانية`;
     
-    window.open(`https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${encodeURIComponent(text)}`, '_blank');
+    const waUrl = `https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(text)}`;
+    trackWhatsAppClick(waUrl, `صفحة منطقة ${area.name} (واتساب)`);
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (

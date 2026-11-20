@@ -30,7 +30,7 @@ export const QuickContactForm: React.FC = () => {
         `"مش مجرد عمال نقل.. إحنا حراس لرفاهيتك."\n` +
         `برجاء التواصل لتأكيد الموعد والمعاينة الفنية المجانية.`
     );
-    return `https://wa.me/20${COMPANY_DATA.whatsappDefault}?text=${msg}`;
+    return `https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${msg}`;
   };
 
   const validatePhoneInput = (): string | null => {
