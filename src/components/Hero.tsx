@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Sparkles } from 'lucide-react';
-import { COMPANY_DATA } from '../data/companyData';
+import { CONTACT_INFO } from '../data/contactInfo';
 import { TrustBadges } from './TrustBadges';
 import { HeroMediaSlider } from './HeroMediaSlider';
 import { WhatsAppIcon } from './WhatsAppIcon';
@@ -28,9 +28,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
       id="hero"
       className="relative overflow-hidden pt-32 pb-10 lg:pt-32 lg:pb-14 border-b transition-colors duration-300 bg-gradient-to-b from-[#020b18] via-[#041633] to-[#020b18] border-blue-900/60 text-white"
     >
-      {/* Ambient glows */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-80 h-80 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
+      {/* Ambient glows (desktop only to avoid expensive mobile blur rasterization) */}
+      <div className="hidden sm:block absolute top-1/4 right-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="hidden sm:block absolute bottom-10 left-10 w-80 h-80 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
@@ -74,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
             {/* Primary Above-the-Fold Call-To-Action Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
-                href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
+                href={`https://wa.me/${CONTACT_INFO.whatsappInternational}?text=${encodeURIComponent(
                   t(
                     'السلام عليكم، أرغب في حجز خدمة النقل والتغليف الفندقي VIP مع رويال موفرز',
                     'Hello, I would like to book VIP white-glove moving & packing with Royal Movers'
@@ -89,7 +89,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
               </a>
 
               <a
-                href={`tel:${COMPANY_DATA.phones[0].number}`}
+                href={`tel:${CONTACT_INFO.primaryPhone}`}
                 className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-gradient-to-r from-blue-700 to-blue-600 hover:from-blue-600 hover:to-blue-500 text-white px-5 py-3.5 rounded-xl font-black text-sm sm:text-lg shadow-xl shadow-blue-700/25 hover:scale-[1.02] active:scale-95 transition-all"
               >
                 <Phone className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" />

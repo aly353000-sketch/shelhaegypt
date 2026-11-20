@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, ChevronUp, Copy, Check } from 'lucide-react';
-import { COMPANY_DATA } from '../data/companyData';
+import { CONTACT_INFO } from '../data/contactInfo';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { useApp } from '../context/AppContext';
 import { trackPhoneClick, trackWhatsAppClick } from '../utils/analytics';
@@ -10,8 +10,8 @@ export const FloatingActions: React.FC = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
 
-  const phoneNumber = COMPANY_DATA.phones[0]?.number || '01233391255';
-  const waUrl = `https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
+  const phoneNumber = CONTACT_INFO.primaryPhone;
+  const waUrl = `https://wa.me/${CONTACT_INFO.whatsappInternational}?text=${encodeURIComponent(
     t(
       'السلام عليكم، استفسار عن خدمات وأسعار نقل وتغليف الأثاث مع رويال موفرز VIP',
       'Hello, inquiry about VIP moving services with Royal Movers Egypt.'

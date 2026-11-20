@@ -99,8 +99,9 @@ const SLIDES: MediaSlide[] = [
 ];
 
 export const HeroMediaSlider: React.FC = () => {
-  const { t, lang, theme } = useApp();
+  const { t, lang } = useApp();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [hasSlid, setHasSlid] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [isVideoMuted, setIsVideoMuted] = useState(true);
   const [isVideoPlaying, setIsVideoPlaying] = useState(true);
@@ -113,6 +114,7 @@ export const HeroMediaSlider: React.FC = () => {
     if (isPaused) return;
 
     timerRef.current = setInterval(() => {
+      setHasSlid(true);
       setCurrentIndex((prev) => (prev + 1) % SLIDES.length);
     }, 4800);
 
@@ -135,10 +137,12 @@ export const HeroMediaSlider: React.FC = () => {
   }, [currentIndex, isVideoPlaying]);
 
   const handleNext = () => {
+    setHasSlid(true);
     setCurrentIndex((prev) => (prev + 1) % SLIDES.length);
   };
 
   const handlePrev = () => {
+    setHasSlid(true);
     setCurrentIndex((prev) => (prev - 1 + SLIDES.length) % SLIDES.length);
   };
 
@@ -214,11 +218,12 @@ export const HeroMediaSlider: React.FC = () => {
           >
             {SLIDES.map((slide, idx) => {
               const isActive = idx === currentIndex;
-              const isAdjacent =
-                idx === 0 ||
-                isActive ||
-                idx === (currentIndex + 1) % SLIDES.length ||
-                idx === (currentIndex - 1 + SLIDES.length) % SLIDES.length;
+              const shouldRenderMedia = hasSlid
+                ? idx === 0 ||
+                  isActive ||
+                  idx === (currentIndex + 1) % SLIDES.length ||
+                  idx === (currentIndex - 1 + SLIDES.length) % SLIDES.length
+                : idx === 0;
 
               return (
                 <div
@@ -263,7 +268,7 @@ export const HeroMediaSlider: React.FC = () => {
                             </button>
                           </div>
                         </>
-                      ) : (
+                      ) : shouldRenderMedia ? (
                         <img
                           src={slide.poster || '/assets/optimized/hydraulic_winch_building.webp'}
                           alt={t(slide.titleAr, slide.titleEn)}
@@ -273,21 +278,37 @@ export const HeroMediaSlider: React.FC = () => {
                           loading="lazy"
                           decoding="async"
                         />
+                      ) : (
+                        <div className="w-full h-full bg-slate-950" />
                       )}
                     </div>
-                  ) : isAdjacent ? (
-                    <img
-                      src={slide.src}
-                      srcSet={slide.mobileSrc ? `${slide.mobileSrc} 480w, ${slide.src} 800w` : undefined}
-                      sizes={slide.mobileSrc ? '(max-width: 640px) 100vw, 500px' : undefined}
-                      alt={t(slide.titleAr, slide.titleEn)}
-                      width={slide.width}
-                      height={slide.height}
-                      className="w-full h-full object-cover object-center transition-transform duration-700 ease-out"
-                      loading={idx === 0 ? 'eager' : 'lazy'}
-                      fetchPriority={idx === 0 ? 'high' : 'low'}
-                      decoding={idx === 0 ? 'sync' : 'async'}
-                    />
+                  ) : shouldRenderMedia ? (
+                    slide.mobileSrc ? (
+                      <picture className="block w-full h-full">
+                        <source media="(max-width: 768px)" srcSet={slide.mobileSrc} type="image/webp" />
+                        <img
+                          src={slide.src}
+                          alt={t(slide.titleAr, slide.titleEn)}
+                          width={slide.width}
+                          height={slide.height}
+                          className="w-full h-full object-cover object-center transition-transform duration-700 ease-out"
+                          loading={idx === 0 ? 'eager' : 'lazy'}
+                          fetchPriority={idx === 0 ? 'high' : 'low'}
+                          decoding={idx === 0 ? 'sync' : 'async'}
+                        />
+                      </picture>
+                    ) : (
+                      <img
+                        src={slide.src}
+                        alt={t(slide.titleAr, slide.titleEn)}
+                        width={slide.width}
+                        height={slide.height}
+                        className="w-full h-full object-cover object-center transition-transform duration-700 ease-out"
+                        loading={idx === 0 ? 'eager' : 'lazy'}
+                        fetchPriority={idx === 0 ? 'high' : 'low'}
+                        decoding={idx === 0 ? 'sync' : 'async'}
+                      />
+                    )
                   ) : (
                     <div className="w-full h-full bg-slate-950" />
                   )}
@@ -349,14 +370,17 @@ export const HeroMediaSlider: React.FC = () => {
               {t(currentSlide.titleAr, currentSlide.titleEn)}
             </p>
 
-            {/* Visual Progress Dots Bar with accessible 24px+ touch targets */}
+            {/* Visual Progress Dots Bar with WCAG 2.2 compliant >=28px touch targets */}
             <div className="flex items-center justify-center gap-0.5 pt-1">
               {SLIDES.map((_, idx) => (
                 <button
                   key={idx}
                   type="button"
-                  onClick={() => setCurrentIndex(idx)}
-                  className="p-2 flex items-center justify-center cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 rounded-full"
+                  onClick={() => {
+                    setHasSlid(true);
+                    setCurrentIndex(idx);
+                  }}
+                  className="min-w-[28px] min-h-[28px] p-2.5 flex items-center justify-center cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 rounded-full"
                   aria-label={t(`الشريحة رقم ${idx + 1}`, `Slide ${idx + 1}`)}
                   aria-current={idx === currentIndex ? 'true' : undefined}
                 >

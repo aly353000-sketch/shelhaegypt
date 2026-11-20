@@ -15,7 +15,7 @@ import {
   BarChart3
 } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
-import { COMPANY_DATA } from '../data/companyData';
+import { CONTACT_INFO } from '../data/contactInfo';
 import { useApp } from '../context/AppContext';
 
 interface NavbarProps {
@@ -141,7 +141,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span>{t('الخط الساخن الموحد:', 'Direct Hotline:')}</span>
             <a
               href="tel:01233391255"
-              className="underline hover:text-sky-200 transition-colors font-mono text-sm sm:text-base font-black tracking-wider"
+              className="inline-flex items-center py-1 underline hover:text-sky-200 transition-colors font-mono text-sm sm:text-base font-black tracking-wider"
               dir="ltr"
             >
               01233391255
@@ -151,7 +151,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Main Navbar with Unified Royal Navy Blue Luxury Styling */}
-      <nav className="border-b transition-colors duration-300 bg-[#020b18]/95 backdrop-blur-xl border-blue-900/60 text-white sticky top-0 z-40">
+      <nav aria-label={t('التنقل الرئيسي', 'Main navigation')} className="border-b transition-colors duration-300 bg-[#020b18]/95 backdrop-blur-xl border-blue-900/60 text-white sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-3">
           
           {/* Brand Logo & Name (Royal Movers VIP) - Compact, Crisp & Non-Wrapping */}
@@ -273,7 +273,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 aria-label="عرض أرقام الهواتف المتاحة"
               >
                 <Phone className="w-3.5 h-3.5 text-blue-600" />
-                <span dir="ltr">{COMPANY_DATA.phones[0].number}</span>
+                <span dir="ltr">{CONTACT_INFO.primaryPhone}</span>
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform ${phonesDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
@@ -288,7 +288,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   }`}>
                     {t('أرقام التواصل والحجوزات الفورية', 'Direct Contact & Booking Lines')}
                   </div>
-                  {COMPANY_DATA.phones.map((phone) => (
+                  {CONTACT_INFO.phones.map((phone) => (
                     <a
                       key={phone.number}
                       href={`tel:${phone.number}`}
@@ -303,7 +303,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   ))}
                   <div className={`p-2 border-t ${theme === 'light' ? 'border-slate-100' : 'border-slate-800'}`}>
                     <a
-                      href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
+                      href={`https://wa.me/${CONTACT_INFO.whatsappInternational}?text=${encodeURIComponent(
                         t('السلام عليكم، استفسار عن خدمات وأسعار نقل وتغليف أثاث الشقق والفلل مع رويال موفرز VIP', 'Hello, I want to inquire about VIP apartment & villa moving services and pricing with Royal Movers.')
                       )}`}
                       target="_blank"
@@ -421,14 +421,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="lg:hidden px-4 pt-4 pb-8 space-y-4 border-b bg-[#020b18] border-blue-900/80 text-white max-h-[80vh] overflow-y-auto">
             <div className="grid grid-cols-2 gap-2 pb-3 border-b border-slate-800/40">
               <a
-                href={`tel:${COMPANY_DATA.phones[0].number}`}
+                href={`tel:${CONTACT_INFO.primaryPhone}`}
                 className="flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-600 text-white py-2.5 rounded-xl font-bold text-xs"
               >
                 <Phone className="w-4 h-4" />
                 <span>{t('اتصال سريع', 'Call')}</span>
               </a>
               <a
-                href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(
+                href={`https://wa.me/${CONTACT_INFO.whatsappInternational}?text=${encodeURIComponent(
                   t('السلام عليكم، استفسار عن خدمات نقل وتغليف الأثاث مع رويال موفرز VIP', 'Hello, inquiry about Royal Movers VIP')
                 )}`}
                 target="_blank"

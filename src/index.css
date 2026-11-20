@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+/* Exclude unused legacy components from CSS scanning to keep render-blocking CSS minimal */
+@source not "./components/LuxuryCompoundsExplorer.tsx";
+@source not "./components/Testimonials.tsx";
+@source not "./components/FurnitureTransformationArticle.tsx";
+@source not "./components/ServicesSection.tsx";
+@source not "./components/WinchAndPackingDeepDive.tsx";
+@source not "./components/HydraulicWinchIllustration.tsx";
+@source not "./components/FaqSection.tsx";
+@source not "./components/MovingTipsGuide.tsx";
+@source not "./components/WorkProcess.tsx";
+
 /* Force dark variant to require .dark class so OS dark-mode media queries never wash out text */
 @custom-variant dark (&:where(.dark, .dark *));
 

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Phone, User, CheckCircle2, RotateCcw, Sparkles, AlertCircle, Loader2 } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
-import { COMPANY_DATA } from '../data/companyData';
+import { CONTACT_INFO } from '../data/contactInfo';
 import { useApp } from '../context/AppContext';
 import { trackWhatsAppClick, trackBookingLead } from '../utils/analytics';
 import { normalizeEgyptianPhone, isValidEgyptianPhone } from '../utils/phoneValidation';
@@ -29,7 +29,7 @@ export const QuickContactForm: React.FC = () => {
         `"مش مجرد عمال نقل.. إحنا حراس لرفاهيتك."\n` +
         `برجاء التواصل لتأكيد الموعد والمعاينة الفنية المجانية.`
     );
-    return `https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${msg}`;
+    return `https://wa.me/${CONTACT_INFO.whatsappInternational}?text=${msg}`;
   };
 
   const validatePhoneInput = (): string | null => {
@@ -195,11 +195,11 @@ export const QuickContactForm: React.FC = () => {
                     <span>تأكيد سريع عبر واتساب</span>
                   </a>
                   <a
-                    href={`tel:${COMPANY_DATA.phones[0].number}`}
+                    href={`tel:${CONTACT_INFO.primaryPhone}`}
                     className="flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-600 text-white font-black py-3.5 px-6 rounded-2xl text-sm sm:text-base shadow-lg shadow-blue-700/30 transition-all"
                   >
                     <Phone className="w-5 h-5 text-white" />
-                    <span dir="ltr">{COMPANY_DATA.phones[0].number}</span>
+                    <span dir="ltr">{CONTACT_INFO.primaryPhone}</span>
                   </a>
                 </div>
 

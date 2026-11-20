@@ -8,16 +8,24 @@ import { AppProvider } from './context/AppContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { StatsCounterBar } from './components/StatsCounterBar';
-import { LuxuryCompoundsTrustStrip } from './components/LuxuryCompoundsTrustStrip';
-import { LuxuryAreasTopShowcase } from './components/LuxuryAreasTopShowcase';
-import { CompactTrustAndFaqPills } from './components/CompactTrustAndFaqPills';
-import { QuickContactForm } from './components/QuickContactForm';
 import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
 import { ScrollProgressBar } from './components/ScrollProgressBar';
 import { initGlobalConversionTracker } from './utils/analytics';
 
-// Lazy-load below-the-fold heavy sections & modals to speed up initial mobile page load
+// Lazy-load below-the-fold sections & modals so initial mobile JS bundle stays ultra-slim
+const LuxuryCompoundsTrustStrip = lazy(() =>
+  import('./components/LuxuryCompoundsTrustStrip').then((m) => ({ default: m.LuxuryCompoundsTrustStrip }))
+);
+const LuxuryAreasTopShowcase = lazy(() =>
+  import('./components/LuxuryAreasTopShowcase').then((m) => ({ default: m.LuxuryAreasTopShowcase }))
+);
+const CompactTrustAndFaqPills = lazy(() =>
+  import('./components/CompactTrustAndFaqPills').then((m) => ({ default: m.CompactTrustAndFaqPills }))
+);
+const QuickContactForm = lazy(() =>
+  import('./components/QuickContactForm').then((m) => ({ default: m.QuickContactForm }))
+);
 const InteractiveServicesFlipCards = lazy(() =>
   import('./components/InteractiveServicesFlipCards').then((m) => ({ default: m.InteractiveServicesFlipCards }))
 );
@@ -241,9 +249,13 @@ function MainAppContent() {
 
             <StatsCounterBar />
 
-            <LuxuryCompoundsTrustStrip onSelectArea={handleSelectArea} />
+            <ViewportDeferredSection id="luxury-compounds" minHeight="min-h-[340px]">
+              <LuxuryCompoundsTrustStrip onSelectArea={handleSelectArea} />
+            </ViewportDeferredSection>
 
-            <LuxuryAreasTopShowcase onSelectArea={handleSelectArea} />
+            <ViewportDeferredSection id="luxury-areas" minHeight="min-h-[480px]">
+              <LuxuryAreasTopShowcase onSelectArea={handleSelectArea} />
+            </ViewportDeferredSection>
 
             <ViewportDeferredSection id="interactive-services" altIds={['services', 'packing-section']} minHeight="min-h-[560px]">
               <InteractiveServicesFlipCards />
@@ -257,16 +269,20 @@ function MainAppContent() {
               <RealGallery />
             </ViewportDeferredSection>
 
-            <CompactTrustAndFaqPills
-              onOpenFaq={() => setFaqModalOpen(true)}
-              onOpenReviews={() => setReviewsModalOpen(true)}
-            />
+            <ViewportDeferredSection id="faqs" minHeight="min-h-[180px]">
+              <CompactTrustAndFaqPills
+                onOpenFaq={() => setFaqModalOpen(true)}
+                onOpenReviews={() => setReviewsModalOpen(true)}
+              />
+            </ViewportDeferredSection>
 
             <ViewportDeferredSection id="location-section" minHeight="min-h-[540px]">
               <GoogleMapsLocationSection />
             </ViewportDeferredSection>
 
-            <QuickContactForm />
+            <ViewportDeferredSection id="quick-contact" altIds={['contact-form']} minHeight="min-h-[460px]">
+              <QuickContactForm />
+            </ViewportDeferredSection>
           </main>
 
           <Footer />
