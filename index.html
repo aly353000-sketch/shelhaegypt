@@ -4,9 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Google tag (gtag.js) - Single loader for Google Ads & Google Analytics 4 -->
+    <!-- Google tag (gtag.js) - Instant dataLayer queue + zero-loss deferred network loader -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18544594401"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -14,6 +13,26 @@
 
       gtag('config', 'AW-18544594401');
       gtag('config', 'G-2TFJ7D161W');
+
+      // Load gtag.js network script on first user interaction or after initial render settles
+      // All config & conversion calls remain queued in dataLayer with zero data loss
+      (function() {
+        var loaded = false;
+        function loadGtagScript() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18544594401';
+          document.head.appendChild(s);
+        }
+        ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function(evt) {
+          window.addEventListener(evt, loadGtagScript, { passive: true, once: true });
+        });
+        window.addEventListener('load', function() {
+          setTimeout(loadGtagScript, 3200);
+        }, { once: true });
+      })();
 
       // Global Deduplicated Click Tracking for phone_click, whatsapp_click and Google Ads conversions
       document.addEventListener('click', function(event) {
@@ -117,14 +136,21 @@
     <meta name="twitter:description" content="مش مجرد عمال نقل.. إحنا حراس لرفاهيتك! تغليف أوروبي 5 طبقات للتحف والصالونات والنجف، نجارون وفنيو تكييفات محترفون، وتصاريح دخول لأرقى كمبوندات مصر. الخط الموحد: 01233391255." />
     <meta name="twitter:image" content="https://shelhaegypt.com/assets/logos/royal_movers_logo.jpg" />
 
-    <!-- Preload LCP Hero Image for instant mobile paint -->
+    <!-- Preload exact LCP Hero WebP per viewport so high-DPR mobile only fetches 22KB WebP -->
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="/assets/images/royal_delicate_packing_mobile.webp"
+      media="(max-width: 768px)"
+      fetchpriority="high"
+    />
     <link
       rel="preload"
       as="image"
       type="image/webp"
       href="/assets/images/royal_delicate_packing.webp"
-      imagesrcset="/assets/images/royal_delicate_packing_mobile.webp 480w, /assets/images/royal_delicate_packing.webp 800w"
-      imagesizes="(max-width: 640px) 100vw, 500px"
+      media="(min-width: 769px)"
       fetchpriority="high"
     />
 
@@ -344,13 +370,13 @@
       ]
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-BEuJaTu-.js"></script>
+    <script type="module" crossorigin src="/assets/index-DZNvr7JD.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-WkwZ5CU-.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-icons-CBZzSZ8k.js">
-    <link rel="modulepreload" crossorigin href="/assets/vendor-react-CLKx0hiq.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BLrv91Xk.css">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-react-B2vNsGZ7.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-DxGm-9U9.css">
   </head>
-  <body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-600 selection:text-white">
+  <body class="bg-[#020b18] text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950" style="background-color:#020b18;color:#f1f5f9">
     <div id="root"></div>
   </body>
 </html>
