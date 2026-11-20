@@ -106,7 +106,7 @@ export const VideoShowcase: React.FC = () => {
             <video
               ref={videoRef}
               src="/assets/aistudio/VID-20261029-WA0025_08d54593.mp4"
-              poster="/assets/aistudio/FB_IMG_1793372096933_b1d91a1d.jpg"
+              poster="/assets/optimized/hydraulic_winch_building.webp"
               preload="none"
               className="w-full aspect-[4/3] sm:aspect-[16/10] max-h-[540px] object-contain mx-auto bg-black"
               loop
@@ -163,7 +163,7 @@ export const VideoShowcase: React.FC = () => {
                 <button
                   type="button"
                   onClick={togglePlay}
-                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white flex items-center justify-center shadow-2xl shadow-sky-500/40 hover:scale-110 active:scale-95 transition-all cursor-pointer border-2 border-white/70"
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r from-blue-700 to-blue-600 hover:from-blue-600 hover:to-blue-500 text-white flex items-center justify-center shadow-2xl shadow-blue-700/40 hover:scale-110 active:scale-95 transition-all cursor-pointer border-2 border-white/70"
                   aria-label={isPlaying ? 'إيقاف الفيديو' : 'تشغيل الفيديو'}
                 >
                   {isPlaying ? (
@@ -225,7 +225,7 @@ export const VideoShowcase: React.FC = () => {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black px-6 py-3.5 rounded-2xl text-base shadow-md transition-all hover:scale-105 active:scale-95"
+                className="flex items-center justify-center gap-2.5 bg-emerald-700 hover:bg-emerald-600 text-white font-black px-6 py-3.5 rounded-2xl text-base shadow-md transition-all hover:scale-105 active:scale-95"
               >
                 <WhatsAppIcon className="w-5 h-5 text-white" />
                 <span>احجز الونش بنفس الدقة دي</span>

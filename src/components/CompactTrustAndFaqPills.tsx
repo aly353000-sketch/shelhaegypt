@@ -27,9 +27,9 @@ export const CompactTrustAndFaqPills: React.FC<CompactTrustAndFaqPillsProps> = (
               </div>
               <div className="text-right">
                 <div className="flex items-center gap-2">
-                  <h3 className="text-base sm:text-lg font-black text-white group-hover:text-amber-300 transition-colors">
+                  <h2 className="text-base sm:text-lg font-black text-white group-hover:text-amber-300 transition-colors">
                     الأسئلة الشائعة وإجابات فورية
-                  </h3>
+                  </h2>
                   <span className="text-[10px] font-black bg-blue-900 text-sky-300 px-2 py-0.5 rounded-full border border-blue-700">
                     10 أسئلة
                   </span>
@@ -58,9 +58,9 @@ export const CompactTrustAndFaqPills: React.FC<CompactTrustAndFaqPillsProps> = (
               </div>
               <div className="text-right">
                 <div className="flex items-center gap-2">
-                  <h3 className="text-base sm:text-lg font-black text-white group-hover:text-amber-300 transition-colors">
+                  <h2 className="text-base sm:text-lg font-black text-white group-hover:text-amber-300 transition-colors">
                     تقييمات وتجارب العملاء
-                  </h3>
+                  </h2>
                   <span className="text-[10px] font-black bg-amber-400 text-slate-950 px-2 py-0.5 rounded-full">
                     4.95 / 5 ⭐
                   </span>

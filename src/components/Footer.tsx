@@ -174,8 +174,8 @@ export const Footer: React.FC = () => {
   return (
     <footer className={`border-t text-right transition-colors duration-300 ${
       theme === 'light'
-        ? 'bg-white border-slate-200 text-slate-600'
-        : 'bg-[#010714] border-blue-900/40 text-slate-400'
+        ? 'bg-white border-slate-200 text-slate-700'
+        : 'bg-[#010714] border-blue-900/40 text-slate-300'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-28 sm:pb-24 space-y-12">
         
@@ -186,8 +186,12 @@ export const Footer: React.FC = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <img 
-                src="/assets/logos/royal_movers_logo.jpg" 
+                src="/assets/logos/royal_movers_logo_sm.webp" 
                 alt="ROYAL MOVERS VIP Logo" 
+                width={56}
+                height={56}
+                loading="lazy"
+                decoding="async"
                 className="w-14 h-14 rounded-2xl bg-white p-1 border border-amber-400/40 shadow-lg object-contain" 
               />
               <div>
@@ -216,11 +220,11 @@ export const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div className="space-y-3">
-            <h4 className={`font-black text-lg sm:text-xl border-b pb-2 ${
+            <h2 className={`font-black text-lg sm:text-xl border-b pb-2 ${
               theme === 'light' ? 'text-slate-900 border-slate-200' : 'text-white border-blue-900/60'
             }`}>
               {t('خدماتنا الرئيسية', 'Our Key Services')}
-            </h4>
+            </h2>
             <ul className="space-y-2.5 text-sm sm:text-base font-bold">
               <li>
                 <a href="#services" className="hover:text-sky-400 transition-colors">
@@ -257,11 +261,11 @@ export const Footer: React.FC = () => {
 
           {/* Areas Coverage */}
           <div className="space-y-3">
-            <h4 className={`font-black text-lg sm:text-xl border-b pb-2 ${
+            <h2 className={`font-black text-lg sm:text-xl border-b pb-2 ${
               theme === 'light' ? 'text-slate-900 border-slate-200' : 'text-white border-blue-900/60'
             }`}>
               {t('مناطق نصل إليها سريعاً', 'Rapid ETA Areas')}
-            </h4>
+            </h2>
             <ul className="space-y-2.5 text-sm sm:text-base font-bold">
               <li>• {t('التجمع الخامس والقاهرة الجديدة', 'New Cairo & 5th Settlement')}</li>
               <li>• {t('مدينة نصر ومصر الجديدة والنزهة', 'Nasr City & Heliopolis')}</li>
@@ -274,11 +278,11 @@ export const Footer: React.FC = () => {
 
           {/* Hotlines & Contact */}
           <div className="space-y-3">
-            <h4 className={`font-black text-lg sm:text-xl border-b pb-2 ${
+            <h2 className={`font-black text-lg sm:text-xl border-b pb-2 ${
               theme === 'light' ? 'text-slate-900 border-slate-200' : 'text-white border-blue-900/60'
             }`}>
               {t('تواصل معنا على مدار الساعة', 'Contact 24/7')}
-            </h4>
+            </h2>
             
             <div className="space-y-2 text-xs sm:text-sm">
               <a
@@ -308,14 +312,14 @@ export const Footer: React.FC = () => {
                     : 'bg-emerald-950/40 hover:bg-emerald-900/60 border-emerald-500/40 text-white'
                 }`}
               >
-                <div className="flex items-center gap-1.5 font-bold text-emerald-600 dark:text-emerald-400">
+                <div className={`flex items-center gap-1.5 font-bold ${theme === 'light' ? 'text-emerald-700' : 'text-emerald-300'}`}>
                   <MessageCircle className="w-3.5 h-3.5" />
                   <span>{t('واتساب الحجوزات السريعة:', 'WhatsApp Bookings:')}</span>
                 </div>
-                <span className="font-black text-emerald-600 dark:text-emerald-400 font-mono text-base tracking-wider" dir="ltr">01233391255</span>
+                <span className={`font-black font-mono text-base tracking-wider ${theme === 'light' ? 'text-emerald-700' : 'text-emerald-300'}`} dir="ltr">01233391255</span>
               </a>
 
-              <div className="flex items-center gap-2 text-xs text-slate-400 pt-1">
+              <div className="flex items-center gap-2 text-xs text-slate-300 pt-1">
                 <Clock className="w-3.5 h-3.5 text-sky-400" />
                 <span>{t('مواعيد العمل: 24 ساعة طوال أيام الأسبوع', 'Working Hours: 24/7 All Week')}</span>
               </div>
@@ -326,14 +330,14 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className={`pt-6 border-t text-center text-xs flex flex-col sm:flex-row items-center justify-between gap-4 ${
-          theme === 'light' ? 'border-slate-200 text-slate-500' : 'border-blue-900/40 text-slate-500'
+          theme === 'light' ? 'border-slate-200 text-slate-600' : 'border-blue-900/40 text-slate-300'
         }`}>
           <div>
             © {new Date().getFullYear()} {t('شركة رويال موفرز لنقل وتغليف الأثاث VIP - جميع الحقوق محفوظة.', 'Shilha Moving & Packing Company - All Rights Reserved.')}
           </div>
-          <div className="flex items-center gap-1 text-sky-600">
+          <div className={`flex items-center gap-1 ${theme === 'light' ? 'text-sky-700' : 'text-sky-300'}`}>
             <span>{t('صُنع باحترافية لخدمتكم بأعلى معايير الأمان والراحة', 'Crafted with premium safety & comfort standards')}</span>
-            <Heart className="w-3.5 h-3.5 text-blue-500 fill-blue-500" />
+            <Heart className="w-3.5 h-3.5 text-sky-400 fill-sky-400" />
           </div>
         </div>
 

@@ -47,10 +47,11 @@ export const RealGallery: React.FC = () => {
               type="button"
               key={f}
               onClick={() => setActiveFilter(f)}
+              aria-pressed={activeFilter === f}
               className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-black transition-all cursor-pointer ${
                 activeFilter === f
-                  ? 'bg-gradient-to-r from-blue-700 to-sky-600 text-white shadow-lg shadow-blue-500/25 scale-105 border border-sky-400'
-                  : 'bg-[#031126] text-slate-300 hover:bg-[#071d49] border border-blue-900 shadow-xs'
+                  ? 'bg-gradient-to-r from-blue-700 to-blue-600 text-white shadow-lg shadow-blue-700/25 scale-105 border border-sky-400'
+                  : 'bg-[#031126] text-slate-200 hover:bg-[#071d49] border border-blue-900 shadow-xs'
               }`}
             >
               {filterLabels[f] || f}
@@ -61,16 +62,19 @@ export const RealGallery: React.FC = () => {
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredGallery.map((item, idx) => (
-            <div
+            <button
               key={idx}
+              type="button"
               onClick={() => setSelectedImage({ url: item.url, title: item.title, desc: item.desc })}
-              className="group relative rounded-3xl overflow-hidden border-2 border-blue-900/70 hover:border-amber-400 bg-[#031126] shadow-xl hover:shadow-2xl cursor-pointer transition-all duration-300 hover:-translate-y-1.5"
+              className="w-full text-right group relative rounded-3xl overflow-hidden border-2 border-blue-900/70 hover:border-amber-400 bg-[#031126] shadow-xl hover:shadow-2xl cursor-pointer transition-all duration-300 hover:-translate-y-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
             >
               {/* Image Container */}
               <div className="relative h-72 sm:h-80 overflow-hidden bg-slate-950">
                 <img
                   src={item.url}
                   alt={item.title}
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
                   loading="lazy"
                   decoding="async"
@@ -97,7 +101,7 @@ export const RealGallery: React.FC = () => {
                   {item.desc}
                 </p>
               </div>
-            </div>
+            </button>
           ))}
         </div>
 

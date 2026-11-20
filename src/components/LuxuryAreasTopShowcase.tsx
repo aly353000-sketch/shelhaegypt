@@ -94,14 +94,15 @@ export const LuxuryAreasTopShowcase: React.FC<LuxuryAreasTopShowcaseProps> = ({ 
         {/* Clean, Fast-Clicking Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {areas.map((area) => (
-            <div
+            <button
               key={area.slug}
+              type="button"
               onClick={() => onSelectArea(area.slug)}
-              className="bg-[#031126] hover:bg-[#071d49] border-2 border-blue-900/70 hover:border-amber-400 rounded-3xl p-5 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col justify-between group hover:-translate-y-1"
+              className="w-full text-right bg-[#031126] hover:bg-[#071d49] border-2 border-blue-900/70 hover:border-amber-400 rounded-3xl p-5 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col justify-between group hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
             >
-              <div className="space-y-3">
+              <div className="space-y-3 w-full">
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl">{area.icon}</span>
+                  <span className="text-2xl" aria-hidden="true">{area.icon}</span>
                   <span className="text-[11px] font-black text-amber-300 bg-amber-500/15 border border-amber-400/30 px-2.5 py-1 rounded-xl">
                     {area.highlight}
                   </span>
@@ -116,16 +117,16 @@ export const LuxuryAreasTopShowcase: React.FC<LuxuryAreasTopShowcaseProps> = ({ 
                   </span>
                 </div>
 
-                <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed font-medium">
+                <p className="text-xs text-slate-300 line-clamp-2 leading-relaxed font-medium">
                   {area.compounds}
                 </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-blue-900/60 flex items-center justify-between text-xs font-black text-amber-400 group-hover:text-white transition-colors">
+              <div className="mt-4 pt-3 w-full border-t border-blue-900/60 flex items-center justify-between text-xs font-black text-amber-300 group-hover:text-white transition-colors">
                 <span>تصفح صفحة {area.name} 👈</span>
                 <ChevronLeft className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
               </div>
-            </div>
+            </button>
           ))}
         </div>
 

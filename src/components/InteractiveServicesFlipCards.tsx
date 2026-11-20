@@ -49,7 +49,7 @@ export const InteractiveServicesFlipCards: React.FC = () => {
       title: 'نقل الأثاث بسيارات مغلقة ومجهزة',
       subtitle: 'عربيات مقفولة ومبطنة تحمي العفش من التراب والمطبات طول الطريق',
       badge: 'أسطول VIP مبطن',
-      image: '/assets/images/royal_movers_workers_loading.jpg',
+      image: '/assets/images/royal_movers_workers_loading.webp',
       icon: Truck,
       features: [
         'صناديق شاحنات مغلقة ومعزولة 100% ضد الأتربة والأمطار وحرارة الشمس',
@@ -65,7 +65,7 @@ export const InteractiveServicesFlipCards: React.FC = () => {
       title: 'أوناش هيدروليكية حديثة للأدوار العليا',
       subtitle: 'رفع وتنزيل آمن حتى الدور 25 من غير خبط في السلالم أو جدران العمارات',
       badge: 'يبدأ من 2500 ج.م فقط',
-      image: '/assets/images/royal_winch_villa.jpg',
+      image: '/assets/images/royal_winch_villa.webp',
       icon: Layers,
       features: [
         'حماية قصوى للأثاث الضخم والرخام والزجاج من ضيق السلالم والمصاعد',
@@ -81,7 +81,7 @@ export const InteractiveServicesFlipCards: React.FC = () => {
       title: 'فنيون ونجارون لفك وتركيب الأثاث والمطابخ',
       subtitle: 'فك وتركيب الدواليب الإيطالية، النيش، والمطابخ وغرف النوم المودرن باحترافية',
       badge: 'نجارون متخصصون',
-      image: '/assets/images/royal_movers_carpenter_vip.jpg',
+      image: '/assets/images/royal_movers_carpenter_vip.webp',
       icon: Wrench,
       features: [
         'خبرة عميقة في فك غرف النوم الإيطالية والمودرن وغرف الأطفال والدواليب الجرار',
@@ -97,7 +97,7 @@ export const InteractiveServicesFlipCards: React.FC = () => {
       title: 'فنيو تكييف وأجهزة كهربائية معتمدة',
       subtitle: 'فك وتركيب التكييف بعناية مع حفظ شحنة الفريون وضمان التشغيل الفوري',
       badge: '800 ج.م للوحدة ❄️',
-      image: '/assets/images/royal_ac_technician.jpg',
+      image: '/assets/images/royal_ac_technician.webp',
       icon: Wind,
       features: [
         'فك وحدات التكييف الداخلية والخارجية باحترافية مع غلق محابس الفريون',
@@ -113,7 +113,7 @@ export const InteractiveServicesFlipCards: React.FC = () => {
       title: 'نقل وتغليف المقتنيات والتحف الحساسة',
       subtitle: 'عناية فائقة بالزجاج، الأطقم الصيني، النجف الكريستال، والقطع القابلة للكسر',
       badge: 'عناية فائقة 💎',
-      image: '/assets/images/royal_delicate_packing.jpg',
+      image: '/assets/images/royal_delicate_packing.webp',
       icon: Gem,
       features: [
         'تغليف كل كأس، طبق صيني، وقطعة كريستال منفردة ببابلز الفيروز الثقيل',
@@ -129,7 +129,7 @@ export const InteractiveServicesFlipCards: React.FC = () => {
       title: 'تغليف الصالونات والأنتريهات الفاخرة',
       subtitle: 'طبقات متعددة من البابلز والاسترتش المقاوم للصدمات لحماية الأقمشة والجلد',
       badge: 'بابلز واسترتش VIP',
-      image: '/assets/images/royal_movers_sofa_wrap.jpg',
+      image: '/assets/images/royal_movers_sofa_wrap.webp',
       icon: Boxes,
       features: [
         'حماية كاملة لأقمشة الصالونات والجلد الطبيعي من أي غبار أو اتساخ أثناء النقل',
@@ -196,6 +196,7 @@ export const InteractiveServicesFlipCards: React.FC = () => {
                   
                   {/* FRONT SIDE */}
                   <div 
+                    aria-hidden={isFlipped}
                     className="absolute inset-0 w-full h-full rounded-3xl overflow-hidden border-2 flex flex-col justify-between transition-all bg-[#03142e] border-blue-900/80 shadow-2xl group-hover:border-amber-400/80"
                     style={{
                       backfaceVisibility: 'hidden',
@@ -208,8 +209,11 @@ export const InteractiveServicesFlipCards: React.FC = () => {
                       <img 
                         src={card.image} 
                         alt={card.title} 
+                        width={800}
+                        height={597}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         loading="lazy"
+                        decoding="async"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#03142e] via-slate-950/40 to-transparent" />
                       
@@ -223,6 +227,7 @@ export const InteractiveServicesFlipCards: React.FC = () => {
                         {/* Flip Button on Front */}
                         <button
                           type="button"
+                          tabIndex={isFlipped ? -1 : 0}
                           onClick={(e) => toggleFlip(card.id, e)}
                           className="bg-slate-950/85 hover:bg-amber-400 hover:text-slate-950 text-white p-2.5 rounded-xl backdrop-blur-md transition-all shadow-lg cursor-pointer flex items-center gap-1.5 text-xs font-black border border-white/20 active:scale-95"
                           title="اقلب الكارت للتفاصيل"
@@ -259,6 +264,7 @@ export const InteractiveServicesFlipCards: React.FC = () => {
 
                   {/* BACK SIDE */}
                   <div 
+                    aria-hidden={!isFlipped}
                     className="absolute inset-0 w-full h-full rounded-3xl p-6 flex flex-col justify-between border-2 shadow-2xl bg-gradient-to-br from-[#020b18] via-[#041635] to-[#020b18] text-white border-amber-400"
                     style={{
                       backfaceVisibility: 'hidden',
@@ -285,6 +291,7 @@ export const InteractiveServicesFlipCards: React.FC = () => {
 
                       <button
                         type="button"
+                        tabIndex={isFlipped ? 0 : -1}
                         onClick={(e) => toggleFlip(card.id, e)}
                         className="p-2.5 rounded-xl bg-amber-500 text-slate-950 font-black text-xs hover:bg-amber-400 transition-all cursor-pointer flex items-center gap-1 shadow-md active:scale-95"
                         title="اقلب الكارت للواجهة"
@@ -316,8 +323,9 @@ export const InteractiveServicesFlipCards: React.FC = () => {
                         href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent(card.whatsappMessage)}`}
                         target="_blank"
                         rel="noopener noreferrer"
+                        tabIndex={isFlipped ? 0 : -1}
                         onClick={(e) => e.stopPropagation()}
-                        className="flex-1 flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-black py-2.5 px-3 rounded-xl text-xs shadow-md transition-all active:scale-95"
+                        className="flex-1 flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white font-black py-2.5 px-3 rounded-xl text-xs shadow-md transition-all active:scale-95"
                       >
                         <WhatsAppIcon className="w-4 h-4 text-white" />
                         <span>احجز هذه الخدمة واتساب</span>
@@ -325,9 +333,11 @@ export const InteractiveServicesFlipCards: React.FC = () => {
 
                       <a
                         href={`tel:${COMPANY_DATA.phones[0].number}`}
+                        tabIndex={isFlipped ? 0 : -1}
                         onClick={(e) => e.stopPropagation()}
                         className="p-2.5 rounded-xl bg-blue-700 hover:bg-blue-600 text-white shadow-md transition-all active:scale-95"
                         title="اتصل الآن"
+                        aria-label={`اتصل الآن لحجز ${card.title} على ${COMPANY_DATA.phones[0].number}`}
                       >
                         <Phone className="w-4 h-4" />
                       </a>

@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { Phone, User, CheckCircle2, RotateCcw, Sparkles, AlertCircle, Loader2 } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { COMPANY_DATA } from '../data/companyData';
@@ -137,9 +136,9 @@ export const QuickContactForm: React.FC = () => {
               <span>حجز موعد ومعاينة مجانية 👑</span>
             </div>
 
-            <h3 className="text-2xl sm:text-4xl font-black text-white leading-tight">
+            <h2 className="text-2xl sm:text-4xl font-black text-white leading-tight">
               ابعتلنا دلوقتي.. سيبها على رويال موفرز VIP وإنت مرتاح!
-            </h3>
+            </h2>
 
             <p className="text-base sm:text-xl font-black text-amber-400 tracking-wide pt-1">
               "مش مجرد عمال نقل.. إحنا حراس لرفاهيتك."
@@ -150,17 +149,12 @@ export const QuickContactForm: React.FC = () => {
             </p>
           </div>
 
-          <AnimatePresence mode="wait">
             {submitted ? (
-              <motion.div
+              <div
                 key="success-box"
-                initial={{ opacity: 0, scale: 0.92, y: 15 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.45, ease: 'easeOut' }}
-                className="bg-gradient-to-b from-[#041633] to-[#031126] border-2 border-emerald-500/80 p-6 sm:p-10 rounded-3xl text-center space-y-6 shadow-xl relative z-10"
+                className="bg-gradient-to-b from-[#041633] to-[#031126] border-2 border-emerald-500/80 p-6 sm:p-10 rounded-3xl text-center space-y-6 shadow-xl relative z-10 transition-all duration-300"
               >
-                <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-lg shadow-emerald-500/30">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-emerald-700 text-white flex items-center justify-center shadow-lg shadow-emerald-700/30">
                   <CheckCircle2 className="w-9 h-9 sm:w-10 sm:h-10" />
                 </div>
 
@@ -170,13 +164,13 @@ export const QuickContactForm: React.FC = () => {
                     <strong className="font-mono text-amber-300 font-black">{bookingRef}</strong>
                   </div>
 
-                  <h4 className="text-xl sm:text-3xl font-black text-white">
+                  <h3 className="text-xl sm:text-3xl font-black text-white">
                     {submitMode === 'whatsapp'
                       ? 'تم تجهيز رسالتك عبر واتساب!'
                       : deliveryStatus === 'sent'
                       ? 'تم استلام طلب الاتصال بنجاح!'
                       : 'تم تسجيل طلبك — أكّد فوراً عبر واتساب أو الهاتف'}
-                  </h4>
+                  </h3>
 
                   <p className="text-sm sm:text-base text-slate-200 max-w-lg mx-auto leading-relaxed">
                     شكراً لثقتك في رويال موفرز VIP.{' '}
@@ -195,14 +189,14 @@ export const QuickContactForm: React.FC = () => {
                     href={liveWaHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-black py-3.5 px-6 rounded-2xl text-sm sm:text-base shadow-lg shadow-emerald-600/30 transition-all"
+                    className="flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white font-black py-3.5 px-6 rounded-2xl text-sm sm:text-base shadow-lg shadow-emerald-700/30 transition-all"
                   >
                     <WhatsAppIcon className="w-5 h-5 text-white" />
                     <span>تأكيد سريع عبر واتساب</span>
                   </a>
                   <a
                     href={`tel:${COMPANY_DATA.phones[0].number}`}
-                    className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-black py-3.5 px-6 rounded-2xl text-sm sm:text-base shadow-lg shadow-blue-600/30 transition-all"
+                    className="flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-600 text-white font-black py-3.5 px-6 rounded-2xl text-sm sm:text-base shadow-lg shadow-blue-700/30 transition-all"
                   >
                     <Phone className="w-5 h-5 text-white" />
                     <span dir="ltr">{COMPANY_DATA.phones[0].number}</span>
@@ -224,7 +218,7 @@ export const QuickContactForm: React.FC = () => {
                     <span>إرسال طلب إضافي</span>
                   </button>
                 </div>
-              </motion.div>
+              </div>
             ) : (
               <form onSubmit={handleCallbackSubmit} noValidate className="space-y-5 relative z-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -239,7 +233,7 @@ export const QuickContactForm: React.FC = () => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="أ/ أحمد محمد"
-                        className="w-full rounded-2xl px-4 py-3.5 text-sm sm:text-base font-bold border-2 border-blue-900/80 bg-[#020b18] text-white focus:border-amber-400 focus:bg-[#031126] outline-none transition-all placeholder:text-slate-500 shadow-inner"
+                        className="w-full rounded-2xl px-4 py-3.5 text-sm sm:text-base font-bold border-2 border-blue-900/80 bg-[#020b18] text-white focus:border-amber-400 focus:bg-[#031126] outline-none transition-all placeholder:text-slate-400 shadow-inner"
                       />
                       <User className="w-5 h-5 text-amber-400 absolute left-3.5 top-3.5" />
                     </div>
@@ -261,7 +255,7 @@ export const QuickContactForm: React.FC = () => {
                           if (errorMsg) setErrorMsg(null);
                         }}
                         placeholder="010XXXXXXXX"
-                        className={`w-full rounded-2xl px-4 py-3.5 text-sm sm:text-base font-bold border-2 bg-[#020b18] text-white outline-none transition-all placeholder:text-slate-500 shadow-inner ${
+                        className={`w-full rounded-2xl px-4 py-3.5 text-sm sm:text-base font-bold border-2 bg-[#020b18] text-white outline-none transition-all placeholder:text-slate-400 shadow-inner ${
                           errorMsg
                             ? 'border-rose-500 focus:border-rose-400'
                             : 'border-blue-900/80 focus:border-amber-400 focus:bg-[#031126]'
@@ -289,7 +283,7 @@ export const QuickContactForm: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={handleWhatsAppLinkClick}
-                    className="flex-1 flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-black py-4 px-5 rounded-2xl text-sm sm:text-base lg:text-lg shadow-lg shadow-emerald-600/30 transition-all cursor-pointer hover:scale-[1.02] active:scale-95"
+                    className="flex-1 flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white font-black py-4 px-5 rounded-2xl text-sm sm:text-base lg:text-lg shadow-lg shadow-emerald-700/30 transition-all cursor-pointer hover:scale-[1.02] active:scale-95"
                   >
                     <WhatsAppIcon className="w-5 h-5 text-white" />
                     <span>إرسال الطلب فورياً عبر واتساب</span>
@@ -314,12 +308,11 @@ export const QuickContactForm: React.FC = () => {
                   </button>
                 </div>
 
-                <div className="text-center text-xs text-slate-400 pt-1 font-medium">
+                <div className="text-center text-xs text-slate-300 pt-1 font-medium">
                   🔒 بياناتك في سرية وخصوصية تامة ولن يتم استخدامها إلا للتواصل معك بخصوص موعد النقل.
                 </div>
               </form>
             )}
-          </AnimatePresence>
         </div>
       </div>
     </section>

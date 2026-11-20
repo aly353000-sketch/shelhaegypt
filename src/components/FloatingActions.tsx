@@ -51,7 +51,7 @@ export const FloatingActions: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackWhatsAppClick(waUrl, 'زر الواتساب العائم')}
-          className="flex items-center gap-2 px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-2xl shadow-emerald-500/45 border-2 border-emerald-200/40 hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer"
+          className="flex items-center gap-2 px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-full bg-emerald-700 hover:bg-emerald-600 text-white shadow-2xl shadow-emerald-700/45 border-2 border-emerald-200/40 hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer"
           aria-label={t('تواصل عبر الواتساب الآن', 'Chat on WhatsApp')}
         >
           <WhatsAppIcon className="w-5 h-5 sm:w-6 sm:h-6 fill-current shrink-0 group-hover:rotate-12 transition-transform" />
@@ -85,13 +85,13 @@ export const FloatingActions: React.FC = () => {
       {/* 3. Floating Direct Call Pill on the LEFT with Clear Label, Direct tel: Action & Desktop Copy */}
       <div className="fixed left-3.5 sm:left-6 bottom-4 sm:bottom-6 z-40 flex flex-col items-start gap-2">
         {copiedPhone && (
-          <div className="bg-emerald-600 text-white font-black text-xs px-3 py-1.5 rounded-full shadow-xl border border-emerald-300/40 flex items-center gap-1.5 animate-in fade-in zoom-in-95 duration-200">
+          <div className="bg-emerald-700 text-white font-black text-xs px-3 py-1.5 rounded-full shadow-xl border border-emerald-300/40 flex items-center gap-1.5 animate-in fade-in zoom-in-95 duration-200">
             <Check className="w-3.5 h-3.5" />
             <span>{t(`تم نسخ الرقم: ${phoneNumber}`, `Copied: ${phoneNumber}`)}</span>
           </div>
         )}
 
-        <div className="flex items-center overflow-hidden rounded-full shadow-2xl shadow-blue-600/45 border-2 border-sky-300/45 bg-gradient-to-r from-blue-700 via-blue-600 to-sky-500 text-white transition-all duration-300 hover:shadow-blue-500/60">
+        <div className="flex items-center overflow-hidden rounded-full shadow-2xl shadow-blue-700/45 border-2 border-sky-300/45 bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 text-white transition-all duration-300 hover:shadow-blue-600/60">
           <a
             href={`tel:${phoneNumber}`}
             onClick={() => trackPhoneClick(phoneNumber, 'زر الاتصال العائم', `tel:${phoneNumber}`)}

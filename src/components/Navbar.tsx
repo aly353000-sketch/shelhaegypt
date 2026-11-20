@@ -128,8 +128,8 @@ export const Navbar: React.FC<NavbarProps> = ({
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      {/* Top Banner with Royal Blue Gradient */}
-      <div className="bg-gradient-to-r from-blue-700 via-sky-600 to-blue-800 text-white font-medium text-xs sm:text-sm py-2 px-3 sm:px-6 shadow-sm">
+      {/* Top Banner with Royal Blue Gradient (WCAG AA compliant) */}
+      <div className="bg-gradient-to-r from-blue-800 via-blue-700 to-blue-800 text-white font-medium text-xs sm:text-sm py-2 px-3 sm:px-6 shadow-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
           <div className="flex items-center gap-2 font-bold">
             <Clock className="w-4 h-4 text-sky-200" />
@@ -158,8 +158,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           <a href="#hero" className="flex items-center gap-2.5 sm:gap-3 text-right group select-none py-1 shrink-0">
             <div className="relative shrink-0">
               <img 
-                src="/assets/logos/royal_movers_logo.jpg" 
+                src="/assets/logos/royal_movers_logo_sm.webp" 
                 alt="ROYAL MOVERS VIP Logo" 
+                width={52}
+                height={52}
+                decoding="async"
                 className="w-11 h-11 sm:w-13 sm:h-13 object-contain rounded-xl border-2 border-amber-400/80 shadow-lg bg-white p-0.5 group-hover:scale-105 transition-transform" 
               />
               <span 
@@ -305,7 +308,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl py-2 text-xs font-bold transition-colors"
+                      className="flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white rounded-xl py-2 text-xs font-bold transition-colors"
                     >
                       <WhatsAppIcon className="w-3.5 h-3.5" />
                       <span>{t('تواصل واتساب مباشرة', 'WhatsApp Directly')}</span>
@@ -419,7 +422,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div className="grid grid-cols-2 gap-2 pb-3 border-b border-slate-800/40">
               <a
                 href={`tel:${COMPANY_DATA.phones[0].number}`}
-                className="flex items-center justify-center gap-2 bg-blue-600 text-white py-2.5 rounded-xl font-bold text-xs"
+                className="flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-600 text-white py-2.5 rounded-xl font-bold text-xs"
               >
                 <Phone className="w-4 h-4" />
                 <span>{t('اتصال سريع', 'Call')}</span>
@@ -430,7 +433,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-emerald-600 text-white py-2.5 rounded-xl font-bold text-xs"
+                className="flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white py-2.5 rounded-xl font-bold text-xs"
               >
                 <WhatsAppIcon className="w-4 h-4 text-white" />
                 <span>{t('واتساب مباشر', 'WhatsApp')}</span>

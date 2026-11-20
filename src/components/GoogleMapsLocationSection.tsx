@@ -63,14 +63,14 @@ export const GoogleMapsLocationSection: React.FC = () => {
 
               {/* Address details */}
               <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                <div className="text-xs text-slate-400 font-bold flex items-center gap-1.5">
+                <div className="text-xs text-slate-300 font-bold flex items-center gap-1.5">
                   <MapPin className="w-3.5 h-3.5 text-amber-400" />
                   العنوان الرسمي المسجل:
                 </div>
                 <p className="text-sm sm:text-base font-bold text-white leading-relaxed">
                   شارع 9، ميدان النافورة، حي المقطم، محافظة القاهرة، جمهورية مصر العربية
                 </p>
-                <div className="text-[11px] text-slate-400 font-mono">
+                <div className="text-[11px] text-slate-300 font-mono">
                   الإحداثيات الجغرافية: 30.0131° N, 31.3026° E
                 </div>
               </div>
@@ -78,15 +78,15 @@ export const GoogleMapsLocationSection: React.FC = () => {
               {/* Working Hours & Readiness */}
               <div className="grid grid-cols-2 gap-3 text-xs">
                 <div className="p-3 rounded-xl bg-white/5 border border-white/10">
-                  <span className="text-slate-400 block mb-1 flex items-center gap-1">
+                  <span className="text-slate-300 block mb-1 flex items-center gap-1">
                     <Clock className="w-3 h-3 text-amber-400" />
                     مواعيد العمل:
                   </span>
-                  <span className="font-bold text-emerald-400">24 ساعة طوال الأسبوع</span>
+                  <span className="font-bold text-emerald-300">24 ساعة طوال الأسبوع</span>
                 </div>
                 <div className="p-3 rounded-xl bg-white/5 border border-white/10">
-                  <span className="text-slate-400 block mb-1 flex items-center gap-1">
-                    <ShieldCheck className="w-3 h-3 text-blue-400" />
+                  <span className="text-slate-300 block mb-1 flex items-center gap-1">
+                    <ShieldCheck className="w-3 h-3 text-sky-400" />
                     سرعة الوصول:
                   </span>
                   <span className="font-bold text-white">خلال 20 - 30 دقيقة</span>
@@ -117,7 +117,7 @@ export const GoogleMapsLocationSection: React.FC = () => {
               <div className="grid grid-cols-2 gap-2">
                 <a
                   href={`tel:${COMPANY_DATA.whatsappDefault || '01233391255'}`}
-                  className="py-3 px-3 rounded-xl bg-blue-600/80 hover:bg-blue-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors border border-blue-400/30"
+                  className="py-3 px-3 rounded-xl bg-blue-700 hover:bg-blue-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors border border-blue-400/30"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   <span>اتصال بمقر المقطم</span>
@@ -127,7 +127,7 @@ export const GoogleMapsLocationSection: React.FC = () => {
                   href={`https://wa.me/${COMPANY_DATA.whatsappInternational}?text=${encodeURIComponent('السلام عليكم، استفسار بخصوص موقع وحجز رويال موفرز VIP فرع المقطم')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-3 px-3 rounded-xl bg-emerald-600/80 hover:bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors border border-emerald-400/30"
+                  className="py-3 px-3 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors border border-emerald-400/30"
                 >
                   <span>واتساب المقر الرئيسي</span>
                 </a>

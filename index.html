@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Google tag (gtag.js) - Google Ads & Google Analytics 4 -->
+    <!-- Google tag (gtag.js) - Single loader for Google Ads & Google Analytics 4 -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18544594401"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TFJ7D161W"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -79,9 +79,6 @@
     <meta name="keywords" content="رويال موفرز VIP, نقل وتغليف اثاث, شركة نقل عفش التجمع الخامس, نقل اثاث الشيخ زايد, نقل عفش مدينتي والرحاب, تغليف اثاث بالبابلز, نقل اثاث فلل وقصور, افضل شركة نقل اثاث بالقاهرة, نقل اثاث كمبوندات, 01233391255" />
     <meta name="author" content="رويال موفرز VIP لنقل الأثاث | Royal Movers Egypt" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
     
     <!-- Google Search Console Verification Meta Tag -->
     <meta name="google-site-verification" content="hBDqg1s06-2q5ir8oKzP_ZijEo73m_JMs1cNFZcCLcQ" />
@@ -120,10 +117,32 @@
     <meta name="twitter:description" content="مش مجرد عمال نقل.. إحنا حراس لرفاهيتك! تغليف أوروبي 5 طبقات للتحف والصالونات والنجف، نجارون وفنيو تكييفات محترفون، وتصاريح دخول لأرقى كمبوندات مصر. الخط الموحد: 01233391255." />
     <meta name="twitter:image" content="https://shelhaegypt.com/assets/logos/royal_movers_logo.jpg" />
 
-    <!-- Google Fonts: Alexandria, Readex Pro & IBM Plex Sans Arabic -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Preload LCP Hero Image for instant mobile paint -->
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="/assets/images/royal_delicate_packing.webp"
+      imagesrcset="/assets/images/royal_delicate_packing_mobile.webp 480w, /assets/images/royal_delicate_packing.webp 800w"
+      imagesizes="(max-width: 640px) 100vw, 500px"
+      fetchpriority="high"
+    />
+
+    <!-- Google Fonts: Non-render-blocking Alexandria (only used weights) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700;800;900&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700;800;900&display=swap"
+      />
+    </noscript>
 
     <!-- Schema.org JSON-LD Graph for Google Search & Google Ads -->
     <script type="application/ld+json">

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect, Suspense, lazy } from 'react';
+import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
 import { AppProvider } from './context/AppContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -52,8 +52,79 @@ const ConversionAnalyticsModal = lazy(() =>
   import('./components/ConversionAnalyticsModal').then((m) => ({ default: m.ConversionAnalyticsModal }))
 );
 
-function SectionPlaceholder({ id }: { id: string }) {
-  return <div id={id} className="min-h-[240px] bg-[#020b18]" aria-hidden="true" />;
+function SectionPlaceholder({ id, minHeight = 'min-h-[320px]' }: { id: string; minHeight?: string }) {
+  return <div id={id} className={`${minHeight} bg-[#020b18]`} aria-hidden="true" />;
+}
+
+interface ViewportDeferredSectionProps {
+  id: string;
+  altIds?: string[];
+  minHeight?: string;
+  children: React.ReactNode;
+}
+
+function ViewportDeferredSection({
+  id,
+  altIds = [],
+  minHeight = 'min-h-[360px]',
+  children,
+}: ViewportDeferredSectionProps) {
+  const [shouldMount, setShouldMount] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return false;
+    const h = window.location.hash.replace('#', '');
+    return h === id || altIds.includes(h);
+  });
+  const sentinelRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (shouldMount) return;
+
+    const checkHash = () => {
+      const h = window.location.hash.replace('#', '');
+      if (h === id || altIds.includes(h)) {
+        setShouldMount(true);
+      }
+    };
+    window.addEventListener('hashchange', checkHash);
+
+    const node = sentinelRef.current;
+    if (!node || typeof IntersectionObserver === 'undefined') {
+      setShouldMount(true);
+      return () => window.removeEventListener('hashchange', checkHash);
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setShouldMount(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '350px 0px' }
+    );
+    observer.observe(node);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('hashchange', checkHash);
+    };
+  }, [shouldMount, id, altIds]);
+
+  if (!shouldMount) {
+    return (
+      <div ref={sentinelRef} id={id} className={`${minHeight} bg-[#020b18]`} aria-hidden="true">
+        {altIds.map((altId) => (
+          <div key={altId} id={altId} className="scroll-mt-24" />
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <Suspense fallback={<SectionPlaceholder id={id} minHeight={minHeight} />}>
+      {children}
+    </Suspense>
+  );
 }
 
 function MainAppContent() {
@@ -174,26 +245,26 @@ function MainAppContent() {
 
             <LuxuryAreasTopShowcase onSelectArea={handleSelectArea} />
 
-            <Suspense fallback={<SectionPlaceholder id="interactive-services" />}>
+            <ViewportDeferredSection id="interactive-services" altIds={['services', 'packing-section']} minHeight="min-h-[560px]">
               <InteractiveServicesFlipCards />
-            </Suspense>
+            </ViewportDeferredSection>
 
-            <Suspense fallback={<SectionPlaceholder id="winch-section" />}>
+            <ViewportDeferredSection id="winch-section" altIds={['video-section']} minHeight="min-h-[520px]">
               <VideoShowcase />
-            </Suspense>
+            </ViewportDeferredSection>
 
-            <Suspense fallback={<SectionPlaceholder id="gallery" />}>
+            <ViewportDeferredSection id="gallery" minHeight="min-h-[560px]">
               <RealGallery />
-            </Suspense>
+            </ViewportDeferredSection>
 
             <CompactTrustAndFaqPills
               onOpenFaq={() => setFaqModalOpen(true)}
               onOpenReviews={() => setReviewsModalOpen(true)}
             />
 
-            <Suspense fallback={<SectionPlaceholder id="location-section" />}>
+            <ViewportDeferredSection id="location-section" minHeight="min-h-[540px]">
               <GoogleMapsLocationSection />
-            </Suspense>
+            </ViewportDeferredSection>
 
             <QuickContactForm />
           </main>

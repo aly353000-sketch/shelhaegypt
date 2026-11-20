@@ -87,9 +87,9 @@ export const LuxuryCompoundsTrustStrip: React.FC<LuxuryCompoundsTrustStripProps>
               <Award className="w-4 h-4 text-amber-400" />
               <span>{t('تثق بنا نخبة عائلات أرقى كمبوندات مصر 👑', 'Trusted by elite families across Egypt premier compounds')}</span>
             </div>
-            <h3 className="text-lg sm:text-2xl font-black text-white">
+            <h2 className="text-lg sm:text-2xl font-black text-white">
               {t('تصاريح دخول رسمية معتمدة لأكثر من 120 كمبوند سكني وفندقي', 'Official access permits for 120+ gated luxury compounds')}
-            </h3>
+            </h2>
           </div>
 
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/80 border border-blue-800 text-sky-300 text-xs font-bold shrink-0 self-start md:self-auto">
@@ -117,12 +117,12 @@ export const LuxuryCompoundsTrustStrip: React.FC<LuxuryCompoundsTrustStripProps>
                 <span className="text-xs sm:text-sm font-black text-white group-hover:text-amber-300 transition-colors block">
                   {dev.nameAr}
                 </span>
-                <span className="text-[10px] text-slate-400 font-mono tracking-tighter block uppercase">
+                <span className="text-[10px] text-slate-300 font-mono tracking-tighter block uppercase">
                   {dev.nameEn}
                 </span>
               </div>
 
-              <span className="text-[10px] text-sky-300/80 font-medium line-clamp-1">
+              <span className="text-[10px] text-sky-200 font-medium line-clamp-1">
                 {dev.project.split('·')[0]}
               </span>
             </button>
@@ -130,7 +130,7 @@ export const LuxuryCompoundsTrustStrip: React.FC<LuxuryCompoundsTrustStripProps>
         </div>
 
         {/* Micro note */}
-        <div className="mt-5 text-center text-xs text-slate-400 flex items-center justify-center gap-2">
+        <div className="mt-5 text-center text-xs text-slate-300 flex items-center justify-center gap-2">
           <Building2 className="w-3.5 h-3.5 text-amber-400" />
           <span>
             {t(

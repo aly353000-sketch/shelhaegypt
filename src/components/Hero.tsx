@@ -82,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 sm:flex-none flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3.5 rounded-xl font-black text-sm sm:text-lg shadow-xl shadow-emerald-600/30 hover:scale-[1.02] active:scale-95 transition-all"
+                className="flex-1 sm:flex-none flex items-center justify-center gap-2.5 bg-emerald-700 hover:bg-emerald-600 text-white px-5 py-3.5 rounded-xl font-black text-sm sm:text-lg shadow-xl shadow-emerald-700/30 hover:scale-[1.02] active:scale-95 transition-all"
               >
                 <WhatsAppIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white shrink-0" />
                 <span>{t('احجز خدمة VIP عبر واتساب', 'Book VIP Move via WhatsApp')}</span>
@@ -90,7 +90,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
 
               <a
                 href={`tel:${COMPANY_DATA.phones[0].number}`}
-                className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white px-5 py-3.5 rounded-xl font-black text-sm sm:text-lg shadow-xl shadow-blue-500/25 hover:scale-[1.02] active:scale-95 transition-all"
+                className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-gradient-to-r from-blue-700 to-blue-600 hover:from-blue-600 hover:to-blue-500 text-white px-5 py-3.5 rounded-xl font-black text-sm sm:text-lg shadow-xl shadow-blue-700/25 hover:scale-[1.02] active:scale-95 transition-all"
               >
                 <Phone className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
                 <span>{t('اتصل فوراً: 01233391255', 'Call Now: 01233391255')}</span>
@@ -134,9 +134,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
                 <div className="space-y-1.5 flex-1">
                   <div className="flex items-center gap-2">
                     <span className="text-xl">👑</span>
-                    <h3 className="text-base sm:text-xl font-black text-amber-300">
+                    <h2 className="text-base sm:text-xl font-black text-amber-300">
                       {t('شعارنا: "عفشك مش مجرد حاجات.. دي ذكريات وتعب سنين"', 'Our Motto: "Your furniture is memories and life effort"')}
-                    </h3>
+                    </h2>
                   </div>
                   <p className="text-xs sm:text-sm leading-relaxed text-slate-200 font-medium">
                     {t(
