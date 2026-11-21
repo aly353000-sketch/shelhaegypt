@@ -91,6 +91,11 @@ export const Footer: React.FC = () => {
                   • {t('سيارات نقل عفش مغلقة ومبطنة للمحافظات', 'Padded Closed Trucks to All Governorates')}
                 </a>
               </li>
+              <li>
+                <a href="/articles/" className="inline-block py-1.5 text-amber-300 hover:text-amber-200 transition-colors">
+                  • {t('مقالات وأدلة نقل وتغليف الأثاث (موسوعة شاملة)', 'Moving & Packing SEO Guides Hub')}
+                </a>
+              </li>
             </ul>
           </div>
 

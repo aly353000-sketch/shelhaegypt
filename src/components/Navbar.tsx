@@ -106,18 +106,18 @@ export const Navbar: React.FC<NavbarProps> = ({
     { label: t('الخدمات', 'Services'), href: '#interactive-services' },
     { label: t('الونش الهيدروليكي', 'Hydraulic Winch'), href: '#winch-section' },
     { label: t('معرض الأعمال', 'Gallery'), href: '#gallery' },
-    { label: t('مقرنا بالمقطم 📍', 'Location'), href: '#location-section' },
+    { label: t('مقالات وأدلة', 'Moving Guides'), href: '/articles/' },
     { label: t('الأسئلة الشائعة', 'FAQs'), href: '#faqs' },
   ];
 
   const mobileNavLinks = [
     { label: t('الرئيسية', 'Home'), href: '#hero' },
+    { label: t('مقالات وأدلة نقل الأثاث 📖', 'Moving Guides & Articles 📖'), href: '/articles/' },
     { label: t('مقرنا بالمقطم 📍', 'Location'), href: '#location-section' },
     { label: t('خدمات الشقق والفلل VIP', 'VIP Moving Services'), href: '#services' },
     { label: t('خدمات تفاعلية 🔄', 'Interactive Services'), href: '#interactive-services' },
     { label: t('كمبوندات نخدمها 🏰', 'Compounds'), href: '#luxury-compounds' },
     { label: t('الونش الهيدروليكي', 'Hydraulic Winch'), href: '#winch-section' },
-    { label: t('قبل وبعد التغليف', 'Before & After'), href: '#case-study-article' },
     { label: t('معرض الأعمال', 'Gallery'), href: '#gallery' },
     { label: t('الأسئلة الشائعة', 'FAQs'), href: '#faqs' },
   ];

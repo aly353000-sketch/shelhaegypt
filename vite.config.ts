@@ -1,11 +1,42 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
+import fs from 'fs';
 import path from 'path';
-import { defineConfig } from 'vite';
+import { defineConfig, type Plugin } from 'vite';
+
+function serveStaticArticlesPlugin(): Plugin {
+  const rewriteArticles = (req: { url?: string }, res: { setHeader: (k: string, v: string) => void; end: (b: string) => void }, next: () => void, rootDir: string) => {
+    const cleanUrl = (req.url || '').split('?')[0];
+    if (cleanUrl === '/articles' || cleanUrl.startsWith('/articles/')) {
+      const normalized = cleanUrl.endsWith('/') ? `${cleanUrl}index.html` : `${cleanUrl}/index.html`;
+      const targetPath = path.resolve(rootDir, normalized.replace(/^\//, ''));
+      if (fs.existsSync(targetPath) && fs.statSync(targetPath).isFile()) {
+        res.setHeader('Content-Type', 'text/html; charset=utf-8');
+        res.end(fs.readFileSync(targetPath, 'utf8'));
+        return;
+      }
+    }
+    next();
+  };
+
+  return {
+    name: 'serve-static-articles',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) =>
+        rewriteArticles(req, res, next, path.resolve(__dirname, 'public'))
+      );
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use((req, res, next) =>
+        rewriteArticles(req, res, next, path.resolve(__dirname, 'dist'))
+      );
+    },
+  };
+}
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [serveStaticArticlesPlugin(), react(), tailwindcss()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
@@ -29,6 +60,9 @@ export default defineConfig(() => {
       },
     },
     server: {
+      port: 3000,
+      host: '0.0.0.0',
+      allowedHosts: true as const,
       hmr: process.env.DISABLE_HMR !== 'true',
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
