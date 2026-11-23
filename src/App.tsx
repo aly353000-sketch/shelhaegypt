@@ -3,41 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { AppProvider } from './context/AppContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { StatsCounterBar } from './components/StatsCounterBar';
+import { LuxuryCompoundsTrustStrip } from './components/LuxuryCompoundsTrustStrip';
+import { LuxuryAreasTopShowcase } from './components/LuxuryAreasTopShowcase';
+import { InteractiveServicesFlipCards } from './components/InteractiveServicesFlipCards';
+import { VideoShowcase } from './components/VideoShowcase';
+import { RealGallery } from './components/RealGallery';
+import { FaqSection } from './components/FaqSection';
+import { QuickContactForm } from './components/QuickContactForm';
 import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
 import { ScrollProgressBar } from './components/ScrollProgressBar';
 import { initGlobalConversionTracker } from './utils/analytics';
 
-// Lazy-load below-the-fold sections & modals so initial mobile JS bundle stays ultra-slim
-const LuxuryCompoundsTrustStrip = lazy(() =>
-  import('./components/LuxuryCompoundsTrustStrip').then((m) => ({ default: m.LuxuryCompoundsTrustStrip }))
-);
-const LuxuryAreasTopShowcase = lazy(() =>
-  import('./components/LuxuryAreasTopShowcase').then((m) => ({ default: m.LuxuryAreasTopShowcase }))
-);
-const CompactTrustAndFaqPills = lazy(() =>
-  import('./components/CompactTrustAndFaqPills').then((m) => ({ default: m.CompactTrustAndFaqPills }))
-);
-const QuickContactForm = lazy(() =>
-  import('./components/QuickContactForm').then((m) => ({ default: m.QuickContactForm }))
-);
-const InteractiveServicesFlipCards = lazy(() =>
-  import('./components/InteractiveServicesFlipCards').then((m) => ({ default: m.InteractiveServicesFlipCards }))
-);
-const VideoShowcase = lazy(() =>
-  import('./components/VideoShowcase').then((m) => ({ default: m.VideoShowcase }))
-);
-const RealGallery = lazy(() =>
-  import('./components/RealGallery').then((m) => ({ default: m.RealGallery }))
-);
-const GoogleMapsLocationSection = lazy(() =>
-  import('./components/GoogleMapsLocationSection').then((m) => ({ default: m.GoogleMapsLocationSection }))
-);
+// Lazy-load interactive modals & area detail view opened on user action
 const DedicatedAreaLandingPage = lazy(() =>
   import('./components/DedicatedAreaLandingPage').then((m) => ({ default: m.DedicatedAreaLandingPage }))
 );
@@ -59,81 +42,6 @@ const CompactReviewsModal = lazy(() =>
 const ConversionAnalyticsModal = lazy(() =>
   import('./components/ConversionAnalyticsModal').then((m) => ({ default: m.ConversionAnalyticsModal }))
 );
-
-function SectionPlaceholder({ id, minHeight = 'min-h-[320px]' }: { id: string; minHeight?: string }) {
-  return <div id={id} className={`${minHeight} bg-[#020b18]`} aria-hidden="true" />;
-}
-
-interface ViewportDeferredSectionProps {
-  id: string;
-  altIds?: string[];
-  minHeight?: string;
-  children: React.ReactNode;
-}
-
-function ViewportDeferredSection({
-  id,
-  altIds = [],
-  minHeight = 'min-h-[360px]',
-  children,
-}: ViewportDeferredSectionProps) {
-  const [shouldMount, setShouldMount] = useState<boolean>(() => {
-    if (typeof window === 'undefined') return false;
-    const h = window.location.hash.replace('#', '');
-    return h === id || altIds.includes(h);
-  });
-  const sentinelRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (shouldMount) return;
-
-    const checkHash = () => {
-      const h = window.location.hash.replace('#', '');
-      if (h === id || altIds.includes(h)) {
-        setShouldMount(true);
-      }
-    };
-    window.addEventListener('hashchange', checkHash);
-
-    const node = sentinelRef.current;
-    if (!node || typeof IntersectionObserver === 'undefined') {
-      setShouldMount(true);
-      return () => window.removeEventListener('hashchange', checkHash);
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          setShouldMount(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: '350px 0px' }
-    );
-    observer.observe(node);
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('hashchange', checkHash);
-    };
-  }, [shouldMount, id, altIds]);
-
-  if (!shouldMount) {
-    return (
-      <div ref={sentinelRef} id={id} className={`${minHeight} bg-[#020b18]`} aria-hidden="true">
-        {altIds.map((altId) => (
-          <div key={altId} id={altId} className="scroll-mt-24" />
-        ))}
-      </div>
-    );
-  }
-
-  return (
-    <Suspense fallback={<SectionPlaceholder id={id} minHeight={minHeight} />}>
-      {children}
-    </Suspense>
-  );
-}
 
 function MainAppContent() {
   const [searchModalOpen, setSearchModalOpen] = useState(false);
@@ -249,40 +157,36 @@ function MainAppContent() {
 
             <StatsCounterBar />
 
-            <ViewportDeferredSection id="luxury-compounds" minHeight="min-h-[340px]">
+            <div id="luxury-compounds">
               <LuxuryCompoundsTrustStrip onSelectArea={handleSelectArea} />
-            </ViewportDeferredSection>
+            </div>
 
-            <ViewportDeferredSection id="luxury-areas" minHeight="min-h-[480px]">
+            <div id="luxury-areas">
               <LuxuryAreasTopShowcase onSelectArea={handleSelectArea} />
-            </ViewportDeferredSection>
+            </div>
 
-            <ViewportDeferredSection id="interactive-services" altIds={['services', 'packing-section']} minHeight="min-h-[560px]">
+            <div id="services">
+              <div id="packing-section" />
               <InteractiveServicesFlipCards />
-            </ViewportDeferredSection>
+            </div>
 
-            <ViewportDeferredSection id="winch-section" altIds={['video-section']} minHeight="min-h-[520px]">
+            <div id="winch-section">
+              <div id="video-section" />
               <VideoShowcase />
-            </ViewportDeferredSection>
+            </div>
 
-            <ViewportDeferredSection id="gallery" minHeight="min-h-[560px]">
+            <div id="gallery">
               <RealGallery />
-            </ViewportDeferredSection>
+            </div>
 
-            <ViewportDeferredSection id="faqs" minHeight="min-h-[180px]">
-              <CompactTrustAndFaqPills
-                onOpenFaq={() => setFaqModalOpen(true)}
-                onOpenReviews={() => setReviewsModalOpen(true)}
-              />
-            </ViewportDeferredSection>
+            <div id="faqs">
+              <FaqSection />
+            </div>
 
-            <ViewportDeferredSection id="location-section" minHeight="min-h-[540px]">
-              <GoogleMapsLocationSection />
-            </ViewportDeferredSection>
-
-            <ViewportDeferredSection id="quick-contact" altIds={['contact-form']} minHeight="min-h-[460px]">
+            <div id="quick-contact">
+              <div id="contact-form" />
               <QuickContactForm />
-            </ViewportDeferredSection>
+            </div>
           </main>
 
           <Footer />

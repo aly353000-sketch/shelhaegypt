@@ -5,7 +5,7 @@ import path from 'path';
 import { defineConfig, type Plugin } from 'vite';
 
 function serveStaticArticlesPlugin(): Plugin {
-  const rewriteArticles = (req: { url?: string }, res: { setHeader: (k: string, v: string) => void; end: (b: string) => void }, next: () => void, rootDir: string) => {
+  const rewriteArticles = (req: { url?: string }, res: { statusCode?: number; setHeader: (k: string, v: string) => void; end: (b: string | Buffer) => void }, next: () => void, rootDir: string) => {
     const cleanUrl = (req.url || '').split('?')[0];
     if (cleanUrl === '/articles' || cleanUrl.startsWith('/articles/')) {
       const normalized = cleanUrl.endsWith('/') ? `${cleanUrl}index.html` : `${cleanUrl}/index.html`;

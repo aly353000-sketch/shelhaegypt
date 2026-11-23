@@ -3,7 +3,7 @@ import { Phone, ChevronUp, Copy, Check } from 'lucide-react';
 import { CONTACT_INFO } from '../data/contactInfo';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { useApp } from '../context/AppContext';
-import { trackPhoneClick, trackWhatsAppClick } from '../utils/analytics';
+import { handlePhoneCallClick, trackWhatsAppClick } from '../utils/analytics';
 
 export const FloatingActions: React.FC = () => {
   const { t } = useApp();
@@ -94,7 +94,7 @@ export const FloatingActions: React.FC = () => {
         <div className="flex items-center overflow-hidden rounded-full shadow-2xl shadow-blue-700/45 border-2 border-sky-300/45 bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 text-white transition-all duration-300 hover:shadow-blue-600/60">
           <a
             href={`tel:${phoneNumber}`}
-            onClick={() => trackPhoneClick(phoneNumber, 'زر الاتصال العائم', `tel:${phoneNumber}`)}
+            onClick={(e) => handlePhoneCallClick(e, `tel:${phoneNumber}`, 'زر الاتصال العائم')}
             className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 hover:bg-white/10 active:scale-95 transition-all cursor-pointer group"
             aria-label={t(`اتصل الآن بشركة رويال موفرز VIP - ${phoneNumber}`, `Call Royal Movers VIP - ${phoneNumber}`)}
           >

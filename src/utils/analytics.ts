@@ -1,9 +1,11 @@
 /**
  * Google Analytics 4 & Google Ads Conversion Tracking Utility
- * Google Ads Conversion ID: AW-18544594401/Mq04CNmS1LgdEOGb4IpF
+ * Google Ads Call Conversion ID: AW-18544594401/Zg7tCM6j1r0dEOGb4IpF
+ * Google Ads Contact Conversion ID: AW-18544594401/Mq04CNmS1LgdEOGb4IpF
  * GA4 Measurement ID: G-2TFJ7D161W
  */
 
+export const GOOGLE_ADS_CALL_SEND_TO = 'AW-18544594401/Zg7tCM6j1r0dEOGb4IpF';
 export const GOOGLE_ADS_CONTACT_SEND_TO = 'AW-18544594401/Mq04CNmS1LgdEOGb4IpF';
 
 export interface ConversionRecord {
@@ -28,9 +30,11 @@ export interface DailySummary {
 declare global {
   interface Window {
     gtag?: (...args: any[]) => void;
+    gtag_report_conversion?: (url?: string) => boolean;
     dataLayer?: any[];
     __lastGaEventTime?: Record<string, number>;
     __lastLocalEventTime?: Record<string, number>;
+    __lastCallConversionTime?: Record<string, number>;
   }
 }
 
@@ -186,43 +190,66 @@ function generateInitialSampleData(): ConversionRecord[] {
 }
 
 /**
- * Track phone call clicks safely without duplicates
+ * Track phone call clicks safely without duplicates and report Google Ads Call conversion
  */
 export function trackPhoneClick(phoneNumber: string, linkText?: string, linkUrl?: string) {
-  const key = `phone_${phoneNumber}`;
+  const cleanPhone = phoneNumber.replace(/^tel:/i, '').trim() || '01233391255';
+  const telUrl = linkUrl || `tel:${cleanPhone}`;
+  const key = `phone_${cleanPhone}`;
   const now = Date.now();
 
   if (typeof window !== 'undefined') {
     window.__lastLocalEventTime = window.__lastLocalEventTime || {};
     if (!window.__lastLocalEventTime[key] || now - window.__lastLocalEventTime[key] >= 800) {
       window.__lastLocalEventTime[key] = now;
-      recordLocalConversion('phone', linkText || 'اتصال هاتفي', phoneNumber);
+      recordLocalConversion('phone', linkText || 'اتصال هاتفي', cleanPhone);
     }
 
     window.__lastGaEventTime = window.__lastGaEventTime || {};
-    if (window.__lastGaEventTime[key] && now - window.__lastGaEventTime[key] < 800) {
+    if (!window.__lastGaEventTime[key] || now - window.__lastGaEventTime[key] >= 800) {
+      window.__lastGaEventTime[key] = now;
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'phone_click', {
+          phone_number: cleanPhone,
+          link_url: telUrl,
+          link_text: linkText || 'Phone Call',
+          event_category: 'engagement',
+          event_label: cleanPhone,
+        });
+      }
+    }
+
+    window.__lastCallConversionTime = window.__lastCallConversionTime || {};
+    if (window.__lastCallConversionTime[key] && now - window.__lastCallConversionTime[key] < 800) {
       return;
     }
-    window.__lastGaEventTime[key] = now;
+    window.__lastCallConversionTime[key] = now;
 
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'phone_click', {
-        phone_number: phoneNumber,
-        link_url: linkUrl || `tel:${phoneNumber}`,
-        link_text: linkText || 'Phone Call',
-        event_category: 'engagement',
-        event_label: phoneNumber,
-      });
-
+    if (typeof window.gtag_report_conversion === 'function') {
+      window.gtag_report_conversion(telUrl);
+    } else if (typeof window.gtag === 'function') {
       window.gtag('event', 'conversion', {
-        send_to: GOOGLE_ADS_CONTACT_SEND_TO,
+        send_to: GOOGLE_ADS_CALL_SEND_TO,
         value: 1.0,
         currency: 'EGP',
-        event_category: 'lead',
-        event_label: phoneNumber,
       });
     }
   }
+}
+
+/**
+ * Click handler for tel: links in React components matching:
+ * onclick="return gtag_report_conversion('tel:01233391255');"
+ */
+export function handlePhoneCallClick(
+  event?: { preventDefault?: () => void },
+  url = 'tel:01233391255',
+  label?: string
+): false {
+  event?.preventDefault?.();
+  const cleanPhone = url.replace(/^tel:/i, '').trim() || '01233391255';
+  trackPhoneClick(cleanPhone, label, url);
+  return false;
 }
 
 /**
@@ -317,7 +344,6 @@ function inferLinkSourceLabel(link: HTMLAnchorElement, type: 'phone' | 'whatsapp
   if (link.closest('header, nav')) sectionTag = 'الشريط العلوي';
   else if (link.closest('footer')) sectionTag = 'أسفل الموقع';
   else if (link.closest('#hero')) sectionTag = 'القسم الرئيسي';
-  else if (link.closest('#location-section')) sectionTag = 'خريطة المقطم';
   else if (link.closest('#winch-section, #winch-deep-dive')) sectionTag = 'قسم الونش';
   else if (link.closest('#interactive-services, #services')) sectionTag = 'بطاقات الخدمات';
 
@@ -344,9 +370,8 @@ export function initGlobalConversionTracker(): () => void {
     if (!href) return;
 
     if (href.startsWith('tel:')) {
-      const phone = href.replace('tel:', '').trim();
       const label = inferLinkSourceLabel(link, 'phone');
-      trackPhoneClick(phone, label, href);
+      handlePhoneCallClick(event, href, label);
     } else if (href.includes('wa.me') || href.includes('api.whatsapp.com')) {
       const label = inferLinkSourceLabel(link, 'whatsapp');
       trackWhatsAppClick(href, label);

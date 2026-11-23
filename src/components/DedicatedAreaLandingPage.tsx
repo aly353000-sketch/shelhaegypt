@@ -1,4 +1,5 @@
 import React from 'react';
+import { handlePhoneCallClick } from '../utils/analytics';
 import { 
   ArrowRight, 
   Phone, 
@@ -132,6 +133,7 @@ export const DedicatedAreaLandingPage: React.FC<DedicatedAreaLandingPageProps> =
           {/* Direct Hotline Badge */}
           <a
             href={`tel:${COMPANY_DATA.phones[0].number}`}
+            onClick={(e) => handlePhoneCallClick(e, `tel:${COMPANY_DATA.phones[0].number}`, 'صفحة المنطقة (الشريط العلوي)')}
             className="flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black text-xs sm:text-sm px-3.5 py-1.5 rounded-xl shadow-sm hover:scale-105 transition-transform"
           >
             <Phone className="w-3.5 h-3.5" />
@@ -199,6 +201,7 @@ export const DedicatedAreaLandingPage: React.FC<DedicatedAreaLandingPageProps> =
             <div className="pt-3 flex flex-wrap items-center justify-center gap-4">
               <a
                 href={`tel:${COMPANY_DATA.phones[0].number}`}
+                onClick={(e) => handlePhoneCallClick(e, `tel:${COMPANY_DATA.phones[0].number}`, 'صفحة المنطقة (زر رئيسي)')}
                 className="flex items-center gap-2.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
               >
                 <Phone className="w-5 h-5 text-slate-950" />
@@ -282,6 +285,7 @@ export const DedicatedAreaLandingPage: React.FC<DedicatedAreaLandingPageProps> =
               <div className="space-y-2 pt-2">
                 <a
                   href={`tel:${COMPANY_DATA.phones[0].number}`}
+                  onClick={(e) => handlePhoneCallClick(e, `tel:${COMPANY_DATA.phones[0].number}`, 'صفحة المنطقة (بطاقة جانبية)')}
                   className="w-full flex items-center justify-center gap-2 bg-white text-emerald-950 hover:bg-slate-100 font-black py-3 px-4 rounded-xl text-sm shadow-md transition-all active:scale-95"
                 >
                   <Phone className="w-4 h-4 text-emerald-700" />
@@ -535,6 +539,7 @@ export const DedicatedAreaLandingPage: React.FC<DedicatedAreaLandingPageProps> =
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a
               href={`tel:${COMPANY_DATA.phones[0].number}`}
+              onClick={(e) => handlePhoneCallClick(e, `tel:${COMPANY_DATA.phones[0].number}`, 'صفحة المنطقة (أسفل الصفحة)')}
               className="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-6 py-3.5 rounded-2xl text-sm sm:text-base shadow-lg transition-transform hover:scale-105"
             >
               <Phone className="w-5 h-5" />

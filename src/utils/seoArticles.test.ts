@@ -11,8 +11,8 @@ import {
   ADS_CONVERSION_SEND_TO,
 } from './seoArticles';
 
-test('Batch 1 SEO articles registry passes anti-duplication & SEO checks', () => {
-  assert.equal(SEO_ARTICLES.length, 8);
+test('Batch 1 & Batch 2 SEO articles registry passes anti-duplication & SEO checks', () => {
+  assert.equal(SEO_ARTICLES.length, 12);
   const res = validateArticleRegistry(SEO_ARTICLES, PLANNED_SEO_BACKLOG);
   assert.equal(res.valid, true, `Validation errors: ${res.errors.join('; ')}`);
 });
@@ -39,7 +39,19 @@ test('Generated article HTML contains canonical, valid JSON-LD schemas, correct 
   assert.ok(html.includes(`<link rel="canonical" href="${SITE_DOMAIN}/articles/${article.slug}/" />`));
   assert.ok(html.includes('wa.me/201233391255?text='));
   assert.ok(!html.includes('wa.me/2001233391255'));
+  assert.ok(html.includes('https://www.googletagmanager.com/gtag/js?id=AW-18544594401'));
+  assert.ok(html.includes('function gtag_report_conversion(url)'));
+  assert.ok(html.includes('AW-18544594401/Zg7tCM6j1r0dEOGb4IpF'));
   assert.ok(html.includes(ADS_CONVERSION_SEND_TO));
+
+  const telMatches = html.match(/<a[^>]*href="tel:01233391255"[^>]*>/g) || [];
+  assert.ok(telMatches.length >= 4, 'Expected at least 4 tel: links in article HTML');
+  for (const tag of telMatches) {
+    assert.ok(
+      tag.includes(`onclick="return gtag_report_conversion('tel:01233391255');"`),
+      `Missing gtag_report_conversion onclick on: ${tag}`
+    );
+  }
 
   const jsonLdMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
   assert.ok(jsonLdMatch, 'JSON-LD script tag must exist');
@@ -51,6 +63,16 @@ test('Generated article HTML contains canonical, valid JSON-LD schemas, correct 
 test('Generated articles index HTML links to all 8 published articles', () => {
   const html = buildArticlesIndexHtml(SEO_ARTICLES);
   assert.ok(html.includes(`<link rel="canonical" href="${SITE_DOMAIN}/articles/" />`));
+  assert.ok(html.includes('https://www.googletagmanager.com/gtag/js?id=AW-18544594401'));
+  assert.ok(html.includes('function gtag_report_conversion(url)'));
+  const telMatches = html.match(/<a[^>]*href="tel:01233391255"[^>]*>/g) || [];
+  assert.ok(telMatches.length >= 4, 'Expected at least 4 tel: links in articles index HTML');
+  for (const tag of telMatches) {
+    assert.ok(
+      tag.includes(`onclick="return gtag_report_conversion('tel:01233391255');"`),
+      `Missing gtag_report_conversion onclick on: ${tag}`
+    );
+  }
   for (const article of SEO_ARTICLES) {
     assert.ok(html.includes(`/articles/${article.slug}/`), `Missing link to ${article.slug}`);
   }

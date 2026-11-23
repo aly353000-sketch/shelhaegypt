@@ -2,6 +2,7 @@ import React from 'react';
 import { Phone, MessageCircle, Clock, ShieldCheck, Heart } from 'lucide-react';
 import { CONTACT_INFO } from '../data/contactInfo';
 import { useApp } from '../context/AppContext';
+import { handlePhoneCallClick } from '../utils/analytics';
 
 export const Footer: React.FC = () => {
   const { t, theme } = useApp();
@@ -127,6 +128,7 @@ export const Footer: React.FC = () => {
             <div className="space-y-2 text-xs sm:text-sm">
               <a
                 href="tel:01233391255"
+                onClick={(e) => handlePhoneCallClick(e, 'tel:01233391255', 'أسفل الموقع (اتصال)')}
                 className={`flex items-center justify-between p-3 rounded-xl border transition-colors shadow-sm ${
                   theme === 'light'
                     ? 'bg-amber-50/70 hover:bg-amber-100/70 border-amber-300 text-slate-800'

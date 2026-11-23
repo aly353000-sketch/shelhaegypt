@@ -45,15 +45,10 @@ export const COMPANY_DATA = {
   whatsappInternational: '201233391255',
   hours: 'متاحون على مدار 24 ساعة طوال أيام الأسبوع',
   location: {
-    city: 'القاهرة',
-    district: 'المقطم',
-    fullAddress: 'شارع 9، ميدان النافورة، المقطم، محافظة القاهرة، مصر',
-    shortAddress: 'المقطم، القاهرة',
-    coordinates: {
-      lat: 30.0131,
-      lng: 31.3026,
-    },
-    googleMapsUrl: 'https://maps.google.com/?q=30.0131,31.3026+(رويال+موفرز+VIP+-+المقطم)',
+    city: 'القاهرة والجيزة',
+    district: 'القاهرة الكبرى',
+    fullAddress: 'نخدم جميع أحياء القاهرة والجيزة والمدن الجديدة وجميع محافظات مصر',
+    shortAddress: 'القاهرة والجيزة',
   },
   stats: [
     { label: 'عملية نقل ناجحة', value: '+16,850', icon: 'CheckCircle' },

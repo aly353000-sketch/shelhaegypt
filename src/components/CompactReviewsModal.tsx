@@ -2,6 +2,7 @@ import React from 'react';
 import { X, Star, Quote, CheckCircle2, Phone } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { COMPANY_DATA } from '../data/companyData';
+import { handlePhoneCallClick } from '../utils/analytics';
 
 interface CompactReviewsModalProps {
   isOpen: boolean;
@@ -90,6 +91,7 @@ export const CompactReviewsModal: React.FC<CompactReviewsModalProps> = ({ isOpen
           <div className="flex items-center gap-2">
             <a
               href="tel:01233391255"
+              onClick={(e) => handlePhoneCallClick(e, 'tel:01233391255', 'نافذة التقييمات (اتصال)')}
               className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-4 py-2 rounded-xl flex items-center gap-1.5"
             >
               <Phone className="w-3.5 h-3.5" />

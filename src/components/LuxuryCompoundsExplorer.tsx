@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { handlePhoneCallClick } from '../utils/analytics';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Building2, 
@@ -526,6 +527,7 @@ export const LuxuryCompoundsExplorer: React.FC<LuxuryCompoundsExplorerProps> = (
 
                   <a
                     href={`tel:${COMPANY_DATA.phones[0].number}`}
+                    onClick={(e) => handlePhoneCallClick(e, `tel:${COMPANY_DATA.phones[0].number}`, 'بطاقة كمبوند (اتصال)')}
                     className="w-full flex items-center justify-center gap-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-blue-900/40 dark:hover:bg-blue-900/70 text-slate-800 dark:text-slate-200 font-black py-2 px-3 rounded-xl text-xs transition-colors"
                   >
                     <Phone className="w-3.5 h-3.5 text-blue-600 dark:text-sky-400" />
@@ -566,6 +568,7 @@ export const LuxuryCompoundsExplorer: React.FC<LuxuryCompoundsExplorerProps> = (
 
             <a
               href={`tel:${COMPANY_DATA.phones[0].number}`}
+              onClick={(e) => handlePhoneCallClick(e, `tel:${COMPANY_DATA.phones[0].number}`, 'قسم الكمبوندات (اتصال)')}
               className="w-full sm:w-auto flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-6 py-3.5 rounded-2xl text-xs sm:text-sm shadow-lg transition-transform hover:scale-105 active:scale-95"
             >
               <Phone className="w-4 h-4" />

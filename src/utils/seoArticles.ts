@@ -5,6 +5,7 @@ export const PHONE_DISPLAY = '01233391255';
 export const WHATSAPP_INTL = '201233391255';
 export const ADS_ID = 'AW-18544594401';
 export const GA4_ID = 'G-2TFJ7D161W';
+export const ADS_CALL_CONVERSION_SEND_TO = 'AW-18544594401/Zg7tCM6j1r0dEOGb4IpF';
 export const ADS_CONVERSION_SEND_TO = 'AW-18544594401/Mq04CNmS1LgdEOGb4IpF';
 
 export interface RegistryValidationResult {
@@ -113,28 +114,36 @@ export function escapeXml(str: string): string {
 }
 
 function buildSharedHeadScripts(): string {
-  return `    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  return `    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=${ADS_ID}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', '${ADS_ID}');
       gtag('config', '${GA4_ID}');
-      (function() {
-        var loaded = false;
-        function loadGtag() {
-          if (loaded) return;
-          loaded = true;
-          var s = document.createElement('script');
-          s.async = true;
-          s.src = 'https://www.googletagmanager.com/gtag/js?id=${ADS_ID}';
-          document.head.appendChild(s);
-        }
-        ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function(evt) {
-          window.addEventListener(evt, loadGtag, { passive: true, once: true });
+    </script>
+    <script>
+      function gtag_report_conversion(url) {
+        var called = false;
+        var callback = function () {
+          if (called) return;
+          called = true;
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': '${ADS_CALL_CONVERSION_SEND_TO}',
+          'value': 1.0,
+          'currency': 'EGP',
+          'event_callback': callback
         });
-        window.addEventListener('load', function() { setTimeout(loadGtag, 3200); }, { once: true });
-      })();
+        setTimeout(callback, 800);
+        return false;
+      }
+    </script>
+    <script>
       document.addEventListener('click', function(event) {
         var link = event.target && event.target.closest ? event.target.closest('a') : null;
         if (!link || !link.href) return;
@@ -147,7 +156,6 @@ function buildSharedHeadScripts(): string {
           if (window.__lastGaEventTime[phoneKey] && (now - window.__lastGaEventTime[phoneKey] < 800)) return;
           window.__lastGaEventTime[phoneKey] = now;
           gtag('event', 'phone_click', { phone_number: phoneNumber, link_url: href, event_category: 'engagement', event_label: phoneNumber });
-          gtag('event', 'conversion', { send_to: '${ADS_CONVERSION_SEND_TO}', value: 1.0, currency: 'EGP', event_category: 'lead', event_label: phoneNumber });
         } else if (href.indexOf('wa.me') !== -1 || href.indexOf('api.whatsapp.com') !== -1) {
           var waKey = 'wa_' + href;
           if (window.__lastGaEventTime[waKey] && (now - window.__lastGaEventTime[waKey] < 800)) return;
@@ -257,7 +265,7 @@ function buildHeaderHtml(): string {
   return `    <div class="topbar">
       <div class="topbar-inner">
         <span>متاحون 24 ساعة طوال الأسبوع — تغليف أوروبي 5 طبقات وأوناش هيدروليكية</span>
-        <span>الخط الساخن الموحد: <a href="tel:${PHONE_DISPLAY}" dir="ltr">${PHONE_DISPLAY}</a></span>
+        <span>الخط الساخن الموحد: <a href="tel:${PHONE_DISPLAY}" onclick="return gtag_report_conversion('tel:${PHONE_DISPLAY}');" dir="ltr">${PHONE_DISPLAY}</a></span>
       </div>
     </div>
     <header class="site-header">
@@ -282,7 +290,7 @@ function buildHeaderHtml(): string {
 function buildStickyCtaHtml(waUrl: string): string {
   return `    <div class="sticky-mobile-cta" role="region" aria-label="التواصل السريع">
       <a class="btn btn-wa" href="${escapeHtml(waUrl)}" target="_blank" rel="noopener noreferrer">احجز عبر واتساب</a>
-      <a class="btn btn-call" href="tel:${PHONE_DISPLAY}">اتصل الآن: <span dir="ltr">${PHONE_DISPLAY}</span></a>
+      <a class="btn btn-call" href="tel:${PHONE_DISPLAY}" onclick="return gtag_report_conversion('tel:${PHONE_DISPLAY}');">اتصل الآن: <span dir="ltr">${PHONE_DISPLAY}</span></a>
     </div>`;
 }
 
@@ -471,7 +479,7 @@ ${sectionsHtml}
           <p>تواصل الآن مع فريق رويال موفرز VIP للحصول على معاينة مجانية وعرض سعر ثابت شامل التغليف الأوروبي 5 طبقات والفك والتركيب.</p>
           <div class="cta-actions">
             <a class="btn btn-wa" href="${escapeHtml(waUrl)}" target="_blank" rel="noopener noreferrer">احجز معاينة عبر واتساب</a>
-            <a class="btn btn-call" href="tel:${PHONE_DISPLAY}">اتصال فوري: <span dir="ltr">${PHONE_DISPLAY}</span></a>
+            <a class="btn btn-call" href="tel:${PHONE_DISPLAY}" onclick="return gtag_report_conversion('tel:${PHONE_DISPLAY}');">اتصال فوري: <span dir="ltr">${PHONE_DISPLAY}</span></a>
           </div>
         </div>
 
@@ -490,7 +498,7 @@ ${relatedHtml}
     </main>
 
     <footer class="site-footer">
-      <p>© ${new Date().getFullYear()} شركة رويال موفرز VIP لنقل وتغليف الأثاث بمصر — المقطم، القاهرة — الخط الساخن: <a href="tel:${PHONE_DISPLAY}" dir="ltr">${PHONE_DISPLAY}</a></p>
+      <p>© ${new Date().getFullYear()} شركة رويال موفرز لنقل وتغليف الأثاث في القاهرة والجيزة — الخط الساخن: <a href="tel:${PHONE_DISPLAY}" onclick="return gtag_report_conversion('tel:${PHONE_DISPLAY}');" dir="ltr">${PHONE_DISPLAY}</a></p>
       <p><a href="/">العودة إلى الصفحة الرئيسية</a> · <a href="/articles/">تصفح جميع المقالات</a></p>
     </footer>
 ${buildStickyCtaHtml(waUrl)}
@@ -596,13 +604,13 @@ ${cardsHtml}
         <p>تواصل معنا مباشرة على واتساب أو الخط الساخن الموحد 24 ساعة لتحصل على خطة نقل وتغليف متكاملة بسعر ثابت.</p>
         <div class="cta-actions">
           <a class="btn btn-wa" href="${escapeHtml(waUrl)}" target="_blank" rel="noopener noreferrer">احجز معاينة مجانية عبر واتساب</a>
-          <a class="btn btn-call" href="tel:${PHONE_DISPLAY}">اتصل الآن: <span dir="ltr">${PHONE_DISPLAY}</span></a>
+          <a class="btn btn-call" href="tel:${PHONE_DISPLAY}" onclick="return gtag_report_conversion('tel:${PHONE_DISPLAY}');">اتصل الآن: <span dir="ltr">${PHONE_DISPLAY}</span></a>
         </div>
       </div>
     </main>
 
     <footer class="site-footer">
-      <p>© ${new Date().getFullYear()} شركة رويال موفرز VIP لنقل وتغليف الأثاث بمصر — الخط الساخن: <a href="tel:${PHONE_DISPLAY}" dir="ltr">${PHONE_DISPLAY}</a></p>
+      <p>© ${new Date().getFullYear()} شركة رويال موفرز VIP لنقل وتغليف الأثاث بمصر — الخط الساخن: <a href="tel:${PHONE_DISPLAY}" onclick="return gtag_report_conversion('tel:${PHONE_DISPLAY}');" dir="ltr">${PHONE_DISPLAY}</a></p>
       <p><a href="/">العودة إلى الصفحة الرئيسية</a></p>
     </footer>
 ${buildStickyCtaHtml(waUrl)}

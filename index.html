@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Google tag (gtag.js) - Instant dataLayer queue + zero-loss deferred network loader -->
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18544594401"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -13,28 +13,32 @@
 
       gtag('config', 'AW-18544594401');
       gtag('config', 'G-2TFJ7D161W');
+    </script>
 
-      // Load gtag.js network script on first user interaction or after initial render settles
-      // All config & conversion calls remain queued in dataLayer with zero data loss
-      (function() {
-        var loaded = false;
-        function loadGtagScript() {
-          if (loaded) return;
-          loaded = true;
-          var s = document.createElement('script');
-          s.async = true;
-          s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18544594401';
-          document.head.appendChild(s);
-        }
-        ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function(evt) {
-          window.addEventListener(evt, loadGtagScript, { passive: true, once: true });
+    <!-- Event snippet for Google Ads Phone Call conversion -->
+    <script>
+      function gtag_report_conversion(url) {
+        var called = false;
+        var callback = function () {
+          if (called) return;
+          called = true;
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18544594401/Zg7tCM6j1r0dEOGb4IpF',
+          'value': 1.0,
+          'currency': 'EGP',
+          'event_callback': callback
         });
-        window.addEventListener('load', function() {
-          setTimeout(loadGtagScript, 3200);
-        }, { once: true });
-      })();
+        setTimeout(callback, 800);
+        return false;
+      }
+    </script>
 
-      // Global Deduplicated Click Tracking for phone_click, whatsapp_click and Google Ads conversions
+    <script>
+      // Global Deduplicated Click Tracking for GA4 phone_click, whatsapp_click and WhatsApp Ads conversion
       document.addEventListener('click', function(event) {
         var link = event.target && event.target.closest ? event.target.closest('a') : null;
         if (!link || !link.href) return;
@@ -57,14 +61,6 @@
               link_text: (link.textContent || '').trim().substring(0, 60),
               event_category: 'engagement',
               event_label: phoneNumber
-            });
-            // Google Ads Conversion tracking for Phone Call lead - جهة اتصال (2)
-            gtag('event', 'conversion', {
-              'send_to': 'AW-18544594401/Mq04CNmS1LgdEOGb4IpF',
-              'value': 1.0,
-              'currency': 'EGP',
-              'event_category': 'lead',
-              'event_label': phoneNumber
             });
           }
         } else if (href.indexOf('wa.me') !== -1 || href.indexOf('api.whatsapp.com') !== -1) {
@@ -93,10 +89,10 @@
         }
       }, { capture: true });
     </script>
-    <title>رويال موفرز VIP | خدمة نقل وتغليف الأثاث الفندقية للفلل والشقق الراقية | 01233391255</title>
-    <meta name="description" content="رويال موفرز VIP خدمة نقل وتغليف فندقية راقية للفلل والشقق والكمبوندات في القاهرة والجيزة. عناية فائقة بالتحف والصالونات والنجف، تغليف أوروبي 5 طبقات، وفك وتركيب شامل بدون خدش. اتصل الآن: 01233391255." />
-    <meta name="keywords" content="رويال موفرز VIP, نقل وتغليف اثاث, شركة نقل عفش التجمع الخامس, نقل اثاث الشيخ زايد, نقل عفش مدينتي والرحاب, تغليف اثاث بالبابلز, نقل اثاث فلل وقصور, افضل شركة نقل اثاث بالقاهرة, نقل اثاث كمبوندات, 01233391255" />
-    <meta name="author" content="رويال موفرز VIP لنقل الأثاث | Royal Movers Egypt" />
+    <title>نقل عفش وأثاث في القاهرة والجيزة | رويال موفرز</title>
+    <meta name="description" content="رويال موفرز لنقل وتغليف الأثاث في القاهرة والجيزة، مع فك وتركيب الأثاث وخدمة الونش حسب احتياج المكان. تواصل معنا لمعرفة التفاصيل وطلب عرض سعر." />
+    <meta name="keywords" content="نقل عفش القاهرة, نقل اثاث الجيزة, شركة نقل عفش, رويال موفرز, تغليف اثاث, فك وتركيب اثاث, ونش رفع اثاث, نقل عفش التجمع الخامس, نقل اثاث الشيخ زايد, نقل عفش المعادي" />
+    <meta name="author" content="رويال موفرز لنقل الأثاث | Royal Movers Egypt" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     
     <!-- Google Search Console Verification Meta Tag -->
@@ -115,25 +111,23 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Geo Local SEO for Egypt - Mokattam Headquarters -->
-    <meta name="geo.region" content="EG-C" />
-    <meta name="geo.placename" content="Mokattam, Cairo, Egypt" />
-    <meta name="geo.position" content="30.0131;31.3026" />
-    <meta name="ICBM" content="30.0131, 31.3026" />
+    <!-- Service Area Geo Metadata (Greater Cairo & Giza) -->
+    <meta name="geo.region" content="EG" />
+    <meta name="geo.placename" content="Cairo and Giza, Egypt" />
 
     <!-- Open Graph / Facebook / WhatsApp Preview -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://shelhaegypt.com/" />
-    <meta property="og:title" content="رويال موفرز VIP | خدمة نقل وتغليف الأثاث الفندقية للفلل والشقق الراقية | 01233391255" />
-    <meta property="og:description" content="مش مجرد عمال نقل.. إحنا حراس لرفاهيتك! تغليف أوروبي 5 طبقات للتحف والصالونات والنجف، نجارون وفنيو تكييفات محترفون، وتصاريح دخول لأرقى كمبوندات مصر. الخط الموحد: 01233391255." />
+    <meta property="og:title" content="نقل عفش وأثاث في القاهرة والجيزة | رويال موفرز" />
+    <meta property="og:description" content="رويال موفرز لنقل وتغليف الأثاث في القاهرة والجيزة، مع فك وتركيب الأثاث وخدمة الونش حسب احتياج المكان. تواصل معنا لمعرفة التفاصيل وطلب عرض سعر." />
     <meta property="og:site_name" content="رويال موفرز لنقل الأثاث | ROYAL MOVERS VIP" />
     <meta property="og:locale" content="ar_EG" />
     <meta property="og:image" content="https://shelhaegypt.com/assets/logos/royal_movers_logo.jpg" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="رويال موفرز VIP | خدمة نقل وتغليف الأثاث الفندقية للفلل والشقق الراقية | 01233391255" />
-    <meta name="twitter:description" content="مش مجرد عمال نقل.. إحنا حراس لرفاهيتك! تغليف أوروبي 5 طبقات للتحف والصالونات والنجف، نجارون وفنيو تكييفات محترفون، وتصاريح دخول لأرقى كمبوندات مصر. الخط الموحد: 01233391255." />
+    <meta name="twitter:title" content="نقل عفش وأثاث في القاهرة والجيزة | رويال موفرز" />
+    <meta name="twitter:description" content="رويال موفرز لنقل وتغليف الأثاث في القاهرة والجيزة، مع فك وتركيب الأثاث وخدمة الونش حسب احتياج المكان. تواصل معنا لمعرفة التفاصيل وطلب عرض سعر." />
     <meta name="twitter:image" content="https://shelhaegypt.com/assets/logos/royal_movers_logo.jpg" />
 
     <!-- Preload exact LCP Hero WebP per viewport so high-DPR mobile only fetches 22KB WebP -->
@@ -205,57 +199,14 @@
           ],
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "شارع 9، ميدان النافورة، المقطم",
-            "addressLocality": "المقطم",
-            "addressRegion": "القاهرة",
-            "postalCode": "11571",
+            "addressRegion": "القاهرة والجيزة",
             "addressCountry": "EG"
           },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 30.0131,
-            "longitude": 31.3026
-          },
           "areaServed": [
-            "القاهرة", "الجيزة", "الإسكندرية", "القليوبية", "الشرقية", "الغربية", "المنوفية", "الدقهلية", "دمياط", "كفر الشيخ", "البحيرة", "بورسعيد", "الإسماعيلية", "السويس", "الفيوم", "بني سويف", "المنيا", "أسيوط", "سوهاج", "قنا", "الأقصر", "أسوان", "البحر الأحمر", "مطروح", "شمال سيناء", "جنوب سيناء", "الوادي الجديد", "التجمع الخامس", "القاهرة الجديدة", "مدينة نصر", "مصر الجديدة", "المعادي", "الشيخ زايد", "6 أكتوبر", "حدائق الأهرام", "الشروق", "مدينتي", "الرحاب", "العاصمة الإدارية", "الساحل الشمالي", "العين السخنة", "الغردقة", "شرم الشيخ", "العاشر من رمضان", "طنطا", "المنصورة", "بنها", "جميع محافظات مصر"
+            "القاهرة", "الجيزة", "الإسكندرية", "القليوبية", "الشرقية", "الغربية", "المنوفية", "الدقهلية", "دمياط", "كفر الشيخ", "البحيرة", "بورسعيد", "الإسماعيلية", "السويس", "الفيوم", "بني سويف", "المنيا", "أسيوط", "سوهاج", "قنا", "الأقصر", "أسوان", "البحر الأحمر", "مطروح", "شمال سيناء", "جنوب سيناء", "الوادي الجديد", "التجمع الخامس", "القاهرة الجديدة", "مدينة نصر", "مصر الجديدة", "المعادي", "الزمالك", "الشيخ زايد", "6 أكتوبر", "حدائق الأهرام", "الشروق", "مدينتي", "الرحاب", "العاصمة الإدارية", "الساحل الشمالي", "العين السخنة", "الغردقة", "شرم الشيخ", "العاشر من رمضان", "طنطا", "المنصورة", "بنها", "جميع محافظات مصر"
           ],
           "priceRange": "$$",
           "openingHours": "Mo-Su 00:00-24:00",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "184",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
-          "review": [
-            {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "م. أحمد الشريف"
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "reviewBody": "خدمة ممتازة وفريق عمل محترف جداً، نقل وتغليف الشقة بالكامل بكراتين 5 طبقات بدون أي خدش، والونش الهيدروليكي وفر وقت وجهد كبير."
-            },
-            {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "د. نورهان صادق"
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "reviewBody": "أمانة والتزام تام بالمواعيد، فك وتركيب التكييفات تم باحترافية وسيارات النقل مجهزة ومبطنة."
-            }
-          ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "خدمات نقل وتغليف الأثاث ومستلزمات الشحن",
@@ -372,7 +323,52 @@
     </script>
   </head>
   <body class="bg-[#020b18] text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950" style="background-color:#020b18;color:#f1f5f9">
-    <div id="root"></div>
+    <div id="root">
+      <main style="max-width:1080px;margin:0 auto;padding:32px 20px;font-family:Alexandria,system-ui,sans-serif;line-height:1.8;color:#f1f5f9">
+        <header style="margin-bottom:28px">
+          <h1 style="font-size:32px;font-weight:900;margin:0 0 12px;color:#fff">نقل عفش وأثاث في القاهرة والجيزة | رويال موفرز</h1>
+          <p style="font-size:17px;color:#cbd5e1;margin:0 0 16px">
+            رويال موفرز لنقل وتغليف الأثاث في القاهرة والجيزة، مع فك وتركيب الأثاث والتكييفات وخدمة الونش الهيدروليكي حسب احتياج المكان. سيارات مغلقة ومبطنة وتغليف أوروبي 5 طبقات لحماية الأثاث والأجهزة والزجاج.
+          </p>
+          <p style="margin:0">
+            <a href="tel:01233391255" onclick="return gtag_report_conversion('tel:01233391255');" style="color:#fbbf24;font-weight:800;margin-left:16px">اتصل الآن: 01233391255</a>
+            <a href="https://wa.me/201233391255" style="color:#34d399;font-weight:800;margin-left:16px">تواصل عبر واتساب</a>
+            <a href="/articles/" style="color:#7dd3fc;font-weight:800">مقالات وأدلة نقل الأثاث</a>
+          </p>
+        </header>
+
+        <section aria-labelledby="ssr-services" style="margin-bottom:28px">
+          <h2 id="ssr-services" style="font-size:22px;font-weight:800;color:#fbbf24;margin:0 0 10px">خدمات نقل وتغليف الأثاث</h2>
+          <ul>
+            <li>نقل أثاث الشقق والفلل والمكاتب بسيارات صندوق مغلق ومبطن من الداخل.</li>
+            <li>تغليف أوروبي 5 طبقات (فوم، بابلز ثقيل، كرتون مضلع 5 راق، واسترتش صناعي) للأثاث والزجاج والنجف والتحف.</li>
+            <li>فك وتركيب غرف النوم والمطابخ والستائر والنجف بواسطة نجارين وفنيين متخصصين.</li>
+            <li>فك وتركيب التكييفات مع حفظ شحنة الفريون (800 ج.م للوحدة).</li>
+            <li>ونش رفع أثاث هيدروليكي للأدوار المرتفعة حتى الدور 25 (يبدأ من 2,500 ج.م).</li>
+            <li>توريد وتوصيل كراتين نقل عفش 5 طبقات ومستلزمات التغليف لباب المنزل.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="ssr-areas" style="margin-bottom:28px">
+          <h2 id="ssr-areas" style="font-size:22px;font-weight:800;color:#fbbf24;margin:0 0 10px">المناطق والكمبوندات التي نخدمها في القاهرة والجيزة</h2>
+          <p>
+            نغطي جميع أحياء القاهرة والجيزة والمدن الجديدة: التجمع الخامس والقاهرة الجديدة، الشيخ زايد، 6 أكتوبر، مدينتي والرحاب والشروق، العاصمة الإدارية الجديدة، المعادي والزمالك وجاردن سيتي، مدينة نصر ومصر الجديدة والنزهة، المهندسين والدقي، بالإضافة إلى الشحن إلى الساحل الشمالي والعلمين والعين السخنة والجونة وجميع محافظات مصر.
+          </p>
+        </section>
+
+        <section aria-labelledby="ssr-faqs" style="margin-bottom:28px">
+          <h2 id="ssr-faqs" style="font-size:22px;font-weight:800;color:#fbbf24;margin:0 0 10px">الأسئلة الشائعة حول نقل الأثاث</h2>
+          <dl>
+            <dt style="font-weight:800;margin-top:10px">ما هو سعر خدمة الونش الهيدروليكي لرفع الأثاث؟</dt>
+            <dd style="margin:4px 0 0;color:#cbd5e1">يبدأ سعر خدمة الونش الهيدروليكي من 2,500 ج.م، ويصل حتى الدور 25 بحمولة حتى 400 كجم حسب احتياج المكان.</dd>
+            <dt style="font-weight:800;margin-top:10px">كم سعر فك وتركيب التكييف مع رويال موفرز؟</dt>
+            <dd style="margin:4px 0 0;color:#cbd5e1">سعر فك وتركيب التكييف 800 ج.م للوحدة بواسطة فني تكييف متخصص مع حفظ شحنة الفريون وإعادة التشغيل.</dd>
+            <dt style="font-weight:800;margin-top:10px">كيف تحافظ رويال موفرز على سلامة الأثاث أثناء النقل؟</dt>
+            <dd style="margin:4px 0 0;color:#cbd5e1">نستخدم خامات تغليف سميكة من البابلز والاسترتش والكرتون المقوى 5 طبقات مع سيارات مغلقة ومبطنة وأحزمة تثبيت.</dd>
+          </dl>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

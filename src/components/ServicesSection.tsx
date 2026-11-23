@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { handlePhoneCallClick } from '../utils/analytics';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   CheckCircle2, 
@@ -321,6 +322,7 @@ export const ServicesSection: React.FC = () => {
 
                     <a
                       href={`tel:${COMPANY_DATA.phones[0].number}`}
+                      onClick={(e) => handlePhoneCallClick(e, `tel:${COMPANY_DATA.phones[0].number}`, 'قسم الخدمات (اتصال)')}
                       className="flex-1 sm:flex-none flex items-center justify-center gap-2.5 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white px-7 py-3.5 rounded-2xl font-black text-base transition-all hover:scale-105 active:scale-95"
                     >
                       <Phone className="w-5 h-5" />

@@ -3,7 +3,7 @@ import { Search, X, Truck, Package, Phone, ArrowLeft, HelpCircle, Film, ShieldCh
 import { COMPANY_DATA } from '../data/companyData';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { useApp } from '../context/AppContext';
-import { trackPhoneClick, trackWhatsAppClick } from '../utils/analytics';
+import { handlePhoneCallClick, trackWhatsAppClick } from '../utils/analytics';
 
 export interface SearchResultItem {
   id: string;
@@ -313,8 +313,7 @@ export const SiteSearchBar: React.FC<SiteSearchBarProps> = ({
 
     if (item.actionType === 'phone') {
       const phoneNum = COMPANY_DATA.phones[0].number;
-      trackPhoneClick(phoneNum, 'بحث الموقع (اتصال)', `tel:${phoneNum}`);
-      window.location.href = `tel:${phoneNum}`;
+      handlePhoneCallClick(undefined, `tel:${phoneNum}`, 'بحث الموقع (اتصال)');
       return;
     }
 
@@ -509,6 +508,7 @@ export const SiteSearchBar: React.FC<SiteSearchBarProps> = ({
                 </a>
                 <a
                   href="tel:01233391255"
+                  onClick={(e) => handlePhoneCallClick(e, 'tel:01233391255', 'بحث الموقع (اتصال مباشر)')}
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-black shadow-md tracking-wider font-mono"
                 >
                   <Phone className="w-4 h-4 text-white" />

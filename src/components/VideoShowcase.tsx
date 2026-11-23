@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { handlePhoneCallClick } from '../utils/analytics';
 import { 
   Play, 
   Pause, 
@@ -233,6 +234,7 @@ export const VideoShowcase: React.FC = () => {
 
               <a
                 href={`tel:${COMPANY_DATA.phones[0].number}`}
+                onClick={(e) => handlePhoneCallClick(e, `tel:${COMPANY_DATA.phones[0].number}`, 'معرض الفيديو (اتصال)')}
                 className="font-black px-6 py-3.5 rounded-2xl text-base flex items-center justify-center gap-2.5 border-2 bg-white hover:bg-slate-50 text-blue-900 border-slate-300 transition-all hover:scale-105 active:scale-95 shadow-xs"
               >
                 <Phone className="w-5 h-5 text-blue-600" />

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { handlePhoneCallClick } from '../utils/analytics';
 import { motion } from 'motion/react';
 import { 
   Truck, 
@@ -83,6 +84,7 @@ export const WinchAndPackingDeepDive: React.FC = () => {
               <div className="flex flex-wrap items-center gap-3.5 pt-2">
                 <a
                   href={`tel:${COMPANY_DATA.phones[0].number}`}
+                  onClick={(e) => handlePhoneCallClick(e, `tel:${COMPANY_DATA.phones[0].number}`, 'قسم الونش الهيدروليكي (اتصال)')}
                   className="bg-gradient-to-r from-blue-700 to-sky-600 hover:from-blue-600 hover:to-sky-500 text-white font-black px-7 py-4 rounded-2xl text-base sm:text-lg flex items-center gap-2.5 shadow-lg shadow-blue-500/25 transition-all hover:scale-105 active:scale-95"
                 >
                   <Phone className="w-5 h-5" />
@@ -254,6 +256,7 @@ export const WinchAndPackingDeepDive: React.FC = () => {
 
                 <a
                   href={`tel:${COMPANY_DATA.phones[0].number}`}
+                  onClick={(e) => handlePhoneCallClick(e, `tel:${COMPANY_DATA.phones[0].number}`, 'قسم التغليف الأوروبي (اتصال)')}
                   className="font-bold px-5 py-3.5 rounded-2xl text-xs sm:text-sm flex items-center gap-2 border bg-white hover:bg-slate-50 text-blue-900 border-slate-300 transition-all hover:scale-105 active:scale-95 shadow-xs"
                 >
                   <Phone className="w-4 h-4 text-blue-600" />

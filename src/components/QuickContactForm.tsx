@@ -3,7 +3,7 @@ import { Phone, User, CheckCircle2, RotateCcw, Sparkles, AlertCircle, Loader2 } 
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { CONTACT_INFO } from '../data/contactInfo';
 import { useApp } from '../context/AppContext';
-import { trackWhatsAppClick, trackBookingLead } from '../utils/analytics';
+import { handlePhoneCallClick, trackWhatsAppClick, trackBookingLead } from '../utils/analytics';
 import { normalizeEgyptianPhone, isValidEgyptianPhone } from '../utils/phoneValidation';
 
 const CALLBACK_EMAIL_ENDPOINT = 'https://formsubmit.co/ajax/aly353000@gmail.com';
@@ -196,6 +196,7 @@ export const QuickContactForm: React.FC = () => {
                   </a>
                   <a
                     href={`tel:${CONTACT_INFO.primaryPhone}`}
+                    onClick={(e) => handlePhoneCallClick(e, `tel:${CONTACT_INFO.primaryPhone}`, 'نموذج الحجز السريع (اتصال)')}
                     className="flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-600 text-white font-black py-3.5 px-6 rounded-2xl text-sm sm:text-base shadow-lg shadow-blue-700/30 transition-all"
                   >
                     <Phone className="w-5 h-5 text-white" />

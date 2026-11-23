@@ -5,6 +5,7 @@ import { TrustBadges } from './TrustBadges';
 import { HeroMediaSlider } from './HeroMediaSlider';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { useApp } from '../context/AppContext';
+import { handlePhoneCallClick } from '../utils/analytics';
 
 interface HeroProps {
   onOpenGoldenTips?: () => void;
@@ -90,6 +91,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
 
               <a
                 href={`tel:${CONTACT_INFO.primaryPhone}`}
+                onClick={(e) => handlePhoneCallClick(e, `tel:${CONTACT_INFO.primaryPhone}`, 'القسم الرئيسي (اتصال مباشر)')}
                 className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-gradient-to-r from-blue-700 to-blue-600 hover:from-blue-600 hover:to-blue-500 text-white px-5 py-3.5 rounded-xl font-black text-sm sm:text-lg shadow-xl shadow-blue-700/25 hover:scale-[1.02] active:scale-95 transition-all"
               >
                 <Phone className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
@@ -151,7 +153,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGoldenTips }) => {
               <div className="pt-3 border-t border-blue-800/70 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm">
                 <div className="flex items-center gap-2 font-bold">
                   <span className="text-amber-300 font-black">📞 الخط الساخن (24 ساعة):</span>
-                  <a href="tel:01233391255" className="font-mono font-black text-sky-300 hover:text-amber-300 underline-offset-4 hover:underline text-base tracking-wider" dir="ltr">
+                  <a
+                    href="tel:01233391255"
+                    onClick={(e) => handlePhoneCallClick(e, 'tel:01233391255', 'الخط الساخن الرئيسي')}
+                    className="font-mono font-black text-sky-300 hover:text-amber-300 underline-offset-4 hover:underline text-base tracking-wider"
+                    dir="ltr"
+                  >
                     01233391255
                   </a>
                 </div>

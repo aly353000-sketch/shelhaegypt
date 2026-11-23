@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { handlePhoneCallClick } from '../utils/analytics';
 import { 
   Phone, 
   MessageCircle, 
@@ -113,7 +114,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   const mobileNavLinks = [
     { label: t('الرئيسية', 'Home'), href: '#hero' },
     { label: t('مقالات وأدلة نقل الأثاث 📖', 'Moving Guides & Articles 📖'), href: '/articles/' },
-    { label: t('مقرنا بالمقطم 📍', 'Location'), href: '#location-section' },
     { label: t('خدمات الشقق والفلل VIP', 'VIP Moving Services'), href: '#services' },
     { label: t('خدمات تفاعلية 🔄', 'Interactive Services'), href: '#interactive-services' },
     { label: t('كمبوندات نخدمها 🏰', 'Compounds'), href: '#luxury-compounds' },
@@ -141,6 +141,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span>{t('الخط الساخن الموحد:', 'Direct Hotline:')}</span>
             <a
               href="tel:01233391255"
+              onClick={(e) => handlePhoneCallClick(e, 'tel:01233391255', 'الشريط العلوي (اتصال)')}
               className="inline-flex items-center py-1 underline hover:text-sky-200 transition-colors font-mono text-sm sm:text-base font-black tracking-wider"
               dir="ltr"
             >
@@ -292,10 +293,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                     <a
                       key={phone.number}
                       href={`tel:${phone.number}`}
+                      onClick={(e) => {
+                        setPhonesDropdownOpen(false);
+                        handlePhoneCallClick(e, `tel:${phone.number}`, 'قائمة أرقام الهيدر');
+                      }}
                       className={`flex items-center justify-between px-3 py-2 text-xs transition-colors ${
                         theme === 'light' ? 'hover:bg-slate-50 text-slate-800' : 'hover:bg-blue-950/60 text-slate-200'
                       }`}
-                      onClick={() => setPhonesDropdownOpen(false)}
                     >
                       <span className="text-slate-400">{phone.label}</span>
                       <span className="font-bold text-sky-400" dir="ltr">{phone.number}</span>
@@ -422,6 +426,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div className="grid grid-cols-2 gap-2 pb-3 border-b border-slate-800/40">
               <a
                 href={`tel:${CONTACT_INFO.primaryPhone}`}
+                onClick={(e) => handlePhoneCallClick(e, `tel:${CONTACT_INFO.primaryPhone}`, 'قائمة الموبايل (اتصال)')}
                 className="flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-600 text-white py-2.5 rounded-xl font-bold text-xs"
               >
                 <Phone className="w-4 h-4" />

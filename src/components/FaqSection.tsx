@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { handlePhoneCallClick } from '../utils/analytics';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   HelpCircle, 
@@ -270,6 +271,7 @@ export const FaqSection: React.FC = () => {
 
             <a
               href={`tel:${COMPANY_DATA.phones[0].number}`}
+              onClick={(e) => handlePhoneCallClick(e, `tel:${COMPANY_DATA.phones[0].number}`, 'الأسئلة الشائعة (اتصال)')}
               className="flex-1 sm:flex-initial flex items-center justify-center gap-2 bg-white text-blue-900 hover:bg-slate-100 px-5 py-3 rounded-2xl text-xs sm:text-sm font-black shadow-md transition-transform hover:scale-105 active:scale-95"
             >
               <Phone className="w-4 h-4 text-blue-700" />

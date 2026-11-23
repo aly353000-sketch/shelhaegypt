@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X, HelpCircle, ChevronDown, Sparkles, Phone } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { COMPANY_DATA } from '../data/companyData';
+import { handlePhoneCallClick } from '../utils/analytics';
 
 interface CompactFaqModalProps {
   isOpen: boolean;
@@ -108,6 +109,7 @@ export const CompactFaqModal: React.FC<CompactFaqModalProps> = ({ isOpen, onClos
           <div className="flex items-center gap-2">
             <a
               href="tel:01233391255"
+              onClick={(e) => handlePhoneCallClick(e, 'tel:01233391255', 'نافذة الأسئلة الشائعة (اتصال)')}
               className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-3.5 py-2 rounded-xl flex items-center gap-1.5"
             >
               <Phone className="w-3.5 h-3.5" />

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { handlePhoneCallClick } from '../utils/analytics';
 import { 
   RotateCw, 
   Phone, 
@@ -334,7 +335,10 @@ export const InteractiveServicesFlipCards: React.FC = () => {
                       <a
                         href={`tel:${COMPANY_DATA.phones[0].number}`}
                         tabIndex={isFlipped ? 0 : -1}
-                        onClick={(e) => e.stopPropagation()}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handlePhoneCallClick(e, `tel:${COMPANY_DATA.phones[0].number}`, 'بطاقات الخدمات (اتصال)');
+                        }}
                         className="p-2.5 rounded-xl bg-blue-700 hover:bg-blue-600 text-white shadow-md transition-all active:scale-95"
                         title="اتصل الآن"
                         aria-label={`اتصل الآن لحجز ${card.title} على ${COMPANY_DATA.phones[0].number}`}
