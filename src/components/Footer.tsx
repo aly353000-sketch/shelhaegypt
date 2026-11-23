@@ -31,11 +31,15 @@ export const Footer: React.FC = () => {
                 className="w-14 h-14 rounded-2xl bg-white p-1 border border-amber-400/40 shadow-lg object-contain" 
               />
               <div>
-                <span className="text-2xl font-black text-amber-500 flex items-center gap-1.5">
+                <span className={`text-2xl font-black flex items-center gap-1.5 ${
+                  theme === 'light' ? 'text-amber-800' : 'text-amber-400'
+                }`}>
                   <span>👑</span>
                   <span>رويال موفرز</span>
                 </span>
-                <span className="block text-xs text-amber-300 font-bold font-mono tracking-wider">
+                <span className={`block text-xs font-bold font-mono tracking-wider ${
+                  theme === 'light' ? 'text-amber-700' : 'text-amber-300'
+                }`}>
                   ROYAL MOVERS VIP
                 </span>
               </div>
@@ -48,8 +52,10 @@ export const Footer: React.FC = () => {
               )}
             </p>
 
-            <div className="flex items-center gap-2 text-xs text-amber-400 font-bold">
-              <ShieldCheck className="w-4 h-4 text-amber-400" />
+            <div className={`flex items-center gap-2 text-xs font-bold ${
+              theme === 'light' ? 'text-amber-800' : 'text-amber-300'
+            }`}>
+              <ShieldCheck className={`w-4 h-4 shrink-0 ${theme === 'light' ? 'text-amber-700' : 'text-amber-400'}`} />
               <span>{t('عناية فائقة وتغليف ألماني لحماية التحف والمقتنيات', 'German-Grade Protective Packing for Fine Antiques')}</span>
             </div>
           </div>
@@ -63,37 +69,44 @@ export const Footer: React.FC = () => {
             </h2>
             <ul className="space-y-0.5 text-sm sm:text-base font-bold">
               <li>
-                <a href="#services" className="inline-block py-1.5 hover:text-sky-400 transition-colors">
+                <a href="#services" className={`inline-block py-1.5 transition-colors ${theme === 'light' ? 'hover:text-blue-700' : 'hover:text-sky-300'}`}>
                   • {t('نقل عفش الشقق والفلل السكنية', 'Apartments & Villas Moving')}
                 </a>
               </li>
               <li>
-                <a href="#services" className="inline-block py-1.5 hover:text-sky-400 transition-colors">
+                <a href="#services" className={`inline-block py-1.5 transition-colors ${theme === 'light' ? 'hover:text-blue-700' : 'hover:text-sky-300'}`}>
                   • {t('نقل مقرات الشركات والمكاتب والعيادات', 'Corporate & Clinic Moving')}
                 </a>
               </li>
               <li>
-                <a href="#winch-section" className="inline-block py-1.5 hover:text-sky-400 transition-colors">
+                <a href="#winch-section" className={`inline-block py-1.5 transition-colors ${theme === 'light' ? 'hover:text-blue-700' : 'hover:text-sky-300'}`}>
                   • {t('أوناش رفع الأثاث الهيدروليكية (حتى الدور 25)', 'Hydraulic Winches (Up to Floor 25)')}
                 </a>
               </li>
               <li>
-                <a href="#packing-section" className="inline-block py-1.5 hover:text-sky-400 transition-colors">
+                <a href="#packing-section" className={`inline-block py-1.5 transition-colors ${theme === 'light' ? 'hover:text-blue-700' : 'hover:text-sky-300'}`}>
                   • {t('التغليف الأوروبي فائق الجودة والأمان', 'European Multi-Layer Packing')}
                 </a>
               </li>
               <li>
-                <a href="#packing-section" className="inline-block py-1.5 hover:text-sky-400 transition-colors">
+                <a href="#packing-section" className={`inline-block py-1.5 transition-colors ${theme === 'light' ? 'hover:text-blue-700' : 'hover:text-sky-300'}`}>
                   • {t('فك وتركيب التكييفات وشحن الفريون', 'AC Dismantling & Freon Servicing')}
                 </a>
               </li>
               <li>
-                <a href="#services" className="inline-block py-1.5 hover:text-sky-400 transition-colors">
+                <a href="#services" className={`inline-block py-1.5 transition-colors ${theme === 'light' ? 'hover:text-blue-700' : 'hover:text-sky-300'}`}>
                   • {t('سيارات نقل عفش مغلقة ومبطنة للمحافظات', 'Padded Closed Trucks to All Governorates')}
                 </a>
               </li>
               <li>
-                <a href="/articles/" className="inline-block py-1.5 text-amber-300 hover:text-amber-200 transition-colors">
+                <a
+                  href="/articles/"
+                  className={`inline-block py-1.5 transition-colors ${
+                    theme === 'light'
+                      ? 'text-amber-800 hover:text-amber-900 underline decoration-amber-600/50 underline-offset-4'
+                      : 'text-amber-300 hover:text-amber-200'
+                  }`}
+                >
                   • {t('مقالات وأدلة نقل وتغليف الأثاث (موسوعة شاملة)', 'Moving & Packing SEO Guides Hub')}
                 </a>
               </li>
@@ -131,15 +144,17 @@ export const Footer: React.FC = () => {
                 onClick={(e) => handlePhoneCallClick(e, 'tel:01233391255', 'أسفل الموقع (اتصال)')}
                 className={`flex items-center justify-between p-3 rounded-xl border transition-colors shadow-sm ${
                   theme === 'light'
-                    ? 'bg-amber-50/70 hover:bg-amber-100/70 border-amber-300 text-slate-800'
+                    ? 'bg-amber-50 hover:bg-amber-100/80 border-amber-300 text-slate-900'
                     : 'bg-[#031126] hover:bg-blue-950 border-amber-500/40 text-white'
                 }`}
               >
                 <div className="flex items-center gap-1.5 font-bold">
-                  <Phone className="w-3.5 h-3.5 text-amber-500" />
+                  <Phone className={`w-3.5 h-3.5 ${theme === 'light' ? 'text-amber-800' : 'text-amber-400'}`} />
                   <span>{t('الخط الساخن الموحد (24 ساعة):', 'Unified 24/7 Hotline:')}</span>
                 </div>
-                <span className="font-black text-amber-500 font-mono text-base tracking-wider" dir="ltr">01233391255</span>
+                <span className={`font-black font-mono text-base tracking-wider ${
+                  theme === 'light' ? 'text-amber-800' : 'text-amber-400'
+                }`} dir="ltr">01233391255</span>
               </a>
 
               <a
@@ -150,19 +165,21 @@ export const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className={`flex items-center justify-between p-3 rounded-xl border transition-colors shadow-sm ${
                   theme === 'light'
-                    ? 'bg-emerald-50/70 hover:bg-emerald-100/70 border-emerald-300 text-slate-800'
+                    ? 'bg-emerald-50 hover:bg-emerald-100/80 border-emerald-300 text-slate-900'
                     : 'bg-emerald-950/40 hover:bg-emerald-900/60 border-emerald-500/40 text-white'
                 }`}
               >
-                <div className={`flex items-center gap-1.5 font-bold ${theme === 'light' ? 'text-emerald-700' : 'text-emerald-300'}`}>
+                <div className={`flex items-center gap-1.5 font-bold ${theme === 'light' ? 'text-emerald-800' : 'text-emerald-300'}`}>
                   <MessageCircle className="w-3.5 h-3.5" />
                   <span>{t('واتساب الحجوزات السريعة:', 'WhatsApp Bookings:')}</span>
                 </div>
-                <span className={`font-black font-mono text-base tracking-wider ${theme === 'light' ? 'text-emerald-700' : 'text-emerald-300'}`} dir="ltr">01233391255</span>
+                <span className={`font-black font-mono text-base tracking-wider ${theme === 'light' ? 'text-emerald-800' : 'text-emerald-300'}`} dir="ltr">01233391255</span>
               </a>
 
-              <div className="flex items-center gap-2 text-xs text-slate-300 pt-1">
-                <Clock className="w-3.5 h-3.5 text-sky-400" />
+              <div className={`flex items-center gap-2 text-xs font-medium pt-1 ${
+                theme === 'light' ? 'text-slate-700' : 'text-slate-300'
+              }`}>
+                <Clock className={`w-3.5 h-3.5 shrink-0 ${theme === 'light' ? 'text-sky-700' : 'text-sky-400'}`} />
                 <span>{t('مواعيد العمل: 24 ساعة طوال أيام الأسبوع', 'Working Hours: 24/7 All Week')}</span>
               </div>
             </div>
@@ -172,14 +189,14 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className={`pt-6 border-t text-center text-xs flex flex-col sm:flex-row items-center justify-between gap-4 ${
-          theme === 'light' ? 'border-slate-200 text-slate-600' : 'border-blue-900/40 text-slate-300'
+          theme === 'light' ? 'border-slate-200 text-slate-700' : 'border-blue-900/40 text-slate-300'
         }`}>
           <div>
             © {new Date().getFullYear()} {t('شركة رويال موفرز لنقل وتغليف الأثاث VIP - جميع الحقوق محفوظة.', 'Shilha Moving & Packing Company - All Rights Reserved.')}
           </div>
-          <div className={`flex items-center gap-1 ${theme === 'light' ? 'text-sky-700' : 'text-sky-300'}`}>
+          <div className={`flex items-center gap-1 font-medium ${theme === 'light' ? 'text-sky-800' : 'text-sky-300'}`}>
             <span>{t('صُنع باحترافية لخدمتكم بأعلى معايير الأمان والراحة', 'Crafted with premium safety & comfort standards')}</span>
-            <Heart className="w-3.5 h-3.5 text-sky-400 fill-sky-400" />
+            <Heart className={`w-3.5 h-3.5 ${theme === 'light' ? 'text-sky-700 fill-sky-700' : 'text-sky-400 fill-sky-400'}`} />
           </div>
         </div>
 
