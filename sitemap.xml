@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://shelhaegypt.com/</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -17,13 +17,13 @@
   </url>
   <url>
     <loc>https://shelhaegypt.com/articles/</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://shelhaegypt.com/articles/furniture-moving-new-cairo/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -33,7 +33,7 @@
   </url>
   <url>
     <loc>https://shelhaegypt.com/articles/furniture-moving-sheikh-zayed-october/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -73,7 +73,7 @@
   </url>
   <url>
     <loc>https://shelhaegypt.com/articles/furniture-moving-prices-cairo-giza/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -99,6 +99,46 @@
     <image:image>
       <image:loc>https://shelhaegypt.com/assets/optimized/crew_sofa_wrap.webp</image:loc>
       <image:title>قائمة تجهيز الشقة قبل يوم نقل العفش خطوة بخطوة (Checklist شاملة للعائلات)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://shelhaegypt.com/articles/furniture-moving-maadi-zamalek-garden-city/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://shelhaegypt.com/assets/images/royal_delicate_packing.webp</image:loc>
+      <image:title>دليل نقل الأثاث والأنتيكات في المعادي والزمالك وجاردن سيتي بأمان تام</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://shelhaegypt.com/articles/furniture-moving-nasr-city-heliopolis/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://shelhaegypt.com/assets/images/royal_winch_villa.webp</image:loc>
+      <image:title>شركة نقل وتغليف الأثاث في مدينة نصر ومصر الجديدة والنزهة بالونش الهيدروليكي</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://shelhaegypt.com/articles/furniture-moving-new-administrative-capital/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://shelhaegypt.com/assets/images/royal_movers_crew_arrival.webp</image:loc>
+      <image:title>دليل نقل أثاث الفلل والشقق والشركات إلى العاصمة الإدارية الجديدة (R7، R8، المقصد)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://shelhaegypt.com/articles/furniture-moving-north-coast-alamein-gouna/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://shelhaegypt.com/assets/images/royal_movers_workers_loading.webp</image:loc>
+      <image:title>دليل شحن ونقل أثاث الشاليهات والفلل إلى الساحل الشمالي والعلمين والجونة</image:title>
     </image:image>
   </url>
 </urlset>
