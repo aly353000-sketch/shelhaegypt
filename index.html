@@ -32,8 +32,18 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
+      /* Owner-device marker: open the site once with ?internal=1 on your own phone/browser.
+         From then on this browser sends traffic_type=internal, so GA4's "Internal Traffic"
+         data filter can exclude your own visits. Works on mobile data too (no IP needed). */
+      var shelhaInternal = false;
+      try {
+        if (window.location.search.indexOf('internal=1') > -1) {
+          localStorage.setItem('shelha_internal', '1');
+        }
+        shelhaInternal = localStorage.getItem('shelha_internal') === '1';
+      } catch (e) {}
       gtag('config', 'AW-18544594401');
-      gtag('config', 'G-2TFJ7D161W');
+      gtag('config', 'G-2TFJ7D161W', shelhaInternal ? { 'traffic_type': 'internal' } : {});
     </script>
 
     <!-- Event snippet for Google Ads Phone Call conversion -->
