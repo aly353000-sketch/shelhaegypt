@@ -18,9 +18,9 @@
           document.head.appendChild(s);
         }
         if (document.readyState === 'complete') {
-          setTimeout(loadGtag, 1200);
+          setTimeout(loadGtag, 4000);
         } else {
-          window.addEventListener('load', function() { setTimeout(loadGtag, 1200); }, { once: true });
+          window.addEventListener('load', function() { setTimeout(loadGtag, 4000); }, { once: true });
         }
         ['pointerdown', 'keydown', 'scroll'].forEach(function(evt) {
           window.addEventListener(evt, loadGtag, { once: true, passive: true });
